@@ -7,18 +7,26 @@ footer {
     background-color: #B8ABFC;
     color: white;
     padding-bottom: 2em;
+    padding-top: 2em;
 }
 
 footer a {
     color: white;
     text-decoration: none;
+    font-size: 1.125em;
+    font-weight: 600;
 }
 
 #footer_MoA {
     font-family: 'Montserrat';
-font-size: 2.625em;
-margin: 0;
-font-weight: 600;
+    font-size: 2.625em;
+    margin: 0;
+    font-weight: 600;
+}
+
+#tel {
+    font-size: 2.250em;
+    font-weight: 600;
 }
 
 footer .container {
@@ -35,4 +43,12 @@ footer td:nth-child(2) {
     font-size: 0.875em;
 }
 
+footer td p {
+    padding-bottom: 0.3em;
+}
+
+#info {
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
 
