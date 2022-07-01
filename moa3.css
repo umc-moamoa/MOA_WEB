@@ -134,3 +134,49 @@ ul,li{
     line-height: 5.813em;
     color: #414141;
 }
+
+/* main */
+#main {
+    box-sizing: border-box;
+    padding: 3%;
+
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    left: 10%;
+    top: 70%;
+
+    background: #FFFFFF;
+    border: 2.5px solid #909090;
+    box-shadow: 0px 0px 100px rgba(184, 171, 252, 0.1);
+}
+
+.flex-container {
+    display: flex;
+    justify-content : space-between;
+    align-items: flex-end;
+}
+
+#title {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+#count {
+    font-size: 1em;
+    color: #6C6C6C;
+    font-weight: 700;
+    
+}
+
+#type {
+    font-size: 1em;
+    color: #6C6C6C;
+    font-weight: bold;
+}
+
+#point {
+    font-size: 2em;
+    line-height:center;
+    color: #B8ABFC;
+}
