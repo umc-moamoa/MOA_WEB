@@ -1,41 +1,38 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-body {
+* {
     margin: 0;
+    padding: 0;
 }
-ul {
-    margin: 0;
-}
-
-ul a {
-    color: #FFFFFF;
-    text-decoration:none;
-    text-align: right;
-    width: 100%;
-}
-
 footer {
     background-color: #B8ABFC;
-    color: #FFFFFF;
+    color: white;
+    padding-bottom: 2em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
 }
 
 #footer_MoA {
-font-family: 'Montserrat';
+    font-family: 'Montserrat';
 font-size: 2.625em;
 margin: 0;
 font-weight: 600;
 }
 
-footer td:nth-child(1) {
-    padding-left: 10%;
-    width: 35%;
+footer .container {
+    padding-left: 15%;
+    /* padding-right: 10%; */
+}
+
+footer ul {
+    padding-inline-start: 40px;
 }
 
 footer td:nth-child(2) {
     text-align: right;
     font-size: 0.875em;
-    padding-left: 20%;
 }
 
-footer ul a {
-    font-size: 1.125em;
-}
+

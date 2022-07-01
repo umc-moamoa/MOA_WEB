@@ -18,16 +18,6 @@ ul,li{
     list-style: none;
 }
 
-/* 헤더(로고, 메뉴, 아이콘, 서브제목) */
-/* #header{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0em;
-    top: 0em;
-    /* background: url(image/Ellipse\ 35.png) no-repeat; 
-} */
-
 /* 로고*/
 #backCenter {
     position: absolute;
@@ -62,61 +52,38 @@ ul,li{
 #userMenu {
     margin: 0 auto;
     background: url("image/Ellipse 35.png") no-repeat;
+    padding-right: 2em;
 }
 #userMenu .list_menu {
     float: right;
+    line-height: 5.313em;
+    white-space: nowrap;
 }
 #userMenu * {
     font-weight: 400;
     letter-spacing: 0.1em;
+    height: 1em;
+    padding: 0;
+    color: #414141;
 }
 
 #userMenu .menu {
     position: relative;
     float: left;
-    margin-right: 2em;
+    margin-right: 1.5em;
 }
 
 #userMenu .menu.center:before{
     right: 0;
 }
 
-#userMenu .link_login {
-    float: left;
-    height: 1em;
-    padding: 0;
-    
-    color: #414141;
-    line-height: 5.313em;
-    white-space: nowrap;
-    padding-right: 1em;
-}
-
-#userMenu .link_join {
-    float: left;
-    height: 1em;
-    padding: 0;
-    
-    color: #414141;
-    line-height: 5.313em;
-    white-space: nowrap;
-    padding-right: 1em;
-}
-
 #userMenu .link_center {
-    float: left;
-    height: 1em;
-    padding: 0;
-    
-    color: #414141;
-    line-height: 5.313em;
-    white-space: nowrap;
-    padding-right: 3.8em;
+    padding-right: 4.5em;
 }
 
 #userMenu a {
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 /*아이콘*/
 #icon .searchIcon{
@@ -124,10 +91,10 @@ ul,li{
     width: 2em;
     height: 2em;
     left: 80%;
-    top: 10.625em;
+    top: 5em;
 
     background: url("image/searchIcon.png") no-repeat;
-    background-size: 2em 2em;
+    background-size: 1.5em 1.5em;
 }
 
 #icon .userIcon{
@@ -135,20 +102,20 @@ ul,li{
     width: 2em;
     height: 2em;
     left: 85%;
-    top: 170px;
+    top: 5em;
 
     background: url("image/userIcon.png") no-repeat;
-    background-size: 2em 2em;
+    background-size: 1.5em 1.5em;
 }
 #icon .menuIcon{
     position: absolute;
     width: 2em;
     height: 2em;
     left: 90%;
-    top: 10.625em;
+    top: 5em;
 
     background: url("image/menuIcon.png") no-repeat;
-    background-size: 2em 2em;
+    background-size: 1.5em 1.5em;
 }
 
 /*서브 제목*/
@@ -166,4 +133,50 @@ ul,li{
     font-size: 3em;
     line-height: 5.813em;
     color: #414141;
+}
+
+/* main */
+#main {
+    box-sizing: border-box;
+    padding: 3%;
+
+    position: absolute;
+    width: 70%;
+    height: 30%;
+    left: 10%;
+    top: 70%;
+
+    background: #FFFFFF;
+    border: 2.5px solid #909090;
+    box-shadow: 0px 0px 100px rgba(184, 171, 252, 0.1);
+}
+
+.flex-container {
+    display: flex;
+    justify-content : space-between;
+    align-items: flex-end;
+}
+
+#title {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+#count {
+    font-size: 1em;
+    color: #6C6C6C;
+    font-weight: 700;
+    
+}
+
+#type {
+    font-size: 1em;
+    color: #6C6C6C;
+    font-weight: bold;
+}
+
+#point {
+    font-size: 2em;
+    line-height:center;
+    color: #B8ABFC;
 }
