@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR';
+}
+
+#fullScreen {
+    position: relative;
+    width: 1920px;
+    height: 2085px;
+    overflow-y: scroll;
+
+    background: #F9F9F9;
+}
+
+#back1 {
+    position: absolute;
+    width: 660.53px;
+    height: 660.53px;
+    left: -292px;
+    top: 131.56px;
+    
+    background: linear-gradient(180deg, rgba(184, 171, 252, 0.4) 0%, rgba(191, 212, 255, 0.4) 100%);
+    filter: blur(300px);
+    transform: rotate(-48.48deg);
+}
+
+#moa {
+    position: absolute;
+    width: 196px;
+    left: 105px;
+    top: 130px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 102px;
+
+    color: #B8ABFC;
+}
