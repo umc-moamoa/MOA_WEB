@@ -6,11 +6,41 @@ html{
 body{
     font-size: 15px;
 }
+a {
+    text-decoration: none;
+}
+/* 헤더(로고, 메뉴, 아이콘, 서브제목) */
+#header{
+    position: absolute;
+    width: 1920px;
+    height: 464px;
+    left: 0px;
+    top: 0px;
+    
+    background: #F9F9F9;
+    background: url(image/Ellipse\ 35.png) no-repeat;
+}
+/* 로고*/
+#moa {
+    position: absolute;
+    width: 10%;
+    left: 60px;
+    top: 30px;
 
-/* 메뉴 헤더 */
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4em;
+    line-height: 102px;
+
+    color: #B8ABFC;
+    
+}
+
+/* 메뉴 */
 #userMenu {
-    width: 80%;
     margin: 0 auto;
+    background: url("image/Ellipse 35.png") no-repeat;
 }
 #userMenu .list_menu {
     float: right;
@@ -32,7 +62,7 @@ body{
 
 #userMenu .link_menu {
     float: left;
-    height: 52px;
+    height: 12px;
     padding: 0 30px;
     color: #414141;
     line-height: 85px;
@@ -45,4 +75,52 @@ body{
 #userMenu a {
     text-decoration: none;
     font-size: 32px;
+}
+/*아이콘*/
+#icon .searchIcon{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 1650px;
+    top: 170px;
+
+    background: url("image/searchIcon.png") no-repeat;
+    background-size: 40px 40px;
+}
+
+#icon .userIcon{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 1750px;
+    top: 170px;
+
+    background: url("image/userIcon.png") no-repeat;
+    background-size: 40px 40px;
+}
+#icon .menuIcon{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 1850px;
+    top: 170px;
+
+    background: url("image/menuIcon.png") no-repeat;
+    background-size: 40px 40px;
+}
+
+/*서브 제목*/
+#subTitle {
+    position: absolute;
+    width: 383px;
+    height: 93px;
+    left: 198px;
+    top: 349px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 93px;
+    color: #414141;
 }
