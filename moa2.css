@@ -146,7 +146,7 @@ footer {
 
 #wrapper {
     height: auto;
-    min-height: 300%;
+    min-height: 270%;
     padding-bottom: 226.302;
 }
 
@@ -199,7 +199,7 @@ footer td p {
 
     position: absolute;
     width: 65%;
-    height: 130%;
+    height: 124%;
     left: 17%;
     top: 60%;
 
@@ -208,7 +208,7 @@ footer td p {
 }
 
 #Q1, #Q2, #Q3 {
-    font-family: 'Noto Sans KR';
+font-family: 'Noto Sans KR';
 font-style: normal;
 font-weight: 700;
 font-size: 1.5em;
@@ -226,6 +226,7 @@ font-size: 1.5em;
     border: none;
     border-bottom: 1.5px solid #919191;
     resize: none;
+    margin-top: 5%;
 }
 
 #textarea2 {
@@ -233,6 +234,7 @@ font-size: 1.5em;
     border: 1.5px solid #919191;
     border-radius: 0.5em;
     resize: none;
+    margin-top: 5%;
 }
 textarea::placeholder {
     color: #909090;
@@ -246,12 +248,16 @@ textarea::placeholder {
     text-align: center;
     display: inline-block;
     font-size: 20px;
-    width: 100%;
+    width: 110.5%;
     padding-top: 2%;
-    margin-left: 0%;
+    margin-left: -5.3%;
     padding-bottom: 2%;
     cursor: pointer;
+    margin-top: 5%;
 }
 
+.question {
+    margin-top: 5%;
+}
 
 
