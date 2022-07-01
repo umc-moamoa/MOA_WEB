@@ -1,43 +1,48 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
+*{
+    padding: 0;
+    margin: 0;
+}
+ul,li{
+    list-style: none;
+}
 html{
     font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
 }
-body{
-    font-size: 15px;
-}
+
 a {
     text-decoration: none;
 }
 /* 헤더(로고, 메뉴, 아이콘, 서브제목) */
 #header{
     position: absolute;
-    width: 1920px;
-    height: 464px;
-    left: 0px;
-    top: 0px;
-    
-    background: #F9F9F9;
+    width: 100%;
+    height: 40%;
+    left: 0em;
+    top: 0em;
     background: url(image/Ellipse\ 35.png) no-repeat;
 }
 /* 로고*/
 #moa {
     position: absolute;
     width: 10%;
-    left: 60px;
-    top: 30px;
+    left: 5%;
+    top: -10%;
 
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 4em;
-    line-height: 102px;
+    font-size: 5em;
+    line-height: 6.375em;
 
     color: #B8ABFC;
     
 }
 
 /* 메뉴 */
+
 #userMenu {
     margin: 0 auto;
     background: url("image/Ellipse 35.png") no-repeat;
@@ -47,7 +52,7 @@ a {
 }
 #userMenu * {
     font-weight: 400;
-    letter-spacing: -.3px;
+    letter-spacing: 0.019em;
 }
 
 #userMenu .menu {
@@ -62,65 +67,62 @@ a {
 
 #userMenu .link_menu {
     float: left;
-    height: 12px;
-    padding: 0 30px;
+    height: 1em;
+    padding: 0 1.875em;
     color: #414141;
-    line-height: 85px;
+    line-height: 5.313em;
     white-space: nowrap;
 }
 
-#userMenu li {
-    list-style-type: none;
-}
 #userMenu a {
     text-decoration: none;
-    font-size: 32px;
+    font-size: 2em;
 }
 /*아이콘*/
 #icon .searchIcon{
     position: absolute;
-    width: 40px;
-    height: 40px;
-    left: 1650px;
-    top: 170px;
+    width: 2.5em;
+    height: 2.5em;
+    left: 80%;
+    top: 10.625em;
 
     background: url("image/searchIcon.png") no-repeat;
-    background-size: 40px 40px;
+    background-size: 2.5em 2.5em;
 }
 
 #icon .userIcon{
     position: absolute;
     width: 40px;
     height: 40px;
-    left: 1750px;
+    left: 85%;
     top: 170px;
 
     background: url("image/userIcon.png") no-repeat;
-    background-size: 40px 40px;
+    background-size: 2.5em 2.5em;
 }
 #icon .menuIcon{
     position: absolute;
-    width: 40px;
-    height: 40px;
-    left: 1850px;
-    top: 170px;
+    width: 2.5em;
+    height: 2.5em;
+    left: 90%;
+    top: 10.625em;
 
     background: url("image/menuIcon.png") no-repeat;
-    background-size: 40px 40px;
+    background-size: 2.5em 2.5em;
 }
 
 /*서브 제목*/
 #subTitle {
     position: absolute;
-    width: 383px;
-    height: 93px;
-    left: 198px;
-    top: 349px;
+    width: 23.938em;
+    height: 5.813em;
+    left: -10%;
+    top: 40%;
 
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 700;
-    font-size: 64px;
-    line-height: 93px;
+    font-size: 4em;
+    line-height: 5.813em;
     color: #414141;
 }
