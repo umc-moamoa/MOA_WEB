@@ -87,6 +87,7 @@ ul,li{
 }
 
 /*아이콘*/
+
 #icon .searchIcon{
     position: absolute;
     width: 2em;
@@ -477,4 +478,32 @@ footer td p {
     padding-top: 2em;
 }
 
+/* 설문 추가 버튼*/
+#newSurvey{
+    position: absolute;
+    width: 8em;
+    height: 8em;
+    left:90%;
+    top: 230%;
+    
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    background: url( "image/newSurvey.png") no-repeat center;
+    background-size: 10em 10em;
+}
+
+/* #newSurvey{
+    position: sticky; 
+    width: 8em;
+    height: 8em;
+    left:90%;
+    top: 80%;
+    
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    background: url( "image/newSurvey.png") no-repeat center;
+    background-size: 10em 10em;
+} */
 
