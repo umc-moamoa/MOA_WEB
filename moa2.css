@@ -3,11 +3,151 @@
     margin: 0;
     padding: 0;
 }
+
+html, body {
+    height: 100%;
+    width: 100%;
+    
+}
+
+a {
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+}
+
+/* 로고*/
+#backCenter {
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    top: 500px;
+}
+
+#backTop {
+    position: absolute;
+    width: 40%;
+    height: 80%;
+}
+#moa {
+    position: absolute;
+    width: 10%;
+    left: 60px;
+    top: 30px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 550;
+    font-size: 3em;
+    line-height: 102px;
+
+    color: #B8ABFC;
+}
+
+/* 메뉴 */
+#userMenu {
+    margin: 0 auto;
+    background: url("image/Ellipse 35.png") no-repeat;
+    padding-right: 2em;
+}
+#userMenu .list_menu {
+    float: right;
+    line-height: 5.313em;
+    white-space: nowrap;
+}
+#userMenu * {
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    height: 1em;
+    padding: 0;
+    color: #414141;
+}
+
+#userMenu .menu {
+    position: relative;
+    float: left;
+    margin-right: 1.5em;
+}
+
+#userMenu .menu.center:before{
+    right: 0;
+}
+
+#userMenu .link_center {
+    padding-right: 4.5em;
+}
+
+#userMenu a {
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/*아이콘*/
+#icon .searchIcon{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    left: 80%;
+    top: 5em;
+
+    background: url("image/searchIcon.png") no-repeat;
+    background-size: 1.5em 1.5em;
+}
+
+#icon .userIcon{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    left: 85%;
+    top: 5em;
+
+    background: url("image/userIcon.png") no-repeat;
+    background-size: 1.5em 1.5em;
+}
+#icon .menuIcon{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    left: 90%;
+    top: 5em;
+
+    background: url("image/menuIcon.png") no-repeat;
+    background-size: 1.5em 1.5em;
+}
+
+/*서브 제목*/
+#subTitle {
+    position: absolute;
+    padding: 0;
+    width: 23.938em;
+    height: 5.813em;
+    left: 17%;
+    top: 30%;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 5.813em;
+    color: #414141;
+}
+
 footer {
     background-color: #B8ABFC;
     color: white;
     padding-bottom: 2em;
     padding-top: 2em;
+    height: 226.302;
+    position: relative;
+    /* margin-top: -226.302;*/
+    transform: translateY(-100%);
+}
+
+#wrapper {
+    height: auto;
+    min-height: 300%;
+    padding-bottom: 226.302;
 }
 
 footer a {
@@ -51,4 +191,23 @@ footer td p {
     padding-bottom: 2em;
     padding-top: 2em;
 }
+
+
+#main {
+    box-sizing: border-box;
+    padding: 3%;
+
+    position: absolute;
+    width: 65%;
+    height: 70%;
+    left: 17%;
+    top: 70%;
+
+    background: #FFFFFF;
+    border: 1px solid #909090;
+}
+
+
+
+
 
