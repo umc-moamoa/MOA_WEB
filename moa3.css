@@ -8,8 +8,8 @@ body{
 }
 
 /* 메뉴 헤더 */
-#userMenu { 
-    width: 1050px;
+#userMenu {
+    width: 80%;
     margin: 0 auto;
 }
 #userMenu .list_menu {
@@ -25,53 +25,18 @@ body{
     z-index: 400;
     float: left;
 }
-/* 로그인 */
-#userMenu .menu.menu_login .link_menu {
-    position: absolute;
-    width: 89px;
-    height: 46px;
-    right: 200px;
-    top: 52px;
-    
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 46px;
-    
-    color: #414141;
+
+#userMenu .menu.lst:before{
+    right: 0;
 }
-/*회원가입*/
-#userMenu .menu.menu_join .link_menu {
-    position: absolute;
-    width: 118px;
-    height: 46px;
-    right: 0px;
-    top: 52px;
 
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 46px;
-
+#userMenu .link_menu {
+    float: left;
+    height: 52px;
+    padding: 0 30px;
     color: #414141;
-}
-/*고객센터*/
-#userMenu .menu.lst .link_menu {
-    position: absolute;
-    width: 125px;
-    height: 46px;
-    right: -200px;
-    top: 52px;
-
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 46px;
-
-    color: #414141;
+    line-height: 85px;
+    white-space: nowrap;
 }
 
 #userMenu li {
