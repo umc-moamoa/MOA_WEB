@@ -49,15 +49,15 @@ html, body {
 
     position: absolute;
     width: 70%;
-    height: 60%;
+    height: 70%;
     left: 10%;
-    top: 35%;
+    top: 30%;
 
     background: #FFFFFF;
     border: 1px solid #909090;
 }
 
-.flex-container {
+.flex-container1 {
     display: flex;
     justify-content : space-between;
     align-items: flex-end;
@@ -76,4 +76,41 @@ html, body {
 #heart {
     background-color: transparent;
     border: none;
+    cursor: pointer;
+}
+
+.flex-container2 {
+    margin-top: 2%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex-item2 {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #6C6C6C;
+}
+
+.mainTop {
+    border-bottom: 0.1em solid #C6C6C6;
+    padding-bottom: 3%;
+}
+
+.mainBottom {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 1.1em;
+}
+
+#joinBtn {
+    background-color: #B8ABFC;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    cursor: pointer;
 }
