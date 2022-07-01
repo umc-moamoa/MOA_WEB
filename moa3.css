@@ -1,0 +1,83 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+body{
+    font-size: 15px;
+}
+
+/* 메뉴 헤더 */
+#userMenu {
+    width: 1050px;
+    margin: 0 auto;
+}
+#userMenu .list_menu {
+    float: right;
+}
+#userMenu * {
+    font-weight: 400;
+    letter-spacing: -.3px;
+}
+
+#userMenu .menu {
+    position: relative;
+    z-index: 400;
+    float: left;
+}
+/* 로그인 */
+#userMenu .menu.menu_login .link_menu {
+    position: absolute;
+    width: 89px;
+    height: 46px;
+    right: 200px;
+    top: 52px;
+    
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 46px;
+    
+    color: #414141;
+}
+/*회원가입*/
+#userMenu .menu.menu_join .link_menu {
+    position: absolute;
+    width: 118px;
+    height: 46px;
+    right: 0px;
+    top: 52px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 46px;
+
+    color: #414141;
+}
+/*고객센터*/
+#userMenu .menu.lst .link_menu {
+    position: absolute;
+    width: 125px;
+    height: 46px;
+    right: -200px;
+    top: 52px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 46px;
+
+    color: #414141;
+}
+
+#userMenu li {
+    list-style-type: none;
+}
+#userMenu a {
+    text-decoration: none;
+    font-size: 32px;
+}
