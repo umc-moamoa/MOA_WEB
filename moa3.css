@@ -23,7 +23,7 @@ a {
 #header{
     position: absolute;
     width: 100%;
-    height: 40%;
+    height: 60%;
     left: 0em;
     top: 0em;
     background: url(image/Ellipse\ 35.png) no-repeat;
@@ -56,63 +56,87 @@ a {
 }
 #userMenu * {
     font-weight: 400;
-    letter-spacing: 0.019em;
+    letter-spacing: 0.1em;
 }
 
 #userMenu .menu {
     position: relative;
-    z-index: 400;
     float: left;
+    margin-right: 2em;
 }
 
-#userMenu .menu.lst:before{
+#userMenu .menu.center:before{
     right: 0;
 }
 
-#userMenu .link_menu {
+#userMenu .link_login {
     float: left;
     height: 1em;
-    padding: 0 1.875em;
+    padding: 0;
+    
     color: #414141;
     line-height: 5.313em;
     white-space: nowrap;
+    padding-right: 1em;
+}
+
+#userMenu .link_join {
+    float: left;
+    height: 1em;
+    padding: 0;
+    
+    color: #414141;
+    line-height: 5.313em;
+    white-space: nowrap;
+    padding-right: 1em;
+}
+
+#userMenu .link_center {
+    float: left;
+    height: 1em;
+    padding: 0;
+    
+    color: #414141;
+    line-height: 5.313em;
+    white-space: nowrap;
+    padding-right: 4.5em;
 }
 
 #userMenu a {
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 /*아이콘*/
 #icon .searchIcon{
     position: absolute;
-    width: 2.5em;
-    height: 2.5em;
+    width: 2em;
+    height: 2em;
     left: 80%;
     top: 10.625em;
 
     background: url("image/searchIcon.png") no-repeat;
-    background-size: 2.5em 2.5em;
+    background-size: 2em 2em;
 }
 
 #icon .userIcon{
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 2em;
+    height: 2em;
     left: 85%;
     top: 170px;
 
     background: url("image/userIcon.png") no-repeat;
-    background-size: 2.5em 2.5em;
+    background-size: 2em 2em;
 }
 #icon .menuIcon{
     position: absolute;
-    width: 2.5em;
-    height: 2.5em;
+    width: 2em;
+    height: 2em;
     left: 90%;
     top: 10.625em;
 
     background: url("image/menuIcon.png") no-repeat;
-    background-size: 2.5em 2.5em;
+    background-size: 2em 2em;
 }
 
 /*서브 제목*/
@@ -126,7 +150,7 @@ a {
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 700;
-    font-size: 4em;
+    font-size: 3em;
     line-height: 5.813em;
     color: #414141;
 }
