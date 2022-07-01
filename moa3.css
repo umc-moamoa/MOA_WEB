@@ -9,6 +9,8 @@
 
 html, body {
     height: 100%;
+    width: 100%;
+    
 }
 
 a {
@@ -23,8 +25,7 @@ ul,li{
     position: absolute;
     width: 100%;
     height: 140%;
-    left: -111px;
-    top: 200px;
+    top: 500px;
 }
 
 #backTop {
@@ -46,7 +47,6 @@ ul,li{
 
     color: #B8ABFC;
 }
-
 
 /* 메뉴 */
 #userMenu {
@@ -85,6 +85,7 @@ ul,li{
     text-decoration: none;
     font-size: 1em;
 }
+
 /*아이콘*/
 #icon .searchIcon{
     position: absolute;
@@ -124,7 +125,7 @@ ul,li{
     padding: 0;
     width: 23.938em;
     height: 5.813em;
-    left: 10%;
+    left: 17%;
     top: 30%;
 
     font-family: 'Noto Sans KR';
@@ -135,15 +136,15 @@ ul,li{
     color: #414141;
 }
 
-/* main */
-#main {
+/* main1 */
+#main1 {
     box-sizing: border-box;
     padding: 3%;
 
     position: absolute;
-    width: 70%;
+    width: 65%;
     height: 30%;
-    left: 10%;
+    left: 17%;
     top: 70%;
 
     background: #FFFFFF;
@@ -151,32 +152,267 @@ ul,li{
     box-shadow: 0px 0px 100px rgba(184, 171, 252, 0.1);
 }
 
-.flex-container {
+.one-container1 {
     display: flex;
     justify-content : space-between;
     align-items: flex-end;
 }
 
-#title {
+#title1 {
     font-size: 1.7em;
     font-weight: bold;
 }
 
-#count {
+.two-container1 {
+    margin-top: 4%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #6C6C6C;
+}
+
+#count1 {
     font-size: 1em;
     color: #6C6C6C;
     font-weight: 700;
+    border-right: 0.1em solid #6C6C6C;
+    padding-right: 1em;
     
 }
 
-#type {
+#type1 {
     font-size: 1em;
     color: #6C6C6C;
-    font-weight: bold;
+    font-weight: 700;
+    padding-left: 1em;
 }
 
-#point {
+.three-container1{
+    margin-right: 8%;
+    margin-top: -7%;
+    display: flex;
+    justify-content:right;
+}
+
+#point1 {
     font-size: 2em;
     line-height:center;
     color: #B8ABFC;
+}
+
+/* main2 */
+#main2 {
+    box-sizing: border-box;
+    padding: 3%;
+
+    position: absolute;
+    width: 65%;
+    height: 30%;
+    left: 17%;
+    top: 105%;
+
+    background: #FFFFFF;
+    border: 2.5px solid #909090;
+    box-shadow: 0px 0px 100px rgba(184, 171, 252, 0.1);
+}
+
+.one-container2 {
+    display: flex;
+    justify-content : space-between;
+    align-items: flex-end;
+}
+
+#title2 {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.two-container2 {
+    margin-top: 4%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #6C6C6C;
+}
+
+#count2 {
+    font-size: 1em;
+    color: #6C6C6C;
+    font-weight: 700;
+    border-right: 0.1em solid #6C6C6C;
+    padding-right: 1em;
+    
+}
+
+#type2 {
+    font-size: 1em;
+    color: #6C6C6C;
+    font-weight: 700;
+    padding-left: 1em;
+}
+
+.three-container2 {
+    margin-right: 8%;
+    margin-top: -7%;
+    display: flex;
+    justify-content:right;
+}
+
+#point2 {
+    font-size: 2em;
+    line-height:center;
+    color: #B8ABFC;
+}
+
+/* main3 */
+#main3 {
+    box-sizing: border-box;
+    padding: 3%;
+
+    position: absolute;
+    width: 65%;
+    height: 30%;
+    left: 17%;
+    top: 140%;
+
+    background: #FFFFFF;
+    border: 2.5px solid #909090;
+    box-shadow: 0px 0px 100px rgba(184, 171, 252, 0.1);
+}
+
+.one-container3 {
+    display: flex;
+    justify-content : space-between;
+    align-items: flex-end;
+}
+
+#title3 {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.two-container3 {
+    margin-top: 4%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #6C6C6C;
+}
+
+#count3 {
+    font-size: 1em;
+    color: #6C6C6C;
+    font-weight: 700;
+    border-right: 0.1em solid #6C6C6C;
+    padding-right: 1em;
+    
+}
+
+#type3 {
+    font-size: 1em;
+    color: #6C6C6C;
+    font-weight: 700;
+    padding-left: 1em;
+}
+
+.three-container3{
+    margin-right: 8%;
+    margin-top: -7%;
+    display: flex;
+    justify-content:right;
+}
+
+#point3 {
+    font-size: 2em;
+    line-height:center;
+    color: #B8ABFC;
+}
+
+/* main4 */
+#main4 {
+    box-sizing: border-box;
+    padding: 3%;
+
+    position: absolute;
+    width: 65%;
+    height: 30%;
+    left: 17%;
+    top: 175%;
+
+    background: #FFFFFF;
+    border: 2.5px solid #909090;
+    box-shadow: 0px 0px 100px rgba(184, 171, 252, 0.1);
+}
+
+.one-container4 {
+    display: flex;
+    justify-content : space-between;
+    align-items: flex-end;
+}
+
+#title4 {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.two-container4 {
+    margin-top: 4%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #6C6C6C;
+}
+
+#count4 {
+    font-size: 1em;
+    color: #6C6C6C;
+    font-weight: 700;
+    border-right: 0.1em solid #6C6C6C;
+    padding-right: 1em;
+    
+}
+
+#type4 {
+    font-size: 1em;
+    color: #6C6C6C;
+    font-weight: 700;
+    padding-left: 1em;
+}
+
+.three-container4 {
+    margin-right: 8%;
+    margin-top: -7%;
+    display: flex;
+    justify-content:right;
+}
+
+#point4 {
+    font-size: 2em;
+    line-height:center;
+    color: #B8ABFC;
+}
+
+/* underBar */
+#underBar {
+    position: absolute;
+    width: 65%;
+    height: 30%;
+    left: 17%;
+    top: 215%;
+
+    border-top: 0.1em solid #C6C6C6;
+}
+
+.underTab {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    right: 45%;
+    top: 5em;
+    background: url(image/Rectangle\ 75.png) no-repeat;
+    background-size: 3.5em 2em;
 }
