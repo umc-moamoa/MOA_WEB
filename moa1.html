@@ -9,73 +9,101 @@
     <link rel="stylesheet" href="moa1.css" />
 </head>
 <body>
-    <!--배경-->
-    <img id="backTop" src="image/Ellipse 35.png" />
-    <img id="backCenter" src="image/dasdasd 1.png" />
-    <!--logo-->
-    <h1 id="moa">MoA</h1>
+    <div id="wrapper">
+        <!--배경-->
+        <img id="backTop" src="image/Ellipse 35.png" />
+        <img id="backCenter" src="image/dasdasd 1.png" />
+        <!--logo-->
+        <h1 id="moa">MoA</h1>
 
-    <!--헤더(메뉴, 아이콘, 서브제목)-->
-    <header>
-        <!-- menu header -->
-        <div id="userMenu">
-            <ul class="list_menu">
-                <li class="menu menu_login">
-                    <a class="link_login" href="#none">로그인</a>
-                </li>
+        <!--헤더(메뉴, 아이콘, 서브제목)-->
+        <header>
+            <!-- menu header -->
+            <div id="userMenu">
+                <ul class="list_menu">
+                    <li class="menu menu_login">
+                        <a class="link_login" href="#none">로그인</a>
+                    </li>
 
-                <li class="menu menu_join">
-                    <a class="link_join" href="#none">회원가입</a>
-                </li>
-                
-                <li class="menu center">
-                    <a class="link_center" href="#none">고객센터</a>
-                </li>
-            </ul>
-        </div>
+                    <li class="menu menu_join">
+                        <a class="link_join" href="#none">회원가입</a>
+                    </li>
+                    
+                    <li class="menu center">
+                        <a class="link_center" href="#none">고객센터</a>
+                    </li>
+                </ul>
+            </div>
 
-        <!-- icon -->
-        <div id="icon">
-            <a class="searchIcon" href="#none"></a>
-            <a class="userIcon" href="#none"></a>
-            <a class="menuIcon" href="#none"></a>
-        </div>
+            <!-- icon -->
+            <div id="icon">
+                <a class="searchIcon" href="#none"></a>
+                <a class="userIcon" href="#none"></a>
+                <a class="menuIcon" href="#none"></a>
+            </div>
 
-    </header>
+        </header>
 
-    <main>
-        <div id="main">
-            <div class="mainTop">
-                <div class="flex-container1">
-                    <div class="flex-item1"><span id="title">사회현상에 대한 소비자 인식</span></div>
-                    <div class="flex-item1"><span id="date">7/1 16:36</span></div>
-                    <div class="flex-item1"><button id="heart"><img src="image/Heart.png" width="40%"/></button></div>
+        <main>
+            <div id="main">
+                <div class="mainTop">
+                    <div class="flex-container1">
+                        <div class="flex-item1"><span id="title">사회현상에 대한 소비자 인식</span></div>
+                        <div class="flex-item1"><span id="date">7/1 16:36</span></div>
+                        <div class="flex-item1"><button id="heart"><img src="image/Heart.png" width="40%"/></button></div>
+                    </div>
+
+                    <div class="flex-container2">
+                        <div class="flex-item2"><span id="items">11개의 항목&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                        <div class="flex-item2"><span id="types">|&nbsp;&nbsp;&nbsp;&nbsp;선택형</span></div>
+                    </div>
                 </div>
 
-                <div class="flex-container2">
-                    <div class="flex-item2"><span id="items">11개의 항목&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
-                    <div class="flex-item2"><span id="types">|&nbsp;&nbsp;&nbsp;&nbsp;선택형</span></div>
+                <div class="mainBottom">
+                    안녕하세요. 저희는 광고론을 수강하고 있는 학생들입니다.<br>
+                    최근 몇 가지 사회현상에 대해 소비자의 인식이 어떻게 변화했는지에<br>
+                    관한 자료가 필요하며 설문을 진행하고 있습니다.<br><br>
+                    
+                    3분 가량 소요되는 짧은 설문 조사이니, 많은 참여 부탁드립니다.<br>
+                </div>
+
+                <div class="join">
+                    <button id="joinBtn">설문&nbsp;&nbsp;참여</button>
                 </div>
             </div>
-
-            <div class="mainBottom">
-                안녕하세요. 저희는 광고론을 수강하고 있는 학생들입니다.<br>
-                최근 몇 가지 사회현상에 대해 소비자의 인식이 어떻게 변화했는지에<br>
-                관한 자료가 필요하며 설문을 진행하고 있습니다.<br><br>
-                
-                3분 가량 소요되는 짧은 설문 조사이니, 많은 참여 부탁드립니다.<br>
-            </div>
-
-            <div class="join">
-                <button id="joinBtn">설문&nbsp;&nbsp;참여</button>
-            </div>
-        </div>
+        </main>
+    </div>
     
-    </main>
-
     <footer>
-
-
+        <div class="container">
+            <table>
+            <div class="row justify-content-center">
+                <div class="col-sm-4 col-md-3 item">
+                    <td>
+                    <p id="footer_MoA">MoA</p>
+                        <p>CUSTOMER CENTER</p>
+                        <p id="tel">02-381-3758</p>
+                        <p>MON - FRI 10:00 AM - 05:00 PM
+                        <br>LUNCH 12:00 PM - 01:00 PM
+                        <br>CLOSED SAT, SUN AND HOLIDAYS</p>
+                    </td>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                <td>
+                    <ul>
+                        <a href="#">회사안내</a>&nbsp;<a href="#">이용안내</a>&nbsp;<a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴/도매 문의</a>
+                        <p id="info">상호명: 주식회사 사운드웨이브 / 대표: 어주연 / 사업자등록번호: 121-86-36395 [사업자정보확인]
+                            <br>통신판매업신고: 2018-고양덕양구-1367호 / TEL: 02-381-3758 / FAX: 02-381-3788
+                            <br>주소: 경기도 고양시 덕양구 삼송로 193번길 1-6 2층
+                            <br>개인정보 보호 책임자: 어주연 / Email: soundwave@sound-wave.co.kr</p>
+                            <p>COPYRIGHT (C) ALL RIGHTS RESERVED</p>
+                </ul>
+                </td>
+                </div>
+            </div>
+            </table>
+        </div>
     </footer>
+
 </body>
 </html>
