@@ -1,16 +1,13 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-body {
+* {
     margin: 0;
-}
-ul {
-    margin: 0;
+    padding: 0;
 }
 
 ul a {
     color: #FFFFFF;
     text-decoration:none;
     text-align: right;
-    width: 100%;
 }
 
 footer {
@@ -27,7 +24,6 @@ font-weight: 600;
 
 footer td:nth-child(1) {
     padding-left: 10%;
-    width: 35%;
 }
 
 footer td:nth-child(2) {
@@ -39,3 +35,5 @@ footer td:nth-child(2) {
 footer ul a {
     font-size: 1.125em;
 }
+
+
