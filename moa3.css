@@ -416,3 +416,36 @@ ul,li{
     background: url(image/Rectangle\ 75.png) no-repeat;
     background-size: 3.5em 2em;
 }
+/* footer */
+footer {
+    background-color: #B8ABFC;
+    color: white;
+    padding-bottom: 2em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+#footer_MoA {
+    font-family: 'Montserrat';
+    font-size: 2.625em;
+    margin: 0;
+    font-weight: 600;
+}
+
+footer .container {
+    padding-left: 15%;
+    /* padding-right: 10%; */
+}
+
+footer ul {
+    padding-inline-start: 40px;
+}
+
+footer td:nth-child(2) {
+    text-align: right;
+    font-size: 0.875em;
+}
+
