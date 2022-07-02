@@ -51,7 +51,7 @@ ul,li{
 /* 메뉴 */
 #userMenu {
     margin: 0 auto;
-    background: url("image/Ellipse 35.png") no-repeat;
+    background: url("../image/Ellipse 35.png") no-repeat;
     padding-right: 2em;
 }
 #userMenu .list_menu {
@@ -95,7 +95,7 @@ ul,li{
     left: 80%;
     top: 5em;
 
-    background: url("image/searchIcon.png") no-repeat;
+    background: url("../image/searchIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
 
@@ -106,7 +106,7 @@ ul,li{
     left: 85%;
     top: 5em;
 
-    background: url("image/userIcon.png") no-repeat;
+    background: url("../image/userIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
 #icon .menuIcon{
@@ -116,7 +116,7 @@ ul,li{
     left: 90%;
     top: 5em;
 
-    background: url("image/menuIcon.png") no-repeat;
+    background: url("../image/menuIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
 
@@ -414,7 +414,7 @@ ul,li{
     height: 5em;
     right: 45%;
     top: 5em;
-    background: url(image/Rectangle\ 75.png) no-repeat;
+    background: url(../image/Rectangle\ 75.png) no-repeat;
     background-size: 3.5em 2em;
 }
 /*footer*/
@@ -489,7 +489,7 @@ footer td p {
     border: 0;
     outline: 0;
     border-radius: 50%;
-    background: url( "image/newSurvey.png") no-repeat center;
+    background: url( "../image/newSurvey.png") no-repeat center;
     background-size: 10em 10em;
 }
 

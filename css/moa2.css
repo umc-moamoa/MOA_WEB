@@ -1,36 +1,61 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Noto Sans KR';
 }
 
 html, body {
     height: 100%;
     width: 100%;
+    
 }
 
-
-/* 우측 상단 메뉴*/
-ul, li{
+a {
+    text-decoration: none;
+}
+ul,li{
     list-style: none;
+}
+
+/* 로고*/
+#backCenter {
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    top: 500px;
+}
+
+#backTop {
+    position: absolute;
+    width: 40%;
+    height: 80%;
+}
+#moa {
+    position: absolute;
+    width: 10%;
+    left: 60px;
+    top: 30px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 550;
+    font-size: 3em;
+    line-height: 102px;
+
+    color: #B8ABFC;
 }
 
 /* 메뉴 */
 #userMenu {
     margin: 0 auto;
-    background: url("image/Ellipse 35.png") no-repeat;
+    background: url("../image/Ellipse 35.png") no-repeat;
     padding-right: 2em;
 }
-
 #userMenu .list_menu {
     float: right;
     line-height: 5.313em;
     white-space: nowrap;
 }
-
 #userMenu * {
     font-weight: 400;
     letter-spacing: 0.1em;
@@ -66,7 +91,7 @@ ul, li{
     left: 80%;
     top: 5em;
 
-    background: url("image/searchIcon.png") no-repeat;
+    background: url("../image/searchIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
 
@@ -77,7 +102,7 @@ ul, li{
     left: 85%;
     top: 5em;
 
-    background: url("image/userIcon.png") no-repeat;
+    background: url("../image/userIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
 #icon .menuIcon{
@@ -87,14 +112,28 @@ ul, li{
     left: 90%;
     top: 5em;
 
-    background: url("image/menuIcon.png") no-repeat;
+    background: url("../image/menuIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
 
+/*서브 제목*/
+#subTitle {
+    position: absolute;
+    padding: 0;
+    width: 23.938em;
+    height: 5.813em;
+    left: 17%;
+    top: 20%;
 
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 5.813em;
+    color: #414141;
+}
 
-
-/*footer*/
+/* footer */
 footer {
     background-color: #B8ABFC;
     color: white;
@@ -102,16 +141,14 @@ footer {
     padding-top: 2em;
     height: 226.302;
     position: relative;
-    /* margin-top: -226.302;*/
     transform: translateY(-100%);
 }
 
 #wrapper {
     height: auto;
-    min-height: 200%;
+    min-height: 270%;
     padding-bottom: 226.302;
 }
-
 
 footer a {
     color: white;
@@ -155,111 +192,73 @@ footer td p {
     padding-top: 2em;
 }
 
-/*footer css 끝*/
-
-
-
-
-
-#backCenter {
-    position: absolute;
-    width: 100%;
-    height: 140%;
-    top: 100px;
-}
-
-#backTop {
-    position: absolute;
-    width: 40%;
-    height: 80%;
-}
-
-#moa {
-    position: absolute;
-    width: 10%;
-    left: 60px;
-    top: 30px;
-
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 550;
-    font-size: 3em;
-    line-height: 102px;
-
-    color: #B8ABFC;
-}
-
-
-/*main*/
+/* main */
 #main {
     box-sizing: border-box;
     padding: 3%;
 
     position: absolute;
     width: 65%;
-    height: 70%;
+    height: 124%;
     left: 17%;
-    top: 30%;
+    top: 60%;
 
     background: #FFFFFF;
     border: 1px solid #909090;
 }
 
-.flex-container1 {
-    display: flex;
-    justify-content : space-between;
-    align-items: flex-end;
+#Q1, #Q2, #Q3 {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5em;
 }
 
-#title {
-    font-size: 1.7em;
-    font-weight: bold;
+.required {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8em;
+    color: #909090;
 }
 
-#date {
-    opacity: 0.5;
-    margin-top: 50%;
-}
-
-#heart {
-    background-color: transparent;
+#textarea1 {
     border: none;
-    cursor: pointer;
+    border-bottom: 1.5px solid #919191;
+    resize: none;
+    margin-top: 5%;
 }
 
-.flex-container2 {
-    margin-top: 2%;
-    display: flex;
-    justify-content: flex-start;
+#textarea2 {
+    border: none;
+    border: 1.5px solid #919191;
+    border-radius: 0.5em;
+    resize: none;
+    margin-top: 5%;
 }
 
-.flex-item2 {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #6C6C6C;
+textarea::placeholder {
+    color: #909090;
 }
 
-.mainTop {
-    border-bottom: 0.1em solid #C6C6C6;
-    padding-bottom: 3%;
-}
-
-.mainBottom {
-    padding-top: 3%;
-    padding-bottom: 3%;
-    font-size: 1.1em;
-}
-
-#joinBtn {
-    background-color: #B8ABFC;
+#submit_btn {
+    background: linear-gradient(91.36deg, #B8ABFC -24.31%, #BFD4FF 130.3%);
+    box-shadow: 0px -10px 40px rgba(184, 171, 252, 0.3);
     border: none;
     color: white;
     text-align: center;
     display: inline-block;
     font-size: 20px;
-    width: 100%;
+    width: 110.5%;
     padding-top: 2%;
-    margin-left: 0%;
+    margin-left: -5.3%;
     padding-bottom: 2%;
     cursor: pointer;
+    margin-top: 5%;
 }
+
+.question {
+    margin-top: 5%;
+}
+
+
