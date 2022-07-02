@@ -60,7 +60,7 @@ ul,li{
     white-space: nowrap;
 }
 #userMenu * {
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.1em;
     height: 1em;
     padding: 0;
@@ -78,7 +78,7 @@ ul,li{
 }
 
 #userMenu .link_center {
-    padding-right: 4.5em;
+    padding-right: 2.8em;
 }
 
 #userMenu a {
