@@ -212,7 +212,7 @@ footer td p {
 }
 
 #detailTitle {
-    font-size: 1.7em;
+    font-size: 1.3em;
     font-weight: bold;
 }
 
@@ -262,5 +262,5 @@ footer td p {
     margin-left: -5.3%;
     padding-bottom: 2%;
     cursor: pointer;
-    margin-top: 21%;
+    margin-top: 3%;
 }
