@@ -133,6 +133,7 @@ ul,li{
     color: #414141;
 }
 
+/* footer */
 footer {
     background-color: #B8ABFC;
     color: white;
@@ -140,7 +141,6 @@ footer {
     padding-top: 2em;
     height: 226.302;
     position: relative;
-    /* margin-top: -226.302;*/
     transform: translateY(-100%);
 }
 
@@ -192,7 +192,7 @@ footer td p {
     padding-top: 2em;
 }
 
-
+/* main */
 #main {
     box-sizing: border-box;
     padding: 3%;
@@ -208,10 +208,10 @@ footer td p {
 }
 
 #Q1, #Q2, #Q3 {
-font-family: 'Noto Sans KR';
-font-style: normal;
-font-weight: 700;
-font-size: 1.5em;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5em;
 }
 
 .required {
@@ -236,6 +236,7 @@ font-size: 1.5em;
     resize: none;
     margin-top: 5%;
 }
+
 textarea::placeholder {
     color: #909090;
 }
