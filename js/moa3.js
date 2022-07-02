@@ -1,5 +1,5 @@
 
-const $SurveyList = document.querySelector("#SurveytList");
+const $SurveyList = document.querySelector("#SurveyList");
 
 const fetchSurvey = () => {
     var requestOptions = {
