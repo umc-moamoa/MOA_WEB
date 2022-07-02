@@ -146,7 +146,7 @@ footer {
 
 #wrapper {
     height: auto;
-    min-height: 270%;
+    min-height: 290%;
     padding-bottom: 226.302;
 }
 
@@ -199,7 +199,7 @@ footer td p {
 
     position: absolute;
     width: 65%;
-    height: 124%;
+    height: 160%;
     left: 17%;
     top: 60%;
 
@@ -239,6 +239,19 @@ footer td p {
 
 textarea::placeholder {
     color: #909090;
+    font-family: 'Noto Sans KR';
+    font-size: 1.2em;
+}
+
+.radioBtnText {
+    font-family: 'Noto Sans KR';
+    color: #414141;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+#radioBox {
+    margin-top: 5%;
 }
 
 #submit_btn {
