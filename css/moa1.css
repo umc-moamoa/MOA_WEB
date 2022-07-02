@@ -211,7 +211,7 @@ footer td p {
     align-items: flex-end;
 }
 
-#title {
+#detailTitle {
     font-size: 1.7em;
     font-weight: bold;
 }
@@ -244,7 +244,7 @@ footer td p {
     padding-bottom: 3%;
 }
 
-.mainBottom {
+#mainBottom {
     padding-top: 3%;
     padding-bottom: 3%;
     font-size: 1.1em;
