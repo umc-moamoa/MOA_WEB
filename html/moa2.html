@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form List</title>
-    <link rel="stylesheet" href="moa3.css">
+    <title>설문 참여 페이지</title>
+    <link rel="stylesheet" href="../css/moa2.css" />
 </head>
 <body>
     <div id="wrapper">
         <!--배경-->
-        <img id="backTop" src="image/Ellipse 35.png" />
-        <img id="backCenter" src="image/dd 1.png" />
+        <img id="backTop" src="../image/Ellipse 35.png" />
+        <img id="backCenter" src="../image/dd 1.png" />
         <!--logo-->
         <h1 id="moa">MoA</h1>
         <!--헤더(메뉴, 아이콘, 서브제목)-->
@@ -42,74 +42,33 @@
 
             <!-- 서브 제목 -->
             <div id="subTitle" >
-                <p class="subTitle">설문 조사 목록</p>
+                <p class="subTitle">설문 참여</p>
             </div>
         </div>
 
-        <!-- main -->
-        <div id="main1">
-            <div class="one-container1">
-                <a id="title1" href="moa1.html">사회현상에 대한 소비자 인식</a>
-                
+        <main>
+            <div id="main">
+                <form>
+                <div><div><span id="Q1">1. 선호하는 브랜드가 있다면 무엇인가요?</span>
+                <span class="required">필수</span></div>
+                <textarea id="textarea1" cols="108" rows="1" placeholder="자유롭게 적어주세요."></textarea>
+                </div>
+                <div class="question"><div><span id="Q2">2. 해당 브랜드를 선호하는 이유는 무엇인가요?</span>
+                    <span class="required">필수</span></div>
+                    <textarea id="textarea2" cols="108" rows="15" placeholder="자유롭게 적어주세요."></textarea>
+                </div>
+                <div class="question"><div><span id="Q3">3. 해당 브랜드에 방문하거나 제품을 구입하는 횟수를 선택해주세요.</span>
+                    <span class="required">필수</span></div>
+                <input type = "radio" name = "count" value = "1-2"> 한 달에 1-2번 <br>
+                <input type = "radio" name = "count" value = "1"> 일주일에 1번 <br>
+                <input type = "radio" name = "count" value = "3-4"> 일주일에 3-4번 <br>
+                <input type = "radio" name = "count" value = "all"> 매일 <br>
+                <input type = "radio" name = "count" value = "etc"> 기타 <br>
+                </div>
+                <div><button id="submit_btn">제출</button></div>
+                </form>
             </div>
-            <div class="two-container1">
-                <span id="count1">11개 항목</span>
-                <span id="type1">선택형</span>
-            </div>
-            <div class="three-container1">
-                <span id="point1">300P</span>
-            </div>
-        </div>
-
-        <div id="main2">
-            <div class="one-container2">
-                <a id="title2" href="moa1.html">사회현상에 대한 소비자 인식</a>
-                
-            </div>
-            <div class="two-container2">
-                <span id="count2">11개 항목</span>
-                <span id="type2">선택형</span>
-            </div>
-            <div class="three-container2">
-                <span id="point2">300P</span>
-            </div>
-        </div>
-
-        <div id="main3">
-            <div class="one-container3">
-                <a id="title3" href="moa1.html">사회현상에 대한 소비자 인식</a>
-                
-            </div>
-            <div class="two-container3">
-                <span id="count3">11개 항목</span>
-                <span id="type3">선택형</span>
-            </div>
-            <div class="three-container3">
-                <span id="point3">300P</span>
-            </div>
-        </div>
-
-        <div id="main4">
-            <div class="one-container4">
-                <a id="title4" href="moa1.html">사회현상에 대한 소비자 인식</a>
-                
-            </div>
-            <div class="two-container4">
-                <span id="count4">11개 항목</span>
-                <span id="type4">선택형</span>
-            </div>
-            <div class="three-container4">
-                <span id="point4">300P</span>
-            </div>
-        </div>
-
-        <div id="underBar">
-            <a class="underTab" href="#none"></a>
-        </div>
-
-        <div id="newSurvey">
-            <a id="newItem" href="#none"></a>
-        </div>
+        </main>
     </div>
     <!-- footer -->
     <footer>
