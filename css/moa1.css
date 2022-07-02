@@ -257,9 +257,10 @@ footer td p {
     text-align: center;
     display: inline-block;
     font-size: 20px;
-    width: 100%;
+    width: 110.5%;
     padding-top: 2%;
-    margin-left: 0%;
+    margin-left: -5.3%;
     padding-bottom: 2%;
     cursor: pointer;
+    margin-top: 21%;
 }
