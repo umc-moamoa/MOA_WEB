@@ -42,7 +42,7 @@ ul, li{
 #userMenu .menu {
     position: relative;
     float: left;
-    margin-right: 1.5em;
+    margin-right: 2em;
 }
 
 #userMenu .menu.center:before{
@@ -50,7 +50,7 @@ ul, li{
 }
 
 #userMenu .link_center {
-    padding-right: 2.8em;
+    padding-right: 9em;
 }
 
 #userMenu a {
@@ -63,7 +63,7 @@ ul, li{
     position: absolute;
     width: 2em;
     height: 2em;
-    left: 80%;
+    left: 78%;
     top: 5em;
 
     background: url("../image/searchIcon.png") no-repeat;
@@ -74,7 +74,7 @@ ul, li{
     position: absolute;
     width: 2em;
     height: 2em;
-    left: 85%;
+    left: 82%;
     top: 5em;
 
     background: url("../image/userIcon.png") no-repeat;
@@ -84,7 +84,7 @@ ul, li{
     position: absolute;
     width: 2em;
     height: 2em;
-    left: 90%;
+    left: 86%;
     top: 5em;
 
     background: url("../image/menuIcon.png") no-repeat;
