@@ -401,9 +401,9 @@ ul,li{
 #underBar { 
     position: absolute;
     width: 65%;
-    height: 25%;
+    height: 10%;
     left: 17%;
-    top: 220%;
+    top: 200%;
 
     border-top: 0.1em solid #C6C6C6;
 }
