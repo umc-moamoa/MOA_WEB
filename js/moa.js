@@ -10,7 +10,7 @@ const fetchSurvey = () => {
     };
 
     fetch(
-        "umcsom.shop:9000",
+        "umcsom.shop:9000/posts?categoryId=1",
         requestOptions
     )
         .then((response) => response.json())
