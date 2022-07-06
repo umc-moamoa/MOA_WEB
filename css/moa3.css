@@ -133,7 +133,7 @@ ul,li{
     font-style: normal;
     font-weight: 700;
     font-size: 3em;
-    line-height: 5.813em;
+    line-height: 3em;
     color: #414141;
 }
 
@@ -144,9 +144,9 @@ ul,li{
 
     position: absolute;
     width: 65%;
-    height: 30%;
+    height: 25%;
     left: 17%;
-    top: 70%;
+    top: 60%;
 
     background: #FFFFFF;
     border: 2.5px solid #909090;
@@ -197,7 +197,7 @@ ul,li{
 }
 
 #point1 {
-    font-size: 2em;
+    font-size: 2.5em;
     line-height:center;
     color: #B8ABFC;
 }
@@ -209,9 +209,9 @@ ul,li{
 
     position: absolute;
     width: 65%;
-    height: 30%;
+    height: 25%;
     left: 17%;
-    top: 105%;
+    top: 95%;
 
     background: #FFFFFF;
     border: 2.5px solid #909090;
@@ -262,7 +262,7 @@ ul,li{
 }
 
 #point2 {
-    font-size: 2em;
+    font-size: 2.5em;
     line-height:center;
     color: #B8ABFC;
 }
@@ -274,9 +274,9 @@ ul,li{
 
     position: absolute;
     width: 65%;
-    height: 30%;
+    height: 25%;
     left: 17%;
-    top: 140%;
+    top: 130%;
 
     background: #FFFFFF;
     border: 2.5px solid #909090;
@@ -327,7 +327,7 @@ ul,li{
 }
 
 #point3 {
-    font-size: 2em;
+    font-size: 2.5em;
     line-height:center;
     color: #B8ABFC;
 }
@@ -339,9 +339,9 @@ ul,li{
 
     position: absolute;
     width: 65%;
-    height: 30%;
+    height: 25%;
     left: 17%;
-    top: 175%;
+    top: 165%;
 
     background: #FFFFFF;
     border: 2.5px solid #909090;
@@ -392,7 +392,7 @@ ul,li{
 }
 
 #point4 {
-    font-size: 2em;
+    font-size: 2.5em;
     line-height:center;
     color: #B8ABFC;
 }
@@ -401,9 +401,9 @@ ul,li{
 #underBar { 
     position: absolute;
     width: 65%;
-    height: 30%;
+    height: 25%;
     left: 17%;
-    top: 215%;
+    top: 220%;
 
     border-top: 0.1em solid #C6C6C6;
 }
@@ -479,7 +479,7 @@ footer td p {
 }
 
 /* 설문 추가 버튼*/
-#newSurvey{
+#newSurvey .newItem{
     position: absolute;
     width: 8em;
     height: 8em;
