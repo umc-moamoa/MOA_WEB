@@ -1,7 +1,7 @@
 
 const $SurveyList = document.querySelector("#SurveyList");
 
-const $detailTitle = document.querySelector("detailTitle");
+const $detailTitle = document.querySelector("#detailTitle");
 const $mainBottom = document.querySelector("#mainBottom");
 
 const fetchSurvey = () => {
