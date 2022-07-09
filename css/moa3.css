@@ -20,7 +20,7 @@ ul,li{
     list-style: none;
 }
 
-/* 로고*/
+/* 배경 */
 #backCenter {
     position: absolute;
     width: 100%;
@@ -32,6 +32,14 @@ ul,li{
     position: absolute;
     width: 40%;
     height: 80%;
+}
+
+/* 헤더 */
+.header {
+    position: relative;
+    width: 1130px;
+    height: 300px;
+    margin: 0 auto;
 }
 #moa {
     position: absolute;
@@ -77,51 +85,66 @@ ul,li{
     right: 0;
 }
 
-#userMenu .link_center {
-    padding-right: 9em;
-}
-
 #userMenu a {
-    text-decoration: none;
     font-size: 1em;
 }
 
 /*아이콘*/
+#iconMenu{
+    margin: 0 auto;
+}
 
-#icon .searchIcon{
-    position: absolute;
+#iconMenu .list_icon{
+    float: right;
+}
+
+#iconMenu *{
+    font-weight: 500;
+    height: 1em;
+    padding: 0;
+}
+#iconMenu .icon{
+    position: relative;
+    float: left;
+    margin-right: 1.5em;
+}
+
+#iconMenu .icon_search{
     width: 2em;
     height: 2em;
-    left: 78%;
     top: 5em;
-    
-
+    left: 110%;
     background: url("../image/searchIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
-
-#icon .userIcon{
-    position: absolute;
+#iconMenu .icon_user{
     width: 2em;
     height: 2em;
-    left: 82%;
     top: 5em;
-
+    left: 130%;
     background: url("../image/userIcon.png") no-repeat;
     background-size: 1.6em 1.5em;
 }
-#icon .menuIcon{
-    position: absolute;
+#iconMenu .sideMenu{
     width: 2em;
     height: 2em;
-    left: 86%;
     top: 5em;
-
+    left: 150%;
     background: url("../image/menuIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
 
+
+/* container */
+
+.container {
+    
+    width: 1130px;
+    height: 100%;
+    margin: 0 auto;
+}
 /*서브 제목*/
+
 #subTitle {
     position: absolute;
     padding: 0;
@@ -435,8 +458,6 @@ footer {
     min-height: 280%;
     padding-bottom: 226.302;
 }
-
-
 footer a {
     color: white;
     text-decoration: none;
@@ -456,7 +477,7 @@ footer a {
     font-weight: 600;
 }
 
-footer .container {
+footer .footerContainer {
     padding-left: 15%;
     /* padding-right: 10%; */
 }
