@@ -2,6 +2,8 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR';
 }
 
 html, body {
@@ -27,9 +29,18 @@ ul,li{
 
 #backTop {
     position: absolute;
-    width: 40%;
+    width: 50%;
     height: 80%;
 }
+
+/* 헤더 */
+.header {
+    position: relative;
+    width: 1130px;
+    height: 250px;
+    margin: 0 auto;
+}
+
 #moa {
     position: absolute;
     width: 10%;
@@ -48,9 +59,7 @@ ul,li{
 /* 메뉴 */
 #userMenu {
     margin: 0 auto;
-    background: url("../image/Ellipse 35.png") no-repeat;
     padding-right: 2em;
-    font-family: 'Noto Sans KR';
 }
 #userMenu .list_menu {
     float: right;
@@ -75,58 +84,70 @@ ul,li{
     right: 0;
 }
 
-#userMenu .link_center {
-    padding-right: 9em;
-}
-
 #userMenu a {
-    text-decoration: none;
     font-size: 1em;
 }
 
 /*아이콘*/
-#icon .searchIcon{
-    position: absolute;
+#iconMenu{
+    margin: 0 auto;
+}
+
+#iconMenu .list_icon{
+    float: right;
+}
+
+#iconMenu *{
+    font-weight: 500;
+    height: 1em;
+    padding: 0;
+}
+#iconMenu .icon{
+    position: relative;
+    float: left;
+    margin-right: 1.5em;
+}
+
+#iconMenu .icon_search{
     width: 2em;
     height: 2em;
-    left: 78%;
     top: 5em;
-
+    left: 110%;
     background: url("../image/searchIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
-
-#icon .userIcon{
-    position: absolute;
+#iconMenu .icon_user{
     width: 2em;
     height: 2em;
-    left: 82%;
     top: 5em;
-
+    left: 130%;
     background: url("../image/userIcon.png") no-repeat;
-    background-size: 1.5em 1.5em;
+    background-size: 1.6em 1.5em;
 }
-#icon .menuIcon{
-    position: absolute;
+#iconMenu .sideMenu{
     width: 2em;
     height: 2em;
-    left: 86%;
     top: 5em;
-
+    left: 150%;
     background: url("../image/menuIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
 
-/*서브 제목*/
-#subTitle {
-    position: absolute;
-    padding: 0;
-    width: 23.938em;
-    height: 5.813em;
-    left: 17%;
-    top: 30%;
+/* container */
 
-    font-family: 'Noto Sans KR';
+.container {
+    width: 1130px;
+    margin: 0 auto;
+    padding: 15px 30px 0;
+}
+
+/*서브 제목*/
+#subTitle .subTitle{
+    position: relative;
+    width: 100%;
+    left: 5%;
+    padding-bottom: 1em;
+
     font-style: normal;
     font-weight: 700;
     font-size: 3em;
@@ -145,10 +166,9 @@ footer {
     transform: translateY(-100%);
 }
 
-#wrapper {
-    height: auto;
-    min-height: 290%;
-    padding-bottom: 226.302;
+#wrapper{
+    height: 1130px;
+    margin: 0 auto;
 }
 
 footer a {

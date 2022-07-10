@@ -7,15 +7,16 @@
     <title>설문 참여 페이지</title>
     <link rel="stylesheet" href="../css/moa2.css" />
 </head>
-<body>
+<div>
     <div id="wrapper">
         <!--배경-->
         <img id="backTop" src="../image/Ellipse 35.png" />
         <img id="backCenter" src="../image/dd 1.png" />
-        <!--logo-->
-        <h1 id="moa">MoA</h1>
-        <!--헤더(메뉴, 아이콘, 서브제목)-->
-        <div id="header">
+
+        <!--헤더-->
+        <div class="header">
+            <!--logo-->
+            <h1 id="moa">MoA</h1>
             <!-- menu header -->
             <div id="userMenu">
                 <ul class="list_menu">
@@ -34,12 +35,24 @@
             </div>
 
             <!-- icon -->
-            <div id="icon">
-                <a class="searchIcon" href="#none"></a>
-                <a class="userIcon" href="#none"></a>
-                <a class="menuIcon" href="#none"></a>
-            </div>
+            <div id="iconMenu">
+                <ul class="list_icon">
+                    <li class="icon icon_search">
+                        <a class="link_search" href="#none"></a>
+                    </li>
 
+                    <li class="icon icon_user">
+                        <a class="link_user" href="#none"></a>
+                    </li>
+
+                    <li class="icon sideMenu">
+                        <a class="link_menu" href="#none"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- container -->
+        <div class="container">
             <!-- 서브 제목 -->
             <div id="subTitle" >
                 <p class="subTitle">설문 참여</p>
@@ -71,6 +84,7 @@
                 </form>
             </div>
         </main>
+        </div>
     </div>
     <!-- footer -->
     <footer>
@@ -102,7 +116,7 @@
             </div>
             </table>
         </div>
-    </footer>
 
+    </footer>
 </body>
 </html>
