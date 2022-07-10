@@ -55,3 +55,5 @@ function join_check(){
     }
 
 
+// api 참고
+// https://intrepidgeeks.com/tutorial/implement-react-member-registration-api#0
