@@ -12,6 +12,12 @@ html, body {
     
 }
 
+.flex-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
 a {
     text-decoration: none;
 }
@@ -136,7 +142,9 @@ ul,li{
 /* container */
 
 .container {
+    /* min-height: 300vh; */
     width: 1130px;
+    height: auto;
     margin: 0 auto;
     padding: 15px 30px 0;
 }
@@ -161,17 +169,17 @@ footer {
     color: white;
     padding-bottom: 2em;
     padding-top: 2em;
-    height: 226.302;
-    position: relative;
-    transform: translateY(-100%);
+    /* height: 226.302; */
+    /* position: relative; */
+    /* transform: translateY(-100%); */
 }
 
 
-#wrapper{
+/* #wrapper{
     height: auto;
     min-height: 300%;
     padding-bottom: 226.302;
-}
+} */
 
 footer a {
     color: white;
@@ -220,12 +228,12 @@ footer td p {
     box-sizing: border-box;
     padding: 3%;
 
-    position: absolute;
-    width: 65%;
-    height: 160%;
-    left: 17%;
-    top: 70%;
-
+    /* position: absolute; */
+    /* width: 65%; */
+    /* height: 160%; */
+    /* left: 17%;
+    top: 70%; */
+    height: auto;
     background: #FFFFFF;
     border: 2.5px solid #909090;
 }
