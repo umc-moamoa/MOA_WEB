@@ -8,6 +8,59 @@
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    
+    <div id="header">
+        <a id="moa" href="#none">Moa</a>
+    </div>
+    <div id="wrapper">
+        <div id="content">
+            <form class="loginForm">
+                <span class="loginLogo">Login</span>
+
+                <!-- ID -->
+                <div>
+                    <h3 class="join_title">
+                        <label for="id">아이디</label>
+                    </h3>
+                    <span class="box int_id">
+                        <input type="text" id="id" class="int" maxlength="20" check_result="fail" placeholder="아이디">
+                    </span>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div>
+                    <h3 class="join_title">
+                        <label for="pswd1">비밀번호</label>
+                    </h3>
+                    <span class="box int_pass">
+                        <input type="password" id="pswd1" class="int" maxlength="20" placeholder="비밀번호">
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <div class="findinfo">
+                    <a href="#" class="findId">아이디 찾기</a>
+                    <a href="#" class="findPwd">비밀번호 찾기</a>
+                </div>
+                
+                <!-- 로그인 버튼 -->
+                <div class="btn_area">
+                    <button type="button" id="btnJoin" onclick="join_check();"> 
+                        <span>로그인</span>
+                    </button>
+                </div>
+
+                <div class="socialLogin">
+                    <a href="#" class="social-item bg1"><i class="fa fa-kakao"></i></a>
+                    <a href="#" class="social-item bg2"><i class="fa fa-naver"></i></a>
+                    <a href="#" class="social-item bg3"><i class="fa fa-facebook"></i></a>
+                </div>
+                
+                <div class="signUp">
+                    <a href="../html/signUp.html" class="signUPTxt">회원가입</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
 </body>
 </html>
