@@ -20,6 +20,10 @@ ul,li{
     list-style: none;
 }
 
+#wrapper{
+    height: 1130px;
+    margin: 0 auto;
+}
 /* 배경 */
 #backCenter {
     position: absolute;
@@ -30,7 +34,7 @@ ul,li{
 
 #backTop {
     position: absolute;
-    width: 40%;
+    width: 50%;
     height: 80%;
 }
 
@@ -38,7 +42,7 @@ ul,li{
 .header {
     position: relative;
     width: 1130px;
-    height: 300px;
+    height: 250px;
     margin: 0 auto;
 }
 #moa {
@@ -59,7 +63,6 @@ ul,li{
 /* 메뉴 */
 #userMenu {
     margin: 0 auto;
-    background: url("../image/Ellipse 35.png") no-repeat;
     padding-right: 2em;
 }
 #userMenu .list_menu {
@@ -138,22 +141,18 @@ ul,li{
 /* container */
 
 .container {
-    
     width: 1130px;
-    height: 100%;
     margin: 0 auto;
+    padding: 15px 30px 0;
 }
 /*서브 제목*/
 
-#subTitle {
-    position: absolute;
-    padding: 0;
-    width: 23.938em;
-    height: 5.813em;
-    left: 17%;
-    top: 30%;
+#subTitle .subTitle{
+    position: relative;
+    width: 100%;
+    left: 5%;
+    padding-bottom: 1em;
 
-    font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 700;
     font-size: 3em;
@@ -163,18 +162,14 @@ ul,li{
 
 /* main1 */
 #main1 {
+    position: relative;
     box-sizing: border-box;
-    padding: 3%;
-
-    position: absolute;
-    width: 65%;
-    height: 25%;
-    left: 17%;
-    top: 60%;
-
+    padding: 5%;
+    padding-bottom: 7%;
+    width: 85%;
+    left: 5%;
     background: #FFFFFF;
     border: 2.5px solid #909090;
-    box-shadow: 0px 0px 100px rgba(184, 171, 252, 0.1);
 }
 
 .one-container1 {
@@ -184,6 +179,7 @@ ul,li{
 }
 
 #title1 {
+    top: 5%;
     font-size: 1.7em;
     font-weight: bold;
 }
@@ -192,37 +188,30 @@ ul,li{
     margin-top: 4%;
     display: flex;
     justify-content: flex-start;
-    font-size: 1.1em;
+    font-size: 1em;
+    font-weight: 700;
     font-weight: bold;
     color: #6C6C6C;
 }
 
 #count1 {
-    font-size: 1em;
-    color: #6C6C6C;
-    font-weight: 700;
     border-right: 0.1em solid #6C6C6C;
     padding-right: 1em;
-    
 }
 
 #type1 {
-    font-size: 1em;
-    color: #6C6C6C;
-    font-weight: 700;
     padding-left: 1em;
 }
 
 .three-container1{
     margin-right: 8%;
-    margin-top: -7%;
+    margin-top: -8%;
     display: flex;
     justify-content:right;
 }
 
 #point1 {
-    font-size: 2.5em;
-    line-height:center;
+    font-size: 2.3em;
     color: #B8ABFC;
 }
 
