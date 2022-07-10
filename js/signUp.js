@@ -1,48 +1,57 @@
-function id_overlap_check() {
-
-    $('.username_input').change(function () {
-    $('#id_check_sucess').hide();
-    $('.id_overlap_button').show();
-    /* 중복확인했더라도 다시 아이디 변경했을 때, 제출 못하게 막는다 */
-    $('.username_input').attr("check_result", "fail");
-    })
-
-    /* 아이디 입력 되지 않으면 오류 알람*/
-    if ($('.username_input').val() == '') {
-    alert('아이디를 입력해주세요.')
-    return;
-    }
-
-    /* 아이디 중복체크 되지 않으면 오류 알람*/
-    if ($('.username_input').attr("check_result") == "fail"){
-        alert("아이디 중복체크를 해주시기 바랍니다.");
-        $('.username_input').focus();
+function join_check(){
+    var id = document.getElementById("id");
+    var pwd1 = document.getElementById("pswd1");
+    var pwd2 = document.getElementById("pswd2");
+    var name = document.getElementById("name");
+    var nickName = document.getElementById("nickName");
+    
+    // 해당 입력값이 없을 경우
+    if(id.value == ""){ 
+        alert("아이디를 입력하세요.");
+        id.focus(); // 커서가 깜빡이는 현상
+        return false; // 아무것도 반환하지 마라, 아래 코드부터 진행 X
+    };
+    if(pwd1.value == ""){
+        alert("비밀번호를 입력하세요.");
+        pwd1.focus();
         return false;
-    }
+    };
 
-    /* 해당 url 로 data 를 넘겨줍니다. 여기서 데이터는 id_overlap_input 에서 가져온 값, 사용자가 아이디 부분에 입력한 값*/
-    id_overlap_input = document.querySelector('input[name="username"]');
+    //비밀번호 영문자+숫자+특수조합(8~20자리 입력) 정규식
+    var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,20}$/;
 
-    $.ajax({
-    url: "{% url 'lawyerAccount:id_overlap_check' %}",
-    data: {
-        'username': id_overlap_input.value
-    },
-    datatype: 'json',
-    success: function (data) {
-        console.log(data['overlap']);
-        if (data['overlap'] == "fail") {
-            alert("이미 존재하는 아이디 입니다.");
-            id_overlap_input.focus();
-            return;
-        } else {
-            alert("사용가능한 아이디 입니다.");
-            $('.username_input').attr("check_result", "success");
-            $('#id_check_sucess').show();
-            $('.id_overlap_button').hide();
-            return;
-        }
-    }
-    });
+    if (!pwdCheck.test(pwd1.value)) {
+        alert("비밀번호는 영문자+숫자+특수문자 조합으로 8~20자리 사용해야 합니다.");
+        pwd1.focus();
+        return false;
+    };
+
+    if (pwd1.value !== pwd2.value) {
+        alert("비밀번호가 일치하지 않습니다..");
+        pwd2.focus();
+        return false;
+    };
+
+    if (name.value == "") {
+        alert("이름을 입력하세요.");
+        name.focus();
+        return false;
+    };
+
+    if (nickName.value == "") {
+        alert("닉네임을 입력하세요.");
+        nickName.focus();
+        return false;
+    };
+
+
+    //입력 값 전송
+    document.join_form.submit(); //유효성 검사의 포인트   
 }
+    //아이디 중복체크 팝업창(현재 공백문서)
+    function id_check() {
+    //window.open("팝업될 문서 경로", "팝업될 문서 이름", "옵션");
+    window.open("", "", "width=600, height=200, left=200, top=100");
+    }
+
 
