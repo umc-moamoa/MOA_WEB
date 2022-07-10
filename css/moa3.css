@@ -20,10 +20,11 @@ ul,li{
     list-style: none;
 }
 
-#wrapper{
+/* #wrapper{
     height: 1130px;
     margin: 0 auto;
-}
+} */
+
 /* 배경 */
 #backCenter {
     position: absolute;

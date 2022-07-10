@@ -166,9 +166,11 @@ footer {
     transform: translateY(-100%);
 }
 
+
 #wrapper{
-    height: 1130px;
-    margin: 0 auto;
+    height: auto;
+    min-height: 300%;
+    padding-bottom: 226.302;
 }
 
 footer a {
@@ -222,7 +224,7 @@ footer td p {
     width: 65%;
     height: 160%;
     left: 17%;
-    top: 60%;
+    top: 70%;
 
     background: #FFFFFF;
     border: 2.5px solid #909090;
@@ -283,12 +285,12 @@ textarea::placeholder {
     text-align: center;
     display: inline-block;
     font-size: 20px;
-    width: 110.5%;
+    width: 111%;
     padding-top: 2%;
-    margin-left: -5.3%;
+    margin-left: -5.5%;
     padding-bottom: 2%;
     cursor: pointer;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 .question {
