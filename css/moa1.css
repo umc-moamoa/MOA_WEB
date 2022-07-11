@@ -12,25 +12,40 @@ html, body {
     width: 100%;
 }
 
-
 /* 우측 상단 메뉴*/
 ul, li{
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* container */
+.container {
+    width: 1130px;
+    margin: 0 auto;
+    padding: 15px 30px 0;
+}
+
+/* 헤더 */
+.header {
+    position: relative;
+    width: 1130px;
+    height: 250px;
+    margin: 0 auto;
+}
+
 /* 메뉴 */
 #userMenu {
     margin: 0 auto;
-    background: url("../image/Ellipse 35.png") no-repeat;
     padding-right: 2em;
 }
-
 #userMenu .list_menu {
     float: right;
     line-height: 5.313em;
     white-space: nowrap;
 }
-
 #userMenu * {
     font-weight: 500;
     letter-spacing: 0.1em;
@@ -49,49 +64,54 @@ ul, li{
     right: 0;
 }
 
-#userMenu .link_center {
-    padding-right: 9em;
-}
-
 #userMenu a {
-    text-decoration: none;
     font-size: 1em;
 }
 
 /*아이콘*/
-#icon .searchIcon{
-    position: absolute;
+#iconMenu{
+    margin: 0 auto;
+}
+
+#iconMenu .list_icon{
+    float: right;
+}
+
+#iconMenu *{
+    font-weight: 500;
+    height: 1em;
+    padding: 0;
+}
+#iconMenu .icon{
+    position: relative;
+    float: left;
+    margin-right: 1.5em;
+}
+
+#iconMenu .icon_search{
     width: 2em;
     height: 2em;
-    left: 78%;
     top: 5em;
-
+    left: 110%;
     background: url("../image/searchIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
-
-#icon .userIcon{
-    position: absolute;
+#iconMenu .icon_user{
     width: 2em;
     height: 2em;
-    left: 82%;
     top: 5em;
-
+    left: 130%;
     background: url("../image/userIcon.png") no-repeat;
-    background-size: 1.5em 1.5em;
+    background-size: 1.6em 1.5em;
 }
-#icon .menuIcon{
-    position: absolute;
+#iconMenu .sideMenu{
     width: 2em;
     height: 2em;
-    left: 86%;
     top: 5em;
-
+    left: 150%;
     background: url("../image/menuIcon.png") no-repeat;
     background-size: 1.5em 1.5em;
 }
-
-
 
 
 /*footer*/
@@ -100,10 +120,11 @@ footer {
     color: white;
     padding-bottom: 2em;
     padding-top: 2em;
+
     height: 226.302;
     position: relative;
     /* margin-top: -226.302;*/
-    transform: translateY(-100%);
+    transform: translateY(-50%); 
 }
 
 #wrapper {
@@ -133,8 +154,11 @@ footer a {
 }
 
 footer .container {
-    padding-left: 15%;
+    /* padding-left: 15%; */
     /* padding-right: 10%; */
+
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 footer ul {
@@ -158,19 +182,17 @@ footer td p {
 /*footer css 끝*/
 
 
-
-
-
+/* 배경 */
 #backCenter {
     position: absolute;
     width: 100%;
     height: 140%;
-    top: 100px;
+    top: 500px;
 }
 
 #backTop {
     position: absolute;
-    width: 40%;
+    width: 50%;
     height: 80%;
 }
 
@@ -195,9 +217,9 @@ footer td p {
     box-sizing: border-box;
     padding: 3%;
 
-    position: absolute;
+    position: relative;
     width: 65%;
-    height: 70%;
+    height: auto;
     left: 17%;
     top: 30%;
 
@@ -257,9 +279,9 @@ footer td p {
     text-align: center;
     display: inline-block;
     font-size: 20px;
-    width: 110.5%;
+    width: 110.2%;
     padding-top: 2%;
-    margin-left: -5.3%;
+    margin-left: -5.1%;
     padding-bottom: 2%;
     cursor: pointer;
     margin-top: 3%;

@@ -14,7 +14,7 @@ const fetchSurvey = () => {
         requestOptions
     )
         .then((response) => response.json())
-        .then((response) => console.log(JSON.parse(response.result)))
+        .then((response) => console.log((JSON.parse(response)).result))
 
 }
 

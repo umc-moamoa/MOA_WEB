@@ -13,11 +13,12 @@
         <!--배경-->
         <img id="backTop" src="../image/Ellipse 35.png" />
         <img id="backCenter" src="../image/dasdasd 1.png" />
-        <!--logo-->
-        <h1 id="moa">MoA</h1>
 
-        <!--헤더(메뉴, 아이콘)-->
-        <header>
+        <!--헤더-->
+        <div class="header">
+            <!--logo-->
+            <h1 id="moa">MoA</h1>
+            <!-- menu header -->
             <div id="userMenu">
                 <ul class="list_menu">
                     <li class="menu menu_login">
@@ -35,14 +36,24 @@
             </div>
 
             <!-- icon -->
-            <div id="icon">
-                <a class="searchIcon" href="#none"></a>
-                <a class="userIcon" href="#none"></a>
-                <a class="menuIcon" href="#none"></a>
-            </div>
-        </header>
+            <div id="iconMenu">
+                <ul class="list_icon">
+                    <li class="icon icon_search">
+                        <a class="link_search" href="#none"></a>
+                    </li>
 
-        <main>
+                    <li class="icon icon_user">
+                        <a class="link_user" href="#none"></a>
+                    </li>
+
+                    <li class="icon sideMenu">
+                        <a class="link_menu" href="#none"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
             <div id="main">
                 <div class="mainTop">
                     <div class="flex-container1">
@@ -69,7 +80,7 @@
                     <button id="joinBtn" onClick="location.href='moa2.html'">설문&nbsp;&nbsp;참여</button>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
     
     <footer>
