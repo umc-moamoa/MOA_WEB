@@ -46,3 +46,4 @@ fetchSurvey();
 // $detailTitle.insertAdjacentHTML('beforeend', dTitle);
 // $mainBottom.insertAdjacentHTML('beforeend', mBottom);
 // }
+
