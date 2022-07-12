@@ -1,47 +1,213 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
-html{
-    height: 100%;
-}
-
-body{
+* {
     margin: 0;
-    height: 100%;
-    background: #f5f6f7;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Noto Sans KR';
 }
+
+html, body {
+    height: 100%;
+    width: 100%;
+    
+}
+
 a{
     text-decoration: none;
 }
 
-#header {
-    padding-top: 62px;
-    padding-bottom: 20px;
-    text-align: center;
+ul,li{
+    list-style: none;
+}
+
+/* 배경 */
+#backTop {
+    position: absolute;
+    width: 50%;
+    height: 80%;
+}
+
+/* 헤더 */
+.header {
+    position: relative;
+    width: 1130px;
+    height: 250px;
+    margin: 0 auto;
+}
+#moa {
+    position: absolute;
+    width: 10%;
+    left: 45%;
+    top: 100px;
+    
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 550;
     font-size: 3em;
     line-height: 102px;
-}
 
-#moa{
+    text-align: center;
+
     color: #B8ABFC;
 }
 
-#wrapper {
-    position: relative;
-    height: 100%;
-    
+
+/* 메뉴 */
+#userMenu {
+    margin: 0 auto;
+    padding-right: 2em;
+}
+#userMenu .list_menu {
+    float: right;
+    line-height: 5.313em;
+    white-space: nowrap;
+}
+#userMenu * {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    height: 1em;
+    padding: 0;
+    color: #414141;
 }
 
-#content {
+#userMenu .menu {
+    position: relative;
+    float: left;
+    margin-right: 2em;
+}
+
+#userMenu .menu.center:before{
+    right: 0;
+}
+
+#userMenu a {
+    font-size: 1em;
+}
+
+/*아이콘*/
+#iconMenu{
+    margin: 0 auto;
+}
+
+#iconMenu .list_icon{
+    float: right;
+}
+
+#iconMenu *{
+    font-weight: 500;
+    height: 1em;
+    padding: 0;
+}
+#iconMenu .icon{
+    position: relative;
+    float: left;
+    margin-right: 1.5em;
+}
+
+#iconMenu .icon_search{
+    width: 2em;
+    height: 2em;
+    top: 5em;
+    left: 110%;
+    background: url("../image/searchIcon.png") no-repeat;
+    background-size: 1.5em 1.5em;
+}
+#iconMenu .icon_user{
+    width: 2em;
+    height: 2em;
+    top: 5em;
+    left: 130%;
+    background: url("../image/userIcon.png") no-repeat;
+    background-size: 1.6em 1.5em;
+}
+#iconMenu .sideMenu{
+    width: 2em;
+    height: 2em;
+    top: 5em;
+    left: 150%;
+    background: url("../image/menuIcon.png") no-repeat;
+    background-size: 1.5em 1.5em;
+}
+/*footer*/
+footer {
+    background-color: #B8ABFC;
+    color: white;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    height: 226.302;
+    position: relative;
+    /* margin-top: -226.302;*/
+    transform: translateY(-100%);
+}
+
+#wrapper {
+    height: auto;
+    min-height: 150%;
+    padding-bottom: 226.302;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.125em;
+    font-weight: 600;
+}
+
+#footer_MoA {
+    font-family: 'Montserrat';
+    font-size: 2.625em;
+    margin: 0;
+    font-weight: 600;
+}
+
+#tel {
+    font-size: 2.250em;
+    font-weight: 600;
+}
+
+footer .footerContainer {
+    padding-left: 15%;
+    /* padding-right: 10%; */
+}
+
+footer ul {
+    padding-inline-start: 40px;
+}
+
+footer td:nth-child(2) {
+    text-align: right;
+    font-size: 0.875em;
+}
+
+footer td p {
+    padding-bottom: 0.3em;
+}
+
+#info {
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+/*==========================================================*/
+
+
+.container {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    width: 460px;
-    padding: 2em 3em;
+    width: 40%;
+    
+}
+
+.loginForm{
+    box-sizing: border-box;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 5%;
+
+    height: auto;
+    background: #FFFFFF;
     border: solid 2px #dadada;
+    border-bottom: 0;
 }
 
 /* logo*/
@@ -49,26 +215,24 @@ a{
     padding-top: 62px;
     padding-bottom: 20px;
     text-align: center;
-    font-family: 'Montserrat';
+    font-family: 'Noto Sans KR';
     font-style: normal;
-    font-weight: 550;
+    font-weight: 500;
     font-size: 2em;
     line-height: 102px;
+
+    color: #414141;
 }
 
 /* 입력 폼 스타일 */
-h3 {
-    margin: 19px 0 8px;
-    font-size: 14px;
-    font-weight: 700;
-}
 
 .box {
     display: block;
     width: 100%;
     height: 51px;
-    border: solid 1.5px #dadada;
+    border-bottom: solid 1.5px #dadada;
     padding: 10px 14px 10px 14px;
+    margin-top: 2em;
     box-sizing: border-box;
     background: #fff;
     position: relative;
@@ -86,12 +250,16 @@ h3 {
 
 /* 아이디, 비번 찾기*/
 .findinfo{
-    
-    padding-top: 0.5em;
-    padding-left: 1em;
-    font-size: 13px;
+    text-align: center;
+    padding: 2em;
+    padding-left: 1.5em;
+    font-size: 0.8em;
 }
-
+.signUPTxt {
+    color: #919191;
+    padding-right: 1em;
+    border-right: solid 2px #919191;
+}
 .findId{
     color: #919191;
     padding-right: 1em;
@@ -103,6 +271,20 @@ h3 {
 }
 
 /* 소셜 로그인 */
+.socialLoginTxt{
+
+}
+
+.socialLoginTxt2{
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 70px;
+    color: #414141;
+}
+
 .socialLogin{
     display: -webkit-box;
 	display: -webkit-flex;
@@ -129,7 +311,6 @@ h3 {
     border-radius: 50%;
     margin: 5px;
 }
-
 
 .social-item:hover {
     color: #fff;
@@ -169,13 +350,19 @@ h3 {
 }
 
 #btnJoin {
-    width: 100%;
-    padding: 21px 0 17px;
-
-    border: 0;
+    background: linear-gradient(91.36deg, #B8ABFC -24.31%, #BFD4FF 130.3%);
+    box-shadow: 0px -10px 40px rgba(184, 171, 252, 0.3);
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 23px;
+    width: 126%;
     cursor: pointer;
-    color: #fff;
-    background-color:#B8ABFC;
-    font-size: 20px;
-    font-weight: 400;
-} 
+
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    margin-left: -13%;
+    margin-top: 7%;
+}
