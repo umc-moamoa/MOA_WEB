@@ -1,0 +1,254 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR';
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+/* 로고*/
+#backCenter {
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    top: 350px;
+    z-index: -100;
+}
+
+#backTop {
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    right: 0;
+}
+
+/* 헤더 */
+.header {
+    position: relative;
+    width: 1130px;
+    height: 180px;
+    margin: 0 auto;
+}
+
+#moa {
+    position: absolute;
+    width: 10%;
+    left: 60px;
+    top: 30px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 550;
+    font-size: 3em;
+    line-height: 102px;
+
+    color: #B8ABFC;
+}
+
+/* 메뉴 */
+#userMenu {
+    margin: 0 auto;
+    padding-right: 2em;
+}
+#userMenu .list_menu {
+    float: right;
+    line-height: 5.313em;
+    white-space: nowrap;
+}
+#userMenu * {
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    height: 1em;
+    padding: 0;
+    color: #414141;
+}
+#userMenu .menu {
+    position: relative;
+    float: left;
+    margin-right: 2em;
+}
+#userMenu .menu.center:before {
+    right: 0;
+}
+#userMenu a {
+    font-size: 1em;
+}
+
+/*아이콘*/
+#iconMenu {
+    margin: 0 auto;
+}
+#iconMenu .list_icon {
+    float: right;
+}
+#iconMenu * {
+    font-weight: 500;
+    height: 1em;
+    padding: 0;
+}
+#iconMenu .icon {
+    position: relative;
+    float: left;
+    margin-right: 1.5em;
+}
+#iconMenu .icon_search {
+    width: 2em;
+    height: 2em;
+    top: 5em;
+    left: 110%;
+    background: url("../image/searchIcon.png") no-repeat;
+    background-size: 1.5em 1.5em;
+}
+#iconMenu .icon_user {
+    width: 2em;
+    height: 2em;
+    top: 5em;
+    left: 130%;
+    background: url("../image/userIcon.png") no-repeat;
+    background-size: 1.6em 1.5em;
+}
+#iconMenu .sideMenu {
+    width: 2em;
+    height: 2em;
+    top: 5em;
+    left: 150%;
+    background: url("../image/menuIcon.png") no-repeat;
+    background-size: 1.5em 1.5em;
+}
+
+/* container */
+.container {
+    /* min-height: 300vh; */
+    width: 1130px;
+    margin: 0 auto;
+    padding: 15px 70px 0;
+}
+
+/*서브 제목*/
+#subTitle .subTitle {
+    position: relative;
+    width: 100%;
+    left: 5%;
+    padding-bottom: 0.5em;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2em;
+    line-height: 2em;
+    color: #414141;
+}
+
+/*footer*/
+footer {
+    background-color: #B8ABFC;
+    color: white;
+    padding-bottom: 2em;
+    padding-top: 2em;
+
+    height: 226.302;
+    position: relative;
+    /* margin-top: -226.302;*/
+    transform: translateY(100%); 
+}
+
+#wrapper {
+    height: auto;
+    min-height: 200%;
+    padding-bottom: 226.302;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.125em;
+    font-weight: 600;
+}
+#footer_MoA {
+    font-family: 'Montserrat';
+    font-size: 2.625em;
+    margin: 0;
+    font-weight: 600;
+}
+#tel {
+    font-size: 2.250em;
+    font-weight: 600;
+}
+footer .container {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+footer ul {
+    padding-inline-start: 40px;
+}
+footer td:nth-child(2) {
+    text-align: right;
+    font-size: 0.875em;
+}
+footer td p {
+    padding-bottom: 0.3em;
+}
+#info {
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+/* main */
+#main {
+    box-sizing: border-box;
+    padding-right: 15%;
+    padding-left: 10%;
+    padding-top: 10%;
+    margin:0 5% ;
+    margin-bottom: 10%;
+
+    /* position: absolute; */
+    /* width: 65%; */
+    /* height: 160%; */
+    /* left: 17%;
+    top: 70%; */
+    height: auto;
+    background: #FFFFFF;
+    border: 1.4px solid #909090;
+    border-bottom: 0;
+}
+
+.flex-container2 {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+}
+
+#submit_btn {
+    background: linear-gradient(91.36deg, #B8ABFC -24.31%, #BFD4FF 130.3%);
+    box-shadow: 0px -10px 40px rgba(184, 171, 252, 0.3);
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    width: 139.1%;
+    padding-top: 2%;
+    margin-left: -15.7%;
+    padding-bottom: 2%;
+    cursor: pointer;
+    margin-top: 3%;
+}
+
