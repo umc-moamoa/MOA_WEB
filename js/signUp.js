@@ -4,6 +4,10 @@ function join_check(){
     var pwd2 = document.getElementById("pswd2");
     var name = document.getElementById("name");
     var nickName = document.getElementById("nickName");
+
+    var overlapTxt1 = document.getElementsByClassName("overlapTxt1");
+    var overlapTxt2 = document.getElementsByClassName("overlapTxt2");
+    var pwAlertTxt1 = document.getElementsByClassName("pwAlertTxt1");
     
     // 해당 입력값이 없을 경우
     if(id.value == ""){ 
@@ -27,7 +31,7 @@ function join_check(){
     };
 
     if (pwd1.value !== pwd2.value) {
-        alert("비밀번호가 일치하지 않습니다..");
+        alert("비밀번호가 일치하지 않습니다.");
         pwd2.focus();
         return false;
     };
@@ -43,7 +47,6 @@ function join_check(){
         nickName.focus();
         return false;
     };
-
 
     //입력 값 전송
     document.join_form.submit(); //유효성 검사의 포인트   

@@ -8,73 +8,147 @@
     <link rel="stylesheet" href="../css/signUp.css">
 </head>
 <body>
-    <div id="header">
-        <a id="moa" href="#none">Moa</a>
-    </div>
     <div id="wrapper">
-        <div id="content">
-            <!-- ID -->
-            <div>
-                <h3 class="join_title">
-                    <label for="id">아이디</label>
-                </h3>
-                <span class="box int_id">
-                    <input type="text" id="id" class="int" maxlength="20" check_result="fail">
-                    <button type="button" class="id_overlap_button" onclick="id_check();">중복확인</button>
-                </span>
+        <!--배경-->
+        <img id="backTop" src="../image/Ellipse 35.png" />
+        
+        <!--헤더-->
+        <div class="header">
+            <!--logo-->
+            <h1 id="moa">MoA</h1>
+            <!-- menu header -->
+            <div id="userMenu">
+                <ul class="list_menu">
+                    <li class="menu menu_login">
+                        <a class="link_login" href="../html/login.html">로그인</a>
+                    </li>
+
+                    <li class="menu menu_join">
+                        <a class="link_join" href="../html/signUp.html">회원가입</a>
+                    </li>
+                    
+                    <li class="menu center">
+                        <a class="link_center" href="#none">고객센터</a>
+                    </li>
+                </ul>
             </div>
 
-            <!-- 비밀번호 -->
-            <div>
-                <h3 class="join_title">
-                    <label for="pswd1">비밀번호</label>
-                </h3>
-                <p class="meg">8~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요.</p>
-                <span class="box int_pass">
-                    <input type="password" id="pswd1" class="int" maxlength="20">
-                    <span id="alertTxt">사용불가</span>
-                </span>
-                <span class="error_next_box"></span>
-            </div>
+            <!-- icon -->
+            <div id="iconMenu">
+                <ul class="list_icon">
+                    <li class="icon icon_search">
+                        <a class="link_search" href="#none"></a>
+                    </li>
 
-            <!-- 비밀번호 확인 -->
-            <div>
-                <h3 class="join_title">
-                    <label for="pswd2">비밀번호 재확인</label>
-                </h3>
-                <span class="box int_pass_check">
-                    <input type="password" id="pswd2" class="int" maxlength="20">
-                </span>
-                <span class="error_next_box"></span>
-            </div>
+                    <li class="icon icon_user">
+                        <a class="link_user" href="#none"></a>
+                    </li>
 
-            <!-- 이름 -->
-            <div>
-                <h3 class="join_title">
-                    <label for="name">이름</label>
-                </h3>
-                <span class="box int_name">
-                    <input type="text" id="name" class="int" maxlength="20">
-                </span>
-            </div>
-            <!-- 닉네임 -->
-            <div>
-                <h3 class="join_title">
-                    <label for="nickName">닉네임</label>
-                </h3>
-                <span class="box int_nickName">
-                    <input type="text" id="nickName" class="int" maxlength="20">
-                </span>
-            </div>
-
-            <!-- 회원가입 버튼 -->
-            <div class="btn_area">
-                <button type="button" id="btnJoin" onclick="join_check();">
-                    <span>가입하기</span>
-                </button>
+                    <li class="icon sideMenu">
+                        <a class="link_menu" href="#none"></a>
+                    </li>
+                </ul>
             </div>
         </div>
+
+        <!-- container -->
+        <div class="container">
+            <div id="main">
+                <span class="joinLogo">회원가입</span>
+
+                <!-- ID -->
+                <div>
+                    <h3 class="join_title">
+                        <label for="id">아이디</label>
+                    </h3>
+                    <span class="box int_id">  
+                        <input type="text" id="id" class="int name" maxlength="20" check_result="fail">
+                        <button type="button" class="id_overlap_button" onclick="id_check();">중복 확인</button>
+                        <p class="overlapTxt1">사용 가능한 아이디입니다.</p>
+                        <p class="overlapTxt2">이미 사용 중인 아이디입니다.</p>
+                    </span>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div>
+                    <h3 class="join_title">
+                        <label for="pswd1" class="pwsd1">비밀번호</label>
+                    </h3>
+                    <p class="meg">8~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요.</p>
+                    <span class="box int_pass">
+                        <input type="password" id="pswd1" class="int" maxlength="20">
+                        <p class="pwAlertTxt1">사용 가능한 비밀번호입니다.</p>
+                        <p class="pwAlertTxt2">사용 불가한 비밀번호입니다.</p>
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <!-- 비밀번호 확인 -->
+                <div>
+                    <h3 class="join_title">
+                        <label for="pswd2">비밀번호 재확인</label>
+                    </h3>
+                    <span class="box int_pass_check">
+                        <input type="password" id="pswd2" class="int" maxlength="20">
+                        <p class="pwCheckAlertTxt1">비밀번호가 동일합니다.</p>
+                        <p class="pwCheckAlertTxt2">비밀번호가 동일하지 않습니다.</p>
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <!-- 닉네임 -->
+                <div>
+                    <h3 class="join_title">
+                        <label for="nickName">닉네임</label>
+                    </h3>
+                    <span class="box int_nickName">
+                        <input type="text" id="nickName" class="int" maxlength="20">
+                        <p class="nickAlertTxt1">사용 가능한 닉네임입니다.</p>
+                        <p class="nickAlertTxt2">사용 불가한 닉네임입니다.</p>
+                    </span>
+                </div>
+
+                <!-- 회원가입 버튼 -->
+                <div class="btn_area">
+                    <button type="button" id="btnJoin" onclick="join_check();">
+                        <span>회원가입</span>
+                    </button>
+                </div>
+            </div>
+        </div>        
     </div>
+
+    <!-- footer -->
+    <footer>
+        <div class="footerContainer">
+            <table>
+            <div class="row justify-content-center">
+                <div class="col-sm-4 col-md-3 item">
+                    <td>
+                    <p id="footer_MoA">MoA</p>
+                        <p>CUSTOMER CENTER</p>
+                        <p id="tel">02-381-3758</p>
+                        <p>MON - FRI 10:00 AM - 05:00 PM
+                        <br>LUNCH 12:00 PM - 01:00 PM
+                        <br>CLOSED SAT, SUN AND HOLIDAYS</p>
+                    </td>
+                </div>
+                <div class="col-sm-4 col-md-3 item">
+                <td>
+                    <ul>
+                        <a href="#">회사안내</a>&nbsp;<a href="#">이용안내</a>&nbsp;<a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴/도매 문의</a>
+                        <p id="info">상호명: 주식회사 사운드웨이브 / 대표: 어주연 / 사업자등록번호: 121-86-36395 [사업자정보확인]
+                            <br>통신판매업신고: 2018-고양덕양구-1367호 / TEL: 02-381-3758 / FAX: 02-381-3788
+                            <br>주소: 경기도 고양시 덕양구 삼송로 193번길 1-6 2층
+                            <br>개인정보 보호 책임자: 어주연 / Email: soundwave@sound-wave.co.kr</p>
+                            <p>COPYRIGHT (C) ALL RIGHTS RESERVED</p>
+                </ul>
+                </td>
+                </div>
+            </div>
+            </table>
+        </div>
+    </footer>
     <script src="../js/signUp.js"></script>
 </body>
 </html>
