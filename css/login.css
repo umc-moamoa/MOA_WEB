@@ -248,22 +248,22 @@ footer td p {
     font-size: 15px;
 }
 
-/* 아이디, 비번 찾기*/
+/* 회원가입, 아이디, 비번 찾기*/
 .findinfo{
     text-align: center;
     padding: 2em;
-    padding-left: 1.5em;
     font-size: 0.8em;
 }
 .signUPTxt {
     color: #919191;
     padding-right: 1em;
-    border-right: solid 2px #919191;
+    border-right: solid 1.8px #919191;
 }
 .findId{
     color: #919191;
     padding-right: 1em;
-    border-right: solid 2px #919191;
+    padding-left: 1em;
+    border-right: solid 1.8px #919191;
 }
 .findPwd{
     color: #919191;
@@ -271,9 +271,7 @@ footer td p {
 }
 
 /* 소셜 로그인 */
-.socialLoginTxt{
 
-}
 
 .socialLoginTxt2{
     text-align: center;
@@ -321,28 +319,6 @@ footer td p {
 .bg2 {background-color: #5EA152}
 .bg3 {background-color: #3b5998}
 
-/* 회원가입 */
-.signUp{
-    display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-direction: column;
-	-moz-flex-direction: column;
-	-ms-flex-direction: column;
-	-o-flex-direction: column;
-	flex-direction: column;
-	-ms-align-items: center;
-	align-items: center;
-}
-.signUPTxt{
-    font-size: 15px;
-    line-height: 1.5;
-    color: #333333;
-    padding-top: 2em;
-    text-transform: uppercase;
-}
 
 /* 버튼 스타일 */
 .btn_area {
