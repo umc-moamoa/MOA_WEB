@@ -138,7 +138,7 @@ footer {
     height: 226.302;
     position: relative;
     /* margin-top: -226.302;*/
-    transform: translateY(-100%);
+    /* transform: translateY(-100%); */
 }
 
 #wrapper {
@@ -293,6 +293,7 @@ footer td p {
 	-ms-align-items: center;
 	align-items: center;
 }
+
 .social-item {
     font-size: 25px;
     color: #fff;
@@ -313,9 +314,10 @@ footer td p {
 .social-item:hover {
     color: #fff;
     background-color: #333333;
+    /* filter: invert(100%); */
 }
 
-.bg1 {background-color: #fae100}
+.bg1 {background-color: #fae100;}
 .bg2 {background-color: #5EA152}
 .bg3 {background-color: #3b5998}
 
