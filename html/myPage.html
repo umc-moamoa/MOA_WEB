@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>설문 참여 페이지</title>
-    <link rel="stylesheet" href="../css/moa2.css" />
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="../css/myPage.css" />
 </head>
 <body>
     <div class="flex-container">
     <!-- <div id="wrapper"> -->
         <!--배경-->
         <img id="backTop" src="../image/Ellipse 35.png" />
-        <img id="backCenter" src="../image/dd 1.png" />
+        <img id="backCenter" src="../image/dss 1.png" />
 
         <!--헤더-->
         <div class="header">
@@ -56,40 +56,64 @@
         <div class="container">
             <!-- 서브 제목 -->
             <div id="subTitle" >
-                <p class="subTitle">설문 참여</p>
+                <p class="subTitle">마이 페이지</p>
             </div>
 
             <div id="main">
-                <form>
                 <div class="flex-container2">
                 <!-- 메인 -->
-                <div id="SurveyQuestion"></div>
-                <div>
-                <div>
-                <span id="Q1">1. 선호하는 브랜드가 있다면 무엇인가요?</span>
-                <span class="required">필수</span></div>
-                <textarea id="textarea1" cols="108" rows="2" placeholder="자유롭게 적어주세요."></textarea>
+                    <div>
+                        <div class="flex-nickname">
+                            <div>회원 닉네임</div><div id="님">&nbsp;&nbsp;님</div>
+                        </div>
+
+                        <div class="flex-container-icon">
+                            <div class="flex-container-icon-sub1">
+                                <img src="../image/Vector.png" width="35%"><div class="category1">&nbsp;&nbsp;&nbsp;&nbsp;포인트</div>
+                            </div>
+                            <div class="state">2400<span>P</span></div>
+                        </div>
+
+                        <div class="flex-container-icon" id="icon_bottom_line">
+                            <div class="flex-container-icon-sub1">
+                                <img src="../image/Vector (1).png" width="20%"><div class="category1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;진행 중인 설문조사</div>
+                            </div>
+                            <div class="state">2<span>개</span></div>
+                        </div>
+
+                        <div class="flex-container-icon">
+                            <div class="flex-container-icon-sub1">
+                                <img src="../image/Vector (2).png"><div class="category2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;나의 설문조사</div>
+                            </div>
+                            <a href="#"><img src="../image/Rectangle 76.png" width="15px"></a>
+                        </div>
+
+                        <div class="flex-container-icon">
+                            <div class="flex-container-icon-sub1">
+                                <img src="../image/Group.png"><div class="category2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심 있는 설문조사</div>
+                            </div>
+                            <a href="#"><img src="../image/Rectangle 76.png" width="15px"></a>
+                        </div>
+
+                        <div class="flex-container-icon">
+                            <div class="flex-container-icon-sub1">
+                                <img src="../image/Group (1).png"><div class="category2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;참여한 설문조사</div>
+                            </div>
+                            <a href="#"><img src="../image/Rectangle 76.png" width="15px"></a>
+                        </div>
+
+                        <div class="flex-container-icon">
+                            <div class="flex-container-icon-sub1">
+                                <img src="../image/Vector (5).png"><div class="category2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;포인트 내역</div>
+                            </div>
+                            <a href="#"><img src="../image/Rectangle 76.png" width="15px"></a>
+                        </div>
+
+                        
+                    </div>
                 </div>
-                <div class="question"><div><span id="Q2">2. 해당 브랜드를 선호하는 이유는 무엇인가요?</span>
-                    <span class="required">필수</span></div>
-                    <textarea id="textarea2" cols="108" rows="15" placeholder=" 자유롭게 적어주세요."></textarea>
-                </div>
-                <!-- <div class="question"><div><span id="Q3">3. 해당 브랜드에 방문하거나 제품을 구입하는 횟수를 선택해주세요.</span>
-                    <span class="required">필수</span></div>
-                <div id="radioBox">
-                <input type = "radio" name = "count" value = "1-2"> <span class="radioBtnText">한 달에 1-2번 </span><br><br>
-                <input type = "radio" name = "count" value = "1"> <span class="radioBtnText">일주일에 1번 </span> <br><br>
-                <input type = "radio" name = "count" value = "3-4"> <span class="radioBtnText">일주일에 3-4번 </span> <br><br>
-                <input type = "radio" name = "count" value = "all"> <span class="radioBtnText">매일</span> <br><br>
-                <input type = "radio" name = "count" value = "etc"> <span class="radioBtnText">기타</span> <br>
-                </div> -->
-                </div>
-                <div><button id="submit_btn">제출</button></div>
-                </div>
-                </form>
             </div>
         </div>
-    <!-- </div> -->
 
     <!-- footer -->
     <footer>
@@ -124,6 +148,5 @@
 
     </footer>
     </div>
-    <script src="involve.js"></script>
 </body>
 </html>
