@@ -67,8 +67,6 @@
                     <div class="flex-container2">
 
                         <!-- 메인 -->
-                        <div id="surveyMake"></div>
-
                         <div id="surveyStart">
                             <input type="text" class="inputTitle" maxlength="30"
                             placeholder="설문지 제목을 입력하세요." 
@@ -79,6 +77,27 @@
                             placeholder="설문에 대한 설명을 적어주세요."
                             onfocus="this.placeholder = ''" 
                             onblur="this.placeholder = '설문에 대한 설명을 적어주세요.'">
+                        </div>
+
+                        <div class="surveyElement">
+
+                            <div class="question">
+                                <span class="Qnum">1.</span>
+                                <input type="text"  class="Qinput" maxlength="20"
+                                placeholder="질문을 입력해주세요."
+                                onfocus="this.placeholder = ''" 
+                                onblur="this.placeholder = '질문을 입력해주세요.'">
+                                <select class="Qtype">
+                                    <option value="1">객관식 질문</option>
+                                    <option value="2">체크박스</option>
+                                    <option value="3">단답형</option>
+                                    <option value="4">장문형</option>
+                                </select>
+                            </div>
+
+                            <div class="makeOption">
+                                
+                            </div>
 
                         </div>
 
