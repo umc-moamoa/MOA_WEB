@@ -165,7 +165,6 @@ footer {
 
     height: 226.302;
     position: relative;
-    /* margin-top: -226.302;*/
     transform: translateY(100%); 
 }
 
@@ -213,9 +212,7 @@ footer td p {
 /* main */
 #main {
     box-sizing: border-box;
-    padding-right: 15%;
-    padding-left: 10%;
-    padding-top: 10%;
+    padding: 4% 4% 0% 4%;
     margin:0 5% ;
     margin-bottom: 10%;
 
@@ -236,6 +233,38 @@ footer td p {
     /* justify-content: space-evenly; */
 }
 
+.inputTitle {
+    border: none;
+    outline: none; /* 입력 시 테두리 지움*/
+    display: block;
+    width: 100%;
+    font-weight: 600;
+    font-size: 1.9em;
+    color: #414141;
+    /* line-height: 2em; */
+}
+
+.inputExplain {
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: #909090;
+    line-height: 3.2em;
+}
+
+/* placeholder 폰트 색 변경, 크롬/엣지 둘 다 적용 */
+input:nth-child(1)::placeholder {color: #414141;}
+input:nth-child(1)::-webkit-input-placeholder {color: #414141;}
+input:nth-child(1)::-ms-input-placeholder {color: #414141;}
+
+input:nth-child(2)::placeholder{color: #909090;}
+input:nth-child(2)::-webkit-input-placeholder {color: #909090;}
+input:nth-child(2)::-ms-input-placeholder{color: #909090;}
+
+
 #submit_btn {
     background: linear-gradient(91.36deg, #B8ABFC -24.31%, #BFD4FF 130.3%);
     box-shadow: 0px -10px 40px rgba(184, 171, 252, 0.3);
@@ -243,12 +272,12 @@ footer td p {
     color: white;
     text-align: center;
     display: inline-block;
-    font-size: 20px;
-    width: 139.1%;
+    font-size: 22px;
+    font-weight: 600;
+    width: 110.2%;
     padding-top: 2%;
-    margin-left: -15.7%;
+    margin-left: -5.1%;
     padding-bottom: 2%;
     cursor: pointer;
     margin-top: 3%;
 }
-
