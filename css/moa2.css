@@ -40,6 +40,14 @@ ul,li{
     height: 80%;
 }
 
+#backBottom {
+    position: absolute;
+    top: 200%;
+    width: 60%;
+    height: 150%;
+    z-index: -300;
+    left: 40%;
+}
 /* 헤더 */
 .header {
     position: relative;
@@ -283,7 +291,7 @@ textarea::placeholder {
 .radioBtnText {
     font-family: 'Noto Sans KR';
     color: #414141;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 500;
 }
 
@@ -307,7 +315,7 @@ textarea::placeholder {
     margin-top: 3%;
 }
 
-.question {
+.question , #Q1{
     margin-top: 5%;
     font-family: 'Noto Sans KR';
     font-style: normal;
