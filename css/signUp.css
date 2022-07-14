@@ -138,7 +138,7 @@ footer {
     height: 226.302;
     position: relative;
     /* margin-top: -226.302;*/
-    transform: translateY(-100%);
+    /* transform: translateY(-100%); */
 }
 
 #wrapper {
