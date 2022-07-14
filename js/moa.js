@@ -3,8 +3,6 @@ const $SurveyList = document.querySelector("#SurveyList");
 const $detailTitle = document.querySelector("#detailTitle");
 const $mainBottom = document.querySelector("#mainBottom");
 
-// const API_KEY = "AIzaSyDfLtpRMc7tlw92VizH1oWUOJqXzlUuWcU";
-
 const fetchSurvey = () => {
     var requestOptions = {
         method: "GET",

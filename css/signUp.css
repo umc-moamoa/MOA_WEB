@@ -56,7 +56,7 @@ ul,li{
 /* 메뉴 */
 #userMenu {
     margin: 0 auto;
-    padding-right: 2em;
+    
 }
 #userMenu .list_menu {
     float: right;
@@ -67,24 +67,27 @@ ul,li{
     font-weight: 500;
     letter-spacing: 0.1em;
     height: 1em;
-    padding: 0;
     color: #414141;
 }
 
 #userMenu .menu {
     position: relative;
     float: left;
-    margin-right: 2em;
-}
-
-#userMenu .menu.center:before{
-    right: 0;
+    margin-right: 1em;
 }
 
 #userMenu a {
     font-size: 1em;
 }
 
+.link_login {
+    padding-right: 1em;
+    border-right: 1.5px solid #414141;
+}
+.link_join {
+    padding-right: 1em;
+    border-right: 1.5px solid #414141;
+}
 /*아이콘*/
 #iconMenu{
     margin: 0 auto;
@@ -109,25 +112,25 @@ ul,li{
     width: 2em;
     height: 2em;
     top: 5em;
-    left: 110%;
+    left: 166%;
     background: url("../image/searchIcon.png") no-repeat;
-    background-size: 1.5em 1.5em;
+    background-size: 1.4em 1.4em;
 }
 #iconMenu .icon_user{
     width: 2em;
     height: 2em;
     top: 5em;
-    left: 130%;
+    left: 166%;
     background: url("../image/userIcon.png") no-repeat;
-    background-size: 1.6em 1.5em;
+    background-size: 1.3em 1.4em;
 }
 #iconMenu .sideMenu{
     width: 2em;
-    height: 2em;
+    height: 1.8em;
     top: 5em;
-    left: 150%;
+    left: 165%;
     background: url("../image/menuIcon.png") no-repeat;
-    background-size: 1.5em 1.5em;
+    background-size: 1.2em 1.2em;
 }
 /*footer*/
 footer {
