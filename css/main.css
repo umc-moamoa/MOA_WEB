@@ -254,9 +254,9 @@ footer td p {
     color: #B8ABFC;
 }
 /*==================================*/
-
-.container {
-    width: 100%;
+.container{
+    width: auto;
+    overflow-x: hidden;
 }
 
 .banner{
@@ -266,7 +266,6 @@ footer td p {
     top: 800px;
 
     background: #FFFFFF;
-    box-shadow: 0px 0px 100px rgba(184, 171, 252, 0.1);
 }
 #subMenu{
     margin-bottom: 8em;
@@ -289,11 +288,7 @@ footer td p {
     background-position: right center;
     background-size: 100%;
 }
-.firstContent{
-    float: center;
-    margin-left: 3em;
-    margin-right: 3em;
-}
+
 /* 전체 설문 보기 */
 .clickAllList {
     position: relative;
