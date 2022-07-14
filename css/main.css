@@ -196,7 +196,81 @@ footer td p {
     padding-top: 2em;
 }
 /*==========================================================*/
+/* main1 */
+#main1 {
+    position: relative;
+    box-sizing: border-box;
+    padding: 5%;
+    padding-bottom: 7%;
+    margin-bottom: 5%;
+    width: 70%;
+    top: 15%;
+    left: 15%;
+    
+    background: #FFFFFF;
+    border: 2.5px solid #909090;
+}
 
+.one-container1 {
+    display: flex;
+    justify-content : space-between;
+    align-items: flex-end;
+}
+
+#title1 {
+    top: 5%;
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+.two-container1 {
+    margin-top: 4%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1em;
+    font-weight: 700;
+    font-weight: bold;
+    color: #6C6C6C;
+}
+
+#count1 {
+    border-right: 0.1em solid #6C6C6C;
+    padding-right: 1em;
+}
+
+#type1 {
+    padding-left: 1em;
+}
+
+.three-container1{
+    margin-right: 8%;
+    margin-top: -8%;
+    display: flex;
+    justify-content:right;
+}
+
+#point1 {
+    font-size: 2.3em;
+    color: #B8ABFC;
+}
+/*==================================*/
+
+.container {
+    width: 100%;
+}
+
+.banner{
+    width: 100%;
+    height: 700px;
+    left: 0px;
+    top: 800px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 0px 100px rgba(184, 171, 252, 0.1);
+}
+#subMenu{
+    margin-bottom: 8em;
+}
 .subTitle{
     position: relative;
     left: 15%;
@@ -215,7 +289,11 @@ footer td p {
     background-position: right center;
     background-size: 100%;
 }
-
+.firstContent{
+    float: center;
+    margin-left: 3em;
+    margin-right: 3em;
+}
 /* 전체 설문 보기 */
 .clickAllList {
     position: relative;
