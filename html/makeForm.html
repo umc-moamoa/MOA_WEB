@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>폼 작성 페이지</title>
     <link rel="stylesheet" href="../css/makeForm.css" />
+    <script src="../js/makeForm.js"></script>
 </head>
 <body>
     <div class="flex-container">
@@ -79,26 +80,68 @@
                             onblur="this.placeholder = '설문에 대한 설명을 적어주세요.'">
                         </div>
 
-                        <div class="surveyElement">
+                        <div id="surveyElements">
+                            <div class="surveyElement">
 
-                            <div class="question">
-                                <span class="Qnum">1.</span>
-                                <input type="text"  class="Qinput" maxlength="20"
-                                placeholder="질문을 입력해주세요."
-                                onfocus="this.placeholder = ''" 
-                                onblur="this.placeholder = '질문을 입력해주세요.'">
-                                <select class="Qtype">
-                                    <option value="1">객관식 질문</option>
-                                    <option value="2">체크박스</option>
-                                    <option value="3">단답형</option>
-                                    <option value="4">장문형</option>
-                                </select>
+                                <div class="question">
+                                    <span class="Qnum">1.</span>
+                                    <input type="text"  class="Qinput" maxlength="40"
+                                    placeholder="질문을 입력해주세요."
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '질문을 입력해주세요.'">
+                                    <select class="Qtype">
+                                        <option value="1">객관식 질문</option>
+                                        <option value="2">체크박스</option>
+                                        <option value="3">단답형</option>
+                                        <option value="4">장문형</option>
+                                    </select>
+                                </div>
+
+                                <div class="makeOption">
+                                    <input type="radio" name="checkOption" value="1"/>
+                                    <!-- <img id="checkButton" src="../image/Ellipse 39.png"/> -->
+                                    <input type="text" class="optionInput" maxlength="40"
+                                    placeholder="옵션 1"
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '옵션 1'">
+
+                                    <button id="xButton"><img src="../image/Group 16.png" width="50%"/></button>
+                                    <!-- <img id="xButton" src="../image/Group 16.png"/> -->
+                                </div>
+
+                                <div class="makeOption">
+                                    <input type="radio" name="checkOption" value="2"/>
+                                    <!-- <img id="checkButton" src="../image/Ellipse 39.png"/> -->
+                                    <input type="text" class="optionInput" maxlength="40"
+                                    placeholder="옵션 2"
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '옵션 2'">
+
+                                    <button id="xButton"><img src="../image/Group 16.png" width="50%"/></button>
+                                    <!-- <img id="xButton" src="../image/Group 16.png"/> -->
+                                </div>
+
+                                <div class="addOption">
+                                    <input type="radio" name="checkOption" value="3"/>
+                                    <!-- <img id="checkButton" src="../image/Ellipse 39.png"/> -->
+                                    <input type="text" class="optionInput" maxlength="40"
+                                    placeholder="옵션 추가 또는 '기타' 추가"
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '옵션 추가 또는 기타 추가'">
+
+                                    <button id="xButton"><img src="../image/Group 16.png" width="50%"/></button>
+                                    <!-- <img id="xButton" src="../image/Group 16.png"/> -->
+                                </div>
+
+                                <div class="Qdelete">
+                                    <button id="trash"><img src="../image/Trash can.png" width="50%"/></button>
+                                </div>
+
                             </div>
+                        </div>
 
-                            <div class="makeOption">
-                                
-                            </div>
-
+                        <div class="Qadd">
+                            <button id="plus" type="button" onclick="addQuestion()"><img src="../image/Group 17.png" width="50%"></button>
                         </div>
 
                         <div><button id="submit_btn">저장</button></div>

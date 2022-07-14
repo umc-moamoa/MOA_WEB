@@ -290,7 +290,7 @@ input:nth-child(2)::-ms-input-placeholder{color: #909090;}
     outline: none;
     font-weight: 600;
     font-size: 1.2em;
-    color: #909090;
+    color: #414141;
     line-height: 2em;
 }
 
@@ -317,6 +317,72 @@ input:nth-child(2)::-ms-input-placeholder{color: #909090;}
     display: none;
 } */
 
+.makeOption {
+    margin: 1.2em 0;
+}
+
+.addOption {
+    margin: 1.2em 0;
+}
+
+#checkButton {
+    display: inline-block;
+    margin-right: 1em;
+
+    width: 2.7%;
+}
+
+.optionInput {
+    display: inline-block;
+    width: 87%;
+
+    border: none;
+    padding-left: 0.6em;
+
+    outline: none;
+    font-weight: 500;
+    font-size: 1.2em;
+    color: #414141;
+}
+
+input:nth-child(5)::placeholder{color: #909090;}
+input:nth-child(5)::-webkit-input-placeholder {color: #909090;}
+input:nth-child(5)::-ms-input-placeholder{color: #909090;}
+
+input:nth-child(7)::placeholder {color: #414141;}
+input:nth-child(7)::-webkit-input-placeholder {color: #414141;}
+input:nth-child(7)::-ms-input-placeholder {color: #414141;}
+
+/* #xButton {
+    display: inline-block;
+    width: 2.6%;
+} */
+
+#xButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#trash {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#plus {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.Qdelete {
+    margin-left: 89%;
+}
+
+.Qadd {
+    margin: 7% 0 7% 40%;
+}
 
 #submit_btn {
     background: linear-gradient(91.36deg, #B8ABFC -24.31%, #BFD4FF 130.3%);
