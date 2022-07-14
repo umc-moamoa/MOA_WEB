@@ -6,11 +6,11 @@ const fetchSuryeyIn = () => {
     };
 
     fetch(
-        "umcsom.shop:9000/involves?postId=1",
+        "http://umcsom.shop:9000/posts/1",
         requestOptions
     )
         .then((response) => response.json())
-        .then((result) => result.items.map(item => SurveyInTemplate(item)))
+        .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
 
 }
