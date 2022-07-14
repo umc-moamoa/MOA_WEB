@@ -13,7 +13,7 @@ const fetchSurvey = () => {
         requestOptions
     )
         .then((response) => response.json())
-        .then((result) => SurveyListTemplate(result))
+        .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
         
 }
