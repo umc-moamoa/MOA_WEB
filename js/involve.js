@@ -10,7 +10,8 @@ const fetchSuryeyIn = () => {
         requestOptions
     )
         .then((response) => response.json())
-        .then((result) => console.log(result))
+        .then((webResult) => console.log(webResult))
+        .then((webResult) => webResult.result.map(item => SurveyInTemplate(item)))
         .catch((error) => console.log("error", error));
 
 }
@@ -18,7 +19,7 @@ const fetchSuryeyIn = () => {
 fetchSuryeyIn();
 
 function SurveyInTemplate(data) {
-    const SurveyQ = `<div class="question"><div><span id="Q2">${data.result.question}</span>
+    const SurveyQ = `<div class="question"><div><span>${data.result.question}</span>
     <span class="required">필수</span></div>
     <textarea id="textarea2" cols="108" rows="15" placeholder=" 자유롭게 적어주세요."></textarea>
 </div>`
