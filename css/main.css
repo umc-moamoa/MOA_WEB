@@ -269,6 +269,9 @@ footer td p {
 }
 #subMenu{
     margin-bottom: 8em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .subTitle{
     position: relative;
