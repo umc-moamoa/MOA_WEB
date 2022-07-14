@@ -321,6 +321,18 @@ footer td p {
 .bg2 {background-color: #5EA152}
 .bg3 {background-color: #3b5998}
 
+.iconImg1 {
+    width: 0.8em;
+    height: 0.8em;
+}
+.iconImg2 {
+    width: 0.8em;
+    height: 0.8em;
+}
+.iconImg3 {
+    width: 0.55em;
+    height: 0.8em;
+}
 
 /* 버튼 스타일 */
 .btn_area {
