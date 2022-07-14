@@ -252,20 +252,12 @@ footer td p {
     /* justify-content: space-evenly; */
 }
 
-#Q1, #Q2, #Q3 {
+/* #Q1, #Q2, #Q3 {
     font-family: 'Noto Sans KR';
     font-style: normal;
     font-weight: 700;
     font-size: 1.5em;
-}
-
-.required {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.8em;
-    color: #909090;
-}
+} */
 
 #textarea1 {
     border: none;
@@ -317,6 +309,16 @@ textarea::placeholder {
 
 .question {
     margin-top: 5%;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5em;
 }
 
-
+.required {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8em;
+    color: #909090;
+}
