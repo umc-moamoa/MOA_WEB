@@ -1,3 +1,4 @@
+var count = 0;
 function addQuestion() {
     //
     var div1 = document.createElement("div");
@@ -9,7 +10,8 @@ function addQuestion() {
 
     var num = document.createElement("span");
     num.className = 'Qnum';
-    var numText = document.createTextNode('2.');
+    //var numText = document.createTextNode('1.');
+    num.textContent = ++count + ".";
 
     var input1 = document.createElement("input");
     input1.className = 'Qinput';
@@ -37,7 +39,7 @@ function addQuestion() {
     surveyElements.appendChild(div1);
     div1.appendChild(div2);
     div2.appendChild(num);
-    num.appendChild(numText);
+    //num.appendChild(numText);
     div2.appendChild(input1);
 
     typeOption1.appendChild(optionText1);

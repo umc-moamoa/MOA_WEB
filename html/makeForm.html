@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/makeForm.css" />
     <script src="../js/makeForm.js"></script>
 </head>
-<body>
+<body onload="addQuestion()">
     <div class="flex-container">
         <div id="wrapper">
 
@@ -81,63 +81,7 @@
                         </div>
 
                         <div id="surveyElements">
-                            <div class="surveyElement">
-
-                                <div class="question">
-                                    <span id="" class="Qnum">1.</span>
-                                    <input type="text"  class="Qinput" maxlength="40"
-                                    placeholder="질문을 입력해주세요."
-                                    onfocus="this.placeholder = ''" 
-                                    onblur="this.placeholder = '질문을 입력해주세요.'">
-                                    <select class="Qtype">
-                                        <option value="1">객관식 질문</option>
-                                        <option value="2">체크박스</option>
-                                        <option value="3">단답형</option>
-                                        <option value="4">장문형</option>
-                                    </select>
-                                </div>
-
-                                <div class="makeOption">
-                                    <input type="radio" name="checkOption" value="1"/>
-                                    <!-- <img id="checkButton" src="../image/Ellipse 39.png"/> -->
-                                    <input type="text" class="optionInput" maxlength="40"
-                                    placeholder="옵션 1"
-                                    onfocus="this.placeholder = ''" 
-                                    onblur="this.placeholder = '옵션 1'">
-
-                                    <button id="xButton"><img src="../image/Group 16.png" width="50%"/></button>
-                                    <!-- <img id="xButton" src="../image/Group 16.png"/> -->
-                                </div>
-
-                                <div class="makeOption">
-                                    <input type="radio" name="checkOption" value="2"/>
-                                    <!-- <img id="checkButton" src="../image/Ellipse 39.png"/> -->
-                                    <input type="text" class="optionInput" maxlength="40"
-                                    placeholder="옵션 2"
-                                    onfocus="this.placeholder = ''" 
-                                    onblur="this.placeholder = '옵션 2'">
-
-                                    <button id="xButton"><img src="../image/Group 16.png" width="50%"/></button>
-                                    <!-- <img id="xButton" src="../image/Group 16.png"/> -->
-                                </div>
-
-                                <div class="addOption">
-                                    <input type="radio" name="checkOption" value="3"/>
-                                    <!-- <img id="checkButton" src="../image/Ellipse 39.png"/> -->
-                                    <input type="text" class="optionInput" maxlength="40"
-                                    placeholder="옵션 추가 또는 '기타' 추가"
-                                    onfocus="this.placeholder = ''" 
-                                    onblur="this.placeholder = '옵션 추가 또는 기타 추가'">
-
-                                    <button id="xButton"><img src="../image/Group 16.png" width="50%"/></button>
-                                    <!-- <img id="xButton" src="../image/Group 16.png"/> -->
-                                </div>
-
-                                <div class="Qdelete">
-                                    <button id="trash"><img src="../image/Trash can.png" width="50%"/></button>
-                                </div>
-
-                            </div>
+                            
                         </div>
 
                         <div class="Qadd">
