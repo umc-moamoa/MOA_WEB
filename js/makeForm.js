@@ -1,6 +1,6 @@
 var count = 0;
 function addQuestion() {
-    //
+    //surveyElement
     var div1 = document.createElement("div");
     div1.className = 'surveyElement';
 
@@ -71,6 +71,7 @@ function addQuestion() {
     
         var xbtn = document.createElement("button");
         xbtn.id = 'xButton';
+        xbtn.type = 'button';
         var ximage = document.createElement("img");
         ximage.setAttribute('src', '../image/Group 16.png');
         ximage.setAttribute('width', '50%');
@@ -100,6 +101,7 @@ function addQuestion() {
     
         var xbtn = document.createElement("button");
         xbtn.id = 'xButton';
+        xbtn.type = 'button';
         var ximage = document.createElement("img");
         ximage.setAttribute('src', '../image/Group 16.png');
         ximage.setAttribute('width', '50%');
@@ -130,6 +132,7 @@ function addQuestion() {
     
         var xbtn = document.createElement("button");
         xbtn.id = 'xButton';
+        xbtn.type = 'button';
         var ximage = document.createElement("img");
         ximage.setAttribute('src', '../image/Group 16.png');
         ximage.setAttribute('width', '50%');
@@ -146,6 +149,23 @@ function addQuestion() {
 
         var tbtn = document.createElement("button");
         tbtn.id = 'trash';
+        tbtn.type = 'button';
+        tbtn.onclick = function() {
+            div1.remove();
+
+            //count = 0;
+            //var elements = document.getElementsByClassName("surveyElement");
+            //while(elements.hasChildNodes()) {
+            //    num.textContent = ++count + ".";
+            //}
+
+            for (var i=0; i<surveyElements.childNodes.length; i++) {
+                if (surveyElements.childNodes[i].nodeName.toLowerCase() == "div") {
+                    
+                }
+
+            }
+        };
         var timage = document.createElement("img");
         timage.setAttribute('src', '../image/Trash can.png');
         timage.setAttribute('width', '50%');
