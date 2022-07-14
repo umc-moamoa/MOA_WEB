@@ -256,7 +256,7 @@ footer td p {
 /*==================================*/
 .container{
     width: auto;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .banner{
@@ -275,7 +275,7 @@ footer td p {
 }
 .subTitle{
     position: relative;
-    left: 15%;
+    /* left: 15%; */
 
     font-weight: 700;
     font-size: 3em;
@@ -290,6 +290,7 @@ footer td p {
     background: url("../image/mainLastBack.png") no-repeat;
     background-position: right center;
     background-size: 100%;
+    padding: 0 10%;
 }
 
 /* 전체 설문 보기 */
