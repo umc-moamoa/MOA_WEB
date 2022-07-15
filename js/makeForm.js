@@ -1,5 +1,3 @@
-var count = 1;
-
 function addQuestion() {
     //surveyElement
     var div1 = document.createElement("div");
@@ -11,35 +9,18 @@ function addQuestion() {
 
     var num = document.createElement("span");
     num.className = 'Qnum';
-    //var numText = document.createTextNode('1.');
-    // num.textContent = ++count + ".";
 
-    if (count == 1) { //젤 처음 로딩되면서 이 함수가 실행될 때
-        num.textContent = count + ".";
-        count++;
-    } else {
-        var rank = 1;
-        var surveyElements = document.getElementById("surveyElements");
-        if( surveyElements.children.length == 0) { //도중에 다 지우고 추가할 때
-            num.textContent = "1.";
-        }
-        for (var i=0; i<surveyElements.children.length; i++) {
+    var rank = 1;
+    var surveyElements = document.getElementById("surveyElements");
+    if( surveyElements.children.length == 0) { //젤 처음 & 도중에 다 지우고 추가할 때 빈 번호칸 방지
+        num.textContent = "1.";
+    } else
+        for (var i=0; i<surveyElements.children.length; i++) { //하나라도 남아있으면 번호 재정렬
             var surveyElement = surveyElements.children[i];
             var question = surveyElement.firstChild;
             var Qnum = question.firstChild;
             num.textContent = ++rank + ".";
         }
-    }
-
-    var rank = 1;
-    var surveyElements = document.getElementById("surveyElements");
-    for (var i=0; i<surveyElements.children.length; i++) {
-        var surveyElement = surveyElements.children[i];
-        var question = surveyElement.firstChild;
-        var Qnum = question.firstChild;
-        Qnum.innerHTML = rank + ".";
-        rank++;
-    }
 
     var input1 = document.createElement("input");
     input1.className = 'Qinput';
