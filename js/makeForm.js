@@ -1,4 +1,5 @@
-var count = 0;
+var count = 1;
+
 function addQuestion() {
     //surveyElement
     var div1 = document.createElement("div");
@@ -11,7 +12,31 @@ function addQuestion() {
     var num = document.createElement("span");
     num.className = 'Qnum';
     //var numText = document.createTextNode('1.');
-    num.textContent = ++count + ".";
+    // num.textContent = ++count + ".";
+
+    if (count == 1) {
+        num.textContent = count + ".";
+        count++;
+    } else {
+        var rank = 1;
+        var surveyElements = document.getElementById("surveyElements");
+        for (var i=0; i<surveyElements.children.length; i++) {
+            var surveyElement = surveyElements.children[i];
+            var question = surveyElement.firstChild;
+            var Qnum = question.firstChild;
+            num.textContent = ++rank + ".";
+        }
+    }
+
+    var rank = 1;
+    var surveyElements = document.getElementById("surveyElements");
+    for (var i=0; i<surveyElements.children.length; i++) {
+        var surveyElement = surveyElements.children[i];
+        var question = surveyElement.firstChild;
+        var Qnum = question.firstChild;
+        Qnum.innerHTML = rank + ".";
+        rank++;
+    }
 
     var input1 = document.createElement("input");
     input1.className = 'Qinput';
@@ -51,6 +76,8 @@ function addQuestion() {
     typeOption4.appendChild(optionText4);
     type.appendChild(typeOption4);
     div2.appendChild(type);
+
+    
 
     //makeOption
     var div3 = document.createElement("div");
@@ -152,20 +179,18 @@ function addQuestion() {
         tbtn.type = 'button';
         tbtn.onclick = function() {
             div1.remove();
-
-            //count = 0;
-            //var elements = document.getElementsByClassName("surveyElement");
-            //while(elements.hasChildNodes()) {
-            //    num.textContent = ++count + ".";
-            //}
-
-            for (var i=0; i<surveyElements.childNodes.length; i++) {
-                if (surveyElements.childNodes[i].nodeName.toLowerCase() == "div") {
-                    
-                }
-
+            
+            var rank = 1;
+            var surveyElements = document.getElementById("surveyElements");
+            for (var i=0; i<surveyElements.children.length; i++) {
+                var surveyElement = surveyElements.children[i];
+                var question = surveyElement.firstChild;
+                var Qnum = question.firstChild;
+                Qnum.innerHTML = rank + ".";
+                rank++;
             }
         };
+
         var timage = document.createElement("img");
         timage.setAttribute('src', '../image/Trash can.png');
         timage.setAttribute('width', '50%');
@@ -173,5 +198,7 @@ function addQuestion() {
         div1.appendChild(div4);
         tbtn.appendChild(timage);
         div4.appendChild(tbtn);
+
+        
     
 }
