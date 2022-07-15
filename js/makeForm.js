@@ -1,5 +1,3 @@
-var count = 1;
-
 function addQuestion() {
     //surveyElement
     var div1 = document.createElement("div");
@@ -11,32 +9,18 @@ function addQuestion() {
 
     var num = document.createElement("span");
     num.className = 'Qnum';
-    //var numText = document.createTextNode('1.');
-    // num.textContent = ++count + ".";
 
-    if (count == 1) {
-        num.textContent = count + ".";
-        count++;
-    } else {
-        var rank = 1;
-        var surveyElements = document.getElementById("surveyElements");
-        for (var i=0; i<surveyElements.children.length; i++) {
+    var rank = 1;
+    var surveyElements = document.getElementById("surveyElements");
+    if( surveyElements.children.length == 0) { //젤 처음 & 도중에 다 지우고 추가할 때 빈 번호칸 방지
+        num.textContent = "1.";
+    } else
+        for (var i=0; i<surveyElements.children.length; i++) { //하나라도 남아있으면 번호 재정렬
             var surveyElement = surveyElements.children[i];
             var question = surveyElement.firstChild;
             var Qnum = question.firstChild;
             num.textContent = ++rank + ".";
         }
-    }
-
-    var rank = 1;
-    var surveyElements = document.getElementById("surveyElements");
-    for (var i=0; i<surveyElements.children.length; i++) {
-        var surveyElement = surveyElements.children[i];
-        var question = surveyElement.firstChild;
-        var Qnum = question.firstChild;
-        Qnum.innerHTML = rank + ".";
-        rank++;
-    }
 
     var input1 = document.createElement("input");
     input1.className = 'Qinput';
@@ -77,8 +61,6 @@ function addQuestion() {
     type.appendChild(typeOption4);
     div2.appendChild(type);
 
-    
-
     //makeOption
     var div3 = document.createElement("div");
         div3.className = 'makeOption';
@@ -99,6 +81,12 @@ function addQuestion() {
         var xbtn = document.createElement("button");
         xbtn.id = 'xButton';
         xbtn.type = 'button';
+        xbtn.onclick = function() {
+            //xbtn 누르면 xbtn의 부모 div remove.
+            var parent = this.parentNode;
+            parent.remove();            
+           
+        };
         var ximage = document.createElement("img");
         ximage.setAttribute('src', '../image/Group 16.png');
         ximage.setAttribute('width', '50%');
@@ -129,6 +117,12 @@ function addQuestion() {
         var xbtn = document.createElement("button");
         xbtn.id = 'xButton';
         xbtn.type = 'button';
+        xbtn.onclick = function() {
+            //xbtn 누르면 xbtn의 부모 div remove.
+            var parent = this.parentNode;
+            parent.remove();            
+           
+        };
         var ximage = document.createElement("img");
         ximage.setAttribute('src', '../image/Group 16.png');
         ximage.setAttribute('width', '50%');
@@ -160,6 +154,12 @@ function addQuestion() {
         var xbtn = document.createElement("button");
         xbtn.id = 'xButton';
         xbtn.type = 'button';
+        xbtn.onclick = function() {
+            //xbtn 누르면 xbtn의 부모 div remove.
+            var parent = this.parentNode;
+            parent.remove();            
+           
+        };
         var ximage = document.createElement("img");
         ximage.setAttribute('src', '../image/Group 16.png');
         ximage.setAttribute('width', '50%');
