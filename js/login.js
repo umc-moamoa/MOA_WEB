@@ -17,3 +17,13 @@ function login_check() {
     //입력 값 전송
     document.loginForm.submit(); //유효성 검사의 포인트
 }
+
+function id_find(){
+    //window.open("팝업될 문서 경로", "팝업될 문서 이름", "옵션");
+    window.open("", "아이디 찾기", "width=600, height=200, left=200, top=100");
+}
+
+function pw_find(){
+    //window.open("팝업될 문서 경로", "팝업될 문서 이름", "옵션");
+    window.open("", "비밀번호 찾기", "width=600, height=200, left=200, top=100");
+}

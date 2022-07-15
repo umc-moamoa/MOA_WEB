@@ -92,12 +92,38 @@ function id_check() {
 
 }
 
+function save(){
+    const data = {
+        id: document.getElementById("id").value,
+        pwd: document.getElementById("pswd1").value,
+        nick: document.getElementById("nickName").value,
+        name: document.getElementById("name").value
+    }
+    fetch('http://umcsom.shop:9000/post/users', {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    })
+
+    .then((response) => response.json())
+    .then((data) => {console.log('Success');})
+    .then(res => {
+        if (res) {
+            alert("회원가입이 완료되었습니다.");
+        }
+    })
+    .catch((error) => console.log("error", error));
+
+}
+
+/*
 function save() {
     alert('user의 save함수 호출됨');
     let data = { 
         id: $("#id").val(),
         pwd: $("#pswd1").val(),
-        nick: $("#nickName").val()
+        nick: $("#nickName").val(),
+        name: $("#name").val()
     };
     console.log(data);
 
@@ -121,4 +147,4 @@ function save() {
         alert("회원가입이 실패하였습니다.");
         alert(JSON.stringify(error));
     });
-}
+}*/
