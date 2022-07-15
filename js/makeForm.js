@@ -1,4 +1,4 @@
-
+var optionNum = 0;
 function addQuestion() {
 
     function addOption() {
@@ -10,8 +10,8 @@ function addQuestion() {
     
         var input2 = document.createElement("input");
         input2.type = 'radio';
-        input2.name = 'checkOption';
-        input2.value = '3'; //
+        input2.name = 'checkOption' + optionNum;
+        // input2.value = '4'; 
     
         var input3 = document.createElement("input");
         input3.type = 'text';
@@ -44,7 +44,6 @@ function addQuestion() {
         div3.appendChild(xbtn);
     }
 
-
     //surveyElement
     var div1 = document.createElement("div");
     div1.className = 'surveyElement';
@@ -67,6 +66,8 @@ function addQuestion() {
             var Qnum = question.firstChild;
             num.textContent = ++rank + ".";
         }
+
+    var optionNum = num.innerText; //질문 번호 -> 라디오 버튼 그룹 만들기 (innerText)
 
     var input1 = document.createElement("input");
     input1.className = 'Qinput';
@@ -113,8 +114,8 @@ function addQuestion() {
     
         var input2 = document.createElement("input");
         input2.type = 'radio';
-        input2.name = 'checkOption';
-        input2.value = '1';
+        input2.name = 'checkOption' + optionNum;
+        // input2.value = '1';
     
         var input3 = document.createElement("input");
         input3.type = 'text';
@@ -149,8 +150,8 @@ function addQuestion() {
     
         var input2 = document.createElement("input");
         input2.type = 'radio';
-        input2.name = 'checkOption';
-        input2.value = '2';
+        input2.name = 'checkOption' + optionNum; //name으로 구별을 한다..
+        // input2.value = '2';
     
         var input3 = document.createElement("input");
         input3.type = 'text';
@@ -186,8 +187,8 @@ function addQuestion() {
     
         var input2 = document.createElement("input");
         input2.type = 'radio';
-        input2.name = 'checkOption';
-        input2.value = '3'; //
+        input2.name = 'checkOption' + optionNum;
+        // input2.value = '3'; 
     
         var input3 = document.createElement("input");
         input3.type = 'text';
@@ -248,4 +249,3 @@ function addQuestion() {
         div4.appendChild(tbtn);
 
 }
-

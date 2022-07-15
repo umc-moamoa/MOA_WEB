@@ -64,8 +64,7 @@
                     <span class="box int_id">  
                         <input type="text" id="id" class="int name" maxlength="20" check_result="fail">
                         <button type="button" class="id_overlap_button" onclick="id_check();">중복 확인</button>
-                        <p class="overlapTxt1">사용 가능한 아이디입니다.</p>
-                        <p class="overlapTxt2">이미 사용 중인 아이디입니다.</p>
+                        <p class="txt overlapTxt"></p>
                     </span>
                 </div>
 
@@ -77,8 +76,7 @@
                     <p class="meg">8~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요.</p>
                     <span class="box int_pass">
                         <input type="password" id="pswd1" class="int" maxlength="20">
-                        <p class="pwAlertTxt1">사용 가능한 비밀번호입니다.</p>
-                        <p class="pwAlertTxt2">사용 불가한 비밀번호입니다.</p>
+                        <p class="txt pwAlertTxt"></p>
                     </span>
                     <span class="error_next_box"></span>
                 </div>
@@ -90,8 +88,7 @@
                     </h3>
                     <span class="box int_pass_check">
                         <input type="password" id="pswd2" class="int" maxlength="20">
-                        <p class="pwCheckAlertTxt1">비밀번호가 동일합니다.</p>
-                        <p class="pwCheckAlertTxt2">비밀번호가 동일하지 않습니다.</p>
+                        <p class="txt pwCheckAlertTxt"></p>
                     </span>
                     <span class="error_next_box"></span>
                 </div>
@@ -103,8 +100,7 @@
                     </h3>
                     <span class="box int_nickName">
                         <input type="text" id="nickName" class="int" maxlength="20">
-                        <p class="nickAlertTxt1">사용 가능한 닉네임입니다.</p>
-                        <p class="nickAlertTxt2">사용 불가한 닉네임입니다.</p>
+                        <p class="txt nickAlertTxt"></p>
                     </span>
                 </div>
 
@@ -149,6 +145,7 @@
             </table>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="../js/signUp.js"></script>
 </body>
 </html>
