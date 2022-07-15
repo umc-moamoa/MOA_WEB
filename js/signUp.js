@@ -107,7 +107,7 @@ function save() {
     $.ajax({
         // 회원가입 수행 요청
         type: "POST",
-        url: "http://umcsom.shop:9000//users",
+        url: "http://umcsom.shop:9000/users",
         data: JSON.stringify(data), // http body 데이터
         contentType: "application/json; charset=utf-8", // body 데이터가 어떤 타입인지 (MIME)
         dataType: "json" // 요청을 서버로 해서 응답이 왔을 때 기본적으로 모든 것이 String(문자열), 만약 생긴게 json이라면 javascript 오브젝트로 변경
