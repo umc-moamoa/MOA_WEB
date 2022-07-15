@@ -101,6 +101,7 @@ ul,li{
     font-weight: 500;
     height: 1em;
     padding: 0;
+    color:transparent;
 }
 #iconMenu .icon{
     position: relative;
@@ -146,7 +147,7 @@ footer {
 
 #wrapper {
     height: auto;
-    min-height: 150%;
+    min-height: 180vh;
     padding-bottom: 226.302;
 }
 footer a {

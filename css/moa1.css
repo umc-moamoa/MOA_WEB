@@ -84,6 +84,7 @@ a {
     font-weight: 500;
     height: 1em;
     padding: 0;
+    color:transparent;
 }
 #iconMenu .icon{
     position: relative;

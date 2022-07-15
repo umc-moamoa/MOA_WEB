@@ -13,15 +13,22 @@ html, body {
     
 }
 
-a{
+a {
     text-decoration: none;
 }
-
 ul,li{
     list-style: none;
 }
 
+
 /* 배경 */
+#backCenter {
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    top: 500px;
+}
+
 #backTop {
     position: absolute;
     width: 50%;
@@ -30,13 +37,6 @@ ul,li{
 
 /* 헤더 */
 .header {
-    width: 100%;
-    height: 1500px;
-    background: url("../image/mainTopBack.png") no-repeat;
-    background-size: 100%;
-}
-
-.headerContainer{
     position: relative;
     width: 1130px;
     height: 250px;
@@ -56,7 +56,6 @@ ul,li{
 
     color: #B8ABFC;
 }
-
 
 /* 메뉴 */
 #userMenu {
@@ -106,7 +105,6 @@ ul,li{
     font-weight: 500;
     height: 1em;
     padding: 0;
-    color:transparent;
 }
 #iconMenu .icon{
     position: relative;
@@ -130,7 +128,6 @@ ul,li{
     background: url("../image/userIcon.png") no-repeat;
     background-size: 1.3em 1.4em;
 }
-
 #iconMenu .sideMenu{
     width: 2em;
     height: 1.8em;
@@ -139,65 +136,30 @@ ul,li{
     background: url("../image/menuIcon.png") no-repeat;
     background-size: 1.2em 1.2em;
 }
-/*footer*/
-footer {
-    background-color: #B8ABFC;
-    color: white;
-    padding-bottom: 2em;
-    padding-top: 2em;
-    height: 226.302;
+
+
+/* container */
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 15px 8%;
+}
+/*서브 제목*/
+
+#subTitle .subTitle{
     position: relative;
-    /* margin-top: -226.302;*/
-    /* transform: translateY(-100%); */
+    width: 100%;
+    /* left: 5%; */
+    padding-bottom: 1em;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 3em;
+    color: #414141;
 }
 
-#wrapper {
-    height: auto;
-    min-height: 150%;
-    padding-bottom: 226.302;
-}
-footer a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.125em;
-    font-weight: 600;
-}
-
-#footer_MoA {
-    font-family: 'Montserrat';
-    font-size: 2.625em;
-    margin: 0;
-    font-weight: 600;
-}
-
-#tel {
-    font-size: 2.250em;
-    font-weight: 600;
-}
-
-footer .footerContainer {
-    padding-left: 15%;
-    /* padding-right: 10%; */
-}
-
-footer ul {
-    padding-inline-start: 40px;
-}
-
-footer td:nth-child(2) {
-    text-align: right;
-    font-size: 0.875em;
-}
-
-footer td p {
-    padding-bottom: 0.3em;
-}
-
-#info {
-    padding-bottom: 2em;
-    padding-top: 2em;
-}
-/*==========================================================*/
 /* main1 */
 #main1 {
     position: relative;
@@ -206,8 +168,7 @@ footer td p {
     padding-bottom: 7%;
     margin-bottom: 5%;
     width: 100%;
-    top: 15%;
-    
+    /* left: 5%; */
     background: #FFFFFF;
     border: 2.5px solid #909090;
 }
@@ -254,66 +215,96 @@ footer td p {
     font-size: 2.3em;
     color: #B8ABFC;
 }
-/*==================================*/
-.container{
-    width: auto;
-    /* overflow-x: hidden; */
-}
 
-.banner{
-    width: 100%;
-    height: 700px;
-    left: 0px;
-    top: 800px;
-
-    background: #FFFFFF;
-}
-#subMenu{
-    margin-bottom: 8em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.subTitle{
+/* underBar */
+#underBar { 
     position: relative;
-    /* left: 15%; */
-
-    font-weight: 700;
-    font-size: 3em;
-    line-height: 1em;
-    color: #000000;
-}
-
-/*인기 있는 설문조사*/
-.firstContainer{
     width: 100%;
-    height: 1500px;
-    background: url("../image/mainLastBack.png") no-repeat;
-    background-position: right center;
-    background-size: 100%;
-    padding: 0 10%;
+    height: 10%;
+    /* left: 5%; */
+    top: 200%;
+
+    border-top: 0.1em solid #C6C6C6;
 }
 
-/* 전체 설문 보기 */
-.clickAllList {
+.underTab {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    right: 45%;
+    top: 5em;
+    background: url(../image/Rectangle\ 75.png) no-repeat;
+    background-size: 3.5em 2em;
+}
+/*footer*/
+footer {
+    background-color: #B8ABFC;
+    color: white;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    height: 226.302;
     position: relative;
-    float: right;
-    right: 15%;
+    /* margin-top: -226.302;*/
+    /* transform: translateY(-100%); */
+}
+
+#wrapper {
+    height: auto;
+    min-height: 280%;
+    padding-bottom: 226.302;
+}
+footer a {
+    color: white;
     text-decoration: none;
-
-    font-size:2em;
-    padding-right: 2em;
-    background: url(../image/listTab.png) no-repeat;
-    background-position: right center;
-    background-size: 0.5em 0.8em;
-    color: #000000;
+    font-size: 1.125em;
+    font-weight: 600;
 }
 
-/*참여를 기다리고 있는 설문조사*/
-.secondContainer{
-    width: 100%;
-    height: 1500px;
-    background: url("../image/mainThirdBack.png") no-repeat;
-    background-size: 100%;
-    padding: 0 10%;
+#footer_MoA {
+    font-family: 'Montserrat';
+    font-size: 2.625em;
+    margin: 0;
+    font-weight: 600;
 }
+
+#tel {
+    font-size: 2.250em;
+    font-weight: 600;
+}
+
+footer .footerContainer {
+    padding-left: 15%;
+    /* padding-right: 10%; */
+}
+
+footer ul {
+    padding-inline-start: 40px;
+}
+
+footer td:nth-child(2) {
+    text-align: right;
+    font-size: 0.875em;
+}
+
+footer td p {
+    padding-bottom: 0.3em;
+}
+
+#info {
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+/* #newSurvey{
+    position: sticky; 
+    width: 8em;
+    height: 8em;
+    left:90%;
+    top: 80%;
+    
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    background: url( "image/newSurvey.png") no-repeat center;
+    background-size: 10em 10em;
+} */
