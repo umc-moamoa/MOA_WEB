@@ -14,12 +14,15 @@ function addQuestion() {
     //var numText = document.createTextNode('1.');
     // num.textContent = ++count + ".";
 
-    if (count == 1) {
+    if (count == 1) { //젤 처음 로딩되면서 이 함수가 실행될 때
         num.textContent = count + ".";
         count++;
     } else {
         var rank = 1;
         var surveyElements = document.getElementById("surveyElements");
+        if( surveyElements.children.length == 0) { //도중에 다 지우고 추가할 때
+            num.textContent = "1.";
+        }
         for (var i=0; i<surveyElements.children.length; i++) {
             var surveyElement = surveyElements.children[i];
             var question = surveyElement.firstChild;
@@ -77,8 +80,6 @@ function addQuestion() {
     type.appendChild(typeOption4);
     div2.appendChild(type);
 
-    
-
     //makeOption
     var div3 = document.createElement("div");
         div3.className = 'makeOption';
@@ -99,6 +100,12 @@ function addQuestion() {
         var xbtn = document.createElement("button");
         xbtn.id = 'xButton';
         xbtn.type = 'button';
+        xbtn.onclick = function() {
+            //xbtn 누르면 xbtn의 부모 div remove.
+            var parent = this.parentNode;
+            parent.remove();            
+           
+        };
         var ximage = document.createElement("img");
         ximage.setAttribute('src', '../image/Group 16.png');
         ximage.setAttribute('width', '50%');
@@ -129,6 +136,12 @@ function addQuestion() {
         var xbtn = document.createElement("button");
         xbtn.id = 'xButton';
         xbtn.type = 'button';
+        xbtn.onclick = function() {
+            //xbtn 누르면 xbtn의 부모 div remove.
+            var parent = this.parentNode;
+            parent.remove();            
+           
+        };
         var ximage = document.createElement("img");
         ximage.setAttribute('src', '../image/Group 16.png');
         ximage.setAttribute('width', '50%');
@@ -160,6 +173,12 @@ function addQuestion() {
         var xbtn = document.createElement("button");
         xbtn.id = 'xButton';
         xbtn.type = 'button';
+        xbtn.onclick = function() {
+            //xbtn 누르면 xbtn의 부모 div remove.
+            var parent = this.parentNode;
+            parent.remove();            
+           
+        };
         var ximage = document.createElement("img");
         ximage.setAttribute('src', '../image/Group 16.png');
         ximage.setAttribute('width', '50%');
