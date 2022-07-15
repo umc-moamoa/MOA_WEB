@@ -1,4 +1,50 @@
+
 function addQuestion() {
+
+    function addOption() {
+        //옵션 추가란 누르자마자 placeholder 글 지워지고, 새 옵션 추가란 생기도록
+        this.placeholder='';
+    
+        var div3 = document.createElement("div");
+        div3.className = 'makeOption';
+    
+        var input2 = document.createElement("input");
+        input2.type = 'radio';
+        input2.name = 'checkOption';
+        input2.value = '3'; //
+    
+        var input3 = document.createElement("input");
+        input3.type = 'text';
+        input3.className = 'optionInput';
+        input3.setAttribute('maxlength', '40');
+        input3.setAttribute('placeholder', "옵션 추가 또는 '기타' 추가");
+        input3.setAttribute('onfocus', 'this.placeholder=""');
+    
+        input3.onfocus = addOption;
+        input3.setAttribute('onblur', 'this.placeholder="옵션 추가 또는 \'기타\' 추가"');
+    
+        var xbtn = document.createElement("button");
+        xbtn.id = 'xButton';
+        xbtn.type = 'button';
+        xbtn.onclick = function() {
+            //xbtn 누르면 xbtn의 부모 div remove.
+            var parent = this.parentNode;
+            parent.remove();            
+        
+        };
+        var ximage = document.createElement("img");
+        ximage.setAttribute('src', '../image/Group 16.png');
+        ximage.setAttribute('width', '50%');
+    
+        div3.appendChild(input2);
+        div3.appendChild(input3);
+        // div1.appendChild(div3);
+        div1.insertBefore(div3, div4);
+        xbtn.appendChild(ximage);
+        div3.appendChild(xbtn);
+    }
+
+
     //surveyElement
     var div1 = document.createElement("div");
     div1.className = 'surveyElement';
@@ -148,7 +194,9 @@ function addQuestion() {
         input3.className = 'optionInput';
         input3.setAttribute('maxlength', '40');
         input3.setAttribute('placeholder', "옵션 추가 또는 '기타' 추가");
-        input3.setAttribute('onfocus', 'this.placeholder=""');
+        // input3.setAttribute('onfocus', 'this.placeholder=""');
+
+        input3.onfocus = addOption;
         input3.setAttribute('onblur', 'this.placeholder="옵션 추가 또는 \'기타\' 추가"');
     
         var xbtn = document.createElement("button");
@@ -199,6 +247,5 @@ function addQuestion() {
         tbtn.appendChild(timage);
         div4.appendChild(tbtn);
 
-        
-    
 }
+
