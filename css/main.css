@@ -203,9 +203,8 @@ footer td p {
     padding: 5%;
     padding-bottom: 7%;
     margin-bottom: 5%;
-    width: 70%;
+    width: 100%;
     top: 15%;
-    left: 15%;
     
     background: #FFFFFF;
     border: 2.5px solid #909090;
@@ -304,7 +303,7 @@ footer td p {
     padding-right: 2em;
     background: url(../image/listTab.png) no-repeat;
     background-position: right center;
-    background-size: 0.6em 0.9em;
+    background-size: 0.5em 0.8em;
     color: #000000;
 }
 
@@ -314,4 +313,5 @@ footer td p {
     height: 1500px;
     background: url("../image/mainThirdBack.png") no-repeat;
     background-size: 100%;
+    padding: 0 10%;
 }
