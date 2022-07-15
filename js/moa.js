@@ -45,3 +45,6 @@ $SurveyList.insertAdjacentHTML('beforeend', SurveyItem);
 // $detailTitle.insertAdjacentHTML('beforeend', dTitle);
 // $mainBottom.insertAdjacentHTML('beforeend', mBottom);
 }
+
+// display, start
+//https://developers.naver.com/docs/serviceapi/search/web/web.md#%EC%9B%B9%EB%AC%B8%EC%84%9C
