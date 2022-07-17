@@ -282,71 +282,8 @@ h3 {
     font-size: 12px;
     color: #B8ABFC;    
 }
-
-/* 중복확인 메세지 사용 가능한 아이디입니다. */
-.overlapTxt1{
+.txt{
     padding-top: 1em;
-    color: #4383FF;
-    font-size: 12px;
-    padding-top: 1.5em;
-    display: none;
-}
-
-/* 중복확인 메세지 이미 사용 중인 아이디입니다. */
-.overlapTxt2{
-    padding-top: 1em;
-    color: #FC4B3D;
-    font-size: 12px;
-    padding-top: 1.5em;
-    display: none;
-}
-
-/* 비밀번호 메세지 사용 가능한 비밀번호입니다. */
-.pwAlertTxt1 {
-    padding-top: 1em;
-    color: #4383FF;
-    font-size: 12px;
-    padding-top: 1.5em;
-    display: none;
-}
-/* 비밀번호 메세지 사용 불가한 비밀번호입니다. */
-.pwAlertTxt2 {
-    padding-top: 1em;
-    color: #FC4B3D;
-    font-size: 12px;
-    padding-top: 1.5em;
-    display: none;
-}
-
-/* 비밀번호 재확인 메세지 비밀번호가 동일합니다. */
-.pwCheckAlertTxt1 {
-    padding-top: 1em;
-    color: #4383FF;
-    font-size: 12px;
-    padding-top: 1.5em;
-    display: none;
-}
-/* 비밀번호 재확인 메세지 비밀번호가 동일하지 않습니다. */
-.pwCheckAlertTxt2 {
-    padding-top: 1em;
-    color: #FC4B3D;
-    font-size: 12px;
-    padding-top: 1.5em;
-    display: none;
-}
-
-/* 닉네임 메세지 사용 가능한 비밀번호입니다. */
-.nickAlertTxt1 {
-    padding-top: 1em;
-    color: #4383FF;
-    font-size: 12px;
-    padding-top: 1.5em;
-    display: none;
-}
-/* 닉네임 메세지 사용 불가한 비밀번호입니다. */
-.nickAlertTxt2 {
-    padding-top: 1em;
-    color: #FC4B3D;
     font-size: 12px;
     padding-top: 1.5em;
     display: none;
