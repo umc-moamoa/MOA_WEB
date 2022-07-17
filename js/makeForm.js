@@ -16,12 +16,77 @@ function addQuestion() {
         for (var i=1; i<thisQs.length-1; i++) {
             var thisQinput2 = thisQs[i].firstChild;
             var thisQvalue = selectedValue();
-            if (thisQvalue == 1) 
+            if (thisQvalue == 1) {
                 thisQinput2.type = 'radio';
-            else if (thisQvalue == 2)
+
+                // 단답형으로 갔다가 돌아오면?
+                thisQs[1].children[0].style.visibility = 'visible';
+                thisQs[1].children[2].style.display = '';
+
+                thisQs[1].children[1].value = ''; // 객관식에서 옵션 1에 입력하고 단답형으로 바꿨을 때 입력한 input 값이 넘어가지 않도록. (반대로도 마찬가지)
+                thisQs[1].children[1].placeholder = '옵션 1';
+                thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="옵션 1"');
+
+                thisQs[2].style.display = '';
+                thisQs[3].style.display = '';
+            }
+            else if (thisQvalue == 2) {
                 thisQinput2.type = 'checkbox'; 
-                //여기에 단답형, 장문형 타입도 정의하면 된다. 이건 또 생각해볼 문제,, 단순 타입 변경이 아니라 전체 div를 바꿔야함.
-                // 그냥 바꾸는 게 문제가 아니라 다시 버튼으로 돌아올 수 있어야 함 -> 원래 꺼 아예 지우면 안 됨 or 다시 돌아올 때 다시 생성
+
+                // 단답형으로 갔다가 돌아오면?
+                thisQs[1].children[0].style.visibility = 'visible';
+                thisQs[1].children[2].style.display = '';
+
+                thisQs[1].children[1].value = ''; // 객관식에서 옵션 1에 입력하고 단답형으로 바꿨을 때 입력한 input 값이 넘어가지 않도록. (반대로도 마찬가지)
+                thisQs[1].children[1].placeholder = '옵션 1';
+                thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="옵션 1"');
+
+                thisQs[2].style.display = '';
+                thisQs[3].style.display = '';
+
+            }
+            //여기에 단답형, 장문형 타입도 정의하면 된다. 이건 또 생각해볼 문제,, 단순 타입 변경이 아니라 전체 div를 바꿔야함.
+            // 그냥 바꾸는 게 문제가 아니라 다시 버튼으로 돌아올 수 있어야 함 -> 원래 꺼 아예 지우면 안 됨 or 다시 돌아올 때 다시 생성
+            else if (thisQvalue == 3) {
+                // thisQs[2].style.visibility = 'hidden';
+                // thisQs[3].style.visibility = 'hidden';
+                thisQs[1].children[0].style.visibility = 'hidden';
+                thisQs[1].children[2].style.display = 'none';
+
+                thisQs[1].children[1].value = ''; // 객관식에서 옵션 1에 입력하고 단답형으로 바꿨을 때 입력한 input 값이 넘어가지 않도록.
+                thisQs[1].children[1].placeholder = '단답형';
+                thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="단답형"');
+                // thisQs[1].children[1].onblur = "this.placeholder='단답형'";
+
+                thisQs[2].style.display = 'none';
+                thisQs[3].style.display = 'none';
+            }
+            else if (thisQvalue == 4) {
+               
+                thisQs[1].children[0].style.visibility = 'hidden';
+                // thisQs[1].children[1].style.display = 'none';
+                thisQs[1].children[2].style.display = 'none';
+
+                thisQs[2].style.display = 'none';
+                thisQs[3].style.display = 'none';
+                //js에서 css를 변경할 때 style 사용함.
+                // thisQs[1].children[1].style.maxlength = '1000';
+                // thisQs[1].children[1].style.width = '88%';
+
+                thisQs[1].children[1].value = ''; 
+                thisQs[1].children[1].placeholder = '장문형';
+                thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="장문형"');
+
+                // thisQs[1].style.display = 'none';
+ 
+                
+
+                // var longtext = document.createElement("textarea");
+                // longtext.setAttribute('placeholder', '장문형');
+                // longtext.setAttribute('onblur', 'this.placeholder="장문형"');
+
+                
+            }
         }
 
     }
@@ -156,9 +221,14 @@ function addQuestion() {
     type.appendChild(typeOption4);
     div2.appendChild(type);
 
-    // type.onchange = changeQtype; //이벤트 함수 추가
-
-    // var value1 = selectedValue(); //return 값 있는 함수는 이렇게 호출하나봐.
+    // //textarea
+    // var longtext = document.createElement("textarea");
+    // longtext.className = 'longT';
+    // longtext.setAttribute('placeholder', '장문형');
+    // longtext.setAttribute('onblur', 'this.placeholder="장문형"');
+    // div1.appendChild(longtext);
+    // longtext.style.display = 'none';
+    
 
     // if (value1 == 1) { //이거 안 써도 plus로 추가될 때는 radio 버튼으로 생긴다. 아래 코드 때문에 ! -> 결국 다 한 블럭.
     //makeOption
