@@ -62,7 +62,7 @@ function addQuestion() {
                 thisQs[3].style.display = 'none';
             }
             else if (thisQvalue == 4) {
-               
+                
                 thisQs[1].children[0].style.visibility = 'hidden';
                 // thisQs[1].children[1].style.display = 'none';
                 thisQs[1].children[2].style.display = 'none';
@@ -78,13 +78,12 @@ function addQuestion() {
                 thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="장문형"');
 
                 // thisQs[1].style.display = 'none';
- 
-                
+
+
 
                 // var longtext = document.createElement("textarea");
                 // longtext.setAttribute('placeholder', '장문형');
                 // longtext.setAttribute('onblur', 'this.placeholder="장문형"');
-
                 
             }
         }
