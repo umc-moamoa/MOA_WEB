@@ -10,7 +10,11 @@
 html, body {
     height: 100%;
     width: 100%;
-    
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -39,7 +43,7 @@ ul,li{
 .header {
     position: relative;
     width: 1130px;
-    height: 250px;
+    height: 180px;
     margin: 0 auto;
 }
 #moa {
@@ -140,24 +144,23 @@ ul,li{
 
 
 /* container */
-
 .container {
-    width: 1200px;
+    width: 1130px;
     margin: 0 auto;
-    padding: 15px 30px 0;
+    padding: 5px 70px 0;
 }
-/*서브 제목*/
 
+/*서브 제목*/
 #subTitle .subTitle{
     position: relative;
     width: 100%;
     left: 5%;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
 
     font-style: normal;
-    font-weight: 700;
-    font-size: 3em;
-    line-height: 3em;
+    font-weight: 600;
+    font-size: 2em;
+    line-height: 2em;
     color: #414141;
 }
 
@@ -165,13 +168,12 @@ ul,li{
 #main1 {
     position: relative;
     box-sizing: border-box;
-    padding: 5%;
-    padding-bottom: 7%;
-    margin-bottom: 5%;
-    width: 85%;
-    left: 5%;
+    padding: 3% 3% 5% 3%;
+    margin: 0 5% 5% 5%;
+ 
+    /* height: auto; */
     background: #FFFFFF;
-    border: 2.5px solid #909090;
+    border: 1.3px solid #909090;
 }
 
 .one-container1 {
@@ -181,17 +183,18 @@ ul,li{
 }
 
 #title1 {
-    top: 5%;
-    font-size: 1.7em;
-    font-weight: bold;
+   /* top: 5%; */
+   font-size: 1.5em;
+   color: #414141;
+   font-weight: bold;
 }
 
 .two-container1 {
-    margin-top: 4%;
+    margin-top: 2%;
     display: flex;
     justify-content: flex-start;
     font-size: 1em;
-    font-weight: 700;
+    font-weight: 600;
     font-weight: bold;
     color: #6C6C6C;
 }
@@ -206,14 +209,14 @@ ul,li{
 }
 
 .three-container1{
-    margin-right: 8%;
-    margin-top: -8%;
+    margin-top: -7%;
     display: flex;
     justify-content:right;
 }
 
 #point1 {
-    font-size: 2.3em;
+    font-size: 1.8em;
+    font-weight: 500;
     color: #B8ABFC;
 }
 
@@ -225,10 +228,15 @@ ul,li{
     left: 5%;
     
 }
-.underBar{
+/* underBar */
+#underBar { 
     position: relative;
-    width: 85%;
-    border-top: 0.1em solid #C6C6C6;
+    width: 90%;
+    height: 10%;
+    left: 5%;
+    top: 200%;
+
+    border-top: 0.05em solid #C6C6C6;
 }
 .underTab {
     position: absolute;
@@ -238,7 +246,7 @@ ul,li{
     top: 5em;
     
     background: url(../image/Rectangle\ 75.png) no-repeat;
-    background-size: 3.5em 2em;
+    background-size: 2em 1em;
 }
 
 /* 설문 추가 버튼*/
@@ -262,54 +270,52 @@ footer {
     color: white;
     padding-bottom: 2em;
     padding-top: 2em;
-    height: 226.302;
+
+    /* height: 226.302; */
     position: relative;
-    /* margin-top: -226.302;*/
-    /* transform: translateY(-100%); */
+    transform: translateY(100%); 
 }
 
 #wrapper {
     height: auto;
-    min-height: 280%;
-    padding-bottom: 226.302;
+    min-height: 200%;
+    /* padding-bottom: 226.302; */
 }
+table {
+    width: 100%;
+}
+
 footer a {
     color: white;
     text-decoration: none;
-    font-size: 1.125em;
-    font-weight: 600;
+    font-size: 1.1em;
+    font-weight: 500;
 }
-
 #footer_MoA {
     font-family: 'Montserrat';
-    font-size: 2.625em;
+    font-size: 2em;
     margin: 0;
     font-weight: 600;
 }
-
 #tel {
-    font-size: 2.250em;
-    font-weight: 600;
+    font-size: 1.8em;
+    font-weight: 500;
 }
-
-footer .footerContainer {
-    padding-left: 15%;
-    /* padding-right: 10%; */
+footer .container {
+    padding-left: 10%;
+    padding-right: 10%;
 }
-
 footer ul {
-    padding-inline-start: 40px;
+    padding-inline-start: 100px;
 }
-
 footer td:nth-child(2) {
     text-align: right;
-    font-size: 0.875em;
+    font-size: 0.8em;
 }
-
 footer td p {
-    padding-bottom: 0.3em;
+    padding-bottom: 0.1em;
+    font-size: 0.7em;
 }
-
 #info {
     padding-bottom: 2em;
     padding-top: 2em;
