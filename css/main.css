@@ -10,7 +10,6 @@
 html, body {
     height: 100%;
     width: 100%;
-    
 }
 
 a{
@@ -31,15 +30,15 @@ ul,li{
 /* 헤더 */
 .header {
     width: 100%;
-    height: 1100px;
+    height: 500px;
     /* background: url("../image/mainTopBack.png") no-repeat; */
-    background-size: 100%;
+    /* background-size: 100%; */
 }
 
 .headerContainer{
     position: relative;
     width: 1130px;
-    height: 250px;
+    height: 180px;
     margin: 0 auto;
 }
 #moa {
@@ -139,6 +138,7 @@ ul,li{
     background: url("../image/menuIcon.png") no-repeat;
     background-size: 1.2em 1.2em;
 }
+
 /*footer*/
 footer {
     background-color: #B8ABFC;
@@ -204,14 +204,13 @@ footer td p {
 #main1 {
     position: relative;
     box-sizing: border-box;
-    padding: 5%;
-    padding-bottom: 7%;
-    margin-bottom: 5%;
-    width: 100%;
-    top: 15%;
-    
+    padding: 3% 3% 5% 3%;
+    margin: 0 5% 5% 5%;
+ 
+    /* height: auto; */
     background: #FFFFFF;
-    border: 2.5px solid #909090;
+    border: 1.3px solid #909090;
+
 }
 
 .one-container1 {
@@ -221,17 +220,17 @@ footer td p {
 }
 
 #title1 {
-    top: 5%;
-    font-size: 1.7em;
+    font-size: 1.5em;
+    color: #414141;
     font-weight: bold;
 }
 
 .two-container1 {
-    margin-top: 4%;
+    margin-top: 2%;
     display: flex;
     justify-content: flex-start;
     font-size: 1em;
-    font-weight: 700;
+    font-weight: 600;
     font-weight: bold;
     color: #6C6C6C;
 }
@@ -246,14 +245,14 @@ footer td p {
 }
 
 .three-container1{
-    margin-right: 8%;
-    margin-top: -8%;
+    margin-top: -7%;
     display: flex;
     justify-content:right;
 }
 
 #point1 {
-    font-size: 2.3em;
+    font-size: 1.8em;
+    font-weight: 500;
     color: #B8ABFC;
 }
 /*==================================*/
@@ -264,51 +263,64 @@ footer td p {
 
 .banner{
     width: 100%;
-    height: 700px;
+    height: 250px;
     left: 0px;
     top: 800px;
 
     background: #FFFFFF;
 }
 #subMenu{
-    margin-bottom: 8em;
+    margin-bottom: 2em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 .subTitle{
     position: relative;
-    /* left: 15%; */
+    left: 5%;
 
     font-weight: 700;
-    font-size: 3em;
+    font-size: 2em;
     line-height: 1em;
     color: #000000;
+
+    /* position: relative;
+    width: 100%;
+    left: 5%;
+    padding-bottom: 0.5em;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2em;
+    line-height: 2em;
+    color: #414141; */
 }
 
 /*인기 있는 설문조사*/
 #firstContainer{
     width: 100%;
-    height: 1500px;
+    height: 800px;
     /* background: url("../image/mainCenterBack.png") no-repeat; */
-    background-size: 50%;
-    background-position: right center;
+    /* background-size: 50%; */
+    /* background-position: right center; */
     padding: 0 10%;
 }
 
 /* 전체 설문 보기 */
 .clickAllList {
+    /* display: block; */
+    /* width: 50%; */
     position: relative;
     float: right;
-    right: 15%;
+    right: 40%;
     text-decoration: none;
 
-    font-size:2em;
-    padding-right: 2em;
+    font-size:1.2em;
+    padding-right: 1.2em;
     background: url(../image/listTab.png) no-repeat;
     background-position: right center;
     background-size: 0.5em 0.8em;
-    color: #000000;
+    color: #414141;
 }
 
 /*참여를 기다리고 있는 설문조사*/
