@@ -19,7 +19,7 @@ fetchParticipate();
 function ParticipateListTemplate(data) {
     const ParticipatedItem = `<div id="main1">
     <div class="one-container1">
-        <a id="title1" href="../html/moa1.html">  ${data.postTitle}  </a>
+        <a id="title1" href="../html/detailPage.html">  ${data.postTitle}  </a>
     </div>
     <div class="two-container1">
         <span id="count1">${data.qcount}개 항목</span>

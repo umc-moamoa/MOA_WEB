@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<meta name="viewport" content="width=1190">-->
-    <title>관심있는 설문조사 페이지</title>
-    <link rel="stylesheet" href="../css/interestedSurvey.css">
+    <title>나의 설문조사</title>
+    <link rel="stylesheet" href="../css/mySurvey.css">
 </head>
 <body>
     <div class="flex-container">
         <div id="wrapper">
             <!--배경-->
             <img id="backTop" src="../image/Ellipse 35.png" />
-            <img id="backCenter" src="../image/dd 1.png" />
+            <img id="backCenter" src="../image/mySurveyback.png" />
 
             <!--헤더-->
             <div class="header">
@@ -58,29 +58,24 @@
             <div class="container">
                 <!-- 서브 제목 -->
                 <div id="subTitle" >
-                    <p class="subTitle">관심 있는 설문조사</p>
+                    <p class="subTitle">나의 설문조사</p>
+                    <select class="Qtype" id="Qtype">
+                        <option value="1">진행 중</option>
+                        <option value="2">마감</option>
+                        <option value="3">전체</option>
+                    </select>
                 </div>
                 <div id="SurveyList">
-                    <!-- <div id="main1">
-                        <div class="one-container1">
-                            <a id="title1" href="../html/moa1.html">사회현상에 대한 소비자 인식</a>
-                        </div>
-                        <div class="two-container1">
-                            <span id="count1">11개 항목</span>
-                            <span id="type1">선택형</span>
-                        </div>
-                        <div class="three-container1">
-                            <span id="point1">300P</span>
-                        </div>
-                    </div> -->
                 </div>
 
                 <div id="underBar">
                     <a class="underTab" href="#none"></a>
                 </div>
+
+                
             </div>
         </div>
-        
+
         <!-- footer -->
         <footer>
             <div class="container">
@@ -112,7 +107,10 @@
                 </table>
             </div>
         </footer>
+
     </div>
-    <script src="../js/interestedSurvey.js"></script>
+
+    <script src="../js/mySurvey.js"></script>
+
 </body>
 </html>

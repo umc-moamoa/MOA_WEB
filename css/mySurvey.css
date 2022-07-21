@@ -1,4 +1,5 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
 * {
     margin: 0;
     padding: 0;
@@ -23,13 +24,13 @@ ul,li{
     list-style: none;
 }
 
-/* 로고*/
+
+/* 배경 */
 #backCenter {
     position: absolute;
     width: 100%;
     height: 140%;
     top: 500px;
-    z-index: -100;
 }
 
 #backTop {
@@ -45,13 +46,12 @@ ul,li{
     height: 180px;
     margin: 0 auto;
 }
-
 #moa {
     position: absolute;
     width: 10%;
     left: 60px;
     top: 30px;
-
+    
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 550;
@@ -142,14 +142,17 @@ ul,li{
     background-size: 1.2em 1.2em;
 }
 
+
 /* container */
 .container {
-    /* min-height: 300vh; */
     width: 1130px;
     margin: 0 auto;
     padding: 5px 70px 0;
+    
 }
-
+#subTitle{
+    display: flex;
+}
 /*서브 제목*/
 #subTitle .subTitle{
     position: relative;
@@ -163,7 +166,97 @@ ul,li{
     line-height: 2em;
     color: #414141;
 }
+#subTitle .Qtype{
+    position: relative;
+    right: 5%;
+    top: 5%;
+    width: 10%;
+    height: 10%;
+    margin-top: 2.5%;
+    padding: 0.5%;
+    border: 0.08em solid #909090;
+    font-size: 1em;
+    color: #414141;
+}
 
+/* main1 */
+#SurveyList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#main1 {
+    position: relative;
+    box-sizing: border-box;
+    padding: 5% 3% 5% 3%;
+    margin: 0 5% 5% 5%;
+    width: 40%;
+    background: #FFFFFF;
+    border: 1.3px solid #909090;
+}
+
+.one-container1 {
+    display: flex;
+    /* justify-content : space-between; */
+    align-items: flex-end;
+    padding-bottom: 8%;
+    border-bottom: 1.3px solid #C6C6C6;
+}
+
+#title1 {
+    font-size: 1.3em;
+    color: #414141;
+    font-weight: bold;
+}
+
+.two-container1 {
+    /* justify-content: flex-start; */
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6C6C6C;
+    position: relative;
+    justify-content: space-between;
+}
+
+.box{
+    padding: 7%;
+}
+#count1 {
+    padding-right: 7em;
+}
+
+#point1 {
+    padding-right: 7em;
+}
+#num1 {
+    padding-right: 7em;
+    color: #B8ABFC;
+}
+#num {
+    color: #B8ABFC;
+}
+
+/* underBar */
+#underBar { 
+    position: relative;
+    width: 90%;
+    height: 10%;
+    left: 5%;
+    top: 200%;
+
+    border-top: 0.05em solid #C6C6C6;
+}
+
+.underTab {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    right: 45%;
+    top: 5em;
+    background: url(../image/Rectangle\ 75.png) no-repeat;
+    background-size: 2em 1em;
+}
 /*footer*/
 footer {
     background-color: #B8ABFC;
@@ -173,15 +266,14 @@ footer {
 
     /* height: 226.302; */
     position: relative;
-    transform: translateY(100%); 
+    transform: translateY(300%); 
 }
 
 #wrapper {
     height: auto;
     min-height: 200%;
-   /*  padding-bottom: 226.302; */
+    /* padding-bottom: 226.302; */
 }
-
 table {
     width: 100%;
 }
@@ -222,84 +314,16 @@ footer td p {
     padding-top: 2em;
 }
 
-/* main */
-#main {
-    box-sizing: border-box;
-    padding: 3% 4% 20% 4%;
-    margin:0 5%;
-
-    height: auto;
-    background: #FFFFFF;
-    border: 1.3px solid #909090;
-}
-
-.flex-container2 {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-nickname {
-    display: flex;
-    justify-content: flex-start;
-    align-items: baseline;
-    padding-bottom: 0.5em;
-
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 2.3em;
-    color: #414141;
-}
-
-#님 {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 0.6em;
-    color: #414141;
-}
-
-#icon_bottom_line {
-    border-bottom: 0.05em solid #C6C6C6;
-    padding-bottom: 3%;
-}
-
-.flex-container-icon{
-    display: flex;
-    flex-direction: row;
-    padding: 0.3em;
-    margin-bottom: 1em;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.flex-container-icon-sub1{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.category1{
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1.2em;
-    text-align: center;
-    color: #414141;
-}
-.category2 {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1.2em;
-    color: #414141;
-}
-
-.state{
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 1.3em;
-    color: #414141;
-}
+/* #newSurvey{
+    position: sticky; 
+    width: 8em;
+    height: 8em;
+    left:90%;
+    top: 80%;
+    
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    background: url( "image/newSurvey.png") no-repeat center;
+    background-size: 10em 10em;
+} */

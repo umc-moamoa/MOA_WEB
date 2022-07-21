@@ -34,7 +34,7 @@ function SurveyDetailTemplate (data) {
             <div id="mainBottom"> ${data.content} </div>
 
             <div class="join">
-                <button id="joinBtn" onClick="location.href='moa2.html'">설문&nbsp;&nbsp;참여</button>
+                <button id="joinBtn" onClick="location.href='../html/joinForm.html'">설문&nbsp;&nbsp;참여</button>
             </div> 
     `;
 
