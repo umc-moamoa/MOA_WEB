@@ -64,17 +64,17 @@
 
                 <div id="main">
 
-                    <form>
+                    <form action="http://umcsom.shop:9000/post" method="post">
                         <div class="flex-container2">
 
                             <!-- 메인 -->
                             <div id="surveyStart">
-                                <input type="text" class="inputTitle" maxlength="30"
+                                <input name="title" type="text" class="inputTitle" maxlength="30"
                                 placeholder="설문지 제목을 입력하세요." 
                                 onfocus="this.placeholder = ''" 
                                 onblur="this.placeholder = '설문지 제목을 입력하세요.'">
 
-                                <input type="text" class="inputExplain" maxlength="30" 
+                                <input name="content" type="text" class="inputExplain" maxlength="30" 
                                 placeholder="설문에 대한 설명을 적어주세요."
                                 onfocus="this.placeholder = ''" 
                                 onblur="this.placeholder = '설문에 대한 설명을 적어주세요.'">
