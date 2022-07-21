@@ -149,7 +149,7 @@ ul, li {
     /* min-height: 300vh; */
     width: 1130px;
     margin: 0 auto;
-    padding: 15px 70px 0;
+    padding: 5px 70px 0;
 }
 
 /*서브 제목*/
@@ -173,7 +173,7 @@ footer {
     padding-bottom: 2em;
     padding-top: 2em;
 
-    height: 226.302;
+    /* height: 226.302; */
     position: relative;
     transform: translateY(50%); 
 }
@@ -181,38 +181,43 @@ footer {
 #wrapper {
     height: auto;
     min-height: 200%;
-    padding-bottom: 226.302;
+   /*  padding-bottom: 226.302; */
+}
+
+table {
+    width: 100%;
 }
 
 footer a {
     color: white;
     text-decoration: none;
-    font-size: 1.125em;
-    font-weight: 600;
+    font-size: 1.1em;
+    font-weight: 500;
 }
 #footer_MoA {
     font-family: 'Montserrat';
-    font-size: 2.625em;
+    font-size: 2em;
     margin: 0;
     font-weight: 600;
 }
 #tel {
-    font-size: 2.250em;
-    font-weight: 600;
+    font-size: 1.8em;
+    font-weight: 500;
 }
 footer .container {
     padding-left: 10%;
     padding-right: 10%;
 }
 footer ul {
-    padding-inline-start: 40px;
+    padding-inline-start: 100px;
 }
 footer td:nth-child(2) {
     text-align: right;
-    font-size: 0.875em;
+    font-size: 0.8em;
 }
 footer td p {
-    padding-bottom: 0.3em;
+    padding-bottom: 0.1em;
+    font-size: 0.7em;
 }
 #info {
     padding-bottom: 2em;
@@ -234,7 +239,7 @@ footer td p {
     top: 70%; */
     height: auto;
     background: #FFFFFF;
-    border: 1.4px solid #909090;
+    border: 1.3px solid #909090;
     border-bottom: 0;
 }
 
