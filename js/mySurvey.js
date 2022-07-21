@@ -36,7 +36,7 @@ function SurveyListTemplate (data) {
                 <span id="point">${data.point}P</span>
             </div>
             <div class="box">
-                <span id="num1">참여 인원</span>
+                <span id="num">참여 인원</span>
                 <span id="num">${data.postResultCount}명</span>
             </div>
         </div>
