@@ -6,11 +6,12 @@ const fetchInterest = () => {
     };
 
     fetch(
-        "http://umcsom.shop:90001/interest",
+        "http://umcsom.shop:9000/users/1/interest",
         requestOptions
     )
         .then((response) => response.json())
-        .then((webResult) => webResult.result.map(item => InterestListTemplate(item)))
+        // .then((webResult) => console.log(webResult))
+        .then((Result) => Result.result.map(item => InterestListTemplate(item)))
         .catch((error) => console.log("error", error));
 }
 
