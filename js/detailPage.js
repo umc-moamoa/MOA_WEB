@@ -10,8 +10,7 @@ const fetchDetail = () => {
         requestOptions
     )
         .then((response) => response.json())
-        .then((webResult) => console.log(webResult.result[0]))
-        .then((webResult) => SurveyDetailTemplate(webResult.result[0]))
+        .then((webResult) => webResult.result.map(item => SurveyDetailTemplate(item)))
         .catch((error) => console.log("error", error));
 }
 
@@ -27,7 +26,7 @@ function SurveyDetailTemplate (data) {
             </div>
 
             <div class="flex-container2">
-                <div class="flex-item2"><span id="items">${data.count}개의 항목&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
+                <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
                 <div class="flex-item2"><span id="types">|&nbsp;&nbsp;&nbsp;&nbsp;선택형</span></div>
             </div>
             </div>
@@ -39,5 +38,5 @@ function SurveyDetailTemplate (data) {
             </div> 
     `;
 
-$SurveyDetail.insertAdjacentElement('beforeend', SurveyDetailItem);
+$SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem);
 }
