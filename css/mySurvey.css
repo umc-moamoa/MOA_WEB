@@ -221,17 +221,8 @@ ul,li{
 
 .box{
     padding: 7%;
-}
-#count1 {
-    padding-right: 7em;
-}
-
-#point1 {
-    padding-right: 7em;
-}
-#num1 {
-    padding-right: 7em;
-    color: #B8ABFC;
+    display: flex;
+    justify-content: space-between;
 }
 #num {
     color: #B8ABFC;
