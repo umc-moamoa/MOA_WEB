@@ -22,7 +22,7 @@ function SurveyListTemplate1 (data) {
     const SurveyItem = 
     `<div id="main1">
         <div class="one-container1">
-            <a id="title1" href="../html/moa1.html">${data.title}</a>
+            <a id="title1" href="../html/detailPage.html">${data.title}</a>
         </div>
         <div class="two-container1">
             <span id="count1">${data.numberOfQuestion}개 항목</span>
@@ -59,7 +59,7 @@ function SurveyListTemplate2 (data) {
     const SurveyItem = 
     `<div id="main1">
         <div class="one-container1">
-            <a id="title1" href="../html/moa1.html">${data.title}</a>
+            <a id="title1" href="../html/detailPage.html">${data.title}</a>
         </div>
         <div class="two-container1">
             <span id="count1">${data.numberOfQuestion}개 항목</span>

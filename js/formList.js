@@ -1,8 +1,5 @@
 const $SurveyList = document.querySelector("#SurveyList");
 
-const $detailTitle = document.querySelector("#detailTitle");
-const $mainBottom = document.querySelector("#mainBottom");
-
 const fetchSurvey = () => {
     var requestOptions = {
         method: "GET",
@@ -23,7 +20,7 @@ fetchSurvey();
 function SurveyListTemplate (data) {
     const SurveyItem = `<div id="main1">
                             <div class="one-container1">
-                                <a id="title1" href="../html/moa1.html" data-id=${data.postId}>  ${data.title}  </a>
+                                <a id="title1" href="../html/detailPage.html" data-id=${data.postId}>  ${data.title}  </a>
                             </div>
                             <div class="two-container1">
                                 <span id="count1">11개 항목</span>
@@ -35,16 +32,5 @@ function SurveyListTemplate (data) {
                         </div>
     `;
 
-    // const dTitle = `<span>  ${data.snippet.title}  </span>
-    // `;
-    
-    // const mBottom = `  ${data.snippet.title}  
-    // `;
-
 $SurveyList.insertAdjacentHTML('beforeend', SurveyItem);
-// $detailTitle.insertAdjacentHTML('beforeend', dTitle);
-// $mainBottom.insertAdjacentHTML('beforeend', mBottom);
 }
-
-// display, start
-//https://developers.naver.com/docs/serviceapi/search/web/web.md#%EC%9B%B9%EB%AC%B8%EC%84%9C

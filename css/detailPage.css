@@ -32,7 +32,7 @@ a {
 .header {
     position: relative;
     width: 1130px;
-    height: 250px;
+    height: 180px;
     margin: 0 auto;
 }
 
@@ -219,16 +219,13 @@ footer td p {
 /*main*/
 #detailMain {
     box-sizing: border-box;
-    padding: 3%;
+    padding: 4% 4% 0% 4%;
+    margin: 0 8.5% ;
 
-    position: relative;
-    width: 65%;
     height: auto;
-    left: 17%;
-    top: 30%;
-
     background: #FFFFFF;
-    border: 1px solid #909090;
+    border: 1.3px solid #909090;
+    border-bottom: 0;
 }
 
 .flex-container1 {
@@ -277,15 +274,32 @@ footer td p {
 }
 
 #joinBtn {
-    background-color: #B8ABFC;
+    /* background-color: #B8ABFC;
     border: none;
     color: white;
     text-align: center;
     display: inline-block;
     font-size: 20px;
+
     width: 110.2%;
     padding-top: 2%;
     margin-left: -5.1%;
+    padding-bottom: 2%;
+    cursor: pointer;
+    margin-top: 3%; */
+
+    background: linear-gradient(91.36deg, #B8ABFC -24.31%, #BFD4FF 130.3%);
+    box-shadow: 0px -10px 40px rgba(184, 171, 252, 0.3);
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+
+    width: 111.1%;
+    padding-top: 2%;
+    margin-left: -5.55%;
     padding-bottom: 2%;
     cursor: pointer;
     margin-top: 3%;
