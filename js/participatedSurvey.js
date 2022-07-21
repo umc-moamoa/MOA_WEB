@@ -26,7 +26,7 @@ function ParticipateListTemplate(data) {
         <span id="type1">선택형</span>
     </div>
     <div class="three-container1">
-        <span id="point1">  ${data.point}  </span>
+        <span id="point1">  ${data.point}P  </span>
     </div>
 </div>
 `;
