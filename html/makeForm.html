@@ -12,89 +12,89 @@
     <div class="flex-container">
         <div id="wrapper">
 
-        <!-- 배경 -->
-        <img id="backTop" src="../image/Ellipse 35_1.png" />
-        <img id="backCenter" src="../image/dss 1.png" />
+            <!-- 배경 -->
+            <img id="backTop" src="../image/Ellipse 35_1.png" />
+            <img id="backCenter" src="../image/dss 1.png" />
 
-        <!-- 헤더 -->
-        <div class="header">
+            <!-- 헤더 -->
+            <div class="header">
 
-            <!-- logo -->
-            <a href="../html/main.html"><h1 id="moa">MoA</h1></a>
+                <!-- logo -->
+                <a href="../html/main.html"><h1 id="moa">MoA</h1></a>
 
-            <!-- menu header -->
-            <div id="userMenu">
-                <ul class="list_menu">
-                    <li class="menu menu_login">
-                        <a class="link_login" href="../html/login.html">로그인</a>
-                    </li>
-                    <li class="menu menu_join">
-                        <a class="link_join" href="../html/signUp.html">회원가입</a>
-                    </li>
-                    <li class="menu center">
-                        <a class="link_center" href="#none">고객센터</a>
-                    </li>
-                </ul>
+                <!-- menu header -->
+                <div id="userMenu">
+                    <ul class="list_menu">
+                        <li class="menu menu_login">
+                            <a class="link_login" href="../html/login.html">로그인</a>
+                        </li>
+                        <li class="menu menu_join">
+                            <a class="link_join" href="../html/signUp.html">회원가입</a>
+                        </li>
+                        <li class="menu center">
+                            <a class="link_center" href="#none">고객센터</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- icon -->
+                <div id="iconMenu">
+                    <ul class="list_icon">
+                        <li class="icon icon_search">
+                            <a class="link_search" href="#none">검색</a>
+                        </li>
+                        <li class="icon icon_user">
+                            <a class="link_user" href="../html/myPage.html">마이</a>
+                        </li>
+                        <li class="icon sideMenu">
+                            <a class="link_menu" href="#none">메뉴</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
-            <!-- icon -->
-            <div id="iconMenu">
-                <ul class="list_icon">
-                    <li class="icon icon_search">
-                        <a class="link_search" href="#none">검색</a>
-                    </li>
-                    <li class="icon icon_user">
-                        <a class="link_user" href="../html/myPage.html">마이</a>
-                    </li>
-                    <li class="icon sideMenu">
-                        <a class="link_menu" href="#none">메뉴</a>
-                    </li>
-                </ul>
-            </div>
+            <!-- container -->
+            <div class="container">
 
-        </div>
+                <!-- 서브 제목 -->
+                <div id="subTitle">
+                    <p class="subTitle">설문 작성</p>
+                </div>
 
-        <!-- container -->
-        <div class="container">
+                <div id="main">
 
-            <!-- 서브 제목 -->
-            <div id="subTitle">
-                <p class="subTitle">설문 작성</p>
-            </div>
+                    <form>
+                        <div class="flex-container2">
 
-            <div id="main">
+                            <!-- 메인 -->
+                            <div id="surveyStart">
+                                <input type="text" class="inputTitle" maxlength="30"
+                                placeholder="설문지 제목을 입력하세요." 
+                                onfocus="this.placeholder = ''" 
+                                onblur="this.placeholder = '설문지 제목을 입력하세요.'">
 
-                <form>
-                    <div class="flex-container2">
+                                <input type="text" class="inputExplain" maxlength="30" 
+                                placeholder="설문에 대한 설명을 적어주세요."
+                                onfocus="this.placeholder = ''" 
+                                onblur="this.placeholder = '설문에 대한 설명을 적어주세요.'">
+                            </div>
 
-                        <!-- 메인 -->
-                        <div id="surveyStart">
-                            <input type="text" class="inputTitle" maxlength="30"
-                            placeholder="설문지 제목을 입력하세요." 
-                            onfocus="this.placeholder = ''" 
-                            onblur="this.placeholder = '설문지 제목을 입력하세요.'">
+                            <div id="surveyElements">
+                                
+                            </div>
 
-                            <input type="text" class="inputExplain" maxlength="30" 
-                            placeholder="설문에 대한 설명을 적어주세요."
-                            onfocus="this.placeholder = ''" 
-                            onblur="this.placeholder = '설문에 대한 설명을 적어주세요.'">
+                            <div class="Qadd">
+                                <button id="plus" type="button" onclick="addQuestion()"><img src="../image/Group 17.png" width="50%"></button>
+                            </div>
+
+                            <div><button id="submit_btn">저장</button></div>
+
                         </div>
+                    </form>
 
-                        <div id="surveyElements">
-                            
-                        </div>
-
-                        <div class="Qadd">
-                            <button id="plus" type="button" onclick="addQuestion()"><img src="../image/Group 17.png" width="50%"></button>
-                        </div>
-
-                        <div><button id="submit_btn">저장</button></div>
-
-                    </div>
-                </form>
-
+                </div>
             </div>
-        </div>
         </div>
         
         <!-- footer -->
