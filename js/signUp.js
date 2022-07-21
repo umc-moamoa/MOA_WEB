@@ -108,7 +108,7 @@ function save(){
     .then((response) => response.json())
     .then((data) => {console.log('Success');})
     .then(res => {
-        if (res) {
+        if (response) {
             alert("회원가입이 완료되었습니다.");
         }
     })

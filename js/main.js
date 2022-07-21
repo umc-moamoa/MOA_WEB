@@ -1,0 +1,75 @@
+// 인기 있는 설문조사
+const $SurveyList1 = document.querySelector("#SurveyList1");
+
+const fetchSurvey1 = () => {
+    var requestOptions = {
+        method: "GET",
+    };
+
+    fetch(
+        `http://umcsom.shop:9000/posts/desc`,
+        requestOptions
+    )
+        .then((response) => response.json())
+        //.then((webResult) => console.log(webResult.result))
+        .then((webResult) => webResult.result.map(item => SurveyListTemplate(item)))
+        .catch((error) => console.log("error", error));
+}
+
+fetchSurvey1();
+
+function SurveyListTemplate1 (data) {
+    const SurveyItem = 
+    `<div id="main1">
+        <div class="one-container1">
+            <a id="title1" href="../html/moa1.html">${data.title}</a>
+        </div>
+        <div class="two-container1">
+            <span id="count1">${data.numberOfQuestion}개 항목</span>
+            <span id="type1">선택형</span>
+        </div>
+        <div class="three-container1">
+            <span id="point1">${data.point}P</span>
+        </div>
+    </div> `;
+
+$SurveyList1.insertAdjacentHTML('beforeend', SurveyItem);
+}
+
+// 참여를 기다리고 있는 설문조사
+const $SurveyList2 = document.querySelector("#SurveyList2");
+
+const fetchSurvey2 = () => {
+    var requestOptions = {
+        method: "GET",
+    };
+
+    fetch(
+        `http://umcsom.shop:9000/posts/asc`,
+        requestOptions
+    )
+        .then((response) => response.json())
+        //.then((webResult) => console.log(webResult.result))
+        .then((webResult) => webResult.result.map(item => SurveyListTemplate(item)))
+        .catch((error) => console.log("error", error));
+}
+
+fetchSurvey2();
+
+function SurveyListTemplate2 (data) {
+    const SurveyItem = 
+    `<div id="main1">
+        <div class="one-container1">
+            <a id="title1" href="../html/moa1.html">${data.title}</a>
+        </div>
+        <div class="two-container1">
+            <span id="count1">${data.numberOfQuestion}개 항목</span>
+            <span id="type1">선택형</span>
+        </div>
+        <div class="three-container1">
+            <span id="point1">${data.point}P</span>
+        </div>
+    </div> `;
+
+$SurveyList2.insertAdjacentHTML('beforeend', SurveyItem);
+}
