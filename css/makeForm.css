@@ -27,8 +27,8 @@ ul, li {
 /* 로고*/
 #backCenter {
     position: absolute;
-    width: 100%;
-    height: 140%;
+    width: 200px;
+    height: 600px;
     top: 60%;
     z-index: -100;
 }
@@ -38,131 +38,112 @@ ul, li {
     width: 50%;
     height: 80%;
     right: 0;
+    z-index: -100;
 }
 
 /* 헤더 */
 .header {
     position: relative;
     width: 1130px;
-    height: 180px;
+    height: 80px;
     margin: 0 auto;
 }
 
 #moa {
-    position: absolute;
-    width: 10%;
-    left: 60px;
-    top: 30px;
+    display: inline-block;
+    margin: 10px 0 0 50px;
 
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 550;
-    font-size: 3em;
-    line-height: 102px;
-
+    font-size: 2em;
     color: #B8ABFC;
 }
 
 /* 메뉴 */
 #userMenu {
-    margin: 0 auto;
-    
+    display: inline-block;
+    height: 32px;
+    margin: 0 40px 0 780px;
 }
 #userMenu .list_menu {
     float: right;
-    line-height: 5.313em;
     white-space: nowrap;
 }
 #userMenu * {
     font-weight: 500;
     letter-spacing: 0.1em;
-    height: 1em;
     color: #414141;
 }
-
 #userMenu .menu {
     position: relative;
     float: left;
-    margin-right: 1em;
+    margin-right: 0.5em;
 }
-
 #userMenu a {
-    font-size: 1em;
+    font-size: 0.8em;
 }
-
 .link_login {
-    padding-right: 1em;
-    border-right: 1.5px solid #414141;
+    padding-right: 0.5em;
+    /* border-right: 1.5px solid #414141; */
 }
 .link_join {
-    padding-right: 1em;
-    border-right: 1.5px solid #414141;
-}
-/*아이콘*/
-#iconMenu{
-    margin: 0 auto;
+    padding-right: 0.5em;
+    /* border-right: 1.5px solid #414141; */
 }
 
+/*아이콘*/
+#iconMenu{
+    display: inline-block;
+    margin-left: 985px;
+}
 #iconMenu .list_icon{
     float: right;
 }
-
 #iconMenu *{
-    font-weight: 500;
-    height: 1em;
-    padding: 0;
     color:transparent;
 }
 #iconMenu .icon{
     position: relative;
     float: left;
-    margin-right: 1.5em;
+    margin-left: 0.9em;
 }
 
 #iconMenu .icon_search{
-    width: 2em;
-    height: 2em;
-    top: 5em;
-    left: 166%;
+    width: 1em;
+    height: 1em;
     background: url("../image/searchIcon.png") no-repeat;
-    background-size: 1.4em 1.4em;
+    background-size: 1em 1em;
 }
 #iconMenu .icon_user{
-    width: 2em;
-    height: 2em;
-    top: 5em;
-    left: 166%;
+    width: 1em;
+    height: 1em;
     background: url("../image/userIcon.png") no-repeat;
-    background-size: 1.3em 1.4em;
+    background-size: 1em 1em;
 }
 #iconMenu .sideMenu{
-    width: 2em;
-    height: 1.8em;
-    top: 5em;
-    left: 165%;
+    width: 1em;
+    height: 0.9em;
     background: url("../image/menuIcon.png") no-repeat;
-    background-size: 1.2em 1.2em;
+    background-size: 1em 0.9em;
 }
 
 /* container */
 .container {
     /* min-height: 300vh; */
-    width: 1130px;
-    margin: 0 auto;
-    padding: 5px 70px 0;
+    width: 970px;
+    margin: 40px auto;
+    padding: 0 70px;
 }
 
 /*서브 제목*/
 #subTitle .subTitle {
     position: relative;
-    width: 100%;
-    left: 5%;
-    padding-bottom: 0.5em;
 
     font-style: normal;
     font-weight: 600;
-    font-size: 2em;
-    line-height: 2em;
+    font-size: 1.5em;
+    line-height: 2.5em;
     color: #414141;
 }
 
@@ -170,17 +151,22 @@ ul, li {
 footer {
     background-color: #B8ABFC;
     color: white;
-    padding-bottom: 2em;
-    padding-top: 2em;
 
     /* height: 226.302; */
-    position: relative;
-    transform: translateY(50%); 
+    /* position: absolute; */
+    bottom: 0;
+    /* transform: translateY(100%);  */
+
+    /* position: relative; */
+    width: 1263.33px;
+    /* height: 80px; */
+    margin: 0;
 }
 
 #wrapper {
-    height: auto;
-    min-height: 200%;
+    /* height: auto; */
+    min-height: 100vh;
+    position: relative;
    /*  padding-bottom: 226.302; */
 }
 
@@ -191,22 +177,21 @@ table {
 footer a {
     color: white;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 0.9em;
     font-weight: 500;
 }
 #footer_MoA {
     font-family: 'Montserrat';
-    font-size: 2em;
+    font-size: 1.8em;
     margin: 0;
     font-weight: 600;
 }
 #tel {
-    font-size: 1.8em;
+    font-size: 1.4em;
     font-weight: 500;
 }
 footer .container {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 0 auto;
 }
 footer ul {
     padding-inline-start: 100px;
@@ -217,22 +202,20 @@ footer td:nth-child(2) {
 }
 footer td p {
     padding-bottom: 0.1em;
-    font-size: 0.7em;
+    font-size: 0.6em;
 }
 #info {
-    padding-bottom: 2em;
-    padding-top: 2em;
+    padding: 2em 0;
 }
 
 /* main */
 #main {
     box-sizing: border-box;
     padding: 4% 4% 0% 4%;
-    margin:0 5% ;
 
     height: auto;
     background: #FFFFFF;
-    border: 1.3px solid #909090;
+    border: 1.2px solid #909090;
     border-bottom: 0;
 }
 
@@ -246,9 +229,9 @@ footer td p {
     border: none;
     outline: none; /* 입력 시 테두리 지움*/
     display: block;
-    width: 100%;
+ /*    width: 100%; */
     font-weight: 600;
-    font-size: 1.9em;
+    font-size: 1.4em;
     color: #414141;
     /* line-height: 2em; */
 }
@@ -257,11 +240,11 @@ footer td p {
     border: none;
     outline: none;
     display: block;
-    width: 100%;
+/*     width: 100%; */
     font-weight: 400;
-    font-size: 1.1em;
+    font-size: 1em;
     color: #909090;
-    line-height: 3.2em;
+    line-height: 2em;
 }
 
 /* placeholder 폰트 색 변경, 크롬/엣지 둘 다 적용 */
@@ -283,33 +266,34 @@ input:nth-child(2)::-ms-input-placeholder{color: #909090;}
 
     font-style: normal;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #414141;
 }
 
 .Qinput {
     display: inline-block;
-    width: 70%;
+    width: 600px;
 
     border: none;
     border-bottom: 0.06em solid #919191;
-    padding-left: 0.2em;
+    padding-left: 0.1em;
+    margin-bottom: 0.5em;
 
     outline: none;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #414141;
-    line-height: 2em;
+    line-height: 1.8em;
 }
 
 .Qtype {
-    width: 15%;
+    width: 100px;
     border: 0.08em solid #909090;
     border-radius: 2.5px;
-    padding: 0.4em;
-    margin-left: 2.5em;
+    padding: 0.2em;
+    margin-left: 1.5em;
 
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 500;
     color: #414141;
 
@@ -326,30 +310,30 @@ input:nth-child(2)::-ms-input-placeholder{color: #909090;}
 } */
 
 .makeOption {
-    margin: 1.2em 0;
+    margin: 0.7em 0;
 }
 
 .addOption {
-    margin: 1.2em 0;
+    margin: 0.7em 0;
 }
 
 #checkButton {
     display: inline-block;
     margin-right: 1em;
-
-    width: 2.7%;
+/* 
+    width: 2.7%; */
 }
 
 .optionInput {
     display: inline-block;
-    width: 88%;
+    width: 710px;
 
     border: none;
-    padding-left: 0.6em;
+    padding-left: 0.7em;
 
     outline: none;
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1em;
     color: #414141;
 }
 
@@ -367,29 +351,32 @@ input:nth-child(7)::-ms-input-placeholder {color: #414141;}
 } */
 
 #xButton {
+    width: 30px;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
 #trash {
+    width: 40px;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
 #plus {
+    width: 80px;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
 .Qdelete {
-    margin-left: 89%;
+    margin-left: 718px;
 }
 
 .Qadd {
-    margin: 7% 0 7% 40%;
+    margin: 7% 0 7% 45%;
 }
 
 #submit_btn {
@@ -399,13 +386,13 @@ input:nth-child(7)::-ms-input-placeholder {color: #414141;}
     color: white;
     text-align: center;
     display: inline-block;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
 
-    width: 110.2%;
-    padding-top: 2%;
-    margin-left: -5.1%;
-    padding-bottom: 2%;
+    width: 109%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    margin-left: -4.5%;
     cursor: pointer;
     margin-top: 3%;
 }
