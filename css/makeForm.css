@@ -158,9 +158,10 @@ footer {
     /* transform: translateY(100%);  */
 
     /* position: relative; */
-    width: 1263.33px;
+    /* width: 1263.33px; */
     /* height: 80px; */
-    margin: 0;
+    margin: 0 auto;
+    width: 100%;
 }
 
 #wrapper {
