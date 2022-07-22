@@ -11,8 +11,8 @@ const fetchSurvey1 = () => {
         requestOptions
     )
         .then((response) => response.json())
-        // .then((webResult) => console.log(webResult))
         .then((webResult) => webResult.result.map(item => SurveyListTemplate1(item)))
+        .then((webResult) => slick1())
         .catch((error) => console.log("error", error));
 }
 
@@ -50,6 +50,7 @@ const fetchSurvey2 = () => {
     )
         .then((response) => response.json())
         .then((webResult) => webResult.result.map(item => SurveyListTemplate2(item)))
+        .then((webResult) => slick2())
         .catch((error) => console.log("error", error));
 }
 
@@ -71,4 +72,23 @@ function SurveyListTemplate2 (data) {
     </div> `;
 
 $SurveyList2.insertAdjacentHTML('beforeend', SurveyItem);
+}
+
+function slick1(){
+    $(document).ready(function(){
+        $('.SurveyList1').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            rows:2
+        });
+    });
+}
+function slick2(){
+    $(document).ready(function(){
+        $('.SurveyList2').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            rows:2
+        });
+    });
 }
