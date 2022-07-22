@@ -22,14 +22,14 @@ ul, li {
 
 .header {    
     position: relative;
-    width: 1130px;
+    width: 100%;
     height: 170px;
     margin: 0 auto;
 }
 
 /* 로그인, 회원가입, 마이페이지 */
 #userMenu {
-    width: 1130px;
+    width: 100%;
     margin: 0 auto;
 }
 #userMenu .list_menu {
@@ -41,7 +41,6 @@ ul, li {
     /* letter-spacing: 0.1em; */
     color: #414141;
 }
-
 ul {
     display: block;
     margin-block-start: 10px;
@@ -74,38 +73,27 @@ ul {
 }
 
 /* gnb */
-#gnb .gnb_kurly {
-    position: relative;
-    z-index: 300;
-    min-width: 1050px;
-    background-color: #fff;
-    font-family: 'Noto Sans';
-    letter-spacing: -0.3px;
-}
-#gnb .gnb_main {
+.gnb_main {
     /* overflow: hidden; */
-    width: 1050px;
-    margin: 0 auto;
-}
-/* #gnb .gnb_main .gnb {
-    float: left;
     width: 100%;
-} */
-#gnb .gnb_main .gnb li {
-    float: left;
+    height: 45px;
+    margin: 55px 0;
+   /*  border: 0.5px ridge rgb(32 33 36 / 28%); */
+/*     border-right: none;
+    border-left: none;
+    box-shadow: 0 1px 5px 0 rgb(32 33 36 / 28%);
+    transition: box-shadow 250ms; */
+    padding: 2px 60px;
 }
-#gnb .gnb_main .menu1 a {
-    width: 148px;
-}
-#gnb .gnb_main .gnb a {
+.gnb a {
     float: left;
-    width: 200px;
+    width: 190px;
     font-size: 16px;
     color: #909090;
     text-align: center;
-    margin: 20px 0 0 0;
+    /* margin: 20px 0 0 0; */
+    margin: 0;
 }
-
 .txt {
     display: inline-block;
     font-weight: 500;
@@ -113,11 +101,19 @@ ul {
 
 
 /* container */
-.container {
+#wrapper .container {
+    /* min-height: 300vh; */
+    width: 970px;
+    margin: 50px auto;
+    margin-bottom: 100px;
+    padding: 0 70px;
+}
+
+footer .container {
     /* min-height: 300vh; */
     width: 970px;
     margin: 40px auto;
-    padding: 0 70px;
+    padding: 0 65px;
 }
 
 /*서브 제목*/
@@ -133,8 +129,8 @@ ul {
 
 /*footer*/
 footer {
-    background-color: #B8ABFC;
-    color: white;
+    background-color: white;
+    color: #909090;
 
     bottom: 0;
     margin: 0 auto;
@@ -168,9 +164,9 @@ footer a {
     font-size: 1.4em;
     font-weight: 500;
 }
-footer .container {
+/* footer .container {
     padding: 0 auto;
-}
+} */
 footer ul {
     padding-inline-start: 100px;
 }
