@@ -23,8 +23,16 @@ ul, li {
 .header {    
     position: relative;
     width: 100%;
-    height: 170px;
+    height: 180px;
     margin: 0 auto;
+}
+
+#backTop {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    left: 0;
+    z-index: -100;
 }
 
 /* 로그인, 회원가입, 마이페이지 */
@@ -60,7 +68,7 @@ ul {
     display: block;
     overflow: hidden;
     width: 100%;
-    height: 0;
+    height: 15px;
     font-size: 0;
     text-indent: -9999px;
 }
@@ -68,27 +76,26 @@ ul {
 /* 로고 헤더 */
 #headerLogo .logo img {
     display: block;
-    width: 100px;
-    margin: 0 auto;
+    width: 70px;
+    /* margin: 0 auto; */
+    margin-left: 80px;
 }
 
 /* gnb */
 .gnb_main {
     /* overflow: hidden; */
     width: 100%;
-    height: 45px;
-    margin: 55px 0;
-   /*  border: 0.5px ridge rgb(32 33 36 / 28%); */
-/*     border-right: none;
+    height: 40px;
+    margin-top: 60px;
+    border-right: none;
     border-left: none;
-    box-shadow: 0 1px 5px 0 rgb(32 33 36 / 28%);
-    transition: box-shadow 250ms; */
-    padding: 2px 60px;
+    box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
+    padding: 0.5px 60px;
 }
 .gnb a {
     float: left;
     width: 190px;
-    font-size: 16px;
+    font-size: 14px;
     color: #909090;
     text-align: center;
     /* margin: 20px 0 0 0; */
@@ -99,12 +106,11 @@ ul {
     font-weight: 500;
 }
 
-
 /* container */
 #wrapper .container {
     /* min-height: 300vh; */
     width: 970px;
-    margin: 50px auto;
+    margin: 70px auto;
     margin-bottom: 100px;
     padding: 0 70px;
 }
@@ -112,7 +118,7 @@ ul {
 footer .container {
     /* min-height: 300vh; */
     width: 970px;
-    margin: 40px auto;
+    margin: 30px auto;
     padding: 0 65px;
 }
 
@@ -122,8 +128,8 @@ footer .container {
 
     font-style: normal;
     font-weight: 600;
-    font-size: 1.5em;
-    line-height: 2.5em;
+    font-size: 22px;
+    line-height: 40px;
     color: #414141;
 }
 
@@ -185,11 +191,12 @@ footer td p {
 /* main */
 #main {
     box-sizing: border-box;
-    padding: 4% 4% 0% 4%;
+    /* padding: 4% 4% 0% 4%; */
+    padding: 30px 30px 0 30px;
 
     height: auto;
     background: #FFFFFF;
-    border: 1.2px solid #909090;
+    border: 1px solid #909090;
     border-bottom: 0;
 }
 
@@ -203,22 +210,21 @@ footer td p {
     border: none;
     outline: none; /* 입력 시 테두리 지움*/
     display: block;
- /*    width: 100%; */
+    
     font-weight: 600;
-    font-size: 1.4em;
+    font-size: 20px;
     color: #414141;
-    /* line-height: 2em; */
 }
 
 .inputExplain {
     border: none;
     outline: none;
     display: block;
-/*     width: 100%; */
+
     font-weight: 400;
-    font-size: 1em;
+    font-size: 15px;
     color: #909090;
-    line-height: 2em;
+    line-height: 30px;
 }
 
 /* placeholder 폰트 색 변경, 크롬/엣지 둘 다 적용 */
@@ -231,43 +237,43 @@ input:nth-child(2)::-webkit-input-placeholder {color: #909090;}
 input:nth-child(2)::-ms-input-placeholder{color: #909090;}
 
 .surveyElement {
-    margin-top: 2em;
+    margin-top: 30px;
 }
 
 .Qnum {
     display: inline-block;
-    margin-right: 1em;
+    margin-right: 15px;
 
     font-style: normal;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 18px;
     color: #414141;
 }
 
 .Qinput {
     display: inline-block;
-    width: 600px;
+    width: 610px;
 
     border: none;
-    border-bottom: 0.06em solid #919191;
-    padding-left: 0.1em;
-    margin-bottom: 0.5em;
+    border-bottom: 1px solid #919191;
+    padding-left: 3px;
+    margin-bottom: 5px;
 
     outline: none;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 18px;
     color: #414141;
-    line-height: 1.8em;
+    line-height: 30px;
 }
 
 .Qtype {
     width: 100px;
-    border: 0.08em solid #909090;
+    border: 1px solid #909090;
     border-radius: 2.5px;
-    padding: 0.2em;
-    margin-left: 1.5em;
+    padding: 3px;
+    margin-left: 15px;
 
-    font-size: 0.8em;
+    font-size: 13px;
     font-weight: 500;
     color: #414141;
 
@@ -284,30 +290,30 @@ input:nth-child(2)::-ms-input-placeholder{color: #909090;}
 } */
 
 .makeOption {
-    margin: 0.7em 0;
+    margin: 11px 0;
 }
 
 .addOption {
-    margin: 0.7em 0;
+    margin: 11px 0;
 }
 
 #checkButton {
     display: inline-block;
-    margin-right: 1em;
+    margin-right: 5px;
 /* 
     width: 2.7%; */
 }
 
 .optionInput {
     display: inline-block;
-    width: 710px;
+    width: 718px;
 
     border: none;
-    padding-left: 0.7em;
+    padding-left: 15px;
 
     outline: none;
     font-weight: 500;
-    font-size: 1em;
+    font-size: 15px;
     color: #414141;
 }
 
@@ -325,7 +331,7 @@ input:nth-child(7)::-ms-input-placeholder {color: #414141;}
 } */
 
 #xButton {
-    width: 30px;
+    width: 25px;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -339,18 +345,18 @@ input:nth-child(7)::-ms-input-placeholder {color: #414141;}
 }
 
 #plus {
-    width: 80px;
+    width: 70px;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
 
 .Qdelete {
-    margin-left: 718px;
+    margin-left: 724px;
 }
 
 .Qadd {
-    margin: 7% 0 7% 45%;
+    margin: 65px 0 65px 350px;
 }
 
 #submit_btn {
@@ -363,10 +369,8 @@ input:nth-child(7)::-ms-input-placeholder {color: #414141;}
     font-size: 18px;
     font-weight: 600;
 
-    width: 109%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    margin-left: -4.5%;
+    width: 830px;
+    padding: 12px 0;
     cursor: pointer;
-    margin-top: 3%;
+    margin: 20px 0 0 -31px;
 }
