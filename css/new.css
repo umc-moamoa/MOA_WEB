@@ -29,9 +29,9 @@ ul, li {
 
 #backTop {
     position: absolute;
-    width: 500px;
-    height: 400px;
-    left: 0;
+    /* display: block; */
+    /* height: 50%; */
+    /* left: 50%; */
     z-index: -100;
 }
 
@@ -77,8 +77,8 @@ ul {
 #headerLogo .logo img {
     display: block;
     width: 70px;
-    /* margin: 0 auto; */
-    margin-left: 80px;
+    margin: 0 auto;
+    /* margin-left: 80px; */
 }
 
 /* gnb */
@@ -86,7 +86,8 @@ ul {
     /* overflow: hidden; */
     width: 100%;
     height: 40px;
-    margin-top: 60px;
+    margin: 60px auto; 
+    margin-bottom: 0;
     border-right: none;
     border-left: none;
     box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
@@ -155,19 +156,19 @@ table {
 }
 
 footer a {
-    color: white;
+    color: #909090;
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 12px;
     font-weight: 500;
 }
 #footer_MoA {
     font-family: 'Montserrat';
-    font-size: 1.8em;
+    font-size: 25px;
     margin: 0;
     font-weight: 600;
 }
-#tel {
-    font-size: 1.4em;
+#from {
+    font-size: 12px;
     font-weight: 500;
 }
 /* footer .container {
@@ -178,14 +179,13 @@ footer ul {
 }
 footer td:nth-child(2) {
     text-align: right;
-    font-size: 0.8em;
+    font-size: 10px;
 }
 footer td p {
-    padding-bottom: 0.1em;
-    font-size: 0.6em;
+    font-size: 10px;
 }
 #info {
-    padding: 2em 0;
+    padding: 20px 0;
 }
 
 /* main */
@@ -345,7 +345,7 @@ input:nth-child(7)::-ms-input-placeholder {color: #414141;}
 }
 
 #plus {
-    width: 70px;
+    width: 65px;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -360,8 +360,8 @@ input:nth-child(7)::-ms-input-placeholder {color: #414141;}
 }
 
 #submit_btn {
-    background: linear-gradient(91.36deg, #B8ABFC -24.31%, #BFD4FF 130.3%);
-    box-shadow: 0px -10px 40px rgba(184, 171, 252, 0.3);
+    background: linear-gradient(91.36deg, #4E7FF2 -24.31%, #9CC2FF 130.3%);
+    box-shadow: 0px -10px 40px rgba(156, 194, 255, 0.3);
     border: none;
     color: white;
     text-align: center;
