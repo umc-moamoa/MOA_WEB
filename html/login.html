@@ -8,123 +8,158 @@
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <div id="wrapper">
-        <!--배경-->
-        <img id="backTop" src="../image/Ellipse 35.png" />
-        
-        <!--헤더-->
-        <div class="header">
-            <!--logo-->
-            <a href="../html/main.html"><h1 id="moa">MoA</h1></a>
-            <!-- menu header -->
-            <div id="userMenu">
-                <ul class="list_menu">
-                    <li class="menu menu_login">
-                        <a class="link_login" href="../html/login.html">로그인</a>
-                    </li>
+    <div class="flex-container">
+        <div id="wrapper">
+            <!--배경-->
+            <img id="backTop" src="../image/Ellipse 35.png" />
+            
+            <!-- header -->
+            <div class="header">
 
-                    <li class="menu menu_join">
-                        <a class="link_join" href="../html/signUp.html">회원가입</a>
-                    </li>
-                    
-                    <li class="menu center">
-                        <a class="link_center" href="#none">고객센터</a>
-                    </li>
-                </ul>
+                <!-- 로그인, 회원가입, 마이페이지 -->
+                <div id="userMenu">
+                    <ul class="list_menu">
+                        <li class="menu menu_login">
+                            <a class="link_login" href="../html/login.html">로그인</a>
+                        </li>
+                        <li class="menu menu_join">
+                            <a class="link_join" href="../html/signUp.html">회원가입</a>
+                        </li>
+                        <!-- 이름 수정 -->
+                        <li class="menu menu_mypage"> 
+                            <a class="link_mypage" href="../html/myPage.html">마이페이지</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 로고 -->
+                <div id="headerLogo" class="layout-wrapper">
+                    <h1 class="logo">
+                        <a class="link_main" href="../html/main.html">
+                            <img src="../image/MoA.png"  alt="로고" />
+                        </a>
+                    </h1>
+                </div>
+
+                <!-- 메뉴바 -->
+                <div class="gnb_main">
+                    <ul class="gnb">
+                        <li class="menu1">
+                            <a href="../html/formList.html" class="link all" >
+                                <span class="txt">전체 설문 보기</span>
+                            </a>
+                        </li>
+                        <li class="menu2">
+                            <a href="../html/makeForm.html" class="link new">
+                                <span class="txt">새 설문 만들기</span>
+                            </a>
+                        </li>
+                        <li class="menu3">
+                            <a href="../html/mySurvey.html" class="link best">
+                                <span class="txt">내가 만든 설문</span>
+                            </a>
+                        </li>
+                        <li class="menu4">
+                            <a href="../html/interestedSurvey.html" class="link bargain">
+                                <span class="txt">관심 있는 설문조사</span>
+                            </a>
+                        </li>
+                        <li class="lst">
+                            <a href="../html/participatedSurvey.html" class="link event">
+                                <span class="txt">참여한 설문조사</span>
+                            </a>
+                        </li>
+                        <li class="menu4">
+                            <a href="../html/interestedSurvey.html" class="link bargain">
+                                <span class="txt">포인트 내역</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
             </div>
 
-            <!-- icon -->
-            <div id="iconMenu">
-                <ul class="list_icon">
-                    <li class="icon icon_search">
-                        <a class="link_search" href="#none">검색</a>
-                    </li>
+            <!-- container -->
+            <div class="container">
 
-                    <li class="icon icon_user">
-                        <a class="link_user" href="../html/myPage.html">마이</a>
-                    </li>
+                <form class="loginForm">
+                    <span class="loginLogo">로그인</span>
 
-                    <li class="icon sideMenu">
-                        <a class="link_menu" href="#none">메뉴</a>
-                    </li>
-                </ul>
+                    <!-- ID -->
+                    <div>
+                        <span class="box int_id">
+                            <input type="text" id="id" class="int" maxlength="20" check_result="fail" placeholder="아이디">
+                        </span>
+                    </div>
+
+                    <!-- 비밀번호 -->
+                    <div>
+                        <span class="box int_pass">
+                            <input type="password" id="pswd1" class="int" maxlength="20" placeholder="비밀번호">
+                        </span>
+                        <span class="error_next_box"></span>
+                    </div>
+
+                    <div class="findinfo">
+                        <a href="../html/signUp.html" class="signUPTxt">회원가입</a>
+                        <a href="#" class="findId"  onclick="id_find();">아이디 찾기</a>
+                        <a href="#" class="findPwd"  onclick="pw_find();">비밀번호 찾기</a>
+                    </div>
+                    <div class="socialLoginTxt">    
+                        <p class="socialLoginTxt2">간편 로그인</p>
+                    </div>
+                    <div class="socialLogin">
+                        <a href="#" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="../image/kakao_icon.png"></i></a>
+                        <a href="#" class="social-item bg2"><i class="fa fa-naver"><img class="iconImg2" src="../image/naver_icon.png"></i></a>
+                        <a href="#" class="social-item bg3"><i class="fa fa-facebook"><img class="iconImg3" src="../image/facebook_icon.png"></i></a>
+                    </div>
+
+                    <!-- 로그인 버튼 -->
+                    <div class="btn_area">
+                        <button type="button" id="btnJoin" onclick="login_check();"> 
+                            <span>로그인</span>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
 
-        <!-- container -->
-        <div class="container">
-            <form class="loginForm">
-                <span class="loginLogo">Login</span>
-
-                <!-- ID -->
-                <div>
-                    <span class="box int_id">
-                        <input type="text" id="id" class="int" maxlength="20" check_result="fail" placeholder="아이디">
-                    </span>
-                </div>
-
-                <!-- 비밀번호 -->
-                <div>
-                    <span class="box int_pass">
-                        <input type="password" id="pswd1" class="int" maxlength="20" placeholder="비밀번호">
-                    </span>
-                    <span class="error_next_box"></span>
-                </div>
-
-                <div class="findinfo">
-                    <a href="../html/signUp.html" class="signUPTxt">회원가입</a>
-                    <a href="#" class="findId"  onclick="id_find();">아이디 찾기</a>
-                    <a href="#" class="findPwd"  onclick="pw_find();">비밀번호 찾기</a>
-                </div>
-                <div class="socialLoginTxt">    
-                    <p class="socialLoginTxt2">간편 로그인</p>
-                </div>
-                <div class="socialLogin">
-                    <a href="#" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="../image/kakao_icon.png"></i></a>
-                    <a href="#" class="social-item bg2"><i class="fa fa-naver"><img class="iconImg2" src="../image/naver_icon.png"></i></a>
-                    <a href="#" class="social-item bg3"><i class="fa fa-facebook"><img class="iconImg3" src="../image/facebook_icon.png"></i></a>
-                </div>
-
-                <!-- 로그인 버튼 -->
-                <div class="btn_area">
-                    <button type="button" id="btnJoin" onclick="login_check();"> 
-                        <span>로그인</span>
-                    </button>
-                </div>
-            </form>
-        </div>
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <table>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4 col-md-3 item">
+                            <td>
+                                <p id="footer_MoA">MoA</p>
+                                <a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴문의</a>
+                                <!-- <p>010-2020-1030</p> -->
+                                <p id="from">UMC / 컴공선배</p>
+                                <!-- <p>MON - FRI 10:00 AM - 05:00 PM
+                                <br>LUNCH 12:00 PM - 01:00 PM
+                                <br>CLOSED SAT, SUN AND HOLIDAYS</p> -->
+                            </td>
+                        </div>
+                        <div class="col-sm-4 col-md-3 item">
+                            <td>
+                                <ul>
+                                    <!-- <a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴문의</a> -->
+                                    <!-- <a href="#">회사안내</a>&nbsp;<a href="#">이용안내</a>&nbsp;<a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴/도매 문의</a> -->
+                                    <p id="info">
+                                    서비스명: MoA / 대표: 김은혜 / tel: 010-2020-1030
+                                    <!-- <br>통신판매업신고: 2018-고양덕양구-1367호 / TEL: 02-381-3758 / FAX: 02-381-3788 -->
+                                    <!-- <br>주소: 경기도 고양시 덕양구 삼송로 193번길 1-6 2층 -->
+                                    <br>개인정보 보호 책임자: 김은혜 / Email: kimehhk@gmail.com</p>
+                                    <p>COPYRIGHT (C) ALL RIGHTS RESERVED</p>
+                                </ul>
+                            </td>
+                        </div>
+                    </div>
+                </table>
+            </div>
+        </footer>
     </div>
-    <!-- footer -->
-    <footer>
-        <div class="footerContainer">
-            <table>
-            <div class="row justify-content-center">
-                <div class="col-sm-4 col-md-3 item">
-                    <td>
-                    <p id="footer_MoA">MoA</p>
-                        <p>CUSTOMER CENTER</p>
-                        <p id="tel">02-381-3758</p>
-                        <p>MON - FRI 10:00 AM - 05:00 PM
-                        <br>LUNCH 12:00 PM - 01:00 PM
-                        <br>CLOSED SAT, SUN AND HOLIDAYS</p>
-                    </td>
-                </div>
-                <div class="col-sm-4 col-md-3 item">
-                <td>
-                    <ul>
-                        <a href="#">회사안내</a>&nbsp;<a href="#">이용안내</a>&nbsp;<a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴/도매 문의</a>
-                        <p id="info">상호명: 주식회사 사운드웨이브 / 대표: 어주연 / 사업자등록번호: 121-86-36395 [사업자정보확인]
-                            <br>통신판매업신고: 2018-고양덕양구-1367호 / TEL: 02-381-3758 / FAX: 02-381-3788
-                            <br>주소: 경기도 고양시 덕양구 삼송로 193번길 1-6 2층
-                            <br>개인정보 보호 책임자: 어주연 / Email: soundwave@sound-wave.co.kr</p>
-                            <p>COPYRIGHT (C) ALL RIGHTS RESERVED</p>
-                </ul>
-                </td>
-                </div>
-            </div>
-            </table>
-        </div>
-    </footer>
     <script src="../js/login.js"></script>
 </body>
 </html>
