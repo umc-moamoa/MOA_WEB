@@ -9,121 +9,174 @@
 </head>
 <body>
     <div class="flex-container">
-    <!-- <div id="wrapper"> -->
-        <!--배경-->
-        <img id="backTop" src="../image/Ellipse 35.png" />
-        <img id="backCenter" src="../image/dd 1.png" />
+        <div id="wrapper">
+            <!--배경-->
+            <img id="backTop" src="../image/Ellipse 35.png" />
 
-        <!--헤더-->
-        <div class="header">
-            <!--logo-->
-            <a href="../html/main.html"><h1 id="moa">MoA</h1></a>
-            <!-- menu header -->
-            <div id="userMenu">
-                <ul class="list_menu">
-                    <li class="menu menu_login">
-                        <a class="link_login" href="../html/login.html">로그인</a>
-                    </li>
+            <!-- header -->
+            <div class="header">
 
-                    <li class="menu menu_join">
-                        <a class="link_join" href="../html/signUp.html">회원가입</a>
-                    </li>
-                    
-                    <li class="menu center">
-                        <a class="link_center" href="#none">고객센터</a>
-                    </li>
-                </ul>
+                <!-- 로그인, 회원가입, 마이페이지 -->
+                <div id="userMenu">
+                    <ul class="list_menu">
+                        <li class="menu menu_login">
+                            <a class="link_login" href="../html/login.html">로그인</a>
+                        </li>
+                        <li class="menu menu_join">
+                            <a class="link_join" href="../html/signUp.html">회원가입</a>
+                        </li>
+                        <!-- 이름 수정 -->
+                        <li class="menu menu_mypage"> 
+                            <a class="link_mypage" href="../html/myPage.html">마이페이지</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 로고 -->
+                <div id="headerLogo" class="layout-wrapper">
+                    <h1 class="logo">
+                        <a class="link_main" href="../html/main.html">
+                            <img src="../image/MoA.png"  alt="로고" />
+                        </a>
+                    </h1>
+                </div>
+
+                <!-- 메뉴바 -->
+                <div class="gnb_main">
+                    <ul class="gnb">
+                        <li class="menu1">
+                            <a href="../html/formList.html" class="link all" >
+                                <span class="txt">전체 설문 보기</span>
+                            </a>
+                        </li>
+                        <li class="menu2">
+                            <a href="../html/makeForm.html" class="link new">
+                                <span class="txt">새 설문 만들기</span>
+                            </a>
+                        </li>
+                        <li class="menu3">
+                            <a href="../html/mySurvey.html" class="link best">
+                                <span class="txt">내가 만든 설문</span>
+                            </a>
+                        </li>
+                        <li class="menu4">
+                            <a href="../html/interestedSurvey.html" class="link bargain">
+                                <span class="txt">관심 있는 설문조사</span>
+                            </a>
+                        </li>
+                        <li class="lst">
+                            <a href="../html/participatedSurvey.html" class="link event">
+                                <span class="txt">참여한 설문조사</span>
+                            </a>
+                        </li>
+                        <li class="menu4">
+                            <a href="../html/interestedSurvey.html" class="link bargain">
+                                <span class="txt">포인트 내역</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
             </div>
 
-            <!-- icon -->
-            <div id="iconMenu">
-                <ul class="list_icon">
-                    <li class="icon icon_search">
-                        <a class="link_search" href="#none">검색</a>
-                    </li>
+            <!-- container -->
+            <div class="container">
 
-                    <li class="icon icon_user">
-                        <a class="link_user" href="../html/myPage.html">마이</a>
-                    </li>
+                <!-- 서브 제목 -->
+                <div id="subTitle" >
+                    <p class="subTitle">설문 참여</p>
+                </div>
 
-                    <li class="icon sideMenu">
-                        <a class="link_menu" href="#none">메뉴</a>
-                    </li>
-                </ul>
+                <div id="main">
+
+                    <form>
+                        <div class="flex-container2">
+                            <!-- 메인 -->
+                            <div id="SurveyQuestion">
+                                <div class="question">
+                                    <span id="Q1">1. 선호하는 브랜드가 있다면 무엇인가요?</span>
+                                    <span class="required">필수</span>
+                                    <input type="text" class="Qtype3" maxlength="30"
+                                    placeholder="자유롭게 적어주세요."
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '자유롭게 적어주세요.'"></textarea>
+                                </div>
+
+                                <div class="question">
+                                    <span id="Q2">2. 해당 브랜드를 선호하는 이유는 무엇인가요?</span>
+                                    <span class="required">필수</span>
+                                    <textarea id="Qtype4" cols="108" rows="15" 
+                                    placeholder=" 자유롭게 적어주세요."
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = ' 자유롭게 적어주세요.'"></textarea>
+                                </div>
+
+                                <div class="question">
+                                    <span id="Q3">3. 해당 브랜드에 방문하거나 제품을 구입하는 횟수를 선택해주세요.</span>
+                                    <span class="required">필수</span>
+
+                                    <div id="radioBox">
+                                        <div class="Qtype1">
+                                            <input type = "radio" name = "count" value = "1-2"> <span class="radioBtnText">한 달에 1-2번 </span> 
+                                        </div>
+                                        <div class="Qtype1">
+                                            <input type = "radio" name = "count" value = "1"> <span class="radioBtnText">일주일에 1번 </span> 
+                                        </div>
+                                        <div class="Qtype1">
+                                            <input type = "radio" name = "count" value = "3-4"> <span class="radioBtnText">일주일에 3-4번 </span> 
+                                        </div>
+                                        <div class="Qtype1">
+                                            <input type = "radio" name = "count" value = "all"> <span class="radioBtnText">매일</span> 
+                                        </div>
+                                        <div class="Qtype1">
+                                            <input type = "radio" name = "count" value = "etc"> <span class="radioBtnText">기타</span> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div><button id="submit_btn">제출</button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <!-- container -->
-        <div class="container">
-            <!-- 서브 제목 -->
-            <div id="subTitle" >
-                <p class="subTitle">설문 참여</p>
-            </div>
-
-            <div id="main">
-                <form>
-                <div class="flex-container2">
-                <!-- 메인 -->
-                <div id="SurveyQuestion"></div>
-                <!-- <div>
-                <div>
-                <span id="Q1">1. 선호하는 브랜드가 있다면 무엇인가요?</span>
-                <span class="required">필수</span></div>
-                <textarea id="textarea1" cols="108" rows="2" placeholder="자유롭게 적어주세요."></textarea>
-                </div>
-                <div class="question"><div><span id="Q2">2. 해당 브랜드를 선호하는 이유는 무엇인가요?</span>
-                    <span class="required">필수</span></div>
-                    <textarea id="textarea2" cols="108" rows="15" placeholder=" 자유롭게 적어주세요."></textarea>
-                </div>
-                <div class="question"><div><span id="Q3">3. 해당 브랜드에 방문하거나 제품을 구입하는 횟수를 선택해주세요.</span>
-                    <span class="required">필수</span></div>
-                <div id="radioBox">
-                <input type = "radio" name = "count" value = "1-2"> <span class="radioBtnText">한 달에 1-2번 </span><br><br>
-                <input type = "radio" name = "count" value = "1"> <span class="radioBtnText">일주일에 1번 </span> <br><br>
-                <input type = "radio" name = "count" value = "3-4"> <span class="radioBtnText">일주일에 3-4번 </span> <br><br>
-                <input type = "radio" name = "count" value = "all"> <span class="radioBtnText">매일</span> <br><br>
-                <input type = "radio" name = "count" value = "etc"> <span class="radioBtnText">기타</span> <br>
-                </div>
-                </div> -->
-                <div><button id="submit_btn">제출</button></div>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <img id="backBottom" src="../image/Ellipse 34.png"/>
     
-    <!-- footer -->
-    <footer>
-        <div class="container">
-            <table>
-            <div class="row justify-content-center">
-                <div class="col-sm-4 col-md-3 item">
-                    <td>
-                        <p id="footer_MoA">MoA</p>
-                        <p>CUSTOMER CENTER</p>
-                        <p id="tel">02-381-3758</p>
-                        <p>MON - FRI 10:00 AM - 05:00 PM
-                        <br>LUNCH 12:00 PM - 01:00 PM
-                        <br>CLOSED SAT, SUN AND HOLIDAYS</p>
-                    </td>
-                </div>
-                <div class="col-sm-4 col-md-3 item">
-                    <td>
-                        <ul>
-                            <a href="#">회사안내</a>&nbsp;<a href="#">이용안내</a>&nbsp;<a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴/도매 문의</a>
-                            <p id="info">상호명: 주식회사 사운드웨이브 / 대표: 어주연 / 사업자등록번호: 121-86-36395 [사업자정보확인]
-                                <br>통신판매업신고: 2018-고양덕양구-1367호 / TEL: 02-381-3758 / FAX: 02-381-3788
-                                <br>주소: 경기도 고양시 덕양구 삼송로 193번길 1-6 2층
-                                <br>개인정보 보호 책임자: 어주연 / Email: soundwave@sound-wave.co.kr</p>
-                                <p>COPYRIGHT (C) ALL RIGHTS RESERVED</p>
-                        </ul>
-                    </td>
-                </div>
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <table>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4 col-md-3 item">
+                            <td>
+                                <p id="footer_MoA">MoA</p>
+                                <a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴문의</a>
+                                <!-- <p>010-2020-1030</p> -->
+                                <p id="from">UMC / 컴공선배</p>
+                                <!-- <p>MON - FRI 10:00 AM - 05:00 PM
+                                <br>LUNCH 12:00 PM - 01:00 PM
+                                <br>CLOSED SAT, SUN AND HOLIDAYS</p> -->
+                            </td>
+                        </div>
+                        <div class="col-sm-4 col-md-3 item">
+                            <td>
+                                <ul>
+                                    <!-- <a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴문의</a> -->
+                                    <!-- <a href="#">회사안내</a>&nbsp;<a href="#">이용안내</a>&nbsp;<a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴/도매 문의</a> -->
+                                    <p id="info">
+                                    서비스명: MoA / 대표: 김은혜 / tel: 010-2020-1030
+                                    <!-- <br>통신판매업신고: 2018-고양덕양구-1367호 / TEL: 02-381-3758 / FAX: 02-381-3788 -->
+                                    <!-- <br>주소: 경기도 고양시 덕양구 삼송로 193번길 1-6 2층 -->
+                                    <br>개인정보 보호 책임자: 김은혜 / Email: kimehhk@gmail.com</p>
+                                    <p>COPYRIGHT (C) ALL RIGHTS RESERVED</p>
+                                </ul>
+                            </td>
+                        </div>
+                    </div>
+                </table>
             </div>
-            </table>
-        </div>
-
-    </footer>
+        </footer>
     </div>
     <script src="../js/joinForm.js"></script>
 </body>
