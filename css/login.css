@@ -27,12 +27,15 @@ ul,li{
     margin: 0 auto;
 }
 
+/* 배경 */
 #backTop {
     position: absolute;
-    /* display: block; */
-    /* height: 50%; */
-    /* left: 50%; */
     z-index: -100;
+}
+#backBottom{
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 /* 로그인, 회원가입, 마이페이지 */
@@ -81,32 +84,6 @@ ul {
     /* margin-left: 80px; */
 }
 
-/* gnb */
-.gnb_main {
-    /* overflow: hidden; */
-    width: 100%;
-    height: 40px;
-    margin: 60px auto; 
-    margin-bottom: 0;
-    border-right: none;
-    border-left: none;
-    box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
-    padding: 0.5px 60px;
-}
-.gnb a {
-    float: left;
-    width: 190px;
-    font-size: 14px;
-    color: #909090;
-    text-align: center;
-    /* margin: 20px 0 0 0; */
-    margin: 0;
-}
-.txt {
-    display: inline-block;
-    font-weight: 500;
-}
-
 /* container */
 #wrapper .container {
     /* min-height: 300vh; */
@@ -121,59 +98,13 @@ footer .container {
     margin: 30px auto;
     padding: 0 65px;
 }
-
-/*footer*/
-footer {
-    background-color: white;
-    color: #909090;
-
-    bottom: 0;
-    margin: 0 auto;
-    width: 100%;
-}
-
-#wrapper {
-    /* height: auto; */
-    min-height: 100vh;
-    position: relative;
-    /* padding-bottom: 226.302; */
-}
-
-table {
-    width: 100%;
-}
-
-footer a {
-    color: #909090;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-}
-#footer_MoA {
-    font-family: 'Montserrat';
-    font-size: 25px;
-    margin: 0;
-    font-weight: 600;
-}
-#from {
-    font-size: 12px;
-    font-weight: 500;
-}
-/* footer .container {
-    padding: 0 auto;
-} */
-footer ul {
-    padding-inline-start: 100px;
-}
-footer td:nth-child(2) {
-    text-align: right;
-    font-size: 10px;
-}
-footer td p {
-    font-size: 10px;
-}
-#info {
-    padding: 20px 0;
+/*==========================================================*/
+.container {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 28%;
+    height: auto;
 }
 
 /* main */
@@ -183,12 +114,28 @@ footer td p {
 
     height: auto;
     background: #FFFFFF;
+<<<<<<< HEAD
     border: 1px solid #909090;
     border-bottom: 0;
 }
 
 #subTitle .subTitle {
     position: relative;
+=======
+    border: solid 2px #dadada;
+    border-bottom: 0;
+}
+
+/* logo*/
+.loginLogo{
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+
+    padding-top: 35px;
+    padding-bottom: 15px;
+    line-height: 50px;
+>>>>>>> c8754781fa06bf1a7255d2842ae1f32b77602504
 
     font-style: normal;
     font-weight: 600;
@@ -198,6 +145,7 @@ footer td p {
     color: #414141;
 }
 
+<<<<<<< HEAD
 .flex-container2 {
     display: flex;
     flex-direction: column;
@@ -218,6 +166,25 @@ footer td p {
 
     margin-bottom: 15px;
     padding-bottom: 7px;
+=======
+/* 입력 폼 스타일 */
+.box {
+    display: block;
+    width: 350px;
+    height: 40px;
+    border-bottom: solid 1.5px #dadada;
+    padding: 10px 10px 10px 10px;
+    margin-top: 25px;
+    background: #fff;
+    position: relative;
+}
+
+.int {
+    width: 100%;
+    border: none;
+    background: #fff;
+    font-size: 13px;
+>>>>>>> c8754781fa06bf1a7255d2842ae1f32b77602504
 }
 
 .inputPW {
@@ -278,19 +245,21 @@ footer td p {
 /* 소셜 로그인 */
 .socialLoginTxt2{
     text-align: center;
+<<<<<<< HEAD
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
 
     margin: 40px 0 10px 0;
+=======
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 70px;
+>>>>>>> c8754781fa06bf1a7255d2842ae1f32b77602504
     color: #414141;
 }
 
 .socialLogin{
-    display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
 	display: flex;
 	justify-content: center;
 	-ms-align-items: center;
@@ -299,17 +268,22 @@ footer td p {
 
 .social-item {
     font-size: 20px;
+<<<<<<< HEAD
     /* color: #fff; */
+=======
+    color: #fff;
+>>>>>>> c8754781fa06bf1a7255d2842ae1f32b77602504
 
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     width: 45px;
     height: 45px;
+=======
+    width: 40px;
+    height: 40px;
+>>>>>>> c8754781fa06bf1a7255d2842ae1f32b77602504
     border-radius: 50%;
     margin: 8px;
 }
@@ -317,7 +291,6 @@ footer td p {
 .social-item:hover {
     color: #fff;
     background-color: #333333;
-    /* filter: invert(100%); */
 }
 
 .bg1 {background-color: #fae100;}
@@ -344,11 +317,10 @@ footer td p {
     color: white;
     text-align: center;
     display: inline-block;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
 
     width: 430px;
-    padding: 12px 0;
+    padding: 15px 0;
     cursor: pointer;
     margin: 20px 0 0 -31px;
 }
