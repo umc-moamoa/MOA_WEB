@@ -166,10 +166,10 @@ ul,li{
 
 /* main1 */
 #main1 {
-    position: relative;
+    /* position: relative; */
     box-sizing: border-box;
-    padding: 3% 3% 5% 3%;
-    margin: 0 5% 5% 5%;
+    padding: 10px;
+    margin:15px;
  
     /* height: auto; */
     background: #FFFFFF;
@@ -183,11 +183,12 @@ ul,li{
 }
 
 #title1 {
-   /* top: 5%; */
-   font-size: 1.5em;
-   color: #414141;
-   font-weight: bold;
-}
+    /* top: 5%; */
+    font-size: 1.5em;
+    color: #414141;
+    font-weight: bold;
+    text-decoration: none;
+ }
 
 .two-container1 {
     margin-top: 2%;
@@ -218,6 +219,10 @@ ul,li{
     font-size: 1.8em;
     font-weight: 500;
     color: #B8ABFC;
+}
+
+.slick-slide{
+    padding-right: 30px;
 }
 
 /* underBar */
