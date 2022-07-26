@@ -11,7 +11,7 @@
     <div class="flex-container">
         <div id="wrapper">
             <!--배경-->
-            <img id="backTop" src="../image/Ellipse 35.png" />
+            <!-- <img id="backTop" src="../image/Ellipse 35.png" /> -->
             
             <!-- header -->
             <div class="header">
@@ -83,45 +83,48 @@
             <!-- container -->
             <div class="container">
 
-                <form class="loginForm">
-                    <span class="loginLogo">로그인</span>
+                <div id="main">
 
-                    <!-- ID -->
-                    <div>
-                        <span class="box int_id">
-                            <input type="text" id="id" class="int" maxlength="20" check_result="fail" placeholder="아이디">
-                        </span>
-                    </div>
+                    <form>
+                        <div class="flex-container2">
 
-                    <!-- 비밀번호 -->
-                    <div>
-                        <span class="box int_pass">
-                            <input type="password" id="pswd1" class="int" maxlength="20" placeholder="비밀번호">
-                        </span>
-                        <span class="error_next_box"></span>
-                    </div>
+                            <div id="subTitle">
+                                <p class="subTitle">로그인</p>
+                            </div>
 
-                    <div class="findinfo">
-                        <a href="../html/signUp.html" class="signUPTxt">회원가입</a>
-                        <a href="#" class="findId"  onclick="id_find();">아이디 찾기</a>
-                        <a href="#" class="findPwd"  onclick="pw_find();">비밀번호 찾기</a>
-                    </div>
-                    <div class="socialLoginTxt">    
-                        <p class="socialLoginTxt2">간편 로그인</p>
-                    </div>
-                    <div class="socialLogin">
-                        <a href="#" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="../image/kakao_icon.png"></i></a>
-                        <a href="#" class="social-item bg2"><i class="fa fa-naver"><img class="iconImg2" src="../image/naver_icon.png"></i></a>
-                        <a href="#" class="social-item bg3"><i class="fa fa-facebook"><img class="iconImg3" src="../image/facebook_icon.png"></i></a>
-                    </div>
+                            <div id="loginBox">
+                                <input type="text" class="inputId" maxlength="30"
+                                placeholder="아이디"
+                                onfocus="this.placeholder = ''" 
+                                onblur="this.placeholder = '아이디'">
 
-                    <!-- 로그인 버튼 -->
-                    <div class="btn_area">
-                        <button type="button" id="btnJoin" onclick="login_check();"> 
-                            <span>로그인</span>
-                        </button>
-                    </div>
-                </form>
+                                <input type="text" class="inputPW" maxlength="30"
+                                placeholder="비밀번호"
+                                onfocus="this.placeholder = ''" 
+                                onblur="this.placeholder = '비밀번호'">
+                            </div>
+
+                            <div><button id="login_btn">로그인</button></div>
+
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="findinfo">
+                    <a href="../html/signUp.html" class="signUPTxt">회원가입</a>
+                    <a href="#" class="findId"  onclick="id_find();">아이디 찾기</a>
+                    <a href="#" class="findPwd"  onclick="pw_find();">비밀번호 찾기</a>
+                </div>
+                <div class="socialLoginTxt">    
+                    <p class="socialLoginTxt2">간편 로그인</p>
+                </div>
+                <div class="socialLogin">
+                    <a href="#" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="../image/kakao_icon.png"></i></a>
+                    <a href="#" class="social-item bg2"><i class="fa fa-naver"><img class="iconImg2" src="../image/naver_icon.png"></i></a>
+                    <a href="#" class="social-item bg3"><i class="fa fa-facebook"><img class="iconImg3" src="../image/facebook_icon.png"></i></a>
+                </div>
+
             </div>
         </div>
 

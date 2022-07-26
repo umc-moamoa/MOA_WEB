@@ -1,5 +1,4 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
 * {
     margin: 0;
     padding: 0;
@@ -113,7 +112,7 @@ ul {
     /* min-height: 300vh; */
     width: 430px;
     margin: 70px auto;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
 }
 
 footer .container {
@@ -177,80 +176,113 @@ footer td p {
     padding: 20px 0;
 }
 
-.loginForm{
+/* main */
+#main {
     box-sizing: border-box;
     padding: 30px 30px 0 30px;
 
     height: auto;
     background: #FFFFFF;
-    border: solid 1px #909090;
+    border: 1px solid #909090;
     border-bottom: 0;
 }
 
-/* logo*/
-.loginLogo{
-    /* padding-top: 20px; */
-    /* padding-bottom: 20px; */
-    text-align: center;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 22px;
+#subTitle .subTitle {
+    position: relative;
 
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    /* line-height: 40px; */
+    margin-bottom: 30px;
     color: #414141;
 }
 
-/* 입력 폼 스타일 */
-.box {
-    display: block;
-    width: 350px;
-    height: 40px;
-    border-bottom: solid 1px #dadada;
-   /*  padding: 10px 14px 10px 14px; */
-    margin-top: 25px;
-    background: #fff;
-    position: relative;
+.flex-container2 {
+    display: flex;
+    flex-direction: column;
 }
 
-.int {
-/*     display: block;
-    height: 30px;
-    padding-bottom: 0; */
+.inputId {
+    display: block;
+    width: 360px;
+
     border: none;
-    background: #fff;
-    font-size: 14px;
+    border-bottom: 1px solid #B5B5B5;
+    outline: none; /* 입력 시 테두리 지움*/
+    display: block;
+    
+    font-weight: 500;
+    font-size: 15px;
+    color: #909090;
+
+    margin-bottom: 15px;
+    padding-bottom: 7px;
 }
+
+.inputPW {
+    display: block;
+    width: 360px;
+
+    border: none;
+    border-bottom: 1px solid #B5B5B5;
+    outline: none; /* 입력 시 테두리 지움*/
+    display: block;
+    
+    font-weight: 500;
+    font-size: 15px;
+    color: #909090;
+
+    margin-bottom: 15px;
+    padding-bottom: 7px;
+}
+
+#login_btn {
+    background: linear-gradient(91.36deg, #4E7FF2 -24.31%, #9CC2FF 130.3%);
+    box-shadow: 0px -10px 40px rgba(156, 194, 255, 0.3);
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+
+    width: 430px;
+    padding: 12px 0;
+    cursor: pointer;
+    margin: 20px 0 0 -31px;
+}
+
 
 /* 회원가입, 아이디, 비번 찾기*/
 .findinfo{
     text-align: center;
-    padding: 2em;
-    font-size: 0.8em;
+    margin: 30px;
+    font-size: 11px;
 }
 .signUPTxt {
     color: #919191;
-    padding-right: 1em;
-    border-right: solid 1.8px #919191;
+    padding: 0 10px;
+    /* border-right: solid 1.8px #919191; */
 }
 .findId{
     color: #919191;
-    padding-right: 1em;
-    padding-left: 1em;
-    border-right: solid 1.8px #919191;
+    padding: 0 10px;
+    /* border-right: solid 1.8px #919191; */
 }
 .findPwd{
     color: #919191;
-    padding-left: 1em;
+    padding: 0 10px;
 }
 
 /* 소셜 로그인 */
 .socialLoginTxt2{
     text-align: center;
-    font-family: 'Noto Sans KR';
     font-style: normal;
-    font-weight: 400;
-    font-size: 1em;
-    line-height: 70px;
+    font-weight: 600;
+    font-size: 18px;
+
+    margin: 40px 0 10px 0;
     color: #414141;
 }
 
@@ -266,8 +298,8 @@ footer td p {
 }
 
 .social-item {
-    font-size: 25px;
-    color: #fff;
+    font-size: 20px;
+    /* color: #fff; */
 
     display: -webkit-box;
     display: -webkit-flex;
@@ -276,10 +308,10 @@ footer td p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
-    margin: 5px;
+    margin: 8px;
 }
 
 .social-item:hover {
@@ -293,24 +325,19 @@ footer td p {
 .bg3 {background-color: #3b5998}
 
 .iconImg1 {
-    width: 0.8em;
-    height: 0.8em;
+    width: 16px;
+    height: 16px;
 }
 .iconImg2 {
-    width: 0.8em;
-    height: 0.8em;
+    width: 14px;
+    height: 16px;
 }
 .iconImg3 {
-    width: 0.55em;
-    height: 0.8em;
+    width: 11px;
+    height: 16px;
 }
 
-/* 버튼 스타일 */
-.btn_area {
-    margin: 30px 0 91px;
-}
-
-#btnJoin {
+#login_btn {
     background: linear-gradient(91.36deg, #4E7FF2 -24.31%, #9CC2FF 130.3%);
     box-shadow: 0px -10px 40px rgba(156, 194, 255, 0.3);
     border: none;
