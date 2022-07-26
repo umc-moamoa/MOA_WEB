@@ -205,7 +205,7 @@ footer td p {
     display: block;
     
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     color: #909090;
 
     margin-bottom: 15px;
@@ -222,12 +222,17 @@ footer td p {
     display: block;
     
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     color: #909090;
 
     margin-bottom: 15px;
     padding-bottom: 7px;
 }
+
+/* placeholder 폰트 색 변경, 크롬/엣지 둘 다 적용 */
+input::placeholder{color: #909090;}
+input::-webkit-input-placeholder {color: #909090;}
+input::-ms-input-placeholder{color: #909090;}
 
 #login_btn {
     background: linear-gradient(91.36deg, #4E7FF2 -24.31%, #9CC2FF 130.3%);

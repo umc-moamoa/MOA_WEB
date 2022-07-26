@@ -1,5 +1,4 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
 * {
     margin: 0;
     padding: 0;
@@ -21,28 +20,10 @@ ul,li{
     list-style: none;
 }
 
-/* 배경 */
-#backTop {
-    position: absolute;
-    z-index: -100;
-}
-#backBottom{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-/* 헤더 */
 .header {    
     position: relative;
     width: 100%;
     height: 180px;
-    margin: 0 auto;
-}
-
-/* 로고 헤더 */
-#headerLogo .logo img {
-    display: block;
-    width: 70px;
     margin: 0 auto;
 }
 
@@ -57,12 +38,14 @@ ul,li{
 #userMenu * {
     font-weight: 400;
     font-size: 12px;
+    /* letter-spacing: 0.1em; */
     color: #414141;
 }
 ul {
     display: block;
     margin-block-start: 10px;
     margin-block-end: 10px;
+    /* padding-inline-start: 20px; */
 }
 
 #userMenu .menu {
@@ -82,108 +65,251 @@ ul {
     text-indent: -9999px;
 }
 
-/*==========================================================*/
-.container {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    width: 28%;
-    height: auto;
+/* 로고 헤더 */
+#headerLogo .logo img {
+    display: block;
+    width: 70px;
+    margin: 0 auto;
+    /* margin-left: 80px; */
 }
 
+/* gnb */
+.gnb_main {
+    /* overflow: hidden; */
+    width: 100%;
+    height: 40px;
+    margin: 60px auto; 
+    margin-bottom: 0;
+    border-right: none;
+    border-left: none;
+    box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
+    padding: 0.5px 60px;
+}
+.gnb a {
+    float: left;
+    width: 190px;
+    font-size: 14px;
+    color: #909090;
+    text-align: center;
+    /* margin: 20px 0 0 0; */
+    margin: 0;
+}
+.txt {
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* container */
+#wrapper .container {
+    width: 430px;
+    margin: 70px auto;
+    margin-bottom: 30px;
+
+}
+
+footer .container {
+    /* min-height: 300vh; */
+    width: 970px;
+    margin: 30px auto;
+    padding: 0 65px;
+}
+
+/*footer*/
+footer {
+    background-color: white;
+    color: #909090;
+
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#wrapper {
+    /* height: auto; */
+    min-height: 100vh;
+    position: relative;
+    /* padding-bottom: 226.302; */
+}
+
+table {
+    width: 100%;
+}
+
+footer a {
+    color: #909090;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+#footer_MoA {
+    font-family: 'Montserrat';
+    font-size: 25px;
+    margin: 0;
+    font-weight: 600;
+}
+#from {
+    font-size: 12px;
+    font-weight: 500;
+}
+/* footer .container {
+    padding: 0 auto;
+} */
+footer ul {
+    padding-inline-start: 100px;
+}
+footer td:nth-child(2) {
+    text-align: right;
+    font-size: 10px;
+}
+footer td p {
+    font-size: 10px;
+}
+#info {
+    padding: 20px 0;
+}
+
+/* main */
 #main {
     box-sizing: border-box;
-    padding-left: 8%;
-    padding-top: 3%;
+    padding: 30px 30px 0 30px;
+
     height: auto;
-    
     background: #FFFFFF;
-    border: solid 2px #dadada;
+    border: 1px solid #909090;
+    border-bottom: 0;
 }
 
-.joinLogo{
-    padding-top: 35px;
-    padding-bottom: 15px;
-    text-align: center;
-    font-weight: 500;
+#subTitle .subTitle {
+    position: relative;
+
+    font-style: normal;
+    font-weight: 600;
     font-size: 22px;
-    line-height: 50px;
+    margin-bottom: 25px;
 
     color: #414141;
 }
-/* 입력 폼 스타일 */
-h3 {
-    margin: 19px 0 5px;
-    font-size: 11px;
-    font-weight: 500;
-    width: 350px;
-}
-.join_title {
-    padding-top: 5px;
-}
-.box {
-    display: block;
-    width: 380px;
-    height: 40px;
-    border-bottom: solid 1.5px #dadada;
-    padding: 10px 10px 10px 10px;
-    box-sizing: border-box;
-    background: #fff;
-    position: relative;
+
+.flex-container2 {
+    display: flex;
+    flex-direction: column;
 }
 
-.int {
-    display: block;
+.inputId {
+    display: inline-block;
     position: relative;
-    width: 100%;
+    width: 300px;
+
     border: none;
-    background: #fff;
-    font-size: 13px;
-}
+    border-bottom: 1px solid #B5B5B5;
+    outline: none; /* 입력 시 테두리 지움*/
+    
+    font-weight: 500;
+    font-size: 14px;
+    color: #909090;
 
-.int.name{
-    width: 80%;
+/*     margin-bottom: 35px; */
+    padding-bottom: 7px;
 }
 
 /* 중복확인 */
-.id_overlap_button{
+#idBtn {
+    display: inline-block;
     position: absolute;
-    top: 16px;
-    right: 13px;
+    width: 60px;
+    padding: 6px 0;
+    border: none;
+    border-bottom: 1px solid #B5B5B5;
+
+    background-color: #FFFFFF;
+    color: #4E7FF2;
+    text-align: center;
     font-size: 12px;
-    font-family: 'Noto Sans KR';
+    font-weight: 400;
     
-    border: 0;
     cursor: pointer;
-    color: #4383FF;
-    background-color: #fff;
 }
 
-/* 메세지 8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요. */
-.meg{
-    margin-top: 8px;
-    font-size: 10px;
-    color: #4383FF;    
-}
-.txt{
-    padding-top: 1em;
-    font-size: 10px;
-    padding-top: 1.5em;
-    display: none;
+.validId {
+    width: 360px;
+    padding: 6px 0;
+    border: none;
+    margin-bottom: 25px;
+
+    background-color: #FFFFFF;
+    color: #4E7FF2;
+    font-size: 11px;
+    font-weight: 400;
 }
 
-/* 회원가입 버튼*/
-#btnJoin {
+.inputName {
+    display: block;
+    width: 360px;
+
+    border: none;
+    border-bottom: 1px solid #B5B5B5;
+    outline: none; /* 입력 시 테두리 지움*/
+    display: block;
+    
+    font-weight: 500;
+    font-size: 14px;
+    color: #909090;
+
+    margin-bottom: 35px;
+    padding-bottom: 7px;
+}
+
+.inputPW {
+    display: block;
+    width: 360px;
+
+    border: none;
+    border-bottom: 1px solid #B5B5B5;
+    outline: none; /* 입력 시 테두리 지움*/
+    display: block;
+    
+    font-weight: 500;
+    font-size: 14px;
+    color: #909090;
+
+    margin-bottom: 35px;
+    padding-bottom: 7px;
+}
+
+.checkPW {
+    display: block;
+    width: 360px;
+
+    border: none;
+    border-bottom: 1px solid #B5B5B5;
+    outline: none; /* 입력 시 테두리 지움*/
+    display: block;
+    
+    font-weight: 500;
+    font-size: 14px;
+    color: #909090;
+
+    margin-bottom: 35px;
+    padding-bottom: 7px;
+}
+
+/* placeholder 폰트 색 변경, 크롬/엣지 둘 다 적용 */
+input::placeholder{color: #909090;}
+input::-webkit-input-placeholder {color: #909090;}
+input::-ms-input-placeholder{color: #909090;}
+
+#singup_btn {
     background: linear-gradient(91.36deg, #4E7FF2 -24.31%, #9CC2FF 130.3%);
     box-shadow: 0px -10px 40px rgba(156, 194, 255, 0.3);
     border: none;
     color: white;
     text-align: center;
     display: inline-block;
-    font-size: 20px;
-    width: 109%;
-    
-    padding: 15px 0;
-    
-    margin: 20px 0 0 -38px;
+    font-size: 18px;
+    font-weight: 600;
+
+    width: 430px;
+    padding: 12px 0;
+    cursor: pointer;
+    margin: 20px 0 0 -31px;
 }

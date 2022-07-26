@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
-    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+    <title>회원가입 페이지</title>
     <link rel="stylesheet" href="../css/signUp.css">
 </head>
 <body>
     <div class="flex-container">
         <div id="wrapper">
             <!--배경-->
-            <img id="backTop" src="../image/top1.png" />
-            <img id="backBottom" src="../image/bot1.png" />
-            
-            <!--헤더-->
+            <!-- <img id="backTop" src="../image/Ellipse 35.png" /> -->
+
+            <!-- header -->
             <div class="header">
+
                 <!-- 로그인, 회원가입, 마이페이지 -->
                 <div id="userMenu">
                     <ul class="list_menu">
@@ -32,7 +31,7 @@
                         </li>
                     </ul>
                 </div>
-    
+
                 <!-- 로고 -->
                 <div id="headerLogo" class="layout-wrapper">
                     <h1 class="logo">
@@ -41,83 +40,127 @@
                         </a>
                     </h1>
                 </div>
+
+                <!-- 메뉴바 -->
+                <div class="gnb_main">
+                    <ul class="gnb">
+                        <li class="menu1">
+                            <a href="../html/formList.html" class="link all" >
+                                <span class="txt">전체 설문 보기</span>
+                            </a>
+                        </li>
+                        <li class="menu2">
+                            <a href="../html/makeForm.html" class="link new">
+                                <span class="txt">새 설문 만들기</span>
+                            </a>
+                        </li>
+                        <li class="menu3">
+                            <a href="../html/mySurvey.html" class="link best">
+                                <span class="txt">내가 만든 설문</span>
+                            </a>
+                        </li>
+                        <li class="menu4">
+                            <a href="../html/interestedSurvey.html" class="link bargain">
+                                <span class="txt">관심 있는 설문조사</span>
+                            </a>
+                        </li>
+                        <li class="lst">
+                            <a href="../html/participatedSurvey.html" class="link event">
+                                <span class="txt">참여한 설문조사</span>
+                            </a>
+                        </li>
+                        <li class="menu4">
+                            <a href="../html/interestedSurvey.html" class="link bargain">
+                                <span class="txt">포인트 내역</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
             </div>
-    
+
             <!-- container -->
             <div class="container">
                 <div id="main">
-                    <span class="joinLogo">회원가입</span>
-    
-                    <!-- ID -->
-                    <div>
-                        <h3 class="join_title">
-                            <label for="id">아이디</label>
-                        </h3>
-                        <span class="box int_id">  
-                            <input type="text" id="id" class="int name" maxlength="20" check_result="fail">
-                            <button type="button" class="id_overlap_button" onclick="id_check();">중복 확인</button>
-                            <p class="txt overlapTxt"></p>
-                        </span>
-                    </div>
-    
-                    <!-- 비밀번호 -->
-                    <div>
-                        <h3 class="join_title">
-                            <label for="pswd1" class="pwsd1">비밀번호</label>
-                        </h3>
-                        <p class="meg">8~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요.</p>
-                        <span class="box int_pass">
-                            <input type="password" id="pswd1" class="int" maxlength="20">
-                            <p class="txt pwAlertTxt"></p>
-                        </span>
-                        <span class="error_next_box"></span>
-                    </div>
-    
-                    <!-- 비밀번호 확인 -->
-                    <div>
-                        <h3 class="join_title">
-                            <label for="pswd2">비밀번호 재확인</label>
-                        </h3>
-                        <span class="box int_pass_check">
-                            <input type="password" id="pswd2" class="int" maxlength="20">
-                            <p class="txt pwCheckAlertTxt"></p>
-                        </span>
-                        <span class="error_next_box"></span>
-                    </div>
-    
-                    <!-- 닉네임 -->
-                    <div>
-                        <h3 class="join_title">
-                            <label for="nickName">닉네임</label>
-                        </h3>
-                        <span class="box int_nickName">
-                            <input type="text" id="nickName" class="int" maxlength="20">
-                            <p class="txt nickAlertTxt"></p>
-                        </span>
-                    </div>
-    
-                    <div>
-                        <h3 class="join_title">
-                            <label for="name">이름</label>
-                        </h3>
-                        <span class="box int_nickName">
-                            <input type="text" id="name" class="int" maxlength="20">
-                            <p class="txt nickAlertTxt"></p>
-                        </span>
-                    </div>
-    
-                    <!-- 회원가입 버튼 -->
-                    <div class="btn_area">
-                        <button type="button" id="btnJoin" onclick="join_check();">
-                            <span>회원가입</span>
-                        </button>
-                    </div>
+
+                    <form>
+                        <div class="flex-container2">
+
+                            <div id="subTitle">
+                                <p class="subTitle">회원가입</p>
+                            </div>
+
+                            <div id="signupBox">
+                                <div>
+                                    <input type="text" class="inputId" maxlength="30"
+                                    placeholder="사용하실 아이디를 입력해주세요."
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '사용하실 아이디를 입력해주세요.'">
+                                   
+                                    <button id="idBtn">중복확인</button>
+
+                                    <p class="validId">사용 가능한 아이디입니다.</p>
+                                </div>
+
+                                <input type="text" class="inputName" maxlength="30"
+                                placeholder="사용하실 닉네임을 입력해주세요."
+                                onfocus="this.placeholder = ''" 
+                                onblur="this.placeholder = '사용하실 닉네임을 입력해주세요.'">
+
+                                <input type="text" class="inputPW" maxlength="30"
+                                placeholder="사용하실 비밀번호를 입력해주세요."
+                                onfocus="this.placeholder = ''" 
+                                onblur="this.placeholder = '사용하실 비밀번호를 입력해주세요.'">
+
+                                <input type="text" class="checkPW" maxlength="30"
+                                placeholder="비밀번호를 확인해주세요."
+                                onfocus="this.placeholder = ''" 
+                                onblur="this.placeholder = '비밀번호를 확인해주세요.'">
+                            </div>
+
+                            <div><button id="singup_btn">회원가입</button></div>
+
+                        </div>
+                    </form>
+
                 </div>
-            </div>        
+            </div>
         </div>
+
+        <footer>
+            <div class="container">
+                <table>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4 col-md-3 item">
+                            <td>
+                                <p id="footer_MoA">MoA</p>
+                                <a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴문의</a>
+                                <!-- <p>010-2020-1030</p> -->
+                                <p id="from">UMC / 컴공선배</p>
+                                <!-- <p>MON - FRI 10:00 AM - 05:00 PM
+                                <br>LUNCH 12:00 PM - 01:00 PM
+                                <br>CLOSED SAT, SUN AND HOLIDAYS</p> -->
+                            </td>
+                        </div>
+                        <div class="col-sm-4 col-md-3 item">
+                            <td>
+                                <ul>
+                                    <!-- <a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴문의</a> -->
+                                    <!-- <a href="#">회사안내</a>&nbsp;<a href="#">이용안내</a>&nbsp;<a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴/도매 문의</a> -->
+                                    <p id="info">
+                                    서비스명: MoA / 대표: 김은혜 / tel: 010-2020-1030
+                                    <!-- <br>통신판매업신고: 2018-고양덕양구-1367호 / TEL: 02-381-3758 / FAX: 02-381-3788 -->
+                                    <!-- <br>주소: 경기도 고양시 덕양구 삼송로 193번길 1-6 2층 -->
+                                    <br>개인정보 보호 책임자: 김은혜 / Email: kimehhk@gmail.com</p>
+                                    <p>COPYRIGHT (C) ALL RIGHTS RESERVED</p>
+                                </ul>
+                            </td>
+                        </div>
+                    </div>
+                </table>
+            </div>
+        </footer>
     </div>
-    
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="../js/signUp.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 </html>
