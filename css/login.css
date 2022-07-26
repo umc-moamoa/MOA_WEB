@@ -1,0 +1,321 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR';
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+}
+ul,li{
+    list-style: none;
+}
+
+.header {    
+    position: relative;
+    width: 100%;
+    height: 180px;
+    margin: 0 auto;
+}
+
+/* 로그인, 회원가입, 마이페이지 */
+#userMenu {
+    width: 100%;
+    margin: 0 auto;
+}
+#userMenu .list_menu {
+    float: right;
+}
+#userMenu * {
+    font-weight: 400;
+    font-size: 12px;
+    /* letter-spacing: 0.1em; */
+    color: #414141;
+}
+ul {
+    display: block;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    /* padding-inline-start: 20px; */
+}
+
+#userMenu .menu {
+    position: relative;
+    float: left;
+    z-index: 400;
+    margin-right: 15px;
+}
+
+#userMenu:after{
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 15px;
+    font-size: 0;
+    text-indent: -9999px;
+}
+
+/* 로고 헤더 */
+#headerLogo .logo img {
+    display: block;
+    width: 70px;
+    margin: 0 auto;
+    /* margin-left: 80px; */
+}
+
+/* gnb */
+.gnb_main {
+    /* overflow: hidden; */
+    width: 100%;
+    height: 40px;
+    margin: 60px auto; 
+    margin-bottom: 0;
+    border-right: none;
+    border-left: none;
+    box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
+    padding: 0.5px 60px;
+}
+.gnb a {
+    float: left;
+    width: 190px;
+    font-size: 14px;
+    color: #909090;
+    text-align: center;
+    /* margin: 20px 0 0 0; */
+    margin: 0;
+}
+.txt {
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* container */
+#wrapper .container {
+    width: 430px;
+    margin: 70px auto;
+    margin-bottom: 10px;
+
+}
+
+footer .container {
+    /* min-height: 300vh; */
+    width: 970px;
+    margin: 30px auto;
+    padding: 0 65px;
+}
+
+/*footer*/
+footer {
+    background-color: white;
+    color: #909090;
+
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#wrapper {
+    /* height: auto; */
+    min-height: 100vh;
+    position: relative;
+    /* padding-bottom: 226.302; */
+}
+
+table {
+    width: 100%;
+}
+
+footer a {
+    color: #909090;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+#footer_MoA {
+    font-family: 'Montserrat';
+    font-size: 25px;
+    margin: 0;
+    font-weight: 600;
+}
+#from {
+    font-size: 12px;
+    font-weight: 500;
+}
+/* footer .container {
+    padding: 0 auto;
+} */
+footer ul {
+    padding-inline-start: 100px;
+}
+footer td:nth-child(2) {
+    text-align: right;
+    font-size: 10px;
+}
+footer td p {
+    font-size: 10px;
+}
+#info {
+    padding: 20px 0;
+}
+
+/* main */
+#main {
+    box-sizing: border-box;
+    padding: 30px 30px 0 30px;
+
+    height: auto;
+    background: #FFFFFF;
+    border: 1px solid #909090;
+    border-bottom: 0;
+}
+
+#subTitle .subTitle {
+    position: relative;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 25px;
+
+    color: #414141;
+}
+
+.flex-container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputId {
+    display: block;
+    width: 360px;
+
+    border: none;
+    border-bottom: 1px solid #B5B5B5;
+    outline: none; /* 입력 시 테두리 지움*/
+    display: block;
+    
+    font-weight: 500;
+    font-size: 15px;
+    color: #909090;
+
+    margin-bottom: 15px;
+    padding-bottom: 7px;
+}
+
+.inputPW {
+    display: block;
+    width: 360px;
+
+    border: none;
+    border-bottom: 1px solid #B5B5B5;
+    outline: none; /* 입력 시 테두리 지움*/
+    display: block;
+    
+    font-weight: 500;
+    font-size: 15px;
+    color: #909090;
+
+    margin-bottom: 15px;
+    padding-bottom: 7px;
+}
+
+#login_btn {
+    background: linear-gradient(91.36deg, #4E7FF2 -24.31%, #9CC2FF 130.3%);
+    box-shadow: 0px -10px 40px rgba(156, 194, 255, 0.3);
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+
+    width: 430px;
+    padding: 12px 0;
+    cursor: pointer;
+    margin: 20px 0 0 -31px;
+}
+
+
+/* 회원가입, 아이디, 비번 찾기*/
+.findinfo{
+    text-align: center;
+    margin: 30px;
+    font-size: 11px;
+}
+.signUPTxt {
+    color: #919191;
+    padding: 0 10px;
+    /* border-right: solid 1.8px #919191; */
+}
+.findId{
+    color: #919191;
+    padding: 0 10px;
+    /* border-right: solid 1.8px #919191; */
+}
+.findPwd{
+    color: #919191;
+    padding: 0 10px;
+}
+
+/* 소셜 로그인 */
+.socialLoginTxt2{
+    text-align: center;
+    font-style: normal;
+
+    margin: 40px 0 10px 0;
+
+    font-weight: 600;
+    font-size: 18px;
+    color: #414141;
+}
+
+.socialLogin{
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.social-item {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    margin: 8px;
+}
+
+.social-item:hover {
+    color: #fff;
+    background-color: #333333;
+}
+
+.bg1 {background-color: #fae100;}
+.bg2 {background-color: #5EA152}
+.bg3 {background-color: #3b5998}
+
+.iconImg1 {
+    width: 16px;
+    height: 16px;
+}
+.iconImg2 {
+    width: 14px;
+    height: 16px;
+}
+.iconImg3 {
+    width: 11px;
+    height: 16px;
+}
