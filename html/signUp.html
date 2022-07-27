@@ -92,33 +92,37 @@
 
                             <div id="signupBox">
                                 <div>
-                                    <input type="text" class="inputId" maxlength="30"
+                                    <input type="text" class="inputId" id="id" maxlength="30"
                                     placeholder="사용하실 아이디를 입력해주세요."
                                     onfocus="this.placeholder = ''" 
                                     onblur="this.placeholder = '사용하실 아이디를 입력해주세요.'">
-                                   
-                                    <button id="idBtn">중복확인</button>
-
-                                    <p class="validId">사용 가능한 아이디입니다.</p>
+                                    <button type="button" id="idBtn" onclick="id_check();">중복확인</button>
+                                    <p class="alert validId1"></p>
                                 </div>
-
-                                <input type="text" class="inputName" maxlength="30"
-                                placeholder="사용하실 닉네임을 입력해주세요."
-                                onfocus="this.placeholder = ''" 
-                                onblur="this.placeholder = '사용하실 닉네임을 입력해주세요.'">
-
-                                <input type="text" class="inputPW" maxlength="30"
-                                placeholder="사용하실 비밀번호를 입력해주세요."
-                                onfocus="this.placeholder = ''" 
-                                onblur="this.placeholder = '사용하실 비밀번호를 입력해주세요.'">
-
-                                <input type="text" class="checkPW" maxlength="30"
-                                placeholder="비밀번호를 확인해주세요."
-                                onfocus="this.placeholder = ''" 
-                                onblur="this.placeholder = '비밀번호를 확인해주세요.'">
+                                <div>
+                                    <input type="text" class="inputName" id="nickName" maxlength="30"
+                                    placeholder="사용하실 닉네임을 입력해주세요."
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '사용하실 닉네임을 입력해주세요.'">
+                                    <p class="alert validId2"></p>
+                                </div>
+                                <div>
+                                    <input type="text" class="inputPW" id="pswd1" maxlength="30"
+                                    placeholder="사용하실 비밀번호를 입력해주세요."
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '사용하실 비밀번호를 입력해주세요.'">
+                                    <p class="alert validId3"></p>
+                                </div>
+                                <div>
+                                    <input type="text" class="checkPW" id="pswd2" maxlength="30"
+                                    placeholder="비밀번호를 확인해주세요."
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '비밀번호를 확인해주세요.'">
+                                    <p class="alert validId4"></p>
+                                </div>
                             </div>
 
-                            <div><button id="singup_btn">회원가입</button></div>
+                            <div><button type="button" id="singup_btn" onclick="join_check();">회원가입</button></div>
 
                         </div>
                     </form>
@@ -161,6 +165,7 @@
             </div>
         </footer>
     </div>
-    <script src="../js/login.js"></script>
+    <script src="../js/signUp.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 </body>
 </html>

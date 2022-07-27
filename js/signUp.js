@@ -5,30 +5,39 @@ function join_check(){
     var pwd2 = document.getElementById("pswd2");
     var nickName = document.getElementById("nickName");
 
-    var overlapTxt = document.getElementsByClassName("overlapTxt");
-    var pwAlertTxt = document.getElementsByClassName("pwAlertTxt");
-    var pwCheckAlertTxt = document.getElementsByClassName("pwCheckAlertTxt");
-    var nickAlertTxt = document.getElementsByClassName("nickAlertTxt");
-
+    var validId1 = document.getElementsByClassName("validId1");
+    var validId2 = document.getElementsByClassName("validId2");
+    var validId3 = document.getElementsByClassName("validId3");
+    var validId4 = document.getElementsByClassName("validId4");
     // 해당 입력값이 없을 경우
     if(id.value == ""){
-        $(".overlapTxt").css("display","block");
-        $(".overlapTxt").css("color","#FC4B3D");
-        $(".overlapTxt").text("아이디를 입력하세요.");
+        $(".validId1").css("display","block");
+        $(".validId1").css("color","#FC4B3D");
+        $(".validId1").text("아이디를 입력하세요.");
         id.focus(); // 커서가 깜빡이는 현상
         return false; // 아무것도 반환하지 마라, 아래 코드부터 진행 X
     }else{
-        $(".overlapTxt").css("display","none");
+        $(".validId1").css("display","none");
+    };
+    
+    if (nickName.value == "") {
+        $(".validId2").css("display","block");
+        $(".validId2").css("color","#FC4B3D");
+        $(".validId2").text("닉네임을 입력하세요.");
+        nickName.focus();
+        return false;
+    }else{
+        $(".validId2").css("display","none");
     };
 
     if(pwd1.value == ""){
-        $(".pwAlertTxt").css("display","block");
-        $(".pwAlertTxt").css("color","#FC4B3D");
-        $(".pwAlertTxt").text("비밀번호를 입력하세요.");
+        $(".validId3").css("display","block");
+        $(".validId3").css("color","#FC4B3D");
+        $(".validId3").text("비밀번호를 입력하세요.");
         pwd1.focus();
         return false;
     }else{
-        $(".pwAlertTxt").css("display","none");
+        $(".validId3").css("display","none");
     };
 
     //비밀번호 영문자+숫자+특수조합(8~20자리 입력) 정규식
@@ -36,34 +45,26 @@ function join_check(){
     var pwdCheck = /^(?=.*[a-zA-Z]).{2,20}$/;
 
     if (!pwdCheck.test(pwd1.value)) {
-        $(".pwAlertTxt").css("display","block");
-        $(".pwAlertTxt").css("color","#FC4B3D");
-        $(".pwAlertTxt").text("비밀번호는 영문자+숫자+특수문자 조합으로 8~20자리 사용해야 합니다.");
+        $(".validId3").css("display","block");
+        $(".validId3").css("color","#FC4B3D");
+        $(".validId3").text("비밀번호는 영문자+숫자+특수문자 조합으로 8~20자리 사용해야 합니다.");
         pwd1.focus();
         return false;
     }else{
-        $(".pwAlertTxt").css("display","none");
+        $(".validId3").css("display","none");
     };
 
     if (pwd1.value !== pwd2.value) {
-        $(".pwCheckAlertTxt").css("display","block");
-        $(".pwCheckAlertTxt").css("color","#FC4B3D");
-        $(".pwCheckAlertTxt").text("비밀번호가 일치하지 않습니다.");
+        $(".validId4").css("display","block");
+        $(".validId4").css("color","#FC4B3D");
+        $(".validId4").text("비밀번호가 일치하지 않습니다.");
         pwd2.focus();
         return false;
     }else{
-        $(".pwCheckAlertTxt").css("display","none");
+        $(".validId4").css("display","none");
     };
 
-    if (nickName.value == "") {
-        $(".nickAlertTxt").css("display","block");
-        $(".nickAlertTxt").css("color","#FC4B3D");
-        $(".nickAlertTxt").text("닉네임을 입력하세요.");
-        nickName.focus();
-        return false;
-    }else{
-        $(".nickAlertTxt").css("display","none");
-    };
+    
 
     //입력 값 전송
     save(); 
@@ -73,21 +74,21 @@ function join_check(){
 function id_check() {
     var check = true;
     if(id.value == ""){
-        $(".overlapTxt").css("display","block");
-        $(".overlapTxt").css("color","#FC4B3D");
-        $(".overlapTxt").text("아이디를 입력하세요.");
+        $(".validId1").css("display","block");
+        $(".validId1").css("color","#FC4B3D");
+        $(".validId1").text("아이디를 입력하세요.");
         id.focus();
     }else if(check=true){ // 중복 조건 수정
-        $(".overlapTxt").css("display","block");
-        $(".overlapTxt").css("color","#4383FF");
-        $(".overlapTxt").text("사용 가능한 아이디입니다.");
+        $(".validId1").css("display","block");
+        $(".validId1").css("color","#4383FF");
+        $(".validId1").text("사용 가능한 아이디입니다.");
     }else if(check=false){ // 중복 조건 수정
-        $(".overlapTxt").css("display","block");
-        $(".overlapTxt").css("color","#FC4B3D");
-        $(".overlapTxt").text("이미 사용 중인 아이디입니다.");
+        $(".validId1").css("display","block");
+        $(".validId1").css("color","#FC4B3D");
+        $(".validId1").text("이미 사용 중인 아이디입니다.");
     }
     else{
-        $(".overlapTxt").css("display","none");
+        $(".validId1").css("display","none");
     };
 
 }

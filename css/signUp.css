@@ -208,7 +208,7 @@ footer td p {
     font-size: 14px;
     color: #909090;
 
-/*     margin-bottom: 35px; */
+    margin-bottom: 35px;
     padding-bottom: 7px;
 }
 
@@ -230,17 +230,26 @@ footer td p {
     cursor: pointer;
 }
 
-.validId {
+.alert {
+    display: none;
     width: 360px;
-    padding: 6px 0;
+    /* padding: 6px 0; */
     border: none;
-    margin-bottom: 25px;
+    /* margin-top: 5px; */
+    /* margin-bottom: 35px; */
 
     background-color: #FFFFFF;
     color: #4E7FF2;
     font-size: 11px;
     font-weight: 400;
+    /* padding-top: 5px; */
+    /* padding-top: 1em;
+    font-size: 12px;
+    padding-top: 1.5em;
+    display: none; */
+
 }
+
 
 .inputName {
     display: block;
