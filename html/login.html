@@ -91,18 +91,23 @@
                             </div>
 
                             <div id="loginBox">
-                                <input type="text" class="inputId" maxlength="30"
-                                placeholder="아이디"
-                                onfocus="this.placeholder = ''" 
-                                onblur="this.placeholder = '아이디'">
-
-                                <input type="text" class="inputPW" maxlength="30"
-                                placeholder="비밀번호"
-                                onfocus="this.placeholder = ''" 
-                                onblur="this.placeholder = '비밀번호'">
+                                <div class="box">
+                                    <input type="text" class="inputId" id="id" maxlength="30"
+                                    placeholder="아이디"
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '아이디'">
+                                    <p class="alert validId1"></p>
+                                </div>
+                                <div class="box">
+                                    <input type="password" class="inputPW" id="pswd1" maxlength="30"
+                                    placeholder="비밀번호"
+                                    onfocus="this.placeholder = ''" 
+                                    onblur="this.placeholder = '비밀번호'">
+                                    <p class="alert validId2"></p>
+                                </div>
                             </div>
 
-                            <div><button id="login_btn">로그인</button></div>
+                            <div><button type="button" id="login_btn" onclick="login_check();">로그인</button></div>
 
                         </div>
                     </form>
@@ -160,6 +165,7 @@
             </div>
         </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="../js/login.js"></script>
 </body>
 </html>

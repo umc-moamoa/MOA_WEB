@@ -41,7 +41,7 @@ function join_check(){
     };
 
     //비밀번호 영문자+숫자+특수조합(8~20자리 입력) 정규식
-    // var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,20}$/;
+    //var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,20}$/;
     var pwdCheck = /^(?=.*[a-zA-Z]).{2,20}$/;
 
     if (!pwdCheck.test(pwd1.value)) {
@@ -63,8 +63,6 @@ function join_check(){
     }else{
         $(".validId4").css("display","none");
     };
-
-    
 
     //입력 값 전송
     save(); 
@@ -97,8 +95,7 @@ function save(){
     const data = {
         id: document.getElementById("id").value,
         pwd: document.getElementById("pswd1").value,
-        nick: document.getElementById("nickName").value,
-        name: document.getElementById("name").value
+        nick: document.getElementById("nickName").value
     }
     fetch('http://umcsom.shop:9000/post/users', {
         method: "POST",
