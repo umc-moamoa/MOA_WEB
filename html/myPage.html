@@ -9,109 +9,146 @@
 </head>
 <body>
     <div class="flex-container">
-    <div id="wrapper">
-        <!--배경-->
-        <img id="backTop" src="../image/Ellipse 35.png" />
-        <img id="backCenter" src="../image/dss 1.png" />
+        <div id="wrapper">
+            <!--배경-->
+            <!-- <img id="backTop" src="../image/Ellipse 35.png" /> -->
+            <!-- <img id="backCenter" src="../image/dss 1.png" /> -->
 
-        <!--헤더-->
-        <div class="header">
-            <!--logo-->
-            <a href="../html/main.html"><h1 id="moa">MoA</h1></a>
-            <!-- menu header -->
-            <div id="userMenu">
-                <ul class="list_menu">
-                    <li class="menu menu_login">
-                        <a class="link_login" href="../html/login.html">로그인</a>
-                    </li>
+            <!-- header -->
+            <div class="header">
 
-                    <li class="menu menu_join">
-                        <a class="link_join" href="../html/signUp.html">회원가입</a>
-                    </li>
-                    
-                    <li class="menu center">
-                        <a class="link_center" href="#none">고객센터</a>
-                    </li>
-                </ul>
-            </div>
+                <!-- 로그인, 회원가입, 마이페이지 -->
+                <div id="userMenu">
+                    <ul class="list_menu">
+                        <li class="menu menu_login">
+                            <a class="link_login" href="../html/login.html">로그인</a>
+                        </li>
+                        <li class="menu menu_join">
+                            <a class="link_join" href="../html/signUp.html">회원가입</a>
+                        </li>
+                        <!-- 이름 수정 -->
+                        <li class="menu menu_mypage"> 
+                            <a class="link_mypage" href="../html/myPage.html">마이페이지</a>
+                        </li>
+                    </ul>
+                </div>
 
-            <!-- icon -->
-            <div id="iconMenu">
-                <ul class="list_icon">
-                    <li class="icon icon_search">
-                        <a class="link_search" href="#none">검색</a>
-                    </li>
+                <!-- 로고 -->
+                <div id="headerLogo" class="layout-wrapper">
+                    <h1 class="logo">
+                        <a class="link_main" href="../html/main.html">
+                            <img src="../image/MoA.png"  alt="로고" />
+                        </a>
+                    </h1>
+                </div>
 
-                    <li class="icon icon_user">
-                        <a class="link_user" href="../html/myPage.html">마이</a>
-                    </li>
-
-                    <li class="icon sideMenu">
-                        <a class="link_menu" href="#none">메뉴</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- container -->
-        <div class="container">
-            <!-- 서브 제목 -->
-            <div id="subTitle" >
-                <p class="subTitle">마이 페이지</p>
-            </div>
-
-            <div id="main">
-                <div class="flex-container2">
-                    <!-- 메인 -->
-                    <div>
-                        <div id="userInfo">
-                        <!-- <div class="flex-nickname">
-                            <div>회원 닉네임</div><div id="님">&nbsp;&nbsp;님</div>
-                        </div>
-
-                        <div class="flex-container-icon">
-                            <div class="flex-container-icon-sub1">
-                                <img src="../image/Vector.png" width="30%"><div class="category1">&nbsp;&nbsp;&nbsp;&nbsp;포인트</div>
-                            </div>
-                            <div class="state">2400<span>P</span></div>
-                        </div>
-
-                        <div class="flex-container-icon" id="icon_bottom_line">
-                            <div class="flex-container-icon-sub1">
-                                <img src="../image/Vector (1).png" width="15%"><div class="category1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;진행 중인 설문조사</div>
-                            </div>
-                            <div class="state">2<span>개</span></div>
-                        </div> -->
-                        </div>
-                        <div class="flex-container-icon">
-                            <div class="flex-container-icon-sub1">
-                                <img src="../image/Vector (2).png" width="15%"><a href="#"><div class="category2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;나의 설문조사</div>
-                            </div>
-                                <img src="../image/Rectangle 76.png" width="10px"></a>
-                        </div>
-
-                        <div class="flex-container-icon">
-                            <div class="flex-container-icon-sub1">
-                                <img src="../image/Group.png" width="12%"><a href="../html/interestedSurvey.html"><div class="category2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;관심 있는 설문조사</div>
-                            </div>
-                                <img src="../image/Rectangle 76.png" width="10px"></a>
-                        </div>
-
-                        <div class="flex-container-icon">
-                            <div class="flex-container-icon-sub1">
-                                <img src="../image/Group (1).png" width="15%"><a href="../html/participatedSurvey.html"><div class="category2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;참여한 설문조사</div>
-                            </div>
-                                <img src="../image/Rectangle 76.png" width="10px"></a>
-                        </div>
-
-                        <div class="flex-container-icon">
-                            <div class="flex-container-icon-sub1">
-                                <img src="../image/Vector (5).png" width="17%"><a href="#"><div class="category2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;포인트 내역</div>
-                            </div>
-                                <img src="../image/Rectangle 76.png" width="10px"></a>
-                        </div>
-
+                <!-- 메뉴바 -->
+                <div class="gnb_main">
+                    <ul class="gnb">
+                        <li class="menu1">
+                            <a href="../html/formList.html" class="link all" >
+                                <span class="txt">전체 설문 보기</span>
+                            </a>
+                        </li>
+                        <li class="menu2">
+                            <a href="../html/makeForm.html" class="link new">
+                                <span class="txt">새 설문 만들기</span>
+                            </a>
+                        </li>
+                        <li class="menu3">
+                            <a href="../html/mySurvey.html" class="link best">
+                                <span class="txt">내가 만든 설문</span>
+                            </a>
+                        </li>
+                        <li class="menu4">
+                            <a href="../html/interestedSurvey.html" class="link bargain">
+                                <span class="txt">관심 있는 설문조사</span>
+                            </a>
+                        </li>
+                        <li class="lst">
+                            <a href="../html/participatedSurvey.html" class="link event">
+                                <span class="txt">참여한 설문조사</span>
+                            </a>
+                        </li>
+                        <li class="menu4">
+                            <a href="../html/interestedSurvey.html" class="link bargain">
+                                <span class="txt">포인트 내역</span>
+                            </a>
+                        </li>
                         
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- container -->
+            <div class="container">
+
+                <!-- 서브 제목 -->
+                <div id="subTitle" >
+                    <p class="subTitle">마이 페이지</p>
+                </div>
+
+                <div id="main">
+                    <div class="flex-container2">
+
+                        <!-- 메인 -->
+                        <div>
+                            <div id="userInfo">
+                            <div class="flex-nickname">
+                                <div>회원 닉네임</div><div id="님">&nbsp;&nbsp;님</div>
+                            </div>
+
+                            <div class="flex-container-icon">
+                                <div class="flex-container-icon-sub1">
+                                    <img src="../image/Vector.png" width="28px">
+                                    <div class="category1">포인트</div>
+                                </div>
+                                <div class="state">2400<span>P</span></div>
+                            </div>
+
+                            <div class="flex-container-icon" id="icon_bottom_line">
+                                <div class="flex-container-icon-sub1">
+                                    <img src="../image/Vector (1).png" width="25px">
+                                    <div class="category1">&nbsp;진행 중인 설문조사</div>
+                                </div>
+                                <div class="state">2<span>개</span></div>
+                            </div>
+                            </div>
+                            <div class="flex-container-icon">
+                                <div class="flex-container-icon-sub1">
+                                    <img src="../image/Vector (2).png" width="25px"><a href="#">
+                                        <div class="category2">&nbsp;나의 설문조사</div>
+                                </div>
+                                    <img src="../image/Rectangle 76.png" width="8px"></a>
+                            </div>
+
+                            <div class="flex-container-icon">
+                                <div class="flex-container-icon-sub1">
+                                    <img src="../image/Group.png" width="25px"><a href="../html/interestedSurvey.html">
+                                        <div class="category2">&nbsp;관심 있는 설문조사</div>
+                                </div>
+                                    <img src="../image/Rectangle 76.png" width="8px"></a>
+                            </div>
+
+                            <div class="flex-container-icon">
+                                <div class="flex-container-icon-sub1">
+                                    <img src="../image/Group (1).png" width="25px"><a href="../html/participatedSurvey.html">
+                                        <div class="category2">&nbsp;참여한 설문조사</div>
+                                </div>
+                                    <img src="../image/Rectangle 76.png" width="8px"></a>
+                            </div>
+
+                            <div class="flex-container-icon">
+                                <div class="flex-container-icon-sub1">
+                                    <img src="../image/Vector (3).png" width="28px"><a href="#">
+                                        <div class="category2">포인트 내역</div>
+                                </div>
+                                    <img src="../image/Rectangle 76.png" width="8px"></a>
+                            </div>
+
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -125,21 +162,24 @@
                         <div class="col-sm-4 col-md-3 item">
                             <td>
                                 <p id="footer_MoA">MoA</p>
-                                <p>CUSTOMER CENTER</p>
-                                <p id="tel">02-381-3758</p>
-                                <p>MON - FRI 10:00 AM - 05:00 PM
+                                <a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴문의</a>
+                                <!-- <p>010-2020-1030</p> -->
+                                <p id="from">UMC / 컴공선배</p>
+                                <!-- <p>MON - FRI 10:00 AM - 05:00 PM
                                 <br>LUNCH 12:00 PM - 01:00 PM
-                                <br>CLOSED SAT, SUN AND HOLIDAYS</p>
+                                <br>CLOSED SAT, SUN AND HOLIDAYS</p> -->
                             </td>
                         </div>
                         <div class="col-sm-4 col-md-3 item">
                             <td>
                                 <ul>
-                                <a href="#">회사안내</a>&nbsp;<a href="#">이용안내</a>&nbsp;<a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴/도매 문의</a>
-                                <p id="info">상호명: 주식회사 사운드웨이브 / 대표: 어주연 / 사업자등록번호: 121-86-36395 [사업자정보확인]
-                                    <br>통신판매업신고: 2018-고양덕양구-1367호 / TEL: 02-381-3758 / FAX: 02-381-3788
-                                    <br>주소: 경기도 고양시 덕양구 삼송로 193번길 1-6 2층
-                                    <br>개인정보 보호 책임자: 어주연 / Email: soundwave@sound-wave.co.kr</p>
+                                    <!-- <a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴문의</a> -->
+                                    <!-- <a href="#">회사안내</a>&nbsp;<a href="#">이용안내</a>&nbsp;<a href="#">개인정보처리방침</a>&nbsp;<a href="#">이용약관</a>&nbsp;<a href="#">제휴/도매 문의</a> -->
+                                    <p id="info">
+                                    서비스명: MoA / 대표: 김은혜 / tel: 010-2020-1030
+                                    <!-- <br>통신판매업신고: 2018-고양덕양구-1367호 / TEL: 02-381-3758 / FAX: 02-381-3788 -->
+                                    <!-- <br>주소: 경기도 고양시 덕양구 삼송로 193번길 1-6 2층 -->
+                                    <br>개인정보 보호 책임자: 김은혜 / Email: kimehhk@gmail.com</p>
                                     <p>COPYRIGHT (C) ALL RIGHTS RESERVED</p>
                                 </ul>
                             </td>
@@ -147,8 +187,7 @@
                     </div>
                 </table>
             </div>
-            
-    </footer>
+        </footer>
     </div>
     <script src="../js/myPage.js"></script>
 </body>

@@ -6,16 +6,13 @@
     box-sizing: border-box;
     font-family: 'Noto Sans KR';
 }
-
 html, body {
     height: 100%;
     width: 100%;
 }
-
 a{
     text-decoration: none;
 }
-
 ul,li{
     list-style: none;
 }
@@ -37,169 +34,99 @@ ul,li{
 
 .headerContainer{
     position: relative;
-    width: 1130px;
+    width: 100%;
     height: 180px;
     margin: 0 auto;
 }
-#moa {
-    position: absolute;
-    width: 10%;
-    left: 60px;
-    top: 30px;
-    
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 550;
-    font-size: 3em;
-    line-height: 102px;
 
-    color: #B8ABFC;
-}
-
-
-/* 메뉴 */
+/* 로그인, 회원가입, 마이페이지 */
 #userMenu {
+    width: 100%;
     margin: 0 auto;
-    
 }
 #userMenu .list_menu {
     float: right;
-    line-height: 5.313em;
-    white-space: nowrap;
 }
 #userMenu * {
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    height: 1em;
+    font-weight: 400;
+    font-size: 12px;
+    /* letter-spacing: 0.1em; */
     color: #414141;
+}
+ul {
+    display: block;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    /* padding-inline-start: 20px; */
 }
 
 #userMenu .menu {
     position: relative;
     float: left;
-    margin-right: 1em;
+    z-index: 400;
+    margin-right: 15px;
 }
 
-#userMenu a {
-    font-size: 1em;
+#userMenu:after{
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 15px;
+    font-size: 0;
+    text-indent: -9999px;
 }
 
-.link_login {
-    padding-right: 1em;
-    border-right: 1.5px solid #414141;
-}
-.link_join {
-    padding-right: 1em;
-    border-right: 1.5px solid #414141;
-}
-/*아이콘*/
-#iconMenu{
+/* 로고 헤더 */
+#headerLogo .logo img {
+    display: block;
+    width: 70px;
     margin: 0 auto;
+    /* margin-left: 80px; */
 }
 
-#iconMenu .list_icon{
-    float: right;
+/* gnb */
+.gnb_main {
+    /* overflow: hidden; */
+    width: 100%;
+    height: 40px;
+    margin: 60px auto; 
+    margin-bottom: 0;
+    border-right: none;
+    border-left: none;
+    box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
+    padding: 0.5px 60px;
 }
-
-#iconMenu *{
-    font-weight: 500;
-    height: 1em;
-    padding: 0;
-    color:transparent;
-}
-#iconMenu .icon{
-    position: relative;
+.gnb a {
     float: left;
-    margin-right: 1.5em;
-}
-
-#iconMenu .icon_search{
-    width: 2em;
-    height: 2em;
-    top: 5em;
-    left: 166%;
-    background: url("../image/searchIcon.png") no-repeat;
-    background-size: 1.4em 1.4em;
-}
-#iconMenu .icon_user{
-    width: 2em;
-    height: 2em;
-    top: 5em;
-    left: 166%;
-    background: url("../image/userIcon.png") no-repeat;
-    background-size: 1.3em 1.4em;
-}
-
-#iconMenu .sideMenu{
-    width: 2em;
-    height: 1.8em;
-    top: 5em;
-    left: 165%;
-    background: url("../image/menuIcon.png") no-repeat;
-    background-size: 1.2em 1.2em;
-}
-
-/*footer*/
-footer {
-    background-color: #B8ABFC;
-    color: white;
-    padding-bottom: 2em;
-    padding-top: 2em;
-    height: 226.302;
-    position: relative;
-    /* margin-top: -226.302;*/
-    /* transform: translateY(-100%); */
-}
-
-#wrapper {
-    height: auto;
-    /* min-height: 150%; */
-    padding-bottom: 226.302;
-    background: url("../image/BG_1.png") no-repeat;
-    background-size: 100% 100%;
-}
-footer a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.125em;
-    font-weight: 600;
-}
-
-#footer_MoA {
-    font-family: 'Montserrat';
-    font-size: 2.625em;
+    width: 190px;
+    font-size: 14px;
+    color: #909090;
+    text-align: center;
+    /* margin: 20px 0 0 0; */
     margin: 0;
-    font-weight: 600;
+}
+.txt {
+    display: inline-block;
+    font-weight: 500;
 }
 
-#tel {
-    font-size: 2.250em;
-    font-weight: 600;
+/* container */
+#wrapper .container {
+    /* min-height: 300vh; */
+    width: 970px;
+    margin: 30px auto;
+    margin-bottom: 100px;
+    padding: 0 70px;
 }
 
-footer .footerContainer {
-    padding-left: 15%;
-    /* padding-right: 10%; */
+footer .container {
+    /* min-height: 300vh; */
+    width: 970px;
+    margin: 30px auto;
+    padding: 0 65px;
 }
 
-footer ul {
-    padding-inline-start: 40px;
-}
-
-footer td:nth-child(2) {
-    text-align: right;
-    font-size: 0.875em;
-}
-
-footer td p {
-    padding-bottom: 0.3em;
-}
-
-#info {
-    padding-bottom: 2em;
-    padding-top: 2em;
-}
-/*==========================================================*/
 /* main1 */
 #main1 {
     position: relative;
@@ -210,7 +137,6 @@ footer td p {
     /* height: auto; */
     background: #FFFFFF;
     border: 1.3px solid #909090;
-
 }
 
 .one-container1 {
@@ -255,19 +181,13 @@ footer td p {
     font-weight: 500;
     color: #B8ABFC;
 }
-/*==================================*/
-.container{
-    width: auto;
-    /* overflow-x: hidden; */
-}
 
 .banner{
     width: 100%;
     height: 250px;
-    left: 0px;
-    top: 800px;
+    margin-top: 20px;
 
-    background: #FFFFFF;
+    background: #4E7FF2;
 }
 #subMenu{
     margin-bottom: 2em;
@@ -277,57 +197,97 @@ footer td p {
 }
 .subTitle{
     position: relative;
-    left: 5%;
-
-    font-weight: 700;
-    font-size: 2em;
-    line-height: 1em;
-    color: #000000;
-
-    /* position: relative;
-    width: 100%;
-    left: 5%;
-    padding-bottom: 0.5em;
 
     font-style: normal;
     font-weight: 600;
-    font-size: 2em;
-    line-height: 2em;
-    color: #414141; */
+    font-size: 22px;
+    line-height: 40px;
+    color: #414141;
 }
 
 /*인기 있는 설문조사*/
 #firstContainer{
     width: 100%;
-    height: 800px;
+    height: 700px;
     /* background: url("../image/mainCenterBack.png") no-repeat; */
     /* background-size: 50%; */
     /* background-position: right center; */
-    padding: 0 10%;
+    /* padding: 0 10%; */
 }
 
 /* 전체 설문 보기 */
 .clickAllList {
-    /* display: block; */
-    /* width: 50%; */
     position: relative;
     float: right;
-    right: 40%;
     text-decoration: none;
 
-    font-size:1.2em;
-    padding-right: 1.2em;
+    font-size: 14px;
+    padding-right: 14px;
     background: url(../image/listTab.png) no-repeat;
     background-position: right center;
-    background-size: 0.5em 0.8em;
+    background-size: 8px 10px;
     color: #414141;
 }
 
 /*참여를 기다리고 있는 설문조사*/
 #secondContainer{
     width: 100%;
-    height: 1000px;
+    height: 700px;
     /* background: url("../image/mainThirdBack.png") no-repeat; */
-    background-size: 100% 90%;
-    padding: 0 10%;
+    /* background-size: 100% 90%; */
+    /* padding: 0 10%; */
+}
+
+/*footer*/
+footer {
+    background-color: white;
+    color: #909090;
+
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#wrapper {
+    /* height: auto; */
+    min-height: 100vh;
+    position: relative;
+    /* padding-bottom: 226.302; */
+}
+
+table {
+    width: 100%;
+}
+
+footer a {
+    color: #909090;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+#footer_MoA {
+    font-family: 'Montserrat';
+    font-size: 25px;
+    margin: 0;
+    font-weight: 600;
+}
+#from {
+    font-size: 12px;
+    font-weight: 500;
+}
+/* footer .container {
+    padding: 0 auto;
+} */
+footer ul {
+    padding-inline-start: 100px;
+}
+footer td:nth-child(2) {
+    text-align: right;
+    font-size: 10px;
+}
+footer td p {
+    font-size: 10px;
+}
+#info {
+    padding: 20px 0;
 }

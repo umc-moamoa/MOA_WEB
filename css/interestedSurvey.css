@@ -1,22 +1,18 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans KR';
 }
-
 html, body {
     height: 100%;
     width: 100%;
 }
-
 .flex-container {
     display: flex;
     flex-direction: column;
 }
-
 a {
     text-decoration: none;
 }
@@ -24,155 +20,127 @@ ul,li{
     list-style: none;
 }
 
-/* 배경 */
-#backCenter {
-    position: absolute;
+.header {    
+    position: relative;
     width: 100%;
-    height: 140%;
-    top: 500px;
+    height: 180px;
+    margin: 0 auto;
 }
 
 #backTop {
     position: absolute;
-    width: 50%;
-    height: 80%;
+    /* display: block; */
+    /* height: 50%; */
+    /* left: 50%; */
+    z-index: -100;
 }
 
-/* 헤더 */
-.header {
-    position: relative;
-    width: 1130px;
-    height: 180px;
-    margin: 0 auto;
-}
-#moa {
-    position: absolute;
-    width: 10%;
-    left: 60px;
-    top: 30px;
-    
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 550;
-    font-size: 3em;
-    line-height: 102px;
-
-    color: #B8ABFC;
-}
-
-/* 메뉴 */
+/* 로그인, 회원가입, 마이페이지 */
 #userMenu {
+    width: 100%;
     margin: 0 auto;
-    
 }
 #userMenu .list_menu {
     float: right;
-    line-height: 5.313em;
-    white-space: nowrap;
 }
 #userMenu * {
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    height: 1em;
+    font-weight: 400;
+    font-size: 12px;
+    /* letter-spacing: 0.1em; */
     color: #414141;
+}
+ul {
+    display: block;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    /* padding-inline-start: 20px; */
 }
 
 #userMenu .menu {
     position: relative;
     float: left;
-    margin-right: 1em;
+    z-index: 400;
+    margin-right: 15px;
 }
 
-#userMenu a {
-    font-size: 1em;
+#userMenu:after{
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 15px;
+    font-size: 0;
+    text-indent: -9999px;
 }
 
-.link_login {
-    padding-right: 1em;
-    border-right: 1.5px solid #414141;
-}
-.link_join {
-    padding-right: 1em;
-    border-right: 1.5px solid #414141;
-}
-/*아이콘*/
-#iconMenu{
+/* 로고 헤더 */
+#headerLogo .logo img {
+    display: block;
+    width: 70px;
     margin: 0 auto;
+    /* margin-left: 80px; */
 }
 
-#iconMenu .list_icon{
-    float: right;
+/* gnb */
+.gnb_main {
+    /* overflow: hidden; */
+    width: 100%;
+    height: 40px;
+    margin: 60px auto; 
+    margin-bottom: 0;
+    border-right: none;
+    border-left: none;
+    box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
+    padding: 0.5px 60px;
 }
-
-#iconMenu *{
-    font-weight: 500;
-    height: 1em;
-    padding: 0;
-    color:transparent;
-}
-#iconMenu .icon{
-    position: relative;
+.gnb a {
     float: left;
-    margin-right: 1.5em;
+    width: 190px;
+    font-size: 14px;
+    color: #909090;
+    text-align: center;
+    /* margin: 20px 0 0 0; */
+    margin: 0;
 }
-
-#iconMenu .icon_search{
-    width: 2em;
-    height: 2em;
-    top: 5em;
-    left: 166%;
-    background: url("../image/searchIcon.png") no-repeat;
-    background-size: 1.4em 1.4em;
+.txt {
+    display: inline-block;
+    font-weight: 500;
 }
-#iconMenu .icon_user{
-    width: 2em;
-    height: 2em;
-    top: 5em;
-    left: 166%;
-    background: url("../image/userIcon.png") no-repeat;
-    background-size: 1.3em 1.4em;
-}
-#iconMenu .sideMenu{
-    width: 2em;
-    height: 1.8em;
-    top: 5em;
-    left: 165%;
-    background: url("../image/menuIcon.png") no-repeat;
-    background-size: 1.2em 1.2em;
-}
-
 
 /* container */
-.container {
-    width: 1130px;
-    margin: 0 auto;
-    padding: 5px 70px 0;
+#wrapper .container {
+    /* min-height: 300vh; */
+    width: 970px;
+    margin: 70px auto;
+    margin-bottom: 100px;
+    padding: 0 70px;
+}
+
+footer .container {
+    /* min-height: 300vh; */
+    width: 970px;
+    margin: 30px auto;
+    padding: 0 65px;
 }
 
 /*서브 제목*/
-#subTitle .subTitle{
+#subTitle .subTitle {
     position: relative;
-    width: 100%;
-    left: 5%;
-    padding-bottom: 0.5em;
-
+    display: inline-block;
     font-style: normal;
     font-weight: 600;
-    font-size: 2em;
-    line-height: 2em;
+    font-size: 22px;
+    line-height: 40px;
     color: #414141;
 }
 
 /* main1 */
 #main1 {
-    position: relative;
-    box-sizing: border-box;
-    padding: 3% 3% 5% 3%;
-    margin: 0 5% 5% 5%;
+    padding: 10px;
+    margin: 15px 0;
  
-    /* height: auto; */
     background: #FFFFFF;
-    border: 1.3px solid #909090;
+    border: 1px solid #909090;
 }
 
 .one-container1 {
@@ -182,17 +150,17 @@ ul,li{
 }
 
 #title1 {
-    /* top: 5%; */
-    font-size: 1.5em;
+    font-size: 18px;
     color: #414141;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .two-container1 {
     margin-top: 2%;
     display: flex;
     justify-content: flex-start;
-    font-size: 1em;
+    font-size: 18px;
     font-weight: 600;
     font-weight: bold;
     color: #6C6C6C;
@@ -219,93 +187,73 @@ ul,li{
     color: #B8ABFC;
 }
 
-/* underBar */
-#underBar { 
+#under { 
     position: relative;
-    width: 90%;
-    height: 10%;
-    left: 5%;
-    top: 200%;
-
-    border-top: 0.05em solid #C6C6C6;
+    width: 970px;
+    height: 100px;
+    top: 130px;
 }
-
 .underTab {
     position: absolute;
-    width: 5em;
-    height: 5em;
-    right: 45%;
-    top: 5em;
+    display: inline-block;
+    width: 60px;
+    height: 20px;
+    left: 400px;
+    
     background: url(../image/Rectangle\ 75.png) no-repeat;
-    background-size: 2em 1em;
+    background-size: 25px 15px;
 }
 
 /*footer*/
 footer {
-    background-color: #B8ABFC;
-    color: white;
-    padding-bottom: 2em;
-    padding-top: 2em;
+    background-color: white;
+    color: #909090;
 
-    /* height: 226.302; */
-    position: relative;
-    transform: translateY(300%); 
+    bottom: 0;
+    margin: 0 auto;
+    width: 100%;
 }
 
 #wrapper {
-    height: auto;
-    min-height: 200%;
+    /* height: auto; */
+    min-height: 100vh;
+    position: relative;
     /* padding-bottom: 226.302; */
 }
+
 table {
     width: 100%;
 }
 
 footer a {
-    color: white;
+    color: #909090;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 12px;
     font-weight: 500;
 }
 #footer_MoA {
     font-family: 'Montserrat';
-    font-size: 2em;
+    font-size: 25px;
     margin: 0;
     font-weight: 600;
 }
-#tel {
-    font-size: 1.8em;
+#from {
+    font-size: 12px;
     font-weight: 500;
 }
-footer .container {
-    padding-left: 10%;
-    padding-right: 10%;
-}
+/* footer .container {
+    padding: 0 auto;
+} */
 footer ul {
     padding-inline-start: 100px;
 }
 footer td:nth-child(2) {
     text-align: right;
-    font-size: 0.8em;
+    font-size: 10px;
 }
 footer td p {
-    padding-bottom: 0.1em;
-    font-size: 0.7em;
+    font-size: 10px;
 }
 #info {
-    padding-bottom: 2em;
-    padding-top: 2em;
+    padding: 20px 0;
 }
-/* #newSurvey{
-    position: sticky; 
-    width: 8em;
-    height: 8em;
-    left:90%;
-    top: 80%;
-    
-    border: 0;
-    outline: 0;
-    border-radius: 50%;
-    background: url( "image/newSurvey.png") no-repeat center;
-    background-size: 10em 10em;
-} */
