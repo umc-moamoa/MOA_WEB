@@ -131,7 +131,7 @@ footer .container {
 #main1 {
     position: relative;
     box-sizing: border-box;
-    padding: 3%;
+    padding: 2%;
     margin: 0 5% 5% 5%;
 
     /* height: auto; */
@@ -180,39 +180,41 @@ footer .container {
 }
 
 #point1 {
-    font-size: 1.8em;
+    font-size: 1.3em;
     font-weight: 500;
     color: #9CC2FF;
     ;
 }
 
-.prev {
+.arrow {
+    display: flex;
+    justify-content: space-between;
     position: absolute;
-    top:667px;
+    top:648px;
     z-index: 200;
 }
 
-.next {
+.arrow2 {
+    display: flex;
+    justify-content: space-between;
     position: absolute;
-    top:667px;
-    right:217px;
+    top:950px;
     z-index: 200;
+}
+
+.prev {
+    margin-right: 750px;
 }
 
 .prev2 {
-    position: absolute;
-    top:940px;
-    z-index: 200;
-}
-
-.next2 {
-    position: absolute;
-    top:940px;
-    right:217px;
-    z-index: 200;
+    margin-right: 750px;
 }
 
 .arrow img {
+    width: 40px;
+}
+
+.arrow2 img {
     width: 40px;
 }
 
@@ -242,7 +244,7 @@ footer .container {
 /*인기 있는 설문조사*/
 #firstContainer{
     width: 100%;
-    height: 270px;
+    height: 300px;
     /* background: url("../image/mainCenterBack.png") no-repeat; */
     /* background-size: 50%; */
     /* background-position: right center; */
