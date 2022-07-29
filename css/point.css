@@ -115,7 +115,7 @@ ul {
 /* container */
 #wrapper .container {
     /* min-height: 300vh; */
-    width: 970px;
+    width: 995px;
     margin: 70px auto;
     margin-bottom: 100px;
     padding: 0 70px;
@@ -131,7 +131,7 @@ footer .container {
 /*서브 제목*/
 #subTitle .subTitle{
     position: relative;
-    margin-left: 100px;
+
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
@@ -139,7 +139,68 @@ footer .container {
     color: #414141;
 }
 
-/* main */
+/* main1 */
+#main1 {
+    display: flex !important;
+    justify-content : space-between;
+
+    height: 75px;
+
+    /* padding: 10px 10px 10px 0; */
+    margin: 15px;
+    
+    background: #FFFFFF;
+    border: 1px solid #909090;
+
+    border-left: 0;
+}
+
+.one-container1 {
+    background-color: #4E7FF2;
+    width: 80px;
+    color: #FFFFFF;
+    padding: 25px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.two-container1 {
+    color: #6C6C6C;
+    padding: 25px;
+    font-size: 15px;
+    font-weight: 500;
+}
+.three-container1{
+     color: #4E7FF2;
+    padding: 25px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.slick-slide{
+    padding-right: 30px;
+}
+
+.arrow {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top:480px;
+    z-index: 200;
+    /* left:165px; */
+}
+
+.prev {
+    margin-right: 780px;
+}
+
+.arrow img {
+    width: 40px;
+}
+
+#SurveyList {
+    padding:35px;
+}
+
 .flex-container-icon{
     display: flex;
     flex-direction: row;
@@ -148,7 +209,7 @@ footer .container {
     justify-content: space-between;
     align-items: center;
 
-    margin: 5px 100px;
+    margin: 5px 600px 0 0;
 }
 
 .flex-container-icon-sub1{
@@ -172,36 +233,6 @@ footer .container {
     color: #414141;
 }
 
-/* main */
-#main {
-    border: none;
-    /* padding: 30px 30px 0 30px; */
-    margin: 0 100px;
-
-    height: auto;
-    background: #FFFFFF;
-    border: 1px solid #909090; 
-    /* 다하고 윗 줄 주석 처리 */
-}
-
-.pointElements {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-evenly; */
-}
-
-.pointElement {
-    display: inline-block;
-    padding: 20px;
-    /* margin: 10px; */
-    width: 260px;
-
-    /* height: auto; */
-    background: #FFFFFF;
-    border: 1px solid #909090; 
-}
-
-
 /*footer*/
 footer {
     background-color: white;
@@ -215,6 +246,7 @@ footer {
 #wrapper {
     min-height: 100vh;
     position: relative;
+    height:700px;
 }
 
 table {
