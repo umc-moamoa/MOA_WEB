@@ -116,6 +116,10 @@ ul {
     padding: 0 70px;
 }
 
+#wrapper {
+    height:700px;
+}
+
 footer .container {
     /* min-height: 300vh; */
     width: 970px;
@@ -139,7 +143,6 @@ footer .container {
     /* position: relative; */
     padding: 10px;
     margin: 15px;
- 
     /* height: auto; */
     background: #FFFFFF;
     border: 1px solid #909090;
@@ -157,7 +160,7 @@ footer .container {
     color: #414141;
     font-weight: bold;
     text-decoration: none;
- }
+}
 
 .two-container1 {
     margin-top: 2%;
@@ -185,15 +188,31 @@ footer .container {
 }
 
 #point1 {
-    font-size: 1.8em;
+    font-size: 1.3em;
     font-weight: 500;
-    color: #B8ABFC;
+    color: #9CC2FF;
 }
 
 .slick-slide{
     padding-right: 30px;
 }
 
+.arrow {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top:445px;
+    z-index: 200;
+    left:165px;
+}
+
+.prev {
+    margin-right: 855px;
+}
+
+.arrow img {
+    width: 40px;
+}
 /* underBar */
 #under { 
     position: relative;
