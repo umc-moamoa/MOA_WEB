@@ -15,6 +15,7 @@ const fetchSurvey = () => {
         .then((response) => response.json())
         // .then((webResult) => console.log(webResult.result))
         .then((webResult) => webResult.result.map(item => SurveyListTemplate(item)))
+        .then((webResult) => slick())
         .catch((error) => console.log("error", error));
 }
 
@@ -43,4 +44,17 @@ function SurveyListTemplate (data) {
     </div>
     `;
 $SurveyList.insertAdjacentHTML('beforeend', SurveyItem);
+}
+
+function slick(){
+    $(document).ready(function(){
+        $('.SurveyList').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            rows:3,
+            infinite:false,
+            prevArrow : $('.prev'), 
+            nextArrow : $('.next'), 
+        });
+    });
 }
