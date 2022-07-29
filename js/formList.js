@@ -41,8 +41,10 @@ function slick(){
         $('.SurveyList').slick({
             slidesToShow: 2,
             slidesToScroll: 1,
-            rows:2,
-            infinite:false
+            rows:3,
+            infinite:false,
+            prevArrow : $('.prev'), 
+            nextArrow : $('.next'), 
         });
     });
 }
