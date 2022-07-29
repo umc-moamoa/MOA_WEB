@@ -42,6 +42,8 @@
 // }
 // =============================================================================
 const $SurveyDetail = document.querySelector("#detailMain");
+const $data_id='';
+const $user_id='';
 
 const fetchDetail = () => {
     var requestOptions = {
@@ -53,6 +55,7 @@ const fetchDetail = () => {
         requestOptions
     )
         .then((response) => response.json())
+        // .then((webResult) => console.log(webResult.result))
         .then((webResult) => webResult.result.map(item => SurveyDetailTemplate(item)))
         .catch((error) => console.log("error", error));
 }
@@ -80,6 +83,8 @@ function SurveyDetailTemplate (data) {
                 <button id="joinBtn" onClick="location.href='../html/joinForm.html'">설문&nbsp;&nbsp;참여</button>
             </div> 
     `;
+    data_id='${data.postId}';
+    user_id='${data.userId}';
 
 $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem);
 
@@ -91,9 +96,27 @@ function heart(){
     const $heartImgCheck = document.querySelector(".heartImg").getAttribute( 'src' );
     
     if($heartImgCheck == "../image/Heart.png"){
-        $heartImg.setAttribute('src',"../image/Heart2.png");
+        $heartImg.setAttribute('src',"../image/Heart2.png"); // 찬 하트
+        interested_item();
         
     }else{
-        $heartImg.setAttribute('src',"../image/Heart.png");
+        $heartImg.setAttribute('src',"../image/Heart.png"); // 빈 하트
+
     }
+}
+
+// 관심있는 설문조사 등록
+function interested_item(data){
+    const item = {
+        postId : 5,
+        userId : $user_id
+    }
+    fetch('http://umcsom.shop:9000/posts/${postId}/1', {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(item)
+    })
+
+    .then((response) => response.json())
+    .catch((error) => console.log("error", error))
 }
