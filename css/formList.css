@@ -115,14 +115,10 @@ ul {
 /* container */
 #wrapper .container {
     /* min-height: 300vh; */
-    width: 970px;
+    width: 995px;
     margin: 70px auto;
     margin-bottom: 100px;
     padding: 0 70px;
-}
-
-#wrapper {
-    height:700px;
 }
 
 footer .container {
@@ -206,17 +202,21 @@ footer .container {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top:445px;
+    top:480px;
     z-index: 200;
-    left:165px;
+    /* left:165px; */
 }
 
 .prev {
-    margin-right: 855px;
+    margin-right: 780px;
 }
 
 .arrow img {
     width: 40px;
+}
+
+#SurveyList {
+    padding:35px;
 }
 /* underBar */
 #under { 
@@ -278,6 +278,7 @@ footer {
     /* height: auto; */
     min-height: 100vh;
     position: relative;
+    height:700px;
     /* padding-bottom: 226.302; */
 }
 
