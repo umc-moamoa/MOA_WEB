@@ -11,6 +11,7 @@ const fetchParticipate = () => {
     )
         .then((response) => response.json())
         .then((webResult) => webResult.result.map(item => ParticipateListTemplate(item)))
+        .then((webResult) => slick())
         .catch((error) => console.log("error", error));
 }
 
@@ -32,4 +33,17 @@ function ParticipateListTemplate(data) {
 `;
 
 $SurveyList.insertAdjacentHTML('beforeend', ParticipatedItem);
+}
+
+function slick(){
+    $(document).ready(function(){
+        $('.SurveyList').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            rows:3,
+            infinite:false,
+            prevArrow : $('.prev'), 
+            nextArrow : $('.next'), 
+        });
+    });
 }

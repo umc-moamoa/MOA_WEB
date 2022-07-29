@@ -11,7 +11,7 @@ const fetchInterest = () => {
     )
         .then((response) => response.json())
         .then((Result) => Result.result.map(item => InterestListTemplate(item)))
-        .then((webResult) => slick1())
+        .then((Result) => slick())
         .catch((error) => console.log("error", error));
 }
 
@@ -35,12 +35,16 @@ function InterestListTemplate(data) {
 $SurveyList.insertAdjacentHTML('beforeend', InterestItem);
 }
 
-function slick1(){
+function slick(){
     $(document).ready(function(){
-        $('.SurveyList1').slick({
+        $('.SurveyList').slick({
             slidesToShow: 2,
             slidesToScroll: 1,
-            rows:2
+            rows:3,
+            infinite:false,
+            prevArrow : $('.prev'), 
+            nextArrow : $('.next'), 
         });
     });
 }
+
