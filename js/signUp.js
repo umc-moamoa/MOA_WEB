@@ -103,12 +103,12 @@ function id_check() {
 
 function save(){
     const data = {
-        name: null,
+        name: '',
         id: document.getElementById("id").value,
         pwd: document.getElementById("pswd1").value,
         nick: document.getElementById("nickName").value
     }
-    fetch('http://umcsom.shop:9000/post/users', {
+    fetch('http://umcsom.shop:9000/users', {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
