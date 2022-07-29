@@ -92,15 +92,22 @@ ul {
     border-left: none;
     box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
     padding: 0.5px 60px;
+
+    text-align: center;
 }
 .gnb a {
-    float: left;
     width: 190px;
     font-size: 14px;
     color: #909090;
-    text-align: center;
     /* margin: 20px 0 0 0; */
     margin: 0;
+    
+    /* float: left; */
+    /* text-align: center; */
+    display: inline-block;
+}
+.gnb li {
+    display: inline;
 }
 .txt {
     display: inline-block;
