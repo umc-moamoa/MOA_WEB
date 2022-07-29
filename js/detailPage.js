@@ -57,6 +57,7 @@ const fetchDetail = () => {
         .then((response) => response.json())
         // .then((webResult) => console.log(webResult.result))
         .then((webResult) => webResult.result.map(item => SurveyDetailTemplate(item)))
+       /*  .then((webResult2) => interested_item(webResult2)) */
         .catch((error) => console.log("error", error));
 }
 
@@ -83,10 +84,11 @@ function SurveyDetailTemplate (data) {
                 <button id="joinBtn" onClick="location.href='../html/joinForm.html'">설문&nbsp;&nbsp;참여</button>
             </div> 
     `;
-    data_id=`${data.postId}`;
-    user_id=`${data.userId}`;
+    data_id=`${data.postUserId}`;
+  /*   user_id=`${data.userId}`; */
 
 $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem);
+
 
 }
 
@@ -106,12 +108,13 @@ function heart(){
 }
 
 // 관심있는 설문조사 등록
-function interested_item(data){
+function interested_item(){
     const item = {
-        postId : 5,
-        userId : $user_id
+        postId : data_id,
+        userId : 1
+        /* 나중에 userId에 로그인 정보를 값으로 주면 됨 */
     }
-    fetch(`http://umcsom.shop:9000/posts/${postId}/1`, {
+    fetch(`http://umcsom.shop:9000/posts/${item.postId}/${item.userId}`, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(item)
