@@ -10,8 +10,8 @@ const fetchInterest = () => {
         requestOptions
     )
         .then((response) => response.json())
-        // .then((webResult) => console.log(webResult))
         .then((Result) => Result.result.map(item => InterestListTemplate(item)))
+        .then((webResult) => slick1())
         .catch((error) => console.log("error", error));
 }
 
@@ -33,4 +33,14 @@ function InterestListTemplate(data) {
 `;
 
 $SurveyList.insertAdjacentHTML('beforeend', InterestItem);
+}
+
+function slick1(){
+    $(document).ready(function(){
+        $('.SurveyList1').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            rows:2
+        });
+    });
 }
