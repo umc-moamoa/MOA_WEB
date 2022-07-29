@@ -103,6 +103,7 @@ function id_check() {
 
 function save(){
     const data = {
+        name: null,
         id: document.getElementById("id").value,
         pwd: document.getElementById("pswd1").value,
         nick: document.getElementById("nickName").value
