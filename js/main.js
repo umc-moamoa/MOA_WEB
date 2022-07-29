@@ -79,7 +79,10 @@ function slick1(){
         $('.SurveyList1').slick({
             slidesToShow: 2,
             slidesToScroll: 1,
-            rows:2
+            rows:1,
+            infinite: false,
+            prevArrow : $('.prev'), 
+            nextArrow : $('.next'), 
         });
     });
 }
@@ -88,7 +91,10 @@ function slick2(){
         $('.SurveyList2').slick({
             slidesToShow: 2,
             slidesToScroll: 1,
-            rows:2
+            rows:1,
+            infinite: false,
+            prevArrow : $('.prev2'), 
+            nextArrow : $('.next2'), 
         });
     });
 }
