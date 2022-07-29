@@ -64,10 +64,17 @@ function join_check(){
         $(".validId4").css("display","none");
     };
 
-    //입력 값 전송
+    if(check_id == 0){
+        alert("아이디 중복체크해주세요.");
+        id.focus();
+    }else{
+        //입력 값 전송
     save(); 
-}
+    }
 
+    
+}
+var check_id = 0;
 //아이디 중복체크 팝업창
 function id_check() {
     var check = true;
@@ -80,10 +87,13 @@ function id_check() {
         $(".validId1").css("display","block");
         $(".validId1").css("color","#4383FF");
         $(".validId1").text("사용 가능한 아이디입니다.");
+        check_id = 1;
+        
     }else if(check=false){ // 중복 조건 수정
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
         $(".validId1").text("이미 사용 중인 아이디입니다.");
+        check_id = 0;
     }
     else{
         $(".validId1").css("display","none");
@@ -104,14 +114,13 @@ function save(){
     })
 
     .then((response) => response.json())
-    .then((data) => {console.log('Success');})
     .then(response => {alert("회원가입이 완료되었습니다.");})
-    // .then(response => {moveToMain();})
+    // .then(response => {moveToLogin();})
     .catch((error) => console.log("error", error))
 }
 
 // 회원가입 후 메인으로 이동
-function moveToMain(){
-    var link="../html/main.html";
+function moveToLogin(){
+    var link="../html/login.html";
     location.href=link;
 }

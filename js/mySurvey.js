@@ -28,7 +28,7 @@ function SurveyListTemplate (data) {
         </div>
         <div class="two-container1">
             <div class="box">
-                <span id="count1">문항 수</span>
+                <span id="count1">문항 수 </span>
                 <span id="count">${data.qcount}개</span>
             </div>
             <div class="box">
