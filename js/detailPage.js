@@ -83,8 +83,8 @@ function SurveyDetailTemplate (data) {
                 <button id="joinBtn" onClick="location.href='../html/joinForm.html'">설문&nbsp;&nbsp;참여</button>
             </div> 
     `;
-    data_id='${data.postId}';
-    user_id='${data.userId}';
+    data_id=`${data.postId}`;
+    user_id=`${data.userId}`;
 
 $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem);
 
@@ -111,7 +111,7 @@ function interested_item(data){
         postId : 5,
         userId : $user_id
     }
-    fetch('http://umcsom.shop:9000/posts/${postId}/1', {
+    fetch(`http://umcsom.shop:9000/posts/${postId}/1`, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(item)
