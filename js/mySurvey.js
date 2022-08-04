@@ -25,7 +25,7 @@ function SurveyListTemplate (data) {
     const SurveyItem = `
     <div id="main1">
         <div class="one-container1">
-            <a id="title1" href="../html/moa1.html">${data.postTitle}</a>
+            <a id="title1" href="../html/result.html">${data.postTitle}</a>
         </div>
         <div class="two-container1">
             <div class="box">
