@@ -41,8 +41,8 @@ function save(){
 
     .then((response) => response.json())
     .then(response => {alert("로그인이 완료되었습니다.");})
-    // .then(response => {moveToMain();})
-    //.then(response => {change_logout();})
+    .then(response => {moveToMain();})
+    .then(response => {change_logout();})
     .catch((error) => console.log("error", error))
 }
 

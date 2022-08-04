@@ -62,7 +62,9 @@ ul {
     z-index: 400;
     margin-right: 15px;
 }
-
+#userMenu .link:hover{
+    color: #4E7FF2;
+}
 #userMenu:after{
     content: "";
     display: block;
@@ -111,6 +113,11 @@ ul {
     color: #909090;
     margin: 0;
 }
+.link:hover {
+    color: #4E7FF2;
+    font-weight: 700;
+}
+
 
 /* container */
 #wrapper .container {

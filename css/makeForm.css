@@ -72,6 +72,9 @@ ul {
     font-size: 0;
     text-indent: -9999px;
 }
+#userMenu .link:hover{
+    color: #4E7FF2;
+}
 
 /* 로고 헤더 */
 #headerLogo .logo img {
@@ -110,6 +113,10 @@ ul {
     font-weight: 500;
     color: #909090;
     margin: 0;
+}
+.link:hover {
+    color: #4E7FF2;
+    font-weight: 700;
 }
 
 /* container */
