@@ -48,39 +48,11 @@ function save(){
     })
 
     .then((response) => response.json())
+    //.then((response) => console.log(response))
     .then((response) => {my_userId = response.result.userId;})
-    .then(response => {alert("로그인이 완료되었습니다.");})
-    //.then(response => {moveToMain();})
-    .then(response => {change_logout();})
-    .then(response => {local_save();})
+    //.then(response => {alert("로그인이 완료되었습니다.");})
+    
+    .then(response => {login_success();})
     .catch((error) => console.log("error", error))
 }
 
-// 로그인 후 메인으로 이동
-function moveToMain(){
-    var link="../html/main.html";
-    location.href=link;
-
-    
-    change_logout();
-}
-
-// 로그인을 로그아웃으로 변경
-function change_logout(){
-    const link_login = document.querySelector(".link_login");
-    
-    link_login.textContent = "로그아웃";
-    
-}
-
-// 로컬스토리지 저장
-function local_save(){
-    // localStorage에 저장할 객체
-    const obj = my_userId;
-
-    // 객체, 배열을 JSON 문자열로 변환
-    const objString = JSON.stringify(obj);
-
-    // setItem
-    localStorage.setItem('userId', objString);
-}
