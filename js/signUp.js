@@ -42,17 +42,17 @@ function join_check(){
 
     //비밀번호 영문자+숫자+특수조합(8~20자리 입력) 정규식
     //var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,20}$/;
-    var pwdCheck = /^(?=.*[a-zA-Z]).{2,20}$/;
+    //var pwdCheck = /^(?=.*[a-zA-Z]).{2,20}$/;
 
-    if (!pwdCheck.test(pwd1.value)) {
-        $(".validId3").css("display","block");
-        $(".validId3").css("color","#FC4B3D");
-        $(".validId3").text("비밀번호는 영문자+숫자+특수문자 조합으로 8~20자리 사용해야 합니다.");
-        pwd1.focus();
-        return false;
-    }else{
-        $(".validId3").css("display","none");
-    };
+    // if (!pwdCheck.test(pwd1.value)) {
+    //     $(".validId3").css("display","block");
+    //     $(".validId3").css("color","#FC4B3D");
+    //     $(".validId3").text("비밀번호는 영문자+숫자+특수문자 조합으로 8~20자리 사용해야 합니다.");
+    //     pwd1.focus();
+    //     return false;
+    // }else{
+    //     $(".validId3").css("display","none");
+    // };
 
     if (pwd1.value !== pwd2.value) {
         $(".validId4").css("display","block");
@@ -103,7 +103,6 @@ function id_check() {
 
 function save(){
     const data = {
-        name: '',
         id: document.getElementById("id").value,
         pwd: document.getElementById("pswd1").value,
         nick: document.getElementById("nickName").value

@@ -1,7 +1,3 @@
-const $id2 = document.getElementById("id").innerText;
-const $pswd2 = document.getElementById("pswd1").innerText;
-
-
 function login_check() {
     var id = document.getElementById("id");
     var pwd1 = document.getElementById("pswd1");
@@ -34,8 +30,8 @@ function pw_find(){
 
 function save(){
     const data = {
-        id: $id2,
-        pwd: $pswd2
+        id: document.getElementById("id").value,
+        pwd: document.getElementById("pswd1").value
     }
     fetch(`http://umcsom.shop:9000/auth/login`, {
         method: "POST",
@@ -44,8 +40,7 @@ function save(){
     })
 
     .then((response) => response.json())
-    // .then((data) => {console.log('Success');})
-    //.then(response => {alert("로그인이 완료되었습니다.");})
+    .then(response => {alert("로그인이 완료되었습니다.");})
     // .then(response => {moveToMain();})
     //.then(response => {change_logout();})
     .catch((error) => console.log("error", error))
