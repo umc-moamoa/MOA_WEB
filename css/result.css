@@ -130,7 +130,7 @@ ul {
     padding: 0 70px;
 }
 
-footer .container {
+#fcontainer {
     /* min-height: 300vh; */
     width: 970px;
     margin: 30px auto;
