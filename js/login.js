@@ -1,3 +1,8 @@
+
+// 변수 선언
+const $my_userId = '';
+
+// 로그인 버튼 클릭시 실행 함수
 function login_check() {
     var id = document.getElementById("id");
     var pwd1 = document.getElementById("pswd1");
@@ -18,16 +23,19 @@ function login_check() {
     save();
 }
 
+// 아이디 찾기
 function id_find(){
     //window.open("팝업될 문서 경로", "팝업될 문서 이름", "옵션");
     window.open("", "아이디 찾기", "width=600, height=200, left=200, top=100");
 }
 
+// 비밀번호 찾기
 function pw_find(){
     //window.open("팝업될 문서 경로", "팝업될 문서 이름", "옵션");
     window.open("", "비밀번호 찾기", "width=600, height=200, left=200, top=100");
 }
 
+// post 데이터 보내기 함수
 function save(){
     const data = {
         id: document.getElementById("id").value,
@@ -40,9 +48,11 @@ function save(){
     })
 
     .then((response) => response.json())
+    .then((response) => {my_userId = response.result.userId;})
     .then(response => {alert("로그인이 완료되었습니다.");})
-    .then(response => {moveToMain();})
+    //.then(response => {moveToMain();})
     .then(response => {change_logout();})
+    .then(response => {local_save();})
     .catch((error) => console.log("error", error))
 }
 
@@ -51,12 +61,26 @@ function moveToMain(){
     var link="../html/main.html";
     location.href=link;
 
-    // 로그인을 로그아웃으로 변경
+    
     change_logout();
 }
 
+// 로그인을 로그아웃으로 변경
 function change_logout(){
     const link_login = document.querySelector(".link_login");
     
     link_login.textContent = "로그아웃";
+    
+}
+
+// 로컬스토리지 저장
+function local_save(){
+    // localStorage에 저장할 객체
+    const obj = my_userId;
+
+    // 객체, 배열을 JSON 문자열로 변환
+    const objString = JSON.stringify(obj);
+
+    // setItem
+    localStorage.setItem('userId', objString);
 }
