@@ -108,7 +108,7 @@ function save(){
         pwd: document.getElementById("pswd1").value,
         nick: document.getElementById("nickName").value
     }
-    fetch('http://umcsom.shop:9000/users', {
+    fetch(`http://umcsom.shop:9000/users`, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
