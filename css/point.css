@@ -192,7 +192,7 @@ footer .container {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top:480px;
+    top:502px;
     z-index: 200;
     /* left:165px; */
 }
