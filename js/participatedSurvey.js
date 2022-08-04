@@ -6,7 +6,7 @@ const fetchParticipate = () => {
     };
 
     fetch(
-        "http://umcsom.shop:9000/users/2/post",
+        "http://umcsom.shop:9000/users/3/post",
         requestOptions
     )
         .then((response) => response.json())
