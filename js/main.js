@@ -25,7 +25,7 @@ function SurveyListTemplate1 (data) {
             <a id="title1" href="../html/detailPage.html">${data.title}</a>
         </div>
         <div class="two-container1">
-            <span id="count1">${data.numberOfQuestion}개 항목</span>
+            <span id="count1">${data.qcount}개 항목</span>
             <span id="type1">선택형</span>
         </div>
         <div class="three-container1">
@@ -63,7 +63,7 @@ function SurveyListTemplate2 (data) {
             <a id="title1" href="../html/detailPage.html">${data.title}</a>
         </div>
         <div class="two-container1">
-            <span id="count1">${data.numberOfQuestion}개 항목</span>
+            <span id="count1">${data.qcount}개 항목</span>
             <span id="type1">선택형</span>
         </div>
         <div class="three-container1">

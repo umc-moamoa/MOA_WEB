@@ -144,7 +144,7 @@ footer .container {
     padding: 2%;
     margin: 0 5% 5% 5%;
 
-    /* height: auto; */
+    /* height: 200px; */
     background: #FFFFFF;
     border: 1.3px solid #909090;
 }
@@ -193,7 +193,8 @@ footer .container {
     font-size: 1.3em;
     font-weight: 500;
     color: #9CC2FF;
-    ;
+    padding-top: 30px;
+
 }
 
 .arrow {
