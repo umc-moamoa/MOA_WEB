@@ -219,7 +219,7 @@ footer td p {
 
 #date {
     opacity: 0.5;
-    font-size: 13px;
+    font-size: 12px;
     /* margin-top: 12px; */
 }
 
@@ -238,7 +238,8 @@ footer td p {
 
 .flex-item2 {
     font-size: 13px;
-    font-weight: bold;
+    font-weight: 500;
+    /* font-weight: bold; */
     color: #6C6C6C;
 }
 

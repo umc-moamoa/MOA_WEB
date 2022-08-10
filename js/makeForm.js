@@ -374,4 +374,3 @@ function addQuestion() {
     div4.appendChild(tbtn);
     
 }
-

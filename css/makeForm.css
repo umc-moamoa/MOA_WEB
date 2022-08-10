@@ -219,12 +219,25 @@ footer td p {
 }
 
 #inputTitle {
+    display: inline-block;
     border: none;
     outline: none; /* 입력 시 테두리 지움*/
-    display: block;
     
     font-weight: 600;
     font-size: 20px;
+    color: #414141;
+}
+
+#Stype {
+    display: inline-block;
+    width: 80px;
+    border: 1px solid #909090;
+    border-radius: 2.5px;
+    padding: 3px;
+    margin-left: 377px;
+
+    font-size: 13px;
+    font-weight: 500;
     color: #414141;
 }
 
@@ -237,6 +250,28 @@ footer td p {
     font-size: 15px;
     color: #909090;
     line-height: 30px;
+}
+
+#inputDate {
+    display: inline-block;
+    width: 120px;
+    border: 1px solid #909090;
+    border-radius: 2.5px;
+    padding: 3px;
+    margin-top: 10px;
+    padding-left: 8px;
+
+    font-size: 13px;
+    font-weight: 500;
+    color: #414141;
+}
+
+.deadline {
+    display: inline-block;
+    /* font-weight: 600; */
+    font-size: 14px;
+    color: #414141;
+    margin-left: 10px;
 }
 
 /* placeholder 폰트 색 변경, 크롬/엣지 둘 다 적용 */
