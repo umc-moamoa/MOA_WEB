@@ -1,64 +1,20 @@
-// const $SurveyDetail = document.querySelector("#detailMain");
-
-// const fetchDetail = () => {
-//     var requestOptions = {
-//         method: "GET",
-//     };
-
-//     fetch(
-//         `http://umcsom.shop:9000/posts/content/5`,
-//         requestOptions
-//     )
-//         .then((response) => response.json())
-//         .then((webResult) => webResult.result.map(item => SurveyDetailTemplate(item)))
-//         .catch((error) => console.log("error", error));
-// }
-
-// fetchDetail();
-
-// function SurveyDetailTemplate (data) {
-//     const SurveyDetailItem = `
-//             <div id="mainTop">
-//             <div class="flex-container1">
-//                 <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-//                 <div class="flex-item1"><span id="date">7/1 16:36</span></div>
-//                 <div class="flex-item1"><button id="heart"><img src="../image/Heart.png" width="40%"/></button></div>
-//             </div>
-
-//             <div class="flex-container2">
-//                 <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
-//                 <div class="flex-item2"><span id="types">|&nbsp;&nbsp;&nbsp;&nbsp;선택형</span></div>
-//             </div>
-//             </div>
-
-//             <div id="mainBottom"> ${data.content} </div>
-
-//             <div class="join">
-//                 <button id="joinBtn" onClick="location.href='../html/joinForm.html'">설문&nbsp;&nbsp;참여</button>
-//             </div> 
-//     `;
-
-// $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem);
-// }
-// =============================================================================
 const $SurveyDetail = document.querySelector("#detailMain");
 const $data_id='';
 const $user_id='';
 
 const fetchDetail = () => {
-    var requestOptions = {
-        method: "GET",
-    };
 
-    fetch(
-        `http://umcsom.shop:9000/posts/content/5`,
-        requestOptions
-    )
+    fetch(`http://umcsom.shop:9000/posts/content/1`, {
+        method: "GET",
+        headers: {Authorization: `Bearer eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWQiOjIsImlhdCI6MTY1OTg3NzI5OCwiZXhwIjoxNjYxMzQ4NTI3fQ.o0mva-CqHNi_keT__IPIfjsxdfmAlT-96fHtBF1ey_E`}
+    })
         .then((response) => response.json())
-        // .then((webResult) => console.log(webResult.result))
-        .then((webResult) => webResult.result.map(item => SurveyDetailTemplate(item)))
+        .then((webResult) => console.log(webResult.result))
+        // .then((webResult) => webResult.result.map(item => SurveyDetailTemplate(item)))
        /*  .then((webResult2) => interested_item(webResult2)) */
         .catch((error) => console.log("error", error));
+
+
 }
 
 fetchDetail();
@@ -73,8 +29,8 @@ function SurveyDetailTemplate (data) {
             </div>
 
             <div class="flex-container2">
-                <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;&nbsp;&nbsp;</span></div>
-                <div class="flex-item2"><span id="types">|&nbsp;&nbsp;&nbsp;&nbsp;선택형</span></div>
+                <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;</span></div>
+                <div class="flex-item2"><span id="deadline">ㅣ&nbsp;&nbsp;D-${data.deadline}</span></div>
             </div>
             </div>
 
@@ -88,8 +44,6 @@ function SurveyDetailTemplate (data) {
   /*   user_id=`${data.userId}`; */
 
 $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem);
-
-
 }
 
 // 하트 처리
