@@ -21,8 +21,6 @@ function login_success(){
 function moveToMain(){
     var link="../html/main.html";
     location.href=link;
-
-    change_logout();
 }
 
 // 로그인을 로그아웃으로 변경
@@ -43,4 +41,6 @@ function local_save(){
 
     // setItem
     localStorage.setItem('userId', objString);
+
+    login_success();
 }
