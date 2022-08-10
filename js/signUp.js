@@ -40,14 +40,14 @@ function join_check(){
         $(".validId3").css("display","none");
     };
 
-    //비밀번호 영문자+숫자+특수조합(8~20자리 입력) 정규식
-    //var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,20}$/;
+    //비밀번호 영문자+숫자+특수조합(7~15자리 입력) 정규식
+    //var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).7,15}$/;
     //var pwdCheck = /^(?=.*[a-zA-Z]).{2,20}$/;
 
     // if (!pwdCheck.test(pwd1.value)) {
     //     $(".validId3").css("display","block");
     //     $(".validId3").css("color","#FC4B3D");
-    //     $(".validId3").text("비밀번호는 영문자+숫자+특수문자 조합으로 8~20자리 사용해야 합니다.");
+    //     $(".validId3").text("비밀번호는 영문자+숫자+특수문자 조합으로 7~15자리 사용해야 합니다.");
     //     pwd1.focus();
     //     return false;
     // }else{
@@ -114,7 +114,7 @@ function save(){
     })
 
     .then((response) => response.json())
-    .then(response => {alert("회원가입이 완료되었습니다.");})
+    //.then(response => {alert("회원가입이 완료되었습니다.");})
     // .then(response => {moveToLogin();})
     .catch((error) => console.log("error", error))
 }
