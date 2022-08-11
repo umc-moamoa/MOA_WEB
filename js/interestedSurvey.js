@@ -1,12 +1,14 @@
 const $SurveyList = document.querySelector("#SurveyList");
+var my_jwt = localStorage.getItem('x-access-token');
 
 const fetchInterest = () => {
     var requestOptions = {
         method: "Get",
+        headers: {'x-access-token' : my_jwt,}
     };
 
     fetch(
-        "http://seolmunzip.shop:9000/users/1/interest",
+        "http://seolmunzip.shop:9000/users/interest",
         requestOptions
     )
         .then((response) => response.json())
@@ -23,8 +25,8 @@ function InterestListTemplate(data) {
         <a id="title1" href="../html/detailPage.html" data-id=${data.postId}>  ${data.title}  </a>
     </div>
     <div class="two-container1">
-        <span id="count1">${data.numberOfQuestion}개 항목</span>
-        <span id="type1"></span>
+        <span id="count1">${data.qcount}개 항목</span>
+        <span id="type1">선택형</span>
     </div>
     <div class="three-container1">
         <span id="point1">  ${data.point}P  </span>
