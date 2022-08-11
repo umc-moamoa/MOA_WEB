@@ -41,3 +41,26 @@ function userTemplate(data) {
 $userInfo.insertAdjacentHTML('beforeend', userInfoItem);
 
 }
+
+//회원탈퇴
+function quit() {
+    var result = confirm("회원 탈퇴를 하시겠습니까?");
+        if(result) {
+            alert("탈퇴 처리되었습니다.");
+            deleteUser();
+        } else {
+            alert("탈퇴 취소되었습니다.");
+        }
+    }
+
+function deleteUser() {
+    fetch(
+        "http://seolmunzip.shop:9000/users",{
+            method: "DELETE",
+            headers: {'x-access-token' : my_jwt,}
+        }
+    )
+        .then((response) => response.json())
+        .then((response) => console.log(response))
+        .catch((error) => console.log("error", error));
+}

@@ -48,7 +48,7 @@ function SurveyDetailTemplate (data) {
 function hh() {
     var heart = document.getElementById("heart");
     // heart.setAttribute('display', 'none');
-    heart.style.display = 'none';
+    //heart.style.display = 'none';
     // heart.style.css("display","none");
     
 }
@@ -61,7 +61,7 @@ function heart(){
     const $heartImgCheck = document.querySelector(".heartImg").getAttribute( 'src' );
 
     // if(myPost == true){
-        //heart.visibility = 'hidden';
+        heart.visibility = 'hidden';
     // }
     if($heartImgCheck == "../image/Heart.png" || like== true){
         $heartImg.setAttribute('src',"../image/Heart2.png"); // 찬 하트

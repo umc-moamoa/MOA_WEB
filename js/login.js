@@ -1,7 +1,6 @@
 
 // 변수 선언
-const $my_jwt = '';
-
+var my_jwt = localStorage.getItem('x-access-token');
 // 로그인 버튼 클릭시 실행 함수
 function login_check() {
     var id = document.getElementById("id");
@@ -66,10 +65,13 @@ function save(){
 }
 
 // 로그인 후 메인으로 이동, 로그인을 로그아웃으로 변경
-function login(){
-    var link="../html/main.html";
-    location.href=link;
+// function login(){
+//     if(my_jwt != ''){
+//         var link="../html/main.html";
+//         location.href=link;
 
-    const link_login = document.querySelector(".link_login");
-    link_login.textContent = "로그아웃";
-}
+//         const link_login = document.querySelector(".link_login");
+//         link_login.textContent = "로그아웃";
+//     }
+    
+// }
