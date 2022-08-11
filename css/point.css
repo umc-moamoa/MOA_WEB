@@ -164,7 +164,7 @@ footer .container {
 }
 
 .one-container1 {
-    background-color: #4E7FF2;
+    /* background-color: none; */
     width: 80px;
     color: #FFFFFF;
     padding: 25px;
@@ -178,7 +178,7 @@ footer .container {
     font-weight: 500;
 }
 .three-container1{
-     color: #4E7FF2;
+    color: #4E7FF2;
     padding: 25px;
     font-size: 15px;
     font-weight: 500;
@@ -217,7 +217,7 @@ footer .container {
     justify-content: space-between;
     align-items: center;
 
-    margin: 5px 600px 0 0;
+    margin: 5px 20px 0 20px;
 }
 
 .flex-container-icon-sub1{
@@ -237,6 +237,7 @@ footer .container {
 
 .state{
     font-weight: 600;
+    
     font-size: 18px;
     color: #414141;
 }
