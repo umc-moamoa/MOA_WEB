@@ -46,9 +46,18 @@ function SurveyDetailTemplate (data) {
     data_id=`${data.postUserId}`;
     myPost=`${data.myPost}`;
     like=`${data.like}`;
-
-$SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem);
+    
+    $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem);
 }
+
+function hh() {
+    var heart = document.getElementById("heart");
+    // heart.setAttribute('display', 'none');
+    heart.display = 'none';
+    // heart.css("display","none");
+    
+}
+hh();
 
 // 하트 처리
 function heart(){
@@ -57,7 +66,7 @@ function heart(){
     const $heartImgCheck = document.querySelector(".heartImg").getAttribute( 'src' );
 
     // if(myPost == true){
-        heart.display = 'none';
+        heart.visibility = 'hidden';
     // }
     if($heartImgCheck == "../image/Heart.png"){
         $heartImg.setAttribute('src',"../image/Heart2.png"); // 찬 하트
