@@ -1,3 +1,14 @@
+var my_jwt = localStorage.getItem('x-access-token');
+var semiCategoryId;
+var semiShortCount = 0;
+var semiLongCount = 0;
+var semiTitle;
+var semiContent;
+var semiDeadline;
+var semiPostDetails;
+var semiPostItems;
+var semiPostFormat;
+
 function setDeadline() {
     var deadline = document.getElementById("inputDate");
     deadline.value = new Date().toISOString().substring(0, 10);
@@ -11,25 +22,26 @@ function sortQuestion() {
 
     // CategoryId
     var Stype = document.getElementById("Stype");
-    var CategoryId = Stype.options[Stype.selectedIndex].value; 
-    console.log(CategoryId);
+    semiCategoryId = Stype.options[Stype.selectedIndex].value; 
+    // console.log(semiCategoryId);
 
     // title, content
-    var title = document.getElementById("inputTitle");
-    title.value = '제목';
-    var content = document.getElementById("inputExplain");
-    content.value = '설명';
-    console.log(title.value);
-    console.log(content.value);
+    semiTitle = document.getElementById("inputTitle").value;
+    // semiTitle = '제목';
+    semiContent = document.getElementById("inputExplain").value;
+    // semiContent = '설명';
+    // console.log(semiTitle);
+    // console.log(semiContent);
 
     // deadline
-    var deadline = document.getElementById("inputDate");
-    deadline.value = '2022-08-31';
-    console.log(deadline.value);
+    semiDeadline = document.getElementById("inputDate").value;
+    // semiDeadline = '2022-08-31';
+    // console.log(semiDeadline);
 
     // postDetails
-    var postDetails = new Array();
-    var postFormat = new Array();
+    semiPostDetails = new Array();
+    semiPostItems = new Array();
+    semiPostFormat = new Array();
 
     // 일단 큰 틀은? surveryElement 모두 처리 할 때까지!
     // question div는 전체 배열로 찾고 해도 될 듯. 어차피 elements 인덱스랑 같은 맥락으로 작동함.
@@ -37,37 +49,68 @@ function sortQuestion() {
     var elements = document.getElementsByClassName("surveyElement");
     var questions = document.getElementsByClassName("Qinput");
     var types = document.getElementsByClassName("Qtype");
-    var shortCount = 0;
-    var longCount = 0;
-    for (i=0; i<elements.length; i++) {
+    var format;
+    var question;
+    var options;
+    var item;
+    for (var i=0; i<elements.length; i++) {
         // elements[0]이 문항 1번.
 
         // format, questions
-        var format = types[i].value;
-        postDetails.push(format); // 1,2,3,4
+        format = types[i].value;
+        // semiPostItems.push(format);
+        semiPostItems[0] = format;
 
-        var question = questions[i].value;
-        question = "hi"; 
-        postDetails.push(question);
+        question = questions[i].value;
+        // semiPostItems.push(question);
+        semiPostItems[1] = question;
 
+        semiPostFormat.splice(0, semiPostFormat.length); // postFormat 비우고 추가.
         // makeoption은 elements[i]의 children 중에서 구별해서 써야함.
-        var options = elements[i].children;
-        postFormat.splice(0, postFormat.length); // postFormat 비우고 추가.
+        options = elements[i].children;
         for (j=1; j<options.length-1; j++) {
-            var item = options[j].children[1].value;
-            item = j;
-            postFormat.push(item);
+            item = options[j].children[1].value;
+            // item = j;
+            semiPostFormat.push(item);
         }
+        // semiPostItems.push(semiPostFormat);
+        semiPostItems[2] = semiPostFormat;
+        semiPostDetails.push(semiPostItems);
+        // semiPostDetails[i] = semiPostItems;
         
+        console.log(semiPostDetails);
         // shortCount, longCount
         if (types[i].value == 4)
-        longCount++;
+            semiLongCount++;
         else
-        shortCount++;
+            semiShortCount++;
         
-        postDetails.push(postFormat);
-        console.log(postDetails);
     }
-    console.log(shortCount);
-    console.log(longCount);
+    // console.log(semiShortCount);
+    // console.log(semiLongCount);
+
+    fetchMakeForm();
+}
+
+function fetchMakeForm() {
+    const item = {
+        categoryId : semiCategoryId,
+        shortCount : semiShortCount,
+        longCount : semiLongCount,
+        title : semiTitle,
+        content : semiContent,
+        deadline : semiDeadline,
+        postDetails : semiPostDetails
+    }
+
+    console.log(item);
+
+    fetch(`http://seolmunzip.shop:9000/posts` , {
+        method: "POST",
+        headers: {'x-access-token' : my_jwt, 'Content-Type': 'application/json' } ,
+        body: JSON.stringify(item)
+    })
+
+    .then((response) => response.json())
+    .catch((error) => console.log("error", error))
 }

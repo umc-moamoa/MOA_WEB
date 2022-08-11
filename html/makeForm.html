@@ -9,7 +9,7 @@
     <script src="../js/makeForm.js"></script>
     <script src="../js/makeForm2.js"></script>
 </head>
-<body onload="addQuestion(); sortQuestion(); setDeadline()">
+<body onload="addQuestion(); setDeadline(); ">
     <div class="flex-container">
         <div id="wrapper">
             <!-- 배경 -->
@@ -78,7 +78,7 @@
 
                 <div id="main">
 
-                    <form action="http://umcsom.shop:9000/post" method="post">
+                    <form>
                         <div class="flex-container2">
 
                             <!-- 메인 -->
@@ -88,7 +88,7 @@
                                 onfocus="this.placeholder = ''" 
                                 onblur="this.placeholder = '설문지 제목을 입력하세요.'">
 
-                                <select id="Stype">
+                                <select id="Stype" onclick="sortQuestion()">
                                     <option value="1">사회현상</option>
                                     <option value="2">마켓팅</option>
                                     <option value="3">브랜드</option>
