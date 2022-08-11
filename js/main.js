@@ -7,7 +7,7 @@ const fetchSurvey1 = () => {
     };
 
     fetch(
-        `http://umcsom.shop:9000/posts/desc`,
+        `http://seolmunzip.shop:9000/posts/desc`,
         requestOptions
     )
         .then((response) => response.json())
@@ -45,7 +45,7 @@ const fetchSurvey2 = () => {
     };
 
     fetch(
-        `http://umcsom.shop:9000/posts/asc`,
+        `http://seolmunzip.shop:9000/posts/asc`,
         requestOptions
     )
         .then((response) => response.json())

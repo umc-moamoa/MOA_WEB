@@ -1,20 +1,23 @@
 const $SurveyDetail = document.querySelector("#detailMain");
 const $data_id='';
 const $user_id='';
+const $myPost='';
+const $like='';
+var my_jwt = localStorage.getItem('x-access-token');
 
 const fetchDetail = () => {
 
-    fetch(`http://umcsom.shop:9000/posts/content/1`, {
+    fetch(`http://seolmunzip.shop:9000/posts/content/1`, {
         method: "GET",
-        headers: {Authorization: `Bearer eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWQiOjIsImlhdCI6MTY1OTg3NzI5OCwiZXhwIjoxNjYxMzQ4NTI3fQ.o0mva-CqHNi_keT__IPIfjsxdfmAlT-96fHtBF1ey_E`}
+        headers: {'x-access-token' : my_jwt,}
     })
         .then((response) => response.json())
-        .then((webResult) => console.log(webResult.result))
+        //.then((webResult) => console.log(webResult.result))
         // .then((webResult) => webResult.result.map(item => SurveyDetailTemplate(item)))
        /*  .then((webResult2) => interested_item(webResult2)) */
+        .then((webResult) => SurveyDetailTemplate(webResult.result))
+        .then((webResult) => console.log(myPost))
         .catch((error) => console.log("error", error));
-
-
 }
 
 fetchDetail();
@@ -30,7 +33,7 @@ function SurveyDetailTemplate (data) {
 
             <div class="flex-container2">
                 <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;</span></div>
-                <div class="flex-item2"><span id="deadline">ㅣ&nbsp;&nbsp;D-${data.deadline}</span></div>
+                <div class="flex-item2"><span id="deadline">ㅣ&nbsp;&nbsp;D-${data.d_day}</span></div>
             </div>
             </div>
 
@@ -41,16 +44,21 @@ function SurveyDetailTemplate (data) {
             </div> 
     `;
     data_id=`${data.postUserId}`;
-  /*   user_id=`${data.userId}`; */
+    myPost=`${data.myPost}`;
+    like=`${data.like}`;
 
 $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem);
 }
 
 // 하트 처리
 function heart(){
+    var heart = document.getElementById("heart");
     const $heartImg = document.querySelector(".heartImg");
     const $heartImgCheck = document.querySelector(".heartImg").getAttribute( 'src' );
-    
+
+    // if(myPost == true){
+        heart.display = 'none';
+    // }
     if($heartImgCheck == "../image/Heart.png"){
         $heartImg.setAttribute('src',"../image/Heart2.png"); // 찬 하트
         interested_item();
@@ -64,11 +72,9 @@ function heart(){
 // 관심있는 설문조사 등록
 function interested_item(){
     const item = {
-        postId : data_id,
-        userId : 1
-        /* 나중에 userId에 로그인 정보를 값으로 주면 됨 */
+        postId : data_id
     }
-    fetch(`http://umcsom.shop:9000/posts/${item.postId}/${item.userId}`, {
+    fetch(`http://seolmunzip.shop:9000/posts/${item.postId}`, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(item)

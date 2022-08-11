@@ -1,12 +1,13 @@
 const $SurveyList = document.querySelector("#SurveyList");
-
+var my_jwt = localStorage.getItem('x-access-token');
 const fetchSurvey = () => {
     var requestOptions = {
         method: "GET",
+        headers: {'x-access-token' : my_jwt,}
     };
 
     fetch(
-        `http://umcsom.shop:9000/posts?categoryId=1`,
+        `http://seolmunzip.shop:9000/users/point`,
         requestOptions
     )
         .then((response) => response.json())

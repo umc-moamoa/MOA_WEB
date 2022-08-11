@@ -60,6 +60,16 @@ function save(){
     .then((response) => response.json())
     .then((response2) => {
         localStorage.removeItem('x-access-token');
-        localStorage.setItem('x-access-token', response2.result.jwt);})
+        localStorage.setItem('x-access-token', response2.result.jwt);
+        login();})
     .catch((error) => console.log("error", error))
+}
+
+// 로그인 후 메인으로 이동, 로그인을 로그아웃으로 변경
+function login(){
+    var link="../html/main.html";
+    location.href=link;
+
+    const link_login = document.querySelector(".link_login");
+    link_login.textContent = "로그아웃";
 }

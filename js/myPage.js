@@ -3,7 +3,7 @@ var my_jwt = localStorage.getItem('x-access-token');
 
 const fetchUser = () => {
     fetch(
-        "http://umcsom.shop:9000/users",{
+        "http://seolmunzip.shop:9000/users",{
             method: "GET",
             headers: {'x-access-token' : my_jwt,}
         }

@@ -6,7 +6,7 @@ const fetchInterest = () => {
     };
 
     fetch(
-        "http://umcsom.shop:9000/users/1/interest",
+        "http://seolmunzip.shop:9000/users/1/interest",
         requestOptions
     )
         .then((response) => response.json())
