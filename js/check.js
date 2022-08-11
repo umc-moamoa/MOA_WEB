@@ -1,7 +1,7 @@
 // jwt 관리하는 파일
 
 // 변수 선언
-const $my_jwt = '';
+//const $my_jwt = '';
 
 // login.js 에서 로그인 시도하면 실행하는 함수 -> local_save()
 // 로컬스토리지 저장

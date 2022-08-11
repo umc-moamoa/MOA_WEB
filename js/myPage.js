@@ -1,16 +1,17 @@
 const $userInfo = document.querySelector("#userInfo");
+var my_jwt = localStorage.getItem('x-access-token');
 
 const fetchUser = () => {
-    var requestOptions = {
-        method: "GET",
-    };
-
     fetch(
-        "http://umcsom.shop:9000/users?userId=1",
-        requestOptions
+        "http://umcsom.shop:9000/users",{
+            method: "GET",
+            headers: {'x-access-token' : my_jwt,}
+        }
     )
         .then((response) => response.json())
-        .then((webResult) => userTemplate(webResult))
+        //.then((response) => console.log(response))
+        // .then((webResult) => console.log(webResult.result))
+        .then((webResult) => userTemplate(webResult.result))
         .catch((error) => console.log("error", error));
 }
 
@@ -18,8 +19,7 @@ fetchUser();
 
 function userTemplate(data) {
     const userInfoItem = 
-    `<div class="flex-nickname">
-    ${data.result.nickName}<div id="님">&nbsp;&nbsp;님</div>
+    `<div class="flex-nickname">${data.nickName}<div id="님">&nbsp;&nbsp;님</div>
     </div>
 
     <div class="flex-container-icon">
@@ -27,7 +27,7 @@ function userTemplate(data) {
             <img src="../image/Vector.png" width="28px">
             <div class="category1">포인트</div>
         </div>
-        <div class="state">${data.result.point}<span>P</span></div>
+        <div class="state">${data.point}<span>P</span></div>
     </div>
 
     <div class="flex-container-icon" id="icon_bottom_line">
@@ -35,7 +35,7 @@ function userTemplate(data) {
             <img src="../image/Vector (1).png" width="25px">
             <div class="category1">&nbsp;진행 중인 설문조사</div>
         </div>
-        <div class="state">${data.result.postCount}<span>개</span></div>
+        <div class="state">${data.postCount}<span>개</span></div>
     </div>`;
 
 $userInfo.insertAdjacentHTML('beforeend', userInfoItem);

@@ -1,6 +1,6 @@
 
 // 변수 선언
-//const $my_jwt = '';
+const $my_jwt = '';
 
 // 로그인 버튼 클릭시 실행 함수
 function login_check() {
@@ -58,23 +58,8 @@ function save(){
     })
 
     .then((response) => response.json())
-    //.then((response) => console.log(response))
-    //.then((response) => {$my_jwt = response.result.jwt;})
-    .then((response) => {local_save();})
-    // .then((response)=> {
-    //     //$my_jwt = response.result.jwt;
-    //     if($my_jwt == ''){
-    //         $(".valid").css("display","block");
-    //         $(".valid").css("color","#FC4B3D");
-    //         $(".one").text("아이디(로그인 전용 아이디) 또는 비밀번호를 잘못 입력했습니다.");
-    //         $(".two").text("입력하신 내용을 다시 확인해주세요.");
-    //     }
-    // })
-    //.then(response => {alert("로그인이 완료되었습니다.");})
-    
-    //.then(response => {login_success();})
+    .then((response2) => {
+        localStorage.removeItem('x-access-token');
+        localStorage.setItem('x-access-token', response2.result.jwt);})
     .catch((error) => console.log("error", error))
 }
-
-/* test test123
-qwert 123 */
