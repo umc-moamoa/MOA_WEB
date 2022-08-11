@@ -234,8 +234,12 @@ footer .container {
     margin-top: 20px;
 
     /* background: #4E7FF2; */
-    background: url(../image/banner.png) no-repeat;
-    background-size: 100%;
+    /* background: url(../image/banner.png) no-repeat;
+    background-size: 100%; */
+}
+
+.bannerimg {
+    width: 100%;
 }
 #subMenu{
     margin-bottom: 3em;
