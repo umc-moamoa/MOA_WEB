@@ -9,7 +9,7 @@
     <script src="../js/makeForm.js"></script>
     <script src="../js/makeForm2.js"></script>
 </head>
-<body onload="addQuestion(); sortQuestion()">
+<body onload="addQuestion(); sortQuestion(); setDeadline()">
     <div class="flex-container">
         <div id="wrapper">
             <!-- 배경 -->
@@ -117,8 +117,8 @@
                     </form>
 
                     <script>
-                        document.getElementById('inputDate').value = new Date().toISOString().substring(0, 10);
-                        document.getElementById('inputDate').min = new Date().toISOString().substring(0, 10);
+                        // document.getElementById('inputDate').value = new Date().toISOString().substring(0, 10);
+                        // document.getElementById('inputDate').min = new Date().toISOString().substring(0, 10);
                         // console.log(document.getElementById('inputDate').value);
                     </script>
 

@@ -221,6 +221,20 @@ footer .container {
     color: #414141;
 }
 
+button {
+    background-color: #FFFFFF;
+    border: none;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 23px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #909090;
+
+}
+
 /*footer*/
 footer {
     background-color: white;
