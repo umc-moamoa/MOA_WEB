@@ -1,12 +1,14 @@
 const $SurveyList = document.querySelector("#SurveyList");
+var my_jwt = localStorage.getItem('x-access-token');
 
 const fetchParticipate = () => {
     var requestOptions = {
         method: "Get",
+        headers: {'x-access-token' : my_jwt,}
     };
 
     fetch(
-        "http://umcsom.shop:9000/users/3/post",
+        "http://seolmunzip.shop:9000/users/partPost",
         requestOptions
     )
         .then((response) => response.json())
@@ -20,7 +22,7 @@ fetchParticipate();
 function ParticipateListTemplate(data) {
     const ParticipatedItem = `<div id="main1">
     <div class="one-container1">
-        <a id="title1" href="../html/detailPage.html">  ${data.postTitle}  </a>
+        <a id="title1" href="../html/detailPage.html">  ${data.title}  </a>
     </div>
     <div class="two-container1">
         <span id="count1">${data.qcount}개 항목</span>
