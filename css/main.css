@@ -125,7 +125,7 @@ ul {
 #wrapper .container {
     /* min-height: 300vh; */
     width: 970px;
-    margin: 90px auto 80px;
+    margin: 50px auto 80px;
     padding: 0 70px;
 }
 
@@ -235,7 +235,7 @@ footer .container {
 
     /* background: #4E7FF2; */
     background: url(../image/banner.png) no-repeat;
-    background-size: 100%;
+    background-size: 100% 350px;
 }
 #subMenu{
     margin-bottom: 3em;
