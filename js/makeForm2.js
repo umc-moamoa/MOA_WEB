@@ -1,12 +1,3 @@
-// date
-// var inputDate = document.getElementById("date");
-// var today = new Date().toISOString().substring(0, 10);
-// document.getElementById("inputDate").value = new Date().toISOString().substring(0, 10);
-// inputDate.value = new Date().toISOString().substring(0, 10);
-// inputDate.min = new Date().toISOString().substring(0, 10);
-// inputDate.setAttribute('value', 'today');
-// inputDate.setAttribute('min', 'today');
-
 // 폼 데이터 정리 (보내기 위해)
 function sortQuestion() {
 
