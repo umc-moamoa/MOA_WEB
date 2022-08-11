@@ -9,6 +9,9 @@ function sortQuestion() {
     whole.push(title);
     whole.push(content);
 
+    // deadline
+    var deadline = document.getElementById("deadline");
+
     // postDetails
     var postDetails = new Array();
     var postFormat = new Array();
