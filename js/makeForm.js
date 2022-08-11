@@ -1,4 +1,3 @@
-//var optionNum;
 function addQuestion() {
 
     function selectedValue() {

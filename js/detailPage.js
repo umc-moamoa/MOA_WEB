@@ -1,8 +1,8 @@
 const $SurveyDetail = document.querySelector("#detailMain");
-const $data_id='';
-const $user_id='';
-const $myPost='';
-const $like='';
+var $data_id='';
+
+var myPost='';
+var like='';
 var my_jwt = localStorage.getItem('x-access-token');
 
 const fetchDetail = () => {
@@ -12,11 +12,7 @@ const fetchDetail = () => {
         headers: {'x-access-token' : my_jwt,}
     })
         .then((response) => response.json())
-        //.then((webResult) => console.log(webResult.result))
-        // .then((webResult) => webResult.result.map(item => SurveyDetailTemplate(item)))
-       /*  .then((webResult2) => interested_item(webResult2)) */
         .then((webResult) => SurveyDetailTemplate(webResult.result))
-        .then((webResult) => console.log(myPost))
         .catch((error) => console.log("error", error));
 }
 
@@ -27,7 +23,6 @@ function SurveyDetailTemplate (data) {
             <div id="mainTop">
             <div class="flex-container1">
                 <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-                <div class="flex-item1"><span id="date">7/1 16:36</span></div>
                 <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart.png" width="40%" onclick="heart();"/></button></div>
             </div>
 
@@ -53,8 +48,8 @@ function SurveyDetailTemplate (data) {
 function hh() {
     var heart = document.getElementById("heart");
     // heart.setAttribute('display', 'none');
-    heart.display = 'none';
-    // heart.css("display","none");
+    heart.style.display = 'none';
+    // heart.style.css("display","none");
     
 }
 hh();
@@ -66,13 +61,13 @@ function heart(){
     const $heartImgCheck = document.querySelector(".heartImg").getAttribute( 'src' );
 
     // if(myPost == true){
-        heart.visibility = 'hidden';
+        //heart.visibility = 'hidden';
     // }
-    if($heartImgCheck == "../image/Heart.png"){
+    if($heartImgCheck == "../image/Heart.png" || like== true){
         $heartImg.setAttribute('src',"../image/Heart2.png"); // 찬 하트
         interested_item();
         
-    }else{
+    }else if($heartImgCheck == "../image/Heart2.png" || like==false){
         $heartImg.setAttribute('src',"../image/Heart.png"); // 빈 하트
 
     }
