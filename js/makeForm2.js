@@ -53,7 +53,8 @@ function sortQuestion() {
     var question;
     var options;
     var item;
-    for (var i=0; i<elements.length; i++) {
+    var i;
+    for (i=0; i<elements.length; i++) {
         // elements[0]이 문항 1번.
 
         // format, questions
@@ -75,10 +76,11 @@ function sortQuestion() {
         }
         // semiPostItems.push(semiPostFormat);
         semiPostItems[2] = semiPostFormat;
-        semiPostDetails.push(semiPostItems);
-        // semiPostDetails[i] = semiPostItems;
+        // semiPostDetails.push(semiPostItems);
+        semiPostDetails[i] = semiPostItems;
         
         console.log(semiPostDetails);
+        
         // shortCount, longCount
         if (types[i].value == 4)
             semiLongCount++;
@@ -89,7 +91,7 @@ function sortQuestion() {
     // console.log(semiShortCount);
     // console.log(semiLongCount);
 
-    fetchMakeForm();
+    // fetchMakeForm();
 }
 
 function fetchMakeForm() {
