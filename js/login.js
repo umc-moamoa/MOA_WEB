@@ -58,13 +58,10 @@ function save(){
 
     .then((response) => response.json())
     .then((response2) => {
-        if(true){
-            localStorage.removeItem('x-access-token');
-            localStorage.setItem('x-access-token', response2.result.jwt);
-            login();
-        }else{
-            logincheck();
-        }})
+        localStorage.removeItem('x-access-token');
+        localStorage.setItem('x-access-token', response2.result.jwt);
+        login();
+        })
     .catch((error) => console.log("error", error))
 }
 
