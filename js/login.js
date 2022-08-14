@@ -58,20 +58,24 @@ function save(){
 
     .then((response) => response.json())
     .then((response2) => {
-        localStorage.removeItem('x-access-token');
-        localStorage.setItem('x-access-token', response2.result.jwt);
-        login();})
+        if(true){
+            localStorage.removeItem('x-access-token');
+            localStorage.setItem('x-access-token', response2.result.jwt);
+            login();
+        }else{
+            logincheck();
+        }})
     .catch((error) => console.log("error", error))
 }
 
-// 로그인 후 메인으로 이동, 로그인을 로그아웃으로 변경
-// function login(){
-//     if(my_jwt != ''){
-//         var link="../html/main.html";
-//         location.href=link;
 
-//         const link_login = document.querySelector(".link_login");
-//         link_login.textContent = "로그아웃";
-//     }
-    
-// }
+function logincheck(){
+    if(my_jwt == null){
+        $(".one").css("display","block");
+        $(".one").css("color","#FC4B3D");
+        $(".one").text("아이디 또는 비밀번호를 잘못 입력했습니다.");
+        $(".two").css("display","block");
+        $(".two").css("color","#FC4B3D");
+        $(".two").text("입력하신 내용을 다시 확인해주세요.");
+    }
+}

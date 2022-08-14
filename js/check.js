@@ -20,7 +20,7 @@ function login(){
 function change_logout(){
     if(my_jwt != null){  // 로그인 된 상태
         link_login.textContent = "로그아웃";
-        onclick(logout());
+        //onclick(logout());
         // var link="../html/login.html";
         // onclick(location.href=link);
 
