@@ -26,7 +26,7 @@ function change_logout(){
     if(my_jwt != '' || $link_loginCheck == "로그인"){ 
         link_login.textContent = "로그아웃";
 
-    }else if(my_jwt == '' || $link_loginCheckt=="로그아웃"){
+    }else if(my_jwt == '' || $link_loginCheck=="로그아웃"){
         link_login.textContent = "로그인";
         localStorage.removeItem('x-access-token');
     }

@@ -65,21 +65,36 @@ function heart(){
     // }
     if($heartImgCheck == "../image/Heart.png" || like== true){
         $heartImg.setAttribute('src',"../image/Heart2.png"); // 찬 하트
-        interested_item();
+        interested_item_add();
         
     }else if($heartImgCheck == "../image/Heart2.png" || like==false){
         $heartImg.setAttribute('src',"../image/Heart.png"); // 빈 하트
-
+        interested_item_Delete();
     }
 }
 
 // 관심있는 설문조사 등록
-function interested_item(){
+function interested_item_add(){
     const item = {
         postId : data_id
     }
-    fetch(`http://seolmunzip.shop:9000/posts/${item.postId}`, {
+    fetch(`http://seolmunzip.shop:9000/posts/interest/${item.postId}`, {
         method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(item)
+    })
+
+    .then((response) => response.json())
+    .catch((error) => console.log("error", error))
+}
+
+// 관심있는 설문조사 삭제
+function interested_item_Delete(){
+    const item = {
+        postId : data_id
+    }
+    fetch(`http://seolmunzip.shop:9000/posts/interest/${item.postId}`, {
+        method: "DELETE",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(item)
     })
