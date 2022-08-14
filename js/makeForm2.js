@@ -5,9 +5,17 @@ var semiLongCount = 0;
 var semiTitle;
 var semiContent;
 var semiDeadline;
-var semiPostDetails;
-var semiPostItems;
-var semiPostFormat;
+var semiPostDetails = new Array();
+var semiPostItems = new Array();
+var semiPostFormat = new Array();
+var elements = document.getElementsByClassName("surveyElement");
+var questions = document.getElementsByClassName("Qinput");
+var types = document.getElementsByClassName("Qtype");
+var format;
+var question;
+var options;
+var item;
+var i;
 
 function setDeadline() {
     var deadline = document.getElementById("inputDate");
@@ -18,8 +26,6 @@ function setDeadline() {
 // 폼 데이터 정리 (보내기 위해)
 function sortQuestion() {
 
-    // .value들은 다 임의로 넣어둔 값
-
     // CategoryId
     var Stype = document.getElementById("Stype");
     semiCategoryId = Stype.options[Stype.selectedIndex].value; 
@@ -27,75 +33,68 @@ function sortQuestion() {
 
     // title, content
     semiTitle = document.getElementById("inputTitle").value;
-    // semiTitle = '제목';
     semiContent = document.getElementById("inputExplain").value;
-    // semiContent = '설명';
     // console.log(semiTitle);
     // console.log(semiContent);
 
     // deadline
     semiDeadline = document.getElementById("inputDate").value;
-    // semiDeadline = '2022-08-31';
     // console.log(semiDeadline);
-
-    // postDetails
-    semiPostDetails = new Array();
-    semiPostItems = new Array();
-    semiPostFormat = new Array();
-
+    
     // 일단 큰 틀은? surveryElement 모두 처리 할 때까지!
     // question div는 전체 배열로 찾고 해도 될 듯. 어차피 elements 인덱스랑 같은 맥락으로 작동함.
     // Qinput, Qtype 해당.
-    var elements = document.getElementsByClassName("surveyElement");
-    var questions = document.getElementsByClassName("Qinput");
-    var types = document.getElementsByClassName("Qtype");
-    var format;
-    var question;
-    var options;
-    var item;
-    var i;
+    semiPostDetails = semiPostItems;
+    for (i=0; i<elements.length; i++) {
+        // 2차원 배열
+        semiPostItems[i] = new Array(3);
+    }
     for (i=0; i<elements.length; i++) {
         // elements[0]이 문항 1번.
 
         // format, questions
         format = types[i].value;
-        // semiPostItems.push(format);
-        semiPostItems[0] = format;
+        semiPostItems[i][0] = format;
 
         question = questions[i].value;
-        // semiPostItems.push(question);
-        semiPostItems[1] = question;
+        semiPostItems[i][1] = question;
 
         semiPostFormat.splice(0, semiPostFormat.length); // postFormat 비우고 추가.
         // makeoption은 elements[i]의 children 중에서 구별해서 써야함.
         options = elements[i].children;
-        for (j=1; j<options.length-1; j++) {
-            item = options[j].children[1].value;
-            // item = j;
-            semiPostFormat.push(item);
+        if (types[i].value == 1 || types[i].value == 2) {
+            for (j=0; j<options.length-2; j++) {
+                semiPostFormat[i] = new Array(options.length-2);
+            }
+            for (j=1; j<options.length-1; j++) {
+                item = options[j].children[1].value;
+                semiPostFormat[i][j-1] = item;
+            }
+        } else if (types[i].value == 3 || types[i].value == 4) {
+            semiPostFormat[i] = new Array(1);
+            item = options[1].children[1].value;
+            semiPostFormat[i][0] = item;
         }
-        // semiPostItems.push(semiPostFormat);
-        semiPostItems[2] = semiPostFormat;
-        // semiPostDetails.push(semiPostItems);
-        semiPostDetails[i] = semiPostItems;
-        
-        console.log(semiPostDetails);
+        semiPostItems[i][2] = semiPostFormat[i];
         
         // shortCount, longCount
-        if (types[i].value == 4)
-            semiLongCount++;
-        else
+        if (types[i].value == 4) {
+            semiLongCount++;    
+        }
+        else {
             semiShortCount++;
+        }
         
     }
+    console.log(semiPostDetails);
     // console.log(semiShortCount);
     // console.log(semiLongCount);
 
-    // fetchMakeForm();
+    fetchMakeForm();
 }
 
 function fetchMakeForm() {
-    const item = {
+    const formItem = {
         categoryId : semiCategoryId,
         shortCount : semiShortCount,
         longCount : semiLongCount,
@@ -104,13 +103,15 @@ function fetchMakeForm() {
         deadline : semiDeadline,
         postDetails : semiPostDetails
     }
+    // 만약 format, question, format, item 까지 명칭으로 보내야 되는 거면 
+    // 혹시 인덱스로 그냥 구분하면 안 되는지 의논해보기. 어차피 인덱스 0,1,2가 전부라 되지 않을까?
 
-    console.log(item);
+    console.log(formItem);
 
     fetch(`http://seolmunzip.shop:9000/posts` , {
         method: "POST",
         headers: {'x-access-token' : my_jwt, 'Content-Type': 'application/json' } ,
-        body: JSON.stringify(item)
+        body: JSON.stringify(formItem)
     })
 
     .then((response) => response.json())
