@@ -1,4 +1,5 @@
 const $SurveyList = document.querySelector("#SurveyList");
+const $main1 = document.querySelector("#main1");
 
 // html에서 카테고리 선택하면 알아서 categoryId에 맞게 리스트가 나와야함. -> 확인 아직 못함. 데이터 없어서!
 function selectedValue() {
@@ -22,7 +23,7 @@ const fetchSurvey = () => {
         .then((response) => response.json())
        /*  .then((webResult0) => console.log(webResult0)) */
         .then((webResult) => webResult.result.map(item => SurveyListTemplate(item)))
-        .then((webResult) => slick())
+        .then((webResult1) => slick())
         .catch((error) => console.log("error", error));
 }
 
@@ -56,6 +57,10 @@ function SurveyListTemplate (data) {
                         </div>
     `;
 
+    // 1->2->1 눌렀을 때 폼 목록 하나 더 생기는 거 해결하기
+    if ($main1) {
+        $main1.remove();
+    }
     if ( data.dday == null ) {
         $SurveyList.insertAdjacentHTML('beforeend', SurveyItem2);
     } else {
