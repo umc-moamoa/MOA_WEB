@@ -103,17 +103,23 @@ function fetchMakeForm() {
         deadline : semiDeadline,
         postDetails : semiPostDetails
     }
+
+    console.log(formItem);
     // 만약 format, question, format, item 까지 명칭으로 보내야 되는 거면 
     // 혹시 인덱스로 그냥 구분하면 안 되는지 의논해보기. 어차피 인덱스 0,1,2가 전부라 되지 않을까?
 
-    console.log(formItem);
-
     fetch(`http://seolmunzip.shop:9000/posts` , {
         method: "POST",
-        headers: {'x-access-token' : my_jwt, 'Content-Type': 'application/json' } ,
+        headers: {
+            'x-access-token' : my_jwt,
+            'Content-Type': 'application/json'            
+        },
         body: JSON.stringify(formItem)
     })
 
     .then((response) => response.json())
+    .then((response2) => {
+        console.log(response2.message);
+    })
     .catch((error) => console.log("error", error))
 }

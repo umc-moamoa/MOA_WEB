@@ -12,9 +12,6 @@
 <body onload="addQuestion(); setDeadline(); ">
     <div class="flex-container">
         <div id="wrapper">
-            <!-- 배경 -->
-            <img id="backTop" src="../image/Ellipse 35.png" />
-
             <!-- header -->
             <div class="header">
 
@@ -92,7 +89,7 @@
                                     <option value="1">사회현상</option>
                                     <option value="2">마켓팅</option>
                                     <option value="3">브랜드</option>
-                                    <option value="4">사회현상</option>
+                                    <option value="4">아이디어</option>
                                 </select>
 
                                 <input name="content" type="text" id="inputExplain" maxlength="30" 
@@ -111,7 +108,7 @@
                                 <button id="plus" type="button" onclick="addQuestion()"><img src="../image/Group 17.png" width="50%"></button>
                             </div>
 
-                            <div><button id="submit_btn" onclick="sortQuestion()">저장</button></div>
+                            <div><button type="button" id="submit_btn" onclick="sortQuestion(); location.href='../html/mySurvey.html'" >저장</button></div>
 
                         </div>
                     </form>
