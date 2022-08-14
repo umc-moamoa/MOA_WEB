@@ -77,7 +77,7 @@ $SurveyList2.insertAdjacentHTML('beforeend', SurveyItem);
 function slick1(){
     $(document).ready(function(){
         $('.SurveyList1').slick({
-            slidesToShow: 2,
+            slidesToShow: 3,
             slidesToScroll: 1,
             rows:1,
             infinite: false,
@@ -89,7 +89,7 @@ function slick1(){
 function slick2(){
     $(document).ready(function(){
         $('.SurveyList2').slick({
-            slidesToShow: 2,
+            slidesToShow: 3,
             slidesToScroll: 1,
             rows:1,
             infinite: false,

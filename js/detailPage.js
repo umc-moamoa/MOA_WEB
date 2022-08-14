@@ -1,13 +1,14 @@
 const $SurveyDetail = document.querySelector("#detailMain");
 var my_jwt = localStorage.getItem('x-access-token');
-var $data_id='';
+var data_id='';
 var myPost='';
 var like='';
 
 const fetchDetail = () => {
     const item = {
         //postId : data_id
-        postId : 4
+        // 데이터가 없는지 postId 4이외에는 나오지 않는다..
+        postId : 14
     }
     fetch(`http://seolmunzip.shop:9000/posts/content/${item.postId}`, {
         method: "GET",
@@ -49,13 +50,10 @@ function SurveyDetailTemplate (data) {
 }
 
 function heartView() {
-    //if(myPost == true){
+    if(myPost == true){
         var heart = document.getElementById("heart");
-    // heart.setAttribute('display', 'none');
-    //heart.style.display = 'none';
-    // heart.style.css("display","none");
-        heart.visibility = 'hidden';
-    //}
+        heart.style.display = 'none';
+    }
 }
 
 // 하트 처리
@@ -85,6 +83,7 @@ function interested_item_add(){
     })
 
     .then((response) => response.json())
+    //.then((response) => console.log("add"))
     .catch((error) => console.log("error", error))
 }
 
@@ -100,5 +99,6 @@ function interested_item_delete(){
     })
 
     .then((response) => response.json())
+    //.then((response) => console.log("delete"))
     .catch((error) => console.log("error", error))
 }

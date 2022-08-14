@@ -4,7 +4,7 @@ var my_jwt = localStorage.getItem('x-access-token');
 const fetchInterest = () => {
     var requestOptions = {
         method: "Get",
-        headers: {'x-access-token' : my_jwt,}
+        headers: {'x-access-token' : my_jwt}
     };
 
     fetch(
@@ -12,8 +12,12 @@ const fetchInterest = () => {
         requestOptions
     )
         .then((response) => response.json())
-        .then((Result) => Result.result.map(item => InterestListTemplate(item)))
-        .then((Result) => slick())
+        .then((Result) => {
+            Result.result.map(item => InterestListTemplate(item));
+            slick();
+        })
+        //.then((Result) => slick())
+        // 관심있는 설문조사 데이터가 없는건가.. 나오지 않는다. 하트 처리가 안되는건가?
         .catch((error) => console.log("error", error));
 }
 
@@ -22,7 +26,7 @@ fetchInterest();
 function InterestListTemplate(data) {
     const InterestItem = `<div id="main1">
     <div class="one-container1">
-        <a id="title1" href="../html/detailPage.html" data-id=${data.postId}>  ${data.title}  </a>
+        <a id="title1" href="../html/detailPage.html">${data.title}</a>
     </div>
     <div class="two-container1">
         <span id="count1">${data.qcount}개 항목</span>
@@ -33,6 +37,7 @@ function InterestListTemplate(data) {
     </div>
 </div>
 `;
+var data_id=`${data.postId}`;
 
 $SurveyList.insertAdjacentHTML('beforeend', InterestItem);
 }

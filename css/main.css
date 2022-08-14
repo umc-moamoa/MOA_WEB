@@ -124,9 +124,9 @@ ul {
 /* container */
 #wrapper .container {
     /* min-height: 300vh; */
-    width: 970px;
+    width: 1000px;
     margin: 0px auto 80px;
-    padding: 0 70px;
+    padding: 0 50px;
 }
 
 footer .container {
@@ -213,11 +213,11 @@ footer .container {
 }
 
 .prev {
-    margin-right: 750px;
+    margin-right: 830px;
 }
 
 .prev2 {
-    margin-right: 750px;
+    margin-right: 830px;
 }
 
 .arrow img {
