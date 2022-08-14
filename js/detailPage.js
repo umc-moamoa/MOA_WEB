@@ -1,18 +1,21 @@
 const $SurveyDetail = document.querySelector("#detailMain");
+var my_jwt = localStorage.getItem('x-access-token');
 var $data_id='';
-
 var myPost='';
 var like='';
-var my_jwt = localStorage.getItem('x-access-token');
 
 const fetchDetail = () => {
-
-    fetch(`http://seolmunzip.shop:9000/posts/content/1`, {
+    const item = {
+        //postId : data_id
+        postId : 4
+    }
+    fetch(`http://seolmunzip.shop:9000/posts/content/${item.postId}`, {
         method: "GET",
         headers: {'x-access-token' : my_jwt,}
     })
         .then((response) => response.json())
         .then((webResult) => SurveyDetailTemplate(webResult.result))
+        .then((webResult) => heartView())
         .catch((error) => console.log("error", error));
 }
 
@@ -45,31 +48,28 @@ function SurveyDetailTemplate (data) {
     $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem);
 }
 
-function hh() {
-    var heart = document.getElementById("heart");
+function heartView() {
+    //if(myPost == true){
+        var heart = document.getElementById("heart");
     // heart.setAttribute('display', 'none');
     //heart.style.display = 'none';
     // heart.style.css("display","none");
-    
+        heart.visibility = 'hidden';
+    //}
 }
-hh();
 
 // 하트 처리
 function heart(){
-    var heart = document.getElementById("heart");
     const $heartImg = document.querySelector(".heartImg");
     const $heartImgCheck = document.querySelector(".heartImg").getAttribute( 'src' );
 
-    // if(myPost == true){
-        heart.visibility = 'hidden';
-    // }
     if($heartImgCheck == "../image/Heart.png" || like== true){
         $heartImg.setAttribute('src',"../image/Heart2.png"); // 찬 하트
         interested_item_add();
         
     }else if($heartImgCheck == "../image/Heart2.png" || like==false){
         $heartImg.setAttribute('src',"../image/Heart.png"); // 빈 하트
-        interested_item_Delete();
+        interested_item_delete();
     }
 }
 
@@ -80,7 +80,7 @@ function interested_item_add(){
     }
     fetch(`http://seolmunzip.shop:9000/posts/interest/${item.postId}`, {
         method: "POST",
-        headers: {'Content-Type': 'application/json'},
+        headers: {'x-access-token' : my_jwt,},
         body: JSON.stringify(item)
     })
 
@@ -89,13 +89,13 @@ function interested_item_add(){
 }
 
 // 관심있는 설문조사 삭제
-function interested_item_Delete(){
+function interested_item_delete(){
     const item = {
         postId : data_id
     }
     fetch(`http://seolmunzip.shop:9000/posts/interest/${item.postId}`, {
         method: "DELETE",
-        headers: {'Content-Type': 'application/json'},
+        headers: {'x-access-token' : my_jwt,},
         body: JSON.stringify(item)
     })
 

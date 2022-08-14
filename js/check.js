@@ -3,6 +3,8 @@
 // 변수 선언
 //const $my_jwt = '';
 var my_jwt = localStorage.getItem('x-access-token');
+const link_login = document.querySelector(".link_login");
+const $link_loginCheck = document.querySelector(".link_login").getAttribute( 'text' );
 
 // login.js 에서 로그인 시도하면 실행하는 함수 -> local_save()
 // 로컬스토리지 저장
@@ -13,6 +15,7 @@ function login(){
     if(my_jwt != ''){
         var link="../html/main.html";
         location.href=link;
+        link_login.textContent = "로그아웃";
         change_logout();
     }
 }
@@ -21,13 +24,15 @@ function login(){
 // 로그인 -> 로그인페이지로 이동 -> 로그인 성공 -> 로그아웃으로 모든 페이지 변경
 // 로그아웃 -> 메인으로 이동 -> 로그인으로 변경 -> jwt 삭제
 function change_logout(){
-    const link_login = document.querySelector(".link_login");
-    const $link_loginCheck = document.querySelector(".link_login").getAttribute( 'text' );
-    if(my_jwt != '' || $link_loginCheck == "로그인"){ 
-        link_login.textContent = "로그아웃";
+    if(my_jwt != ''){  // 로그인 된 상태
+        link_login.textContent = "로그인2";
+        var link="../html/login.html";
+        //onclick(location.href=link);
 
-    }else if(my_jwt == '' || $link_loginCheck=="로그아웃"){
+    }else{ // 로그아웃 상태 -> 기본 상태
         link_login.textContent = "로그인";
+        //var link="../html/login.html";
+        //location.href=link;
         localStorage.removeItem('x-access-token');
     }
 }

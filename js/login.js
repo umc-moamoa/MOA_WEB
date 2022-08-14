@@ -50,7 +50,7 @@ function save(){
         id: document.getElementById("id").value,
         pwd: document.getElementById("pswd1").value
     }
-    fetch(`http://umcsom.shop:9000/auth/login`, {
+    fetch(`http://seolmunzip.shop:9000/auth/login`, {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
