@@ -12,10 +12,6 @@
 <body>
     <div class="flex-container">
         <div id="wrapper">
-            <!--배경-->
-            <!-- <img id="backTop" src="../image/Ellipse 35.png" /> -->
-            <!-- <img id="backCenter" src="../image/dd 1.png" /> -->
-
             <!-- header -->
             <div class="header">
 
@@ -76,6 +72,12 @@
                 <!-- 서브 제목 -->
                 <div id="subTitle" >
                     <p class="subTitle">설문 조사 목록</p>
+                    <select id="Stype" onchange="fetchSurvey()">
+                        <option value="1" selected>사회현상</option>
+                        <option value="2">마켓팅</option>
+                        <option value="3">브랜드</option>
+                        <option value="4">아이디어</option>
+                    </select>
                 </div>
                 <div class="arrow">
                     <div><span class="prev"><img src="../image/Group 568.png"></span></div>
@@ -87,16 +89,6 @@
                     <div id="main1"></div>
                     <div id="main1"></div> -->
                 </div>
-
-                <div id="under">
-                <!--   <div class="underBar"> -->
-                        <!-- <a class="underTab" href="#none"></a> -->
-                    <!-- </div> -->
-                    <!-- <div id="newSurvey"> -->
-                        <!-- <a class="newItem" href="../html/makeForm.html"></a> -->
-                <!--  </div> -->
-                </div>    
-                
             </div>
         </div>
 
