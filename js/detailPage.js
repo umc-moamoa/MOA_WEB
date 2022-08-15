@@ -6,9 +6,9 @@ var like='';
 
 const fetchDetail = () => {
     const item = {
-        //postId : data_id
+        postId : data_id
         // 데이터가 없는지 postId 4이외에는 나오지 않는다..
-        postId : 14
+        //postId : 14
     }
     fetch(`http://seolmunzip.shop:9000/posts/content/${item.postId}`, {
         method: "GET",
