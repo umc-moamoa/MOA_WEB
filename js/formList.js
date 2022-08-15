@@ -7,6 +7,7 @@ function selectedValue() {
     var value = select.options[select.selectedIndex].value; 
 
     return value;
+    
 }
 
 const fetchSurvey = () => {
@@ -22,8 +23,10 @@ const fetchSurvey = () => {
     )
         .then((response) => response.json())
        /*  .then((webResult0) => console.log(webResult0)) */
-        .then((webResult) => webResult.result.map(item => SurveyListTemplate(item)))
-        .then((webResult1) => slick())
+        .then((webResult) => {
+            webResult.result.map(item => SurveyListTemplate(item));
+            slick();
+        })
         .catch((error) => console.log("error", error));
 }
 
@@ -57,11 +60,11 @@ function SurveyListTemplate (data) {
                         </div>
     `;
 
-    // 1->2->1 눌렀을 때 폼 목록 하나 더 생기는 거 해결하기
+    // 1->2->1 눌렀을 때 폼 목록 하나 더 생기는 거 해결하기 -> slick에 문제가 있는 것 같기도..?
     if ($main1) {
         $main1.remove();
     }
-    if ( data.dday == null ) {
+    if ( data.status == 'CLOSED' ) {
         $SurveyList.insertAdjacentHTML('beforeend', SurveyItem2);
     } else {
         $SurveyList.insertAdjacentHTML('beforeend', SurveyItem1);

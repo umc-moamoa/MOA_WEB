@@ -6,9 +6,9 @@ var like='';
 
 const fetchDetail = () => {
     const item = {
-        postId : data_id
-        // 데이터가 없는지 postId 4이외에는 나오지 않는다..
-        //postId : 14
+        //postId : data_id
+        // 서버에서 postId를 보내주거나 formList.js에 있는 postId를 저장해야함.. -> 쉽지 않다
+        postId : 14
     }
     fetch(`http://seolmunzip.shop:9000/posts/content/${item.postId}`, {
         method: "GET",
