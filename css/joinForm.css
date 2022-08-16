@@ -76,7 +76,7 @@ ul {
 /* 로고 헤더 */
 #headerLogo .logo img {
     display: block;
-    width: 70px;
+    width: 140px;
     margin: 0 auto;
     /* margin-left: 80px; */
 }
@@ -85,7 +85,7 @@ ul {
 .gnb_main {
     width: 100%;
 /*     height: 40px; */
-    margin: 60px auto; 
+    margin: 30px auto; 
     margin-bottom: 0;
     border-right: none;
     border-left: none;

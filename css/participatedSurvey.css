@@ -27,14 +27,6 @@ ul,li{
     margin: 0 auto;
 }
 
-#backTop {
-    position: absolute;
-    /* display: block; */
-    /* height: 50%; */
-    /* left: 50%; */
-    z-index: -100;
-}
-
 /* 로그인, 회원가입, 마이페이지 */
 #userMenu {
     width: 100%;
@@ -80,7 +72,7 @@ ul {
 /* 로고 헤더 */
 #headerLogo .logo img {
     display: block;
-    width: 70px;
+    width: 140px;
     margin: 0 auto;
     /* margin-left: 80px; */
 }
@@ -89,7 +81,7 @@ ul {
 .gnb_main {
     width: 100%;
 /*     height: 40px; */
-    margin: 60px auto; 
+    margin: 30px auto; 
     margin-bottom: 0;
     border-right: none;
     border-left: none;
