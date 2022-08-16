@@ -19,20 +19,11 @@ a {
 ul,li{
     list-style: none;
 }
-
 .header {    
     position: relative;
     width: 100%;
     height: 180px;
     margin: 0 auto;
-}
-
-#backTop {
-    position: absolute;
-    /* display: block; */
-    /* height: 50%; */
-    /* left: 50%; */
-    z-index: -100;
 }
 
 /* 로그인, 회원가입, 마이페이지 */
@@ -46,14 +37,12 @@ ul,li{
 #userMenu * {
     font-weight: 400;
     font-size: 12px;
-    /* letter-spacing: 0.1em; */
     color: #414141;
 }
 ul {
     display: block;
     margin-block-start: 10px;
     margin-block-end: 10px;
-    /* padding-inline-start: 20px; */
 }
 
 #userMenu .menu {
@@ -65,7 +54,6 @@ ul {
 #userMenu .link:hover{
     color: #4E7FF2;
 }
-
 #userMenu:after{
     content: "";
     display: block;
@@ -79,27 +67,23 @@ ul {
 /* 로고 헤더 */
 #headerLogo .logo img {
     display: block;
-    width: 70px;
+    width: 140px;
     margin: 0 auto;
-    /* margin-left: 80px; */
 }
 
 /* gnb */
 .gnb_main {
     width: 100%;
-/*     height: 40px; */
-    margin: 60px auto; 
+    margin: 30px auto; 
     margin-bottom: 0;
     border-right: none;
     border-left: none;
     box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
-    /* padding-top: 0.5px; */
 }
 .gnb{
     text-align: center;
     padding: 8px 0;
     margin: 0;
-/*     vertical-align:middle; */
 }
 .gnb li {
     display: inline;
@@ -119,10 +103,8 @@ ul {
     font-weight: 700;
 }
 
-
 /* container */
 #wrapper .container {
-    /* min-height: 300vh; */
     width: 995px;
     margin: 70px auto;
     margin-bottom: 100px;
@@ -130,7 +112,6 @@ ul {
 }
 
 footer .container {
-    /* min-height: 300vh; */
     width: 970px;
     margin: 30px auto;
     padding: 0 65px;
@@ -154,7 +135,6 @@ footer .container {
     border: 1px solid #909090;
     border-radius: 2.5px;
     padding: 3px;
-    /* margin-left: 20px; */
     margin-top: 10px;
 
     font-size: 13px;
@@ -164,10 +144,8 @@ footer .container {
 
 /* main1 */
 #main1 {
-    /* position: relative; */
     padding: 10px;
     margin: 15px;
-    /* height: auto; */
     background: #FFFFFF;
     border: 1px solid #909090;
 }
@@ -179,7 +157,6 @@ footer .container {
 }
 
 #title1 {
-    /* top: 5%; */
     font-size: 18px;
     color: #414141;
     font-weight: bold;
@@ -251,19 +228,14 @@ footer {
     margin: 0 auto;
     width: 100%;
 }
-
 #wrapper {
-    /* height: auto; */
     min-height: 100vh;
     position: relative;
     height:700px;
-    /* padding-bottom: 226.302; */
 }
-
 table {
     width: 100%;
 }
-
 footer a {
     color: #909090;
     text-decoration: none;
@@ -280,9 +252,6 @@ footer a {
     font-size: 12px;
     font-weight: 500;
 }
-/* footer .container {
-    padding: 0 auto;
-} */
 footer ul {
     padding-inline-start: 100px;
 }
