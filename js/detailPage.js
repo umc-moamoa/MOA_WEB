@@ -3,21 +3,23 @@ var my_jwt = localStorage.getItem('x-access-token');
 var postuser_id='';
 var myPost='';
 var like='';
+var post_id='';
+
 
 const fetchDetail = () => {
-    const item = {
-        //postId : postuser_id //postuser_id을 postId로 변경해야함
+    var item = {
+        postId : post_id //postuser_id을 postId로 변경해야함
         // 서버에서 postId를 보내주거나 formList.js에 있는 postId를 저장해야함.. -> 쉽지 않다
-        postId : 15
-    }
+        //postId : 15
+    };
     fetch(`http://seolmunzip.shop:9000/posts/content/${item.postId}`, {
         method: "GET",
         headers: {'x-access-token' : my_jwt,}
     })
         .then((response) => response.json())
         .then((webResult) => {
-            webResult.result.map(item => SurveyDetailTemplate(item));
-            //SurveyDetailTemplate(webResult.result);
+            //webResult.result.map(item => SurveyDetailTemplate(item));
+            SurveyDetailTemplate(webResult.result);
             console.log(webResult.result);
         })
         //.then((webResult) => heartView())
@@ -67,11 +69,11 @@ function heart(){
 
     if($heartImgCheck == "../image/Heart.png" || like== true){
         $heartImg.setAttribute('src',"../image/Heart2.png"); // 찬 하트
-        //interested_item_add();
+        interested_item_add();
         
     }else if($heartImgCheck == "../image/Heart2.png" || like==false){
         $heartImg.setAttribute('src',"../image/Heart.png"); // 빈 하트
-        //interested_item_delete();
+        interested_item_delete();
     }
 }
 

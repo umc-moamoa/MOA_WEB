@@ -16,8 +16,8 @@ const fetchSurvey = () => {
         requestOptions
     )
         .then((response) => response.json())
-        //.then((webResult) => webResult.result.map(item => pointListTemplate(item)))
-        .then((webResult) => console.log(webResult))
+        .then((webResult) => webResult.result.map(item => pointListTemplate(item)))
+        //.then((webResult) => console.log(webResult))
         //.then((webResult) => pointListTemplate(webResult.result))
         //.then((webResult) => console.log(webResult.result[0].point))
         .then((webResult) => slick())
@@ -42,7 +42,7 @@ function pointListTemplate (data) {
                 sub.style.innerHTML=
                 <div id="main1">
                     <div class="one-container1" style="background-color: #4E7FF2;">사용</div>
-                    <div class="two-container1">${data.date}</div>
+                    <div class="two-container1">${data.created}</div>
                     <div class="three-container1">-${data.subAmount}P</div>
                 </div>
                 ;
@@ -51,7 +51,7 @@ function pointListTemplate (data) {
                 add.style.innerHTML=
                 <div id="main1">
                     <div class="one-container1"  style="background-color: #9CC2FF;">적립</div>
-                    <div class="two-container1">${data.date}</div>
+                    <div class="two-container1">${data.created}</div>
                     <div class="three-container1">+${data.addAmount}P</div>
                 </div>
                 ;
