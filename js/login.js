@@ -58,6 +58,7 @@ function save(){
 
     .then((response) => response.json())
     .then((response2) => {
+        logincheck();
         localStorage.removeItem('x-access-token');
         localStorage.setItem('x-access-token', response2.result.jwt);
         login();
