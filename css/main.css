@@ -121,14 +121,11 @@ footer .container {
 /* main1 */
 #main1 {
     position: relative;
-    box-sizing: border-box;
     padding: 15px;
     margin: 10px 40px 60px 0;
-
     background: #FFFFFF;
     border: 1.3px solid #909090;
 }
-
 .one-container1 {
     display: flex;
     justify-content : space-between;
@@ -158,7 +155,6 @@ footer .container {
     color: #4E7FF2;
     padding-top: 40px;
 }
-
 .bannerimg {
     width: 100%;
 }

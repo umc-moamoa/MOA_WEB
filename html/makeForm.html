@@ -85,7 +85,7 @@
                                 onfocus="this.placeholder = ''" 
                                 onblur="this.placeholder = '설문지 제목을 입력하세요.'">
 
-                                <select id="Stype" onclick="sortQuestion()">
+                                <select id="Stype">
                                     <option value="1">사회현상</option>
                                     <option value="2">마켓팅</option>
                                     <option value="3">브랜드</option>
@@ -108,7 +108,7 @@
                                 <button id="plus" type="button" onclick="addQuestion()"><img src="../image/Group 17.png" width="50%"></button>
                             </div>
 
-                            <div><button type="button" id="submit_btn" onclick="sortQuestion(); location.href='../html/mySurvey.html'" >저장</button></div>
+                            <div><button type="button" id="submit_btn" onclick="sortQuestion();">저장</button></div>
 
                         </div>
                     </form>

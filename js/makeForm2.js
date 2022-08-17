@@ -17,6 +17,11 @@ var options;
 var item;
 var i;
 
+function gotoMysurvey() {
+    var link="../html/mySurvey.html";
+    location.href=link;
+}
+
 function setDeadline() {
     var deadline = document.getElementById("inputDate");
     deadline.value = new Date().toISOString().substring(0, 10);
@@ -73,7 +78,6 @@ function sortQuestion() {
 function fetchMakeForm() {
     const formItem = {
         "categoryId" : Number(semiCategoryId),
-      /*   "categoryId" : 1, */
         "shortCount" : semiShortCount,
         "longCount" : semiLongCount,
         "title" : semiTitle,
@@ -82,9 +86,6 @@ function fetchMakeForm() {
         "postDetails" : semiPostDetails
     }
 
-/*     console.log(typeof categoryId);
-    console.log(typeof shortCount);
-    console.log(typeof title); */
     console.log(JSON.stringify(formItem));
 
     fetch(`http://seolmunzip.shop:9000/posts` , {
@@ -99,6 +100,7 @@ function fetchMakeForm() {
     .then((response) => response.json())
     .then((response2) => {
         console.log(response2.message);
+        gotoMysurvey();
     })
     .catch((error) => console.log("error", error))
 }

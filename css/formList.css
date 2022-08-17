@@ -107,7 +107,7 @@ ul {
 #wrapper .container {
     width: 995px;
     margin: 70px auto;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     padding: 0 70px;
 }
 
@@ -145,55 +145,40 @@ footer .container {
 /* main1 */
 #main1 {
     padding: 10px;
+    padding: 15px;
     margin: 15px;
     background: #FFFFFF;
     border: 1px solid #909090;
 }
-
 .one-container1 {
     display: flex;
     justify-content : space-between;
     align-items: flex-end;
 }
-
 #title1 {
     font-size: 18px;
     color: #414141;
     font-weight: bold;
-    text-decoration: none;
 }
-
 .two-container1 {
-    margin-top: 2%;
+    margin-top: 5px;
     display: flex;
     justify-content: flex-start;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
     font-weight: bold;
     color: #6C6C6C;
 }
-
-#count1 {
-    border-right: 0.1em solid #6C6C6C;
-    padding-right: 1em;
-}
-
-#type1 {
-    padding-left: 1em;
-}
-
 .three-container1{
-    margin-top: -7%;
     display: flex;
     justify-content:right;
 }
-
 #point1 {
-    font-size: 1.3em;
+    font-size: 18px;
     font-weight: 500;
-    color: #9CC2FF;
+    color: #4E7FF2;
+    padding-top: 10px;
 }
-
 .slick-slide{
     padding-right: 30px;
 }
@@ -202,9 +187,8 @@ footer .container {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top:480px;
+    top:570px;
     z-index: 200;
-    /* left:165px; */
 }
 
 .prev {
@@ -215,7 +199,16 @@ footer .container {
     width: 40px;
 }
 
-#SurveyList {
+#SurveyList1 {
+    padding:35px;
+}
+#SurveyList2 {
+    padding:35px;
+}
+#SurveyList3 {
+    padding:35px;
+}
+#SurveyList4 {
     padding:35px;
 }
 
@@ -231,7 +224,7 @@ footer {
 #wrapper {
     min-height: 100vh;
     position: relative;
-    height:700px;
+    height: 900px;
 }
 table {
     width: 100%;
