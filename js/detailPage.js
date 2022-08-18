@@ -44,7 +44,7 @@ function SurveyDetailTemplate (data) {
             <div id="mainBottom"> ${data.content} </div>
 
             <div class="join">
-                <button id="joinBtn" onClick="location.href='../html/joinForm.html'">설문&nbsp;&nbsp;참여</button>
+                <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
             </div> 
     `;
     // myPost가 아니라면 하트 버튼
@@ -65,7 +65,7 @@ function SurveyDetailTemplate (data) {
             <div id="mainBottom"> ${data.content} </div>
 
             <div class="join">
-                <button id="joinBtn" onClick="location.href='../html/joinForm.html'">설문&nbsp;&nbsp;참여</button>
+                <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
             </div> 
     `;
     // like가 false면 빈 하트 표시
@@ -85,7 +85,7 @@ function SurveyDetailTemplate (data) {
     <div id="mainBottom"> ${data.content} </div>
 
     <div class="join">
-        <button id="joinBtn" onClick="location.href='../html/joinForm.html'">설문&nbsp;&nbsp;참여</button>
+        <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
     </div> 
 `;
     

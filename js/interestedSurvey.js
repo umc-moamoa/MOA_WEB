@@ -37,7 +37,6 @@ function InterestListTemplate(data) {
     </div>
 </div>
 `;
-var data_id=`${data.postId}`;
 
 $SurveyList.insertAdjacentHTML('beforeend', InterestItem);
 }

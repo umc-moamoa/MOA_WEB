@@ -1,23 +1,25 @@
 const $SurveyQuestion = document.querySelector("#SurveyQuestion");
 var my_jwt = localStorage.getItem('x-access-token');
 
+const rpostId = location.href.split('?')[1];
+console.log(rpostId);
+
+var qcount; // 총 질문 개수
+
 const fetchSuryeyIn = () => {
-    // const item = {
-    //     postId : data_id
-    // }
     var requestOptions = {
         method: "GET",
         headers: {'x-access-token' : my_jwt,}
     };
 
     fetch(
-        "http://seolmunzip.shop:9000/posts/14",
+        `http://seolmunzip.shop:9000/posts/${rpostId}`,
         requestOptions
     )
         .then((response) => response.json())
         .then((webResult) => {
+            qcount = webResult.result.length
             console.log(webResult);
-            console.log(webResult.result);
             webResult.result.map(item => SurveyInTemplate(item));
         })
         .catch((error) => console.log("error", error));
@@ -26,20 +28,40 @@ const fetchSuryeyIn = () => {
 
 fetchSuryeyIn();
 
+var count = 0;
+function test(data) {
+    for(var i=0; i<qcount; i++) {
+        var questionDiv = document.createElement("div");
+        questionDiv.className = 'question';
+        if(data.format == 1) {
+            var q1Span = document.createElement("span");
+            q1Span.className = 'Q3';
+            var reqSpan = document.createElement("span");
+            reqSpan.className = 'required';
+
+            questionDiv.appendChild(q1Span);
+            questionDiv.appendChild(reqSpan);
+        }
+
+    }
+}
 //type 1:객관식 2:체크박스 3:단답형 4:장문형
 function SurveyInTemplate(data) {
+    count++;
+    console.log(qcount);
     if(data.format == 1) {
-        var SurveyQ = `<div class="question">
-        <span id="Q3">${data.question}</span>
-        <span class="required">필수</span>`
+        var SurveyQ = `
+        <div class="question">
+                <span class="Q3">${count + ".   " + data.question}</span>
+                <span class="required">필수</span>`
 
-        var SurveyOption = `<div id="radioBox">
-            <div class="Qtype1">
-                <input type = "radio" name = "item"> <span class="radioBtnText">${data.item} </span> 
+        var SurveyOption = `
+            <div id="radioBox">
+                <div class="Qtype1">
+                    <input type = "radio" name = "item"> <span class="radioBtnText">${data.items[1]} </span> 
+                </div>
             </div>
-        </div>
-    </div>`
-    // data_id = `${}`
+        </div>`
     $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
     $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyOption);
     }
@@ -93,7 +115,3 @@ function SurveyInTemplate(data) {
     $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
     }
 }
-
-// function SurveyInTemplate2(data) {
-//     if()
-// }
