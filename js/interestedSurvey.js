@@ -13,7 +13,7 @@ const fetchInterest = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
-            console.log(webResult.message);
+            console.log(webResult);
             webResult.result.map(item => InterestListTemplate(item));
             slick();
         })
@@ -30,7 +30,7 @@ function InterestListTemplate(data) {
     </div>
     <div class="two-container1">
         <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
-        <span id="type1">ㅣ&nbsp;&nbsp;D-${data.dday}</span>
+        <span id="type1">ㅣ&nbsp;&nbsp;D-${data.d_day}</span>
     </div>
     <div class="three-container1">
         <span id="point1">  ${data.point}P  </span>
