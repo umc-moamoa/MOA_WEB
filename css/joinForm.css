@@ -216,7 +216,7 @@ footer td p {
     /* justify-content: space-evenly; */
 }
 
-#Q1, #Q2, #Q3 {
+.Q1, .Q2, .Q3 {
     font-weight: 600;
     font-size: 18px;
 }
