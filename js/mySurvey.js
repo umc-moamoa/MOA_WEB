@@ -1,7 +1,7 @@
 const $SurveyList = document.querySelector("#SurveyList");
 
-const $detailTitle = document.querySelector("#detailTitle");
-const $mainBottom = document.querySelector("#mainBottom");
+// const $detailTitle = document.querySelector("#detailTitle");
+// const $mainBottom = document.querySelector("#mainBottom");
 var my_jwt = localStorage.getItem('x-access-token');
 
 const fetchSurvey = () => {
@@ -15,9 +15,13 @@ const fetchSurvey = () => {
         requestOptions
     )
         .then((response) => response.json())
-        // .then((webResult) => console.log(webResult.result))
-        .then((webResult) => webResult.result.map(item => SurveyListTemplate(item)))
-        .then((webResult) => slick())
+        .then((webResult) => {
+            webResult.result.map(item => SurveyListTemplate(item));
+            slick();
+        })
+        // // .then((webResult) => console.log(webResult.result))
+        // .then((webResult) => webResult.result.map(item => SurveyListTemplate(item)))
+        // .then((webResult) => slick())
         .catch((error) => console.log("error", error));
 }
 
@@ -49,8 +53,8 @@ $SurveyList.insertAdjacentHTML('beforeend', SurveyItem);
 }
 
 function slick(){
-    $(document).ready(function(){
-        $('.SurveyList').slick({
+    // $(document).ready(function(){
+        $('#SurveyList').slick({
             slidesToShow: 2,
             slidesToScroll: 1,
             rows:3,
@@ -58,5 +62,5 @@ function slick(){
             prevArrow : $('.prev'), 
             nextArrow : $('.next'), 
         });
-    });
+    // });
 }

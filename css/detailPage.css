@@ -204,6 +204,15 @@ footer td p {
     width: 65px;
 }
 
+#deleteBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 65px;
+    font-size: 12px;
+    color: #909090;
+}
+
 .flex-container2 {
     margin-top: 10px;
     display: flex;

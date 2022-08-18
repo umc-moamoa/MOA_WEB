@@ -12,25 +12,25 @@ const fetchInterest = () => {
         requestOptions
     )
         .then((response) => response.json())
-        .then((Result) => {
-            Result.result.map(item => InterestListTemplate(item));
+        .then((webResult) => {
+            console.log(webResult.message);
+            webResult.result.map(item => InterestListTemplate(item));
             slick();
         })
-        //.then((Result) => slick())
-        // 관심있는 설문조사 데이터가 없는건가.. 나오지 않는다. 하트 처리가 안되는건가?
         .catch((error) => console.log("error", error));
 }
 
 fetchInterest();
 
 function InterestListTemplate(data) {
+    const postId = data.postId;
     const InterestItem = `<div id="main1">
     <div class="one-container1">
-        <a id="title1" href="../html/detailPage.html">${data.title}</a>
+        <a id="title1" href="../html/detailPage.html?${postId}">${data.title}</a>
     </div>
     <div class="two-container1">
-        <span id="count1">${data.qcount}개 항목</span>
-        <span id="type1">D-4</span>
+        <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
+        <span id="type1">ㅣ&nbsp;&nbsp;D-${data.dday}</span>
     </div>
     <div class="three-container1">
         <span id="point1">  ${data.point}P  </span>

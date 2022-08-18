@@ -19,10 +19,13 @@ const fetchSurvey1 = () => {
 fetchSurvey1();
 
 function SurveyListTemplate1 (data) {
+    const sendPostId = data.postId;
+    console.log(sendPostId);
+
     const SurveyItem = 
     `<div id="main1">
         <div class="one-container1">
-            <a id="title1" href="../html/detailPage.html">${data.title}</a>
+            <a id="title1" href="../html/detailPage.html?${sendPostId}">${data.title}</a>
         </div>
         <div class="two-container1">
             <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
@@ -57,10 +60,13 @@ const fetchSurvey2 = () => {
 fetchSurvey2();
 
 function SurveyListTemplate2 (data) {
+    const sendPostId = data.postId;
+    console.log(sendPostId);
+
     const SurveyItem = 
     `<div id="main1">
         <div class="one-container1">
-            <a id="title1" href="../html/detailPage.html">${data.title}</a>
+            <a id="title1" href="../html/detailPage.html?${sendPostId}">${data.title}</a>
         </div>
         <div class="two-container1">
             <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
