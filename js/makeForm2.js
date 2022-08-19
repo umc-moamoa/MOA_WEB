@@ -104,7 +104,7 @@ function fetchMakeForm() {
     .then((response) => response.json())
     .then((response2) => {
         console.log(response2.message);
-        // gotoMysurvey();
+        gotoMysurvey();
     })
     .catch((error) => console.log("error", error))
 }
