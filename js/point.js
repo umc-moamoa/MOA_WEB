@@ -1,7 +1,6 @@
 const $SurveyList1 = document.querySelector("#SurveyList1");
 const $SurveyList2 = document.querySelector("#SurveyList2");
 const $pointAll = document.querySelector(".pointAll");
-//const $pointAll2 = document.querySelector(".pointAll2");
 var my_jwt = localStorage.getItem('x-access-token');
 var value;
 
@@ -78,13 +77,10 @@ const fetchSurvey2 = () => {
         .then((response) => response.json())
         .then((webResult) => {
             webResult.result.pointHistoryFormer.map(item => pointListTemplate4(item));
-            //pointListTemplate3(webResult.result);
             slick(value);
         })
-        //.then((webResult) => slick())
         .catch((error) => console.log("error", error));
 }
-//fetchSurvey2();
 
 function pointListTemplate3(data){
     const pointItem = `<div class="state">${data.point}<span>P</span></div>`;
@@ -119,8 +115,7 @@ function pointListTemplate4(data) {
 
 function slick(){
     if( value == 1){
-       // $(document).ready(function(){
-            $('.SurveyList1').slick({
+            $('#SurveyList1').slick({
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 rows:3,
@@ -128,10 +123,8 @@ function slick(){
                 prevArrow : $('.prev'), 
                 nextArrow : $('.next'), 
             });
-        //});
     }else if(value == 2){
-        //$(document).ready(function(){
-            $('.SurveyList2').slick({
+            $('#SurveyList2').slick({
                 slidesToShow: 2,
                 slidesToScroll: 1,
                 rows:3,
@@ -139,7 +132,6 @@ function slick(){
                 prevArrow : $('.prev'), 
                 nextArrow : $('.next'), 
             });
-        //});
     }
 }
 
@@ -148,9 +140,6 @@ var count2 = 0;
 function showSurvey() { 
     value = selectedValue();
     if (value == 1){
-        fetchSurvey1();
-        //$('.pointAll1').show();
-        //$('.pointAll2').hide();
         $('#SurveyList1').show();
         $('#SurveyList2').hide();
     }else if(value == 2){
@@ -158,13 +147,7 @@ function showSurvey() {
         if(count2 == 1) {
             fetchSurvey2(); //최초 1회만 데이터 추가됨. 1->2->1->2 중복 추가 방지
         }
-        //fetchSurvey2();
-        //$('.pointAll1').hide();
-        //$('.pointAll2').show();
         $('#SurveyList1').hide();
         $('#SurveyList2').show();
-        //fetchSurvey2();
     }
 }
-
-//selectedValue();
