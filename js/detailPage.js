@@ -63,7 +63,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainTop">
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart1.png" width="40%" onclick="heart();"/></button></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart.png" width="40%" onclick="heart();"/></button></div>
         </div>
 
         <div class="flex-container2">
@@ -120,7 +120,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainTop">
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart1.png" width="40%" onclick="heart();"/></button></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart.png" width="40%" onclick="heart();"/></button></div>
         </div>
 
         <div class="flex-container2">
@@ -178,7 +178,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainTop">
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart1.png" width="40%" onclick="heart();"/></button></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart.png" width="40%" onclick="heart();"/></button></div>
         </div>
 
         <div class="flex-container2">
