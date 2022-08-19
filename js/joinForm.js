@@ -69,7 +69,6 @@ function SurveyInTemplate(data) {
             var itemDiv = document.createElement("div");
             itemDiv.className = 'Qtype1';
 
-            // 선택된 result를 위해 value 속성 추가. 해당 value 가진 input의 text 꺼내서 보내면 되지 않을까?
             var inputDiv = document.createElement("input");
             inputDiv.type = 'radio';
             postDetailId = `${data.postDetailId}`;
@@ -78,7 +77,6 @@ function SurveyInTemplate(data) {
             semipostDetailResults[count-1][0] = pi;
             inputDiv.name = postDetailId;
             inputDiv.value = j;
-            // semipostDetailResults[count-1][1] = Number(inputDiv.value);
 
             var inputTextDiv = document.createElement("span");
             inputTextDiv.className = 'radioBtn';
@@ -113,7 +111,6 @@ function SurveyInTemplate(data) {
             var itemDiv = document.createElement("div");
             itemDiv.className = 'Qtype2';
 
-            // 선택된 result를 위해 value 속성 추가. 해당 value 가진 input의 text 꺼내서 보내면 되지 않을까?
             var inputDiv = document.createElement("input");
             inputDiv.type = 'checkbox';
             postDetailId = `${data.postDetailId}`;
@@ -139,7 +136,6 @@ function SurveyInTemplate(data) {
         var pi = new Array();
         pi[0] = Number(postDetailId);
         semipostDetailResults[count-1][0] = pi;
-        // semipostDetailResults[count-1][1] = inputDiv.value;
         var SurveyQ = `<div class="question">
         <span class="Q1">${count + ".   " + data.question}</span>
         <span class="required">필수</span>
@@ -147,8 +143,8 @@ function SurveyInTemplate(data) {
         placeholder="자유롭게 적어주세요."
         onfocus="this.placeholder = ''" 
         onblur="this.placeholder = '자유롭게 적어주세요.'"></textarea>
-    </div>`
-    $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
+        </div>`
+        $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
     }
     // 장문형
     else if(data.format == 4) {
@@ -163,10 +159,9 @@ function SurveyInTemplate(data) {
         placeholder=" 자유롭게 적어주세요."
         onfocus="this.placeholder = ''" 
         onblur="this.placeholder = ' 자유롭게 적어주세요.'"></textarea>
-    </div>`
-    $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
+        </div>`
+        $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
     }
-    // console.log(semipostDetailResults);
 }
 
 // 답변 등록
@@ -229,7 +224,7 @@ function sendPost() {
     .then((response) => response.json())
     .then((response2) => {
         console.log(response2.message);
-        // gotoParticipatedSurvey();
+        gotoParticipatedSurvey();
     })
     .catch((error) => console.log("error", error))
 }

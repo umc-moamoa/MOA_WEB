@@ -194,7 +194,7 @@ footer {
 #wrapper {
     min-height: 100vh;
     position: relative;
-    height:700px;
+    /* height:700px; */
 }
 table {
     width: 100%;
