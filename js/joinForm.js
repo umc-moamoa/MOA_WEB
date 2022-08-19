@@ -73,7 +73,9 @@ function SurveyInTemplate(data) {
             var inputDiv = document.createElement("input");
             inputDiv.type = 'radio';
             postDetailId = `${data.postDetailId}`;
-            semipostDetailResults[count-1][0] = Number(postDetailId);
+            var pi = new Array();
+            pi[0] = Number(postDetailId);
+            semipostDetailResults[count-1][0] = pi;
             inputDiv.name = postDetailId;
             inputDiv.value = j;
             // semipostDetailResults[count-1][1] = Number(inputDiv.value);
@@ -115,7 +117,9 @@ function SurveyInTemplate(data) {
             var inputDiv = document.createElement("input");
             inputDiv.type = 'checkbox';
             postDetailId = `${data.postDetailId}`;
-            semipostDetailResults[count-1][0] = Number(postDetailId);
+            var pi = new Array();
+            pi[0] = Number(postDetailId);
+            semipostDetailResults[count-1][0] = pi;
             inputDiv.name = postDetailId;
             inputDiv.value = j;
 
@@ -132,7 +136,9 @@ function SurveyInTemplate(data) {
     // 단답형
     else if(data.format == 3) {
         postDetailId = `${data.postDetailId}`;
-        semipostDetailResults[count-1][0] = Number(postDetailId);
+        var pi = new Array();
+        pi[0] = Number(postDetailId);
+        semipostDetailResults[count-1][0] = pi;
         // semipostDetailResults[count-1][1] = inputDiv.value;
         var SurveyQ = `<div class="question">
         <span class="Q1">${count + ".   " + data.question}</span>
@@ -147,7 +153,9 @@ function SurveyInTemplate(data) {
     // 장문형
     else if(data.format == 4) {
         postDetailId = `${data.postDetailId}`;
-        semipostDetailResults[count-1][0] = Number(postDetailId);
+        var pi = new Array();
+        pi[0] = Number(postDetailId);
+        semipostDetailResults[count-1][0] = pi;
         var SurveyQ = `<div class="question">
         <span class="Q1">${count + ".   " + data.question}</span>
         <span class="required">필수</span>
@@ -166,7 +174,10 @@ function sendPost() {
     for(var i=0; i<postLength; i++) {
         var tt = semipostDetailResults[i][0];
         if( formats[i] == 1 ) {
-            semipostDetailResults[i][1] = Number($(`input[name=${tt}]:checked`).val());
+            var pi = new Array();
+            pi[0] = $(`input[name=${tt}]:checked`).val();
+
+            semipostDetailResults[i][1] = pi;
         }
         else if( formats[i] == 2 ) {
             const query = `input[name="${tt}"]:checked`;
@@ -178,17 +189,23 @@ function sendPost() {
             checkboxes[i] = new Array(selectedElementsCnt);
             var j=0;
             selectedElements.forEach((el) => {
-                checkboxes[i][j++] = Number(el.value);
+                checkboxes[i][j++] = el.value;
                
             });
             semipostDetailResults[i][1] = checkboxes[i];
             console.log(semipostDetailResults[i][1]);
         }
         else if( formats[i] == 3 ) {
-            semipostDetailResults[i][1] = $(`input[type="text"]`).val();
+            var pi = new Array();
+            pi[0] = $(`input[type="text"]`).val();
+
+            semipostDetailResults[i][1] = pi;
         }
         else if( formats[i] == 4 ) {
-            semipostDetailResults[i][1] = $(`textarea`).val();
+            var pi = new Array();
+            pi[0] =  $(`textarea`).val();
+
+            semipostDetailResults[i][1] = pi;
         }
     }
     console.log(semipostDetailResults);
@@ -212,7 +229,7 @@ function sendPost() {
     .then((response) => response.json())
     .then((response2) => {
         console.log(response2.message);
-        gotoParticipatedSurvey();
+        // gotoParticipatedSurvey();
     })
     .catch((error) => console.log("error", error))
 }
