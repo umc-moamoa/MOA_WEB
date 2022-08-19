@@ -172,6 +172,9 @@ footer .container {
     padding-bottom: 6px;
 }
 
+#day{
+    padding-bottom: 6px;
+}
 .slick-slide{
     padding-right: 30px;
 }
@@ -191,6 +194,17 @@ footer .container {
 
 #SurveyList {
     padding:35px;
+}
+
+#deleteBtn {
+    float:right;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #909090;
 }
 
 /*footer*/
