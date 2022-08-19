@@ -62,6 +62,19 @@ function SurveyListTemplate (data) {
                             </div>
                         </div>
     `;
+    const SurveyItem3 = `<div id="main1">
+                            <div class="one-container1">
+                                <a id="title1" href="../html/detailPage.html?${sendPostId}"}>  ${data.title}  </a>
+                            </div>
+                            <div class="two-container1">
+                                <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
+                                <span id="type1">ㅣ&nbsp;&nbsp;D-DAY</span>
+                            </div>
+                            <div class="three-container1">
+                                <span id="point1">  ${data.point}P  </span>
+                            </div>
+                        </div>
+    `;
     
     if ( data.status == 'CLOSED' ) {
         if ( category == 1 ) {
@@ -73,7 +86,18 @@ function SurveyListTemplate (data) {
         } else if ( category == 4 ) {
             $SurveyList4.insertAdjacentHTML('beforeend', SurveyItem2);
         }
-    } else {
+    }else if(data.dday == 0){
+        if ( category == 1 ) {
+            $SurveyList1.insertAdjacentHTML('beforeend', SurveyItem3);
+        } else if ( category == 2 ) {
+            $SurveyList2.insertAdjacentHTML('beforeend', SurveyItem3);
+        } else if ( category == 3 ) {
+            $SurveyList3.insertAdjacentHTML('beforeend', SurveyItem3);
+        } else if ( category == 4 ) {
+            $SurveyList4.insertAdjacentHTML('beforeend', SurveyItem3);
+        }
+    } 
+    else {
         if ( category == 1 ) {
             $SurveyList1.insertAdjacentHTML('beforeend', SurveyItem1);
         } else if ( category == 2 ) {

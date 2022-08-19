@@ -75,11 +75,38 @@ function SurveyListTemplate (data) {
             <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
         </div>
     </div>`;
+    const SurveyItem3 = `
+    <div id="main1">
+        <div class="one-container1">
+            <a id="title1" href="../html/result.html">${data.postTitle}</a>
+        </div>
+        <div class="two-container1">
+            <div class="box">
+                <span id="count1">문항 수 </span>
+                <span id="count">${data.qcount}개</span>
+            </div>
+            <div class="box">
+                <span id="point1">포인트</span>
+                <span id="point">${data.point}P</span>
+            </div>
+            <div class="box">
+                <span id="day">마감 기간</span>
+                <span id="deadline">D-DAY</span></div>
+            </div>
+            <div class="box">
+                <span id="num">참여 인원</span>
+                <span id="num">${data.postResultCount}명</span>
+            </div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
+        </div>
+    </div>`;
 
-    if(data.status =='ACTIVE'){
-        $SurveyList.insertAdjacentHTML('beforeend', SurveyItem1);
-    }else{
+    if(data.status =='CLOSED'){
         $SurveyList.insertAdjacentHTML('beforeend', SurveyItem2);
+    }else if(data.dday == 0){
+        $SurveyList.insertAdjacentHTML('beforeend', SurveyItem3);
+    }else{
+        $SurveyList.insertAdjacentHTML('beforeend', SurveyItem1);
     }
 }
 
