@@ -25,6 +25,7 @@ const fetchSurvey1 = () => {
         .then((webResult) => {
             webResult.result.pointHistoryRecent.map(item => pointListTemplate2(item));
             pointListTemplate1(webResult.result);
+            console.log(webResult);
             slick(value);
         })
         .catch((error) => console.log("error", error));
@@ -38,29 +39,28 @@ function pointListTemplate1(data){
 }
 
 function pointListTemplate2 (data) {
-    const pointListItem = `
-            if(${data.addAmount} == 0){
-                var sub = document.getElementById("main1");
-                sub.style.innerHTML=
-                <div id="main1">
-                    <div class="one-container1" style="background-color: #4E7FF2;">사용</div>
-                    <div class="two-container1">${data.created}</div>
-                    <div class="three-container1">-${data.subAmount}P</div>
-                </div>
-                ;
-            }else if(${data.subAmount} == 0){
-                var add = document.getElementById("main1");
-                add.style.innerHTML=
-                <div id="main1">
-                    <div class="one-container1"  style="background-color: #9CC2FF;">적립</div>
-                    <div class="two-container1">${data.created}</div>
-                    <div class="three-container1">+${data.addAmount}P</div>
-                </div>
-                ;
-    }
+    const pointListItem1 = `
+        <div id="main1">
+            <div class="one-container1" style="background-color: #4E7FF2;">사용</div>
+            <div class="two-container1">${data.created}</div>
+            <div class="three-container1">-${data.subAmount}P</div>
+        </div>
     `;
-    
-    $SurveyList1.insertAdjacentHTML('beforeend', pointListItem);
+    const pointListItem2 = `
+        <div id="main1">
+            <div class="one-container1"  style="background-color: #9CC2FF;">적립</div>
+            <div class="two-container1">${data.created}</div>
+            <div class="three-container1">+${data.addAmount}P</div>
+        </div>
+    `;
+    const noPoint = ``;
+    if (data.addAmount==0 && data.subAmount==0){
+        $SurveyList1.insertAdjacentHTML('beforeend', noPoint);
+    }else if(data.addAmount == 0){
+        $SurveyList1.insertAdjacentHTML('beforeend', pointListItem1);
+    }else if(data.subAmount == 0){
+        $SurveyList1.insertAdjacentHTML('beforeend', pointListItem2);
+    }
 }
 
 // 오래된 순
@@ -88,29 +88,28 @@ function pointListTemplate3(data){
     $pointAll.insertAdjacentHTML('beforeend', pointItem);
 }
 function pointListTemplate4(data) {
-    const pointListItem = `
-            if(${data.addAmount} == 0){
-                var sub = document.getElementById("main1");
-                sub.style.innerHTML=
-                <div id="main1">
-                    <div class="one-container1" style="background-color: #4E7FF2;">사용</div>
-                    <div class="two-container1">${data.created}</div>
-                    <div class="three-container1">-${data.subAmount}P</div>
-                </div>
-                ;
-            }else if(${data.subAmount} == 0){
-                var add = document.getElementById("main1");
-                add.style.innerHTML=
-                <div id="main1">
-                    <div class="one-container1"  style="background-color: #9CC2FF;">적립</div>
-                    <div class="two-container1">${data.created}</div>
-                    <div class="three-container1">+${data.addAmount}P</div>
-                </div>
-                ;
-    }
+    const pointListItem1 = `
+        <div id="main1">
+            <div class="one-container1" style="background-color: #4E7FF2;">사용</div>
+            <div class="two-container1">${data.created}</div>
+            <div class="three-container1">-${data.subAmount}P</div>
+        </div>
     `;
-
-    $SurveyList2.insertAdjacentHTML('beforeend', pointListItem);
+    const pointListItem2 = `
+        <div id="main1">
+            <div class="one-container1"  style="background-color: #9CC2FF;">적립</div>
+            <div class="two-container1">${data.created}</div>
+            <div class="three-container1">+${data.addAmount}P</div>
+        </div>
+    `;
+    const noPoint = ``;
+    if(data.addAmount==0 && data.subAmount==0){
+        $SurveyList2.insertAdjacentHTML('beforeend', noPoint);
+    }else if(data.addAmount == 0){
+        $SurveyList2.insertAdjacentHTML('beforeend', pointListItem1);
+    }else if(data.subAmount == 0){
+        $SurveyList2.insertAdjacentHTML('beforeend', pointListItem2);
+    }
 }
 
 function slick(){
