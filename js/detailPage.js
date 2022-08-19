@@ -5,7 +5,6 @@ var myPost;
 var like;
 
 const receivedPostId = location.href.split('?')[1];
-//console.log(receivedPostId);
 
 const fetchDetail = () => {
     fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
@@ -24,7 +23,6 @@ fetchDetail();
 function SurveyDetailTemplate (data) {
 
     myPost = data.myPost;
-    // like = data.like;
 
     // myPost라면 설문 삭제 버튼
     const SurveyDetailItem1 = `
