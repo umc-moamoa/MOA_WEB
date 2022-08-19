@@ -329,6 +329,22 @@ input:nth-child(2)::-ms-input-placeholder{color: #909090;}
     background: url('../image/Rectangle\ 83.png') no-repeat 95% 50%; */
 }
 
+.Qtype4 {
+    display: block;
+    width: 750px;
+    border: 1px solid #919191;
+    outline: none; 
+    border-radius: 8px;
+    resize: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 7px;
+
+    font-weight: 500;
+    font-size: 14px;
+    color: #414141;
+}
+
 /* select::-ms-expand {
     display: none;
 } */
