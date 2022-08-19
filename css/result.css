@@ -194,11 +194,11 @@ ul {
 .sub-container {
     margin-top: 25px;
     font-family: 'Noto Sans KR';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 29px;
-color: #414141;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    color: #414141;
 }
 
 #textResultBox {
@@ -265,4 +265,36 @@ footer td p {
 }
 #info {
     padding: 20px 0;
+}
+
+/* 통계 그래프 */
+.resultContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: Noto Sans KR;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+}
+.progress-bar {
+    width: 100%;
+    height: 15px;
+    background-color: #dedede;
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+.progress-bar .progress {
+    /* 나타내고자 하는 퍼센트값 */
+    width: 72%;  
+    height: 15px;
+    padding: 0;
+    text-align: center;
+    background-color: #9CC2FF;
+    ;
+    color: #111;
 }
