@@ -24,10 +24,11 @@ fetchSurvey();
 
 function SurveyListTemplate (data) {
     receivedPostId = data.postId;
+    console.log(receivedPostId);
     const SurveyItem1 = `
     <div id="main1">
         <div class="one-container1">
-            <a id="title1" href="../html/result.html">${data.postTitle}</a>
+            <a id="title1" href="../html/result.html?${receivedPostId}">${data.postTitle}</a>
         </div>
         <div class="two-container1">
             <div class="box">
@@ -53,7 +54,7 @@ function SurveyListTemplate (data) {
     const SurveyItem2 = `
     <div id="main1">
         <div class="one-container1">
-            <a id="title1" href="../html/result.html">${data.postTitle}</a>
+            <a id="title1" href="../html/result.html?${receivedPostId}">${data.postTitle}</a>
         </div>
         <div class="two-container1">
             <div class="box">
@@ -78,7 +79,7 @@ function SurveyListTemplate (data) {
     const SurveyItem3 = `
     <div id="main1">
         <div class="one-container1">
-            <a id="title1" href="../html/result.html">${data.postTitle}</a>
+            <a id="title1" href="../html/result.html?${receivedPostId}">${data.postTitle}</a>
         </div>
         <div class="two-container1">
             <div class="box">
