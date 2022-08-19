@@ -1,16 +1,14 @@
 function addQuestion() {
 
     function selectedValue() {
-
         var select = type;
         var value = select.options[type.selectedIndex].value; 
-        //this, 뭐 등등 필요없이 해당 함수 실행되는 블록에서의 div1, select 등 찾을 수 있음!
 
         return value;
     }
 
+    var textareaDiv = document.createElement("textarea");
     function changeQtype() {
-
         var thisQs = div1.children;
         for (var i=1; i<thisQs.length-1; i++) {
             var thisQinput2 = thisQs[i].firstChild;
@@ -18,75 +16,62 @@ function addQuestion() {
             if (thisQvalue == 1) {
                 thisQinput2.type = 'radio';
 
-                // 단답형으로 갔다가 돌아오면?
                 thisQs[1].children[0].style.visibility = 'visible';
                 thisQs[1].children[2].style.display = '';
 
-                thisQs[1].children[1].value = ''; // 객관식에서 옵션 1에 입력하고 단답형으로 바꿨을 때 입력한 input 값이 넘어가지 않도록. (반대로도 마찬가지)
+                thisQs[1].children[1].value = ''; 
                 thisQs[1].children[1].placeholder = '옵션 1';
                 thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="옵션 1"');
 
+                thisQs[1].style.display = '';
                 thisQs[2].style.display = '';
                 thisQs[3].style.display = '';
+                thisQs[4].style.display = 'none';
             }
             else if (thisQvalue == 2) {
                 thisQinput2.type = 'checkbox'; 
 
-                // 단답형으로 갔다가 돌아오면?
                 thisQs[1].children[0].style.visibility = 'visible';
                 thisQs[1].children[2].style.display = '';
 
-                thisQs[1].children[1].value = ''; // 객관식에서 옵션 1에 입력하고 단답형으로 바꿨을 때 입력한 input 값이 넘어가지 않도록. (반대로도 마찬가지)
+                thisQs[1].children[1].value = ''; 
                 thisQs[1].children[1].placeholder = '옵션 1';
                 thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="옵션 1"');
 
+                thisQs[1].style.display = '';
                 thisQs[2].style.display = '';
                 thisQs[3].style.display = '';
-
+                thisQs[4].style.display = 'none';
             }
-            //여기에 단답형, 장문형 타입도 정의하면 된다. 이건 또 생각해볼 문제,, 단순 타입 변경이 아니라 전체 div를 바꿔야함.
-            // 그냥 바꾸는 게 문제가 아니라 다시 버튼으로 돌아올 수 있어야 함 -> 원래 꺼 아예 지우면 안 됨 or 다시 돌아올 때 다시 생성
             else if (thisQvalue == 3) {
-                // thisQs[2].style.visibility = 'hidden';
-                // thisQs[3].style.visibility = 'hidden';
                 thisQs[1].children[0].style.visibility = 'hidden';
                 thisQs[1].children[2].style.display = 'none';
-
-                thisQs[1].children[1].value = ''; // 객관식에서 옵션 1에 입력하고 단답형으로 바꿨을 때 입력한 input 값이 넘어가지 않도록.
-                thisQs[1].children[1].placeholder = '단답형';
-                thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="단답형"');
-                // thisQs[1].children[1].onblur = "this.placeholder='단답형'";
-
-                thisQs[2].style.display = 'none';
-                thisQs[3].style.display = 'none';
-            }
-            else if (thisQvalue == 4) {
-                
-                thisQs[1].children[0].style.visibility = 'hidden';
-                // thisQs[1].children[1].style.display = 'none';
-                thisQs[1].children[2].style.display = 'none';
-
-                thisQs[2].style.display = 'none';
-                thisQs[3].style.display = 'none';
-                //js에서 css를 변경할 때 style 사용함.
-                // thisQs[1].children[1].style.maxlength = '1000';
-                // thisQs[1].children[1].style.width = '88%';
 
                 thisQs[1].children[1].value = ''; 
-                thisQs[1].children[1].placeholder = '장문형';
-                thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="장문형"');
+                thisQs[1].children[1].placeholder = '단답형';
+                thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="단답형"');
 
-                // thisQs[1].style.display = 'none';
+                thisQs[1].style.display = '';
+                thisQs[2].style.display = 'none';
+                thisQs[3].style.display = 'none';
+                thisQs[4].style.display = 'none';
+            }
+            else if (thisQvalue == 4) {
+                textareaDiv.setAttribute('placeholder', '장문형');
+                textareaDiv.setAttribute('onfocus', 'this.placeholder=""');
+                textareaDiv.setAttribute('onblur', 'this.placeholder="장문형"');
+                textareaDiv.setAttribute('class', 'Qtype4');
+                textareaDiv.setAttribute('cols', '108');
+                textareaDiv.setAttribute('rows', '5');
+                thisQs[4].insertAdjacentElement('beforebegin',textareaDiv);
 
-
-
-                // var longtext = document.createElement("textarea");
-                // longtext.setAttribute('placeholder', '장문형');
-                // longtext.setAttribute('onblur', 'this.placeholder="장문형"');
-                
+                thisQs[1].style.display = 'none';
+                thisQs[2].style.display = 'none';
+                thisQs[3].style.display = 'none';
+                thisQs[4].style.display = '';
+                break;
             }
         }
-
     }
 
     function addOption() {
@@ -100,13 +85,12 @@ function addQuestion() {
         var value2 = selectedValue();
         if (value2 == 1) {
             input2.type = 'radio';
-        } else if (value2 ==2 ) { // **** 아직도 1번 문항의 selectedValue에 종속되어 있음 -> selectedValue 고쳐서 해결함!
+        } else if (value2 ==2 ) { 
             input2.type = 'checkbox';
         }
 
         input2.className = 'btns'
         input2.name = 'checkOption' + optionNum;
-        // input2.value = '4'; 
     
         var input3 = document.createElement("input");
         input3.type = 'text';
@@ -133,7 +117,6 @@ function addQuestion() {
     
         div3.appendChild(input2);
         div3.appendChild(input3);
-        // div1.appendChild(div3);
         div1.insertBefore(div3, div4);
         xbtn.appendChild(ximage);
         div3.appendChild(xbtn);
@@ -174,20 +157,7 @@ function addQuestion() {
     var type = document.createElement("select");
     type.className = 'Qtype';
     type.id = 'Qtype'; //id 추가
-    type.onchange = changeQtype; //이벤트 함수 추가/
-/*     type.onchange = function () { 
-        var thisQs = div1.children;
-        for (var i=1; i<thisQs.length-1; i++) {
-            var thisQinput2 = thisQs[i].firstChild;
-            var thisQvalue = selectedValue();
-            if (thisQvalue == 1) 
-                thisQinput2.type = 'radio';
-            else if (thisQvalue == 2)
-                thisQinput2.type = 'checkbox'; 
-        }
-    } */
-    // 이대로 하니까 1번에 종속되지는 않는데, 1번만 변경됨..  -> 별도 함수 다시 
-    // -> 문제는 이게 아니라 전체에서 찾아서 그런 거였음. 해당 블록 안에서 알아서 찾아줌 !
+    type.onchange = changeQtype; 
 
     var typeOption1 = document.createElement("option");
     typeOption1.value = 1;
@@ -206,7 +176,6 @@ function addQuestion() {
     surveyElements.appendChild(div1);
     div1.appendChild(div2);
     div2.appendChild(num);
-    //num.appendChild(numText);
     div2.appendChild(input1);
 
     typeOption1.appendChild(optionText1);
@@ -219,17 +188,6 @@ function addQuestion() {
     type.appendChild(typeOption4);
     div2.appendChild(type);
 
-    // //textarea
-    // var longtext = document.createElement("textarea");
-    // longtext.className = 'longT';
-    // longtext.setAttribute('placeholder', '장문형');
-    // longtext.setAttribute('onblur', 'this.placeholder="장문형"');
-    // div1.appendChild(longtext);
-    // longtext.style.display = 'none';
-    
-
-    // if (value1 == 1) { //이거 안 써도 plus로 추가될 때는 radio 버튼으로 생긴다. 아래 코드 때문에 ! -> 결국 다 한 블럭.
-    //makeOption
     var div3 = document.createElement("div");
     div3.className = 'makeOption';
 
@@ -237,7 +195,6 @@ function addQuestion() {
     input2.type = 'radio'; //새로 추가되는 질문은 다 radio 버튼으로 생긴다. 
     input2.className = 'btns'
     input2.name = 'checkOption' + optionNum;
-    // input2.value = '1';
 
     var input3 = document.createElement("input");
     input3.type = 'text';
@@ -273,8 +230,7 @@ function addQuestion() {
     var input2 = document.createElement("input");
     input2.type = 'radio';
     input2.className = 'btns'
-    input2.name = 'checkOption' + optionNum; //name으로 구별을 한다..
-    // input2.value = '2';
+    input2.name = 'checkOption' + optionNum; 
 
     var input3 = document.createElement("input");
     input3.type = 'text';
@@ -303,7 +259,6 @@ function addQuestion() {
     xbtn.appendChild(ximage);
     div3.appendChild(xbtn);
 
-
     //addOption
     var div3 = document.createElement("div");
     div3.className = 'makeOption';
@@ -312,14 +267,12 @@ function addQuestion() {
     input2.type = 'radio';
     input2.className = 'btns'
     input2.name = 'checkOption' + optionNum;
-    // input2.value = '3'; 
 
     var input3 = document.createElement("input");
     input3.type = 'text';
     input3.className = 'optionInput';
     input3.setAttribute('maxlength', '40');
     input3.setAttribute('placeholder', "옵션 추가 또는 '기타' 추가");
-    // input3.setAttribute('onfocus', 'this.placeholder=""');
 
     input3.onfocus = addOption;
     input3.setAttribute('onblur', 'this.placeholder="옵션 추가 또는 \'기타\' 추가"');
@@ -371,5 +324,4 @@ function addQuestion() {
     div1.appendChild(div4);
     tbtn.appendChild(timage);
     div4.appendChild(tbtn);
-    
 }

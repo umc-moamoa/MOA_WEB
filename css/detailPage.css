@@ -194,7 +194,6 @@ footer td p {
 #date {
     opacity: 0.5;
     font-size: 12px;
-    /* margin-top: 12px; */
 }
 
 #heart {
@@ -223,6 +222,10 @@ footer td p {
     font-size: 13px;
     font-weight: 500;
     color: #6C6C6C;
+}
+
+#deadline {
+    color: #4E7FF2;
 }
 
 #mainBottom {

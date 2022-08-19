@@ -20,10 +20,9 @@ fetchSurvey1();
 
 function SurveyListTemplate1 (data) {
     const sendPostId = data.postId;
-    //console.log(sendPostId);
 
-    const SurveyItem = 
-    `<div id="main1">
+    const SurveyItem1 = `
+    <div id="main1">
         <div class="one-container1">
             <a id="title1" href="../html/detailPage.html?${sendPostId}">${data.title}</a>
         </div>
@@ -35,8 +34,41 @@ function SurveyListTemplate1 (data) {
             <span id="point1">${data.point}P</span>
         </div>
     </div> `;
+    const SurveyItem2 = `
+    <div id="main1">
+        <div class="one-container1">
+            <a id="title1" href="../html/detailPage.html?${sendPostId}">${data.title}</a>
+        </div>
+        <div class="two-container1">
+            <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
+            <span id="type1">ㅣ&nbsp;&nbsp;D-DAY</span>
+        </div>
+        <div class="three-container1">
+            <span id="point1">${data.point}P</span>
+        </div>
+    </div> `;
+    const SurveyItem3 = `
+    <div id="main1">
+        <div class="one-container1">
+            <a id="title1" href="../html/detailPage.html?${sendPostId}">${data.title}</a>
+        </div>
+        <div class="two-container1">
+            <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
+            <span id="type1">ㅣ&nbsp;&nbsp;CLOSED</span>
+        </div>
+        <div class="three-container1">
+            <span id="point1">${data.point}P</span>
+        </div>
+    </div> `;
 
-$SurveyList1.insertAdjacentHTML('beforeend', SurveyItem);
+    if ( data.status == 'CLOSED' ) {
+        $SurveyList1.insertAdjacentHTML('beforeend', SurveyItem3);
+    }else if(data.dday == 0){
+        $SurveyList1.insertAdjacentHTML('beforeend', SurveyItem2);
+    }else{
+        $SurveyList1.insertAdjacentHTML('beforeend', SurveyItem1);
+    }
+
 }
 
 // 참여를 기다리고 있는 설문조사
@@ -61,9 +93,8 @@ fetchSurvey2();
 
 function SurveyListTemplate2 (data) {
     const sendPostId = data.postId;
-    //console.log(sendPostId);
 
-    const SurveyItem = 
+    const SurveyItem1 = 
     `<div id="main1">
         <div class="one-container1">
             <a id="title1" href="../html/detailPage.html?${sendPostId}">${data.title}</a>
@@ -76,8 +107,40 @@ function SurveyListTemplate2 (data) {
             <span id="point1">${data.point}P</span>
         </div>
     </div> `;
+    const SurveyItem2 = `
+    <div id="main1">
+        <div class="one-container1">
+            <a id="title1" href="../html/detailPage.html?${sendPostId}">${data.title}</a>
+        </div>
+        <div class="two-container1">
+            <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
+            <span id="type1">ㅣ&nbsp;&nbsp;D-DAY</span>
+        </div>
+        <div class="three-container1">
+            <span id="point1">${data.point}P</span>
+        </div>
+    </div> `;
+    const SurveyItem3 = `
+    <div id="main1">
+        <div class="one-container1">
+            <a id="title1" href="../html/detailPage.html?${sendPostId}">${data.title}</a>
+        </div>
+        <div class="two-container1">
+            <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
+            <span id="type1">ㅣ&nbsp;&nbsp;CLOSED</span>
+        </div>
+        <div class="three-container1">
+            <span id="point1">${data.point}P</span>
+        </div>
+    </div> `;
 
-$SurveyList2.insertAdjacentHTML('beforeend', SurveyItem);
+    if ( data.status == 'CLOSED' ) {
+        $SurveyList2.insertAdjacentHTML('beforeend', SurveyItem3);
+    }else if(data.dday == 0){
+        $SurveyList2.insertAdjacentHTML('beforeend', SurveyItem2);
+    }else{
+        $SurveyList2.insertAdjacentHTML('beforeend', SurveyItem1);
+    }
 }
 
 function slick1(){

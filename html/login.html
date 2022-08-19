@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 페이지</title>
+    <title>로그인</title>
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="icon" href="../image/logo.png">
 </head>
 <body>
     <div class="flex-container">
         <div id="wrapper">
-
             <!-- header -->
             <div class="header">
-
                 <!-- 로그인, 회원가입, 마이페이지 -->
                 <div id="userMenu">
                     <ul class="list_menu">
@@ -24,7 +23,6 @@
                         <li class="menu menu_join">
                             <a class="link link_join" href="../html/signUp.html">회원가입</a>
                         </li>
-                        <!-- 이름 수정 -->
                         <li class="menu menu_mypage"> 
                             <a class="link link_mypage" href="../html/myPage.html">마이페이지</a>
                         </li>
@@ -62,20 +60,15 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
-
             <!-- container -->
             <div class="container">
                 <div id="main">
-
                     <form>
                         <div class="flex-container2">
-
                             <div id="subTitle">
                                 <p class="subTitle">로그인</p>
                             </div>
-
                             <div id="loginBox">
                                 <div class="box">
                                     <input type="text" class="inputId" id="id" maxlength="30"
@@ -96,28 +89,14 @@
                                     <p class="alert valid two"></p>
                                 </div>
                             </div>
-
                             <div><button type="button" id="login_btn" onclick="login_check();">로그인</button></div>
-
                         </div>
                     </form>
-
                 </div>
-
                 <div class="findinfo">
+                    <span>아직 회원이 아니신가요?</span>
                     <a href="../html/signUp.html" class="signUPTxt">회원가입</a>
-                    <a href="#" class="findId"  onclick="id_find();">아이디 찾기</a>
-                    <a href="#" class="findPwd"  onclick="pw_find();">비밀번호 찾기</a>
                 </div>
-                <!-- <div class="socialLoginTxt">    
-                    <p class="socialLoginTxt2">간편 로그인</p>
-                </div>
-                <div class="socialLogin">
-                    <a href="#" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="../image/kakao_icon.png"></i></a>
-                    <a href="#" class="social-item bg2"><i class="fa fa-naver"><img class="iconImg2" src="../image/naver_icon.png"></i></a>
-                    <a href="#" class="social-item bg3"><i class="fa fa-facebook"><img class="iconImg3" src="../image/facebook_icon.png"></i></a>
-                </div> -->
-
             </div>
         </div>
 

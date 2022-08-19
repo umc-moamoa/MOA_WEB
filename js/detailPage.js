@@ -5,7 +5,6 @@ var myPost;
 var like;
 
 const receivedPostId = location.href.split('?')[1];
-console.log(receivedPostId);
 
 const fetchDetail = () => {
     fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
@@ -15,7 +14,7 @@ const fetchDetail = () => {
         .then((response) => response.json())
         .then((webResult) => {
             SurveyDetailTemplate(webResult.result);
-            console.log(webResult.result);
+            console.log(webResult);
         })
         .catch((error) => console.log("error", error));
 }
@@ -25,7 +24,6 @@ fetchDetail();
 function SurveyDetailTemplate (data) {
 
     myPost = data.myPost;
-    // like = data.like;
 
     // myPost라면 설문 삭제 버튼
     const SurveyDetailItem1 = `
@@ -100,6 +98,7 @@ function SurveyDetailTemplate (data) {
     }
 }
 
+// 설문조사 삭제
 function deletePost() {
     console.log("delete");
 
@@ -110,8 +109,9 @@ function deletePost() {
         })
         .then((response) => response.json())
         .then((webResult) => {
-            console.log(webResult.message);
-            console.log(webResult.result);
+            alert("설문조사가 삭제되었습니다.");
+            var link="../html/formList.html";
+            location.href=link;
         })
         .catch((error) => console.log("error", error));
     }
@@ -126,13 +126,11 @@ function heart(){
 
     if($heartImgCheck == "../image/Heart.png" || like == true){
         like = true;
-        console.log(like);
         $heartImg.setAttribute('src',"../image/Heart2.png"); // 찬 하트
         interested_item_add();
         
     }else if($heartImgCheck == "../image/Heart2.png" || like == false){
         like = false;
-        console.log(like);
         $heartImg.setAttribute('src',"../image/Heart.png"); // 빈 하트
         interested_item_delete();
     }
@@ -145,10 +143,6 @@ function interested_item_add(){
         headers: {'x-access-token' : my_jwt,}
     })
     .then((response) => response.json())
-    .then((webResult) => {
-        console.log(webResult.message);
-        console.log(webResult.result);
-    })
     .catch((error) => console.log("error", error))
 }
 
@@ -160,9 +154,5 @@ function interested_item_delete(){
     })
 
     .then((response) => response.json())
-    .then((webResult) => {
-        console.log(webResult.message);
-        console.log(webResult.result);
-    })
     .catch((error) => console.log("error", error))
 }

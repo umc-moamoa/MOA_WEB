@@ -9,8 +9,6 @@ const fetchUser = () => {
         }
     )
         .then((response) => response.json())
-        //.then((response) => console.log(response))
-        // .then((webResult) => console.log(webResult.result))
         .then((webResult) => userTemplate(webResult.result))
         .catch((error) => console.log("error", error));
 }

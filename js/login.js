@@ -1,23 +1,17 @@
-
 // 변수 선언
 var my_jwt = localStorage.getItem('x-access-token');
+
 // 로그인 버튼 클릭시 실행 함수
 function login_check() {
     var id = document.getElementById("id");
     var pwd1 = document.getElementById("pswd1");
 
-    var validId1 = document.getElementsByClassName("validId1");
-    var validpwd2 = document.getElementsByClassName("validpwd2");
-    var valid = document.getElementsByClassName("valid");
-    var one = document.getElementsByClassName("one");
-    var two = document.getElementsByClassName("two");
-
     if(id.value == ""){ 
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
         $(".validId1").text("아이디를 입력하세요.");
-        id.focus(); // 커서가 깜빡이는 현상
-        return false; // 아무것도 반환하지 마라, 아래 코드부터 진행 X
+        id.focus();
+        return false; 
     };
 
     if(pwd1.value == ""){
@@ -58,22 +52,20 @@ function save(){
 
     .then((response) => response.json())
     .then((response2) => {
-        logincheck();
         localStorage.removeItem('x-access-token');
-        localStorage.setItem('x-access-token', response2.result.jwt);
-        login();
+        if(response2.code == '3014'){
+            $(".one").css("display","block");
+            $(".one").css("color","#FC4B3D");
+            $(".one").text("아이디 또는 비밀번호를 잘못 입력했습니다.");
+            $(".two").css("display","block");
+            $(".two").css("color","#FC4B3D");
+            $(".two").text("입력하신 내용을 다시 확인해주세요.");
+        }else{
+            localStorage.setItem('x-access-token', response2.result.jwt);
+            $(".one").css("display","none");
+            $(".two").css("display","none");
+            login();
+        }
         })
     .catch((error) => console.log("error", error))
-}
-
-
-function logincheck(){
-    if(my_jwt == null){
-        $(".one").css("display","block");
-        $(".one").css("color","#FC4B3D");
-        $(".one").text("아이디 또는 비밀번호를 잘못 입력했습니다.");
-        $(".two").css("display","block");
-        $(".two").css("color","#FC4B3D");
-        $(".two").text("입력하신 내용을 다시 확인해주세요.");
-    }
 }
