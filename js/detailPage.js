@@ -8,7 +8,7 @@ const receivedPostId = location.href.split('?')[1];
 //console.log(receivedPostId);
 
 const fetchDetail = () => {
-    fetch(`http://3.36.252.208:9000/posts/content/${receivedPostId}`, {
+    fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
         method: "GET",
         headers: {'x-access-token' : my_jwt,}
     })
