@@ -24,21 +24,41 @@ fetchInterest();
 
 function InterestListTemplate(data) {
     const postId = data.postId;
-    const InterestItem = `<div id="main1">
-    <div class="one-container1">
-        <a id="title1" href="../html/detailPage.html?${postId}">${data.title}</a>
-    </div>
-    <div class="two-container1">
-        <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
-        <span id="type1">ㅣ&nbsp;&nbsp;D-${data.d_day}</span>
-    </div>
-    <div class="three-container1">
-        <span id="point1">  ${data.point}P  </span>
-    </div>
-</div>
-`;
+    const InterestItem1 = `
+        <div id="main1">
+            <div class="one-container1">
+                <a id="title1" href="../html/detailPage.html?${postId}">${data.title}</a>
+            </div>
+            <div class="two-container1">
+                <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
+                <span id="type1">ㅣ&nbsp;&nbsp;D-${data.dday}</span>
+            </div>
+            <div class="three-container1">
+                <span id="point1">  ${data.point}P  </span>
+            </div>
+        </div>
+    `;
+    const InterestItem2 = `
+        <div id="main1">
+            <div class="one-container1">
+                <a id="title1" href="../html/detailPage.html?${postId}">${data.title}</a>
+            </div>
+            <div class="two-container1">
+                <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
+                <span id="type1">ㅣ&nbsp;&nbsp; CLOSED</span>
+            </div>
+            <div class="three-container1">
+                <span id="point1">  ${data.point}P  </span>
+            </div>
+        </div>
+    `;
 
-$SurveyList.insertAdjacentHTML('beforeend', InterestItem);
+    if(data.status =='ACTIVE'){
+        $SurveyList.insertAdjacentHTML('beforeend', InterestItem1);
+    }else{
+        $SurveyList.insertAdjacentHTML('beforeend', InterestItem2);
+    }
+
 }
 
 function slick(){
