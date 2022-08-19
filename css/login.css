@@ -255,24 +255,17 @@ input::-ms-input-placeholder{color: #909090;}
     margin: 20px 0 0 -31px;
 }
 
-
-/* 회원가입, 아이디, 비번 찾기*/
+/* 회원가입*/
 .findinfo{
     text-align: center;
     margin: 30px;
     font-size: 11px;
+    color: #919191;
 }
 .signUPTxt {
     color: #919191;
     padding: 0 10px;
-}
-.findId{
-    color: #919191;
-    padding: 0 10px;
-}
-.findPwd{
-    color: #919191;
-    padding: 0 10px;
+    font-weight: 500;
 }
 
 /* 소셜 로그인 */

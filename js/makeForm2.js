@@ -57,9 +57,13 @@ function sortQuestion() {
                 item = options[j].children[1].value;
                 semiPostItems[i][1+j] = item;
             }
-        } else if (types[i].value == 3 || types[i].value == 4) {
+        } else if (types[i].value == 3) {
             semiPostFormat[i] = new Array(1);
             item = options[1].children[1].value;
+            semiPostItems[i][2] = item;
+        } else if (types[i].value == 4) {
+            semiPostFormat[i] = new Array(1);
+            item = options[4].value;
             semiPostItems[i][2] = item;
         }
 
@@ -100,7 +104,7 @@ function fetchMakeForm() {
     .then((response) => response.json())
     .then((response2) => {
         console.log(response2.message);
-        gotoMysurvey();
+        // gotoMysurvey();
     })
     .catch((error) => console.log("error", error))
 }
