@@ -1,10 +1,19 @@
 const $SurveyQuestion = document.querySelector("#SurveyQuestion");
+var questions = document.getElementById("SurveyQuestion");
 var my_jwt = localStorage.getItem('x-access-token');
+var semipostDetailResults = new Array();
+var postDetailId;
+var formats = new Array(); // 여기에 format 넣음. 
+var checkboxes = new Array();
+var postLength = 0;
+
+function gotoParticipatedSurvey() {
+    var link="../html/participatedSurvey.html";
+    location.href=link;
+}
 
 const rpostId = location.href.split('?')[1];
 console.log(rpostId);
-
-var qcount; // 총 질문 개수
 
 const fetchSuryeyIn = () => {
     var requestOptions = {
@@ -18,8 +27,9 @@ const fetchSuryeyIn = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
-            qcount = webResult.result.length
             console.log(webResult);
+            postLength = webResult.result.length;
+            console.log(postLength);
             webResult.result.map(item => SurveyInTemplate(item));
         })
         .catch((error) => console.log("error", error));
@@ -29,71 +39,103 @@ const fetchSuryeyIn = () => {
 fetchSuryeyIn();
 
 var count = 0;
-function test(data) {
-    for(var i=0; i<qcount; i++) {
-        var questionDiv = document.createElement("div");
-        questionDiv.className = 'question';
-        if(data.format == 1) {
-            var q1Span = document.createElement("span");
-            q1Span.className = 'Q3';
-            var reqSpan = document.createElement("span");
-            reqSpan.className = 'required';
-
-            questionDiv.appendChild(q1Span);
-            questionDiv.appendChild(reqSpan);
-        }
-
-    }
-}
-//type 1:객관식 2:체크박스 3:단답형 4:장문형
 function SurveyInTemplate(data) {
+    semipostDetailResults[count] = new Array(2);
+
+    formats[count] = data.format;
+
     count++;
-    console.log(qcount);
+    var questionDiv = document.createElement("div");
+    questionDiv.className = 'question';
+    
+    // 객관식 - 라디오 버튼
     if(data.format == 1) {
-        var SurveyQ = `
-        <div class="question">
-                <span class="Q3">${count + ".   " + data.question}</span>
-                <span class="required">필수</span>`
+        // 질문
+        var q1Span = document.createElement("span");
+        q1Span.className = 'Q1';
+        q1Span.textContent = count + ".   " + `${data.question}`;
+        var reqSpan = document.createElement("span");
+        reqSpan.className = 'required';
+        reqSpan.textContent = "필수";
 
-        var SurveyOption = `
-            <div id="radioBox">
-                <div class="Qtype1">
-                    <input type = "radio" name = "item"> <span class="radioBtnText">${data.items[1]} </span> 
-                </div>
-            </div>
-        </div>`
-    $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
-    $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyOption);
+        questionDiv.appendChild(q1Span);
+        questionDiv.appendChild(reqSpan);
+        questions.appendChild(questionDiv);
+
+        // 답 - 라디오 버튼
+        var rBtnDiv = document.createElement("div");
+        rBtnDiv.className = 'radioBox'
+        for(var j=0; j<data.items.length; j++) {
+            var itemDiv = document.createElement("div");
+            itemDiv.className = 'Qtype1';
+
+            // 선택된 result를 위해 value 속성 추가. 해당 value 가진 input의 text 꺼내서 보내면 되지 않을까?
+            var inputDiv = document.createElement("input");
+            inputDiv.type = 'radio';
+            postDetailId = `${data.postDetailId}`;
+            semipostDetailResults[count-1][0] = Number(postDetailId);
+            inputDiv.name = postDetailId;
+            inputDiv.value = j;
+            // semipostDetailResults[count-1][1] = Number(inputDiv.value);
+
+            var inputTextDiv = document.createElement("span");
+            inputTextDiv.className = 'radioBtn';
+            inputTextDiv.textContent = data.items[j];
+            
+            itemDiv.appendChild(inputDiv);
+            itemDiv.appendChild(inputTextDiv);
+            rBtnDiv.appendChild(itemDiv);
+            questionDiv.appendChild(rBtnDiv);
+        }
     }
+    // 객관식 - 체크박스 버튼
     else if(data.format == 2) {
-        var SurveyQ = `<div class="question">
-        <span id="Q3">${data.question}</span>
-        <span class="required">필수</span>
+        // 질문
+        var q1Span = document.createElement("span");
+        q1Span.className = 'Q1';
+        q1Span.textContent = count + ".   " + `${data.question}`;
+        var reqSpan = document.createElement("span");
+        reqSpan.className = 'required';
+        reqSpan.textContent = "필수";
 
-        <div id="radioBox">
-            <div class="Qtype1">
-                <input type = "checkbox" name = "count" value = "1-2"> <span class="radioBtnText">한 달에 1-2번 </span> 
-            </div>
-            <div class="Qtype1">
-                <input type = "checkbox" name = "count" value = "1"> <span class="radioBtnText">일주일에 1번 </span> 
-            </div>
-            <div class="Qtype1">
-                <input type = "checkbox" name = "count" value = "3-4"> <span class="radioBtnText">일주일에 3-4번 </span> 
-            </div>
-            <div class="Qtype1">
-                <input type = "checkbox" name = "count" value = "all"> <span class="radioBtnText">매일</span> 
-            </div>
-            <div class="Qtype1">
-                <input type = "checkbox" name = "count" value = "etc"> <span class="radioBtnText">기타</span> 
-            </div>
-        </div>
-    </div>`
-    $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
-    $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyOption);
+        questionDiv.appendChild(q1Span);
+        questionDiv.appendChild(reqSpan);
+        questions.appendChild(questionDiv);
+
+        // 답 - 체크박스 버튼
+        var rBtnDiv = document.createElement("div");
+        rBtnDiv.className = 'checkBoxBox';
+        postDetailId = `${data.postDetailId}`;
+        semipostDetailResults[count-1][0] = Number(postDetailId);
+        for(var j=0; j<data.items.length; j++) {
+            var itemDiv = document.createElement("div");
+            itemDiv.className = 'Qtype2';
+
+            // 선택된 result를 위해 value 속성 추가. 해당 value 가진 input의 text 꺼내서 보내면 되지 않을까?
+            var inputDiv = document.createElement("input");
+            inputDiv.type = 'checkbox';
+            postDetailId = `${data.postDetailId}`;
+            semipostDetailResults[count-1][0] = Number(postDetailId);
+            inputDiv.name = postDetailId;
+            inputDiv.value = j;
+
+            var inputTextDiv = document.createElement("span");
+            inputTextDiv.className = 'checkBoxBtn';
+            inputTextDiv.textContent = data.items[j];
+            
+            itemDiv.appendChild(inputDiv);
+            itemDiv.appendChild(inputTextDiv);
+            rBtnDiv.appendChild(itemDiv);
+            questionDiv.appendChild(rBtnDiv);
+        }
     }
+    // 단답형
     else if(data.format == 3) {
+        postDetailId = `${data.postDetailId}`;
+        semipostDetailResults[count-1][0] = Number(postDetailId);
+        // semipostDetailResults[count-1][1] = inputDiv.value;
         var SurveyQ = `<div class="question">
-        <span id="Q1">${data.question}</span>
+        <span class="Q1">${count + ".   " + data.question}</span>
         <span class="required">필수</span>
         <input type="text" class="Qtype3" maxlength="30"
         placeholder="자유롭게 적어주세요."
@@ -102,16 +144,75 @@ function SurveyInTemplate(data) {
     </div>`
     $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
     }
-
+    // 장문형
     else if(data.format == 4) {
+        postDetailId = `${data.postDetailId}`;
+        semipostDetailResults[count-1][0] = Number(postDetailId);
         var SurveyQ = `<div class="question">
-        <span id="Q2">${data.question}</span>
+        <span class="Q1">${count + ".   " + data.question}</span>
         <span class="required">필수</span>
-        <textarea id="Qtype4" cols="108" rows="15" 
+        <textarea class="Qtype4" cols="108" rows="10" 
         placeholder=" 자유롭게 적어주세요."
         onfocus="this.placeholder = ''" 
         onblur="this.placeholder = ' 자유롭게 적어주세요.'"></textarea>
     </div>`
     $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
     }
+    // console.log(semipostDetailResults);
+}
+
+// 답변 등록
+function sendPost() {
+    for(var i=0; i<postLength; i++) {
+        var tt = semipostDetailResults[i][0];
+        if( formats[i] == 1 ) {
+            semipostDetailResults[i][1] = Number($(`input[name=${tt}]:checked`).val());
+        }
+        else if( formats[i] == 2 ) {
+            const query = `input[name="${tt}"]:checked`;
+            const selectedElements = document.querySelectorAll(query);
+            
+            // 선택된 목록의 개수 세기
+            const selectedElementsCnt =selectedElements.length;
+
+            checkboxes[i] = new Array(selectedElementsCnt);
+            var j=0;
+            selectedElements.forEach((el) => {
+                checkboxes[i][j++] = Number(el.value);
+               
+            });
+            semipostDetailResults[i][1] = checkboxes[i];
+            console.log(semipostDetailResults[i][1]);
+        }
+        else if( formats[i] == 3 ) {
+            semipostDetailResults[i][1] = $(`input[type="text"]`).val();
+        }
+        else if( formats[i] == 4 ) {
+            semipostDetailResults[i][1] = $(`textarea`).val();
+        }
+    }
+    console.log(semipostDetailResults);
+
+    const sendList = {
+        "postId" : rpostId,
+        "postDetailResults" : semipostDetailResults
+    }
+
+    console.log(JSON.stringify(sendList));
+
+    fetch(`http://seolmunzip.shop:9000/results` , {
+        method: "POST",
+        headers: {
+            'x-access-token' : my_jwt,
+            'Content-Type': 'application/json'            
+        },
+        body: JSON.stringify(sendList)
+    })
+
+    .then((response) => response.json())
+    .then((response2) => {
+        console.log(response2.message);
+        gotoParticipatedSurvey();
+    })
+    .catch((error) => console.log("error", error))
 }
