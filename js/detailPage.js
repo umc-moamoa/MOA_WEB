@@ -1,6 +1,5 @@
 const $SurveyDetail = document.querySelector("#detailMain");
 var my_jwt = localStorage.getItem('x-access-token');
-var postuser_id;
 var myPost;
 var like;
 
@@ -14,7 +13,6 @@ const fetchDetail = () => {
         .then((response) => response.json())
         .then((webResult) => {
             SurveyDetailTemplate(webResult.result);
-            console.log(webResult);
         })
         .catch((error) => console.log("error", error));
 }
@@ -23,77 +21,202 @@ fetchDetail();
 
 function SurveyDetailTemplate (data) {
 
-    myPost = data.myPost;
+    const SurveyDetailItem_closed_myPost = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
+        </div>
 
-    // myPost라면 설문 삭제 버튼
-    const SurveyDetailItem1 = `
-            <div id="mainTop">
-            <div class="flex-container1">
-                <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-                <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
-            </div>
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp; CLOSED</span></div>
+        </div>
+        </div>
 
-            <div class="flex-container2">
-                <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;</span></div>
-                <div class="flex-item2"><span id="deadline">ㅣ&nbsp;&nbsp;D-${data.d_day}</span></div>
-            </div>
-            </div>
+        <div id="mainBottom"> ${data.content} </div>
 
-            <div id="mainBottom"> ${data.content} </div>
-
-            <div class="join">
-                <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
-            </div> 
+        <div class="join">
+            <button id="joinBtn" onClick="closed_alert();">마감된&nbsp;&nbsp;설문</button>
+        </div> 
     `;
-    // myPost가 아니라면 하트 버튼
-    // like가 true면 찬 하트 표시
-    const SurveyDetailItem2 = `
-            <div id="mainTop">
-            <div class="flex-container1">
-                <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-                <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart2.png" width="40%" onclick="heart();"/></button></div>
-            </div>
+    const SurveyDetailItem_closed_like = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart2.png" width="40%" onclick="heart();"/></button></div>
+        </div>
 
-            <div class="flex-container2">
-                <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;</span></div>
-                <div class="flex-item2"><span id="deadline">ㅣ&nbsp;&nbsp;D-${data.d_day}</span></div>
-            </div>
-            </div>
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp; CLOSED</span></div>
+        </div>
+        </div>
 
-            <div id="mainBottom"> ${data.content} </div>
+        <div id="mainBottom"> ${data.content} </div>
 
-            <div class="join">
-                <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
-            </div> 
+        <div class="join">
+            <button id="joinBtn" onClick="closed_alert();">마감된&nbsp;&nbsp;설문</button>
+        </div> 
     `;
-    // like가 false면 빈 하트 표시
-    const SurveyDetailItem3 = `
-    <div id="mainTop">
-    <div class="flex-container1">
-        <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-        <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart.png" width="40%" onclick="heart();"/></button></div>
-    </div>
+    const SurveyDetailItem_closed_nolike = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart1.png" width="40%" onclick="heart();"/></button></div>
+        </div>
 
-    <div class="flex-container2">
-        <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;</span></div>
-        <div class="flex-item2"><span id="deadline">ㅣ&nbsp;&nbsp;D-${data.d_day}</span></div>
-    </div>
-    </div>
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp;CLOSED</span></div>
+        </div>
+        </div>
 
-    <div id="mainBottom"> ${data.content} </div>
+        <div id="mainBottom"> ${data.content} </div>
 
-    <div class="join">
-        <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
-    </div> 
-`;
-    
-    if(myPost == true) {
-        $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem1);
-    } else if(myPost == false) { 
-        if(data.like == true) {
-            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem2);
-        } else if(data.like == false) {
-            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem3);
+        <div class="join">
+            <button id="joinBtn" onClick="closed_alert();">마감된&nbsp;&nbsp;설문</button>
+        </div> 
+    `;
+    const SurveyDetailItem_dday_myPost = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
+        </div>
+
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp; D-DAY</span></div>
+        </div>
+        </div>
+
+        <div id="mainBottom"> ${data.content} </div>
+
+        <div class="join">
+            <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
+        </div> 
+    `;
+    const SurveyDetailItem_dday_like = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart2.png" width="40%" onclick="heart();"/></button></div>
+        </div>
+
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp; D-DAY</span></div>
+        </div>
+        </div>
+
+        <div id="mainBottom"> ${data.content} </div>
+
+        <div class="join">
+            <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
+        </div> 
+    `;
+    const SurveyDetailItem_dday_nolike = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart1.png" width="40%" onclick="heart();"/></button></div>
+        </div>
+
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp;D-DAY</span></div>
+        </div>
+        </div>
+
+        <div id="mainBottom"> ${data.content} </div>
+
+        <div class="join">
+            <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
+        </div> 
+    `;
+
+    const SurveyDetailItem_d_myPost = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
+        </div>
+
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp; D-${data.dday}</span></div>
+        </div>
+        </div>
+
+        <div id="mainBottom"> ${data.content} </div>
+
+        <div class="join">
+            <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
+        </div> 
+    `;
+    const SurveyDetailItem_d_like = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart2.png" width="40%" onclick="heart();"/></button></div>
+        </div>
+
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp; D-${data.dday}</span></div>
+        </div>
+        </div>
+
+        <div id="mainBottom"> ${data.content} </div>
+
+        <div class="join">
+            <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
+        </div> 
+    `;
+    const SurveyDetailItem_d_nolike = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart1.png" width="40%" onclick="heart();"/></button></div>
+        </div>
+
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp;D-${data.dday}</span></div>
+        </div>
+        </div>
+
+        <div id="mainBottom"> ${data.content} </div>
+
+        <div class="join">
+            <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
+        </div> 
+    `
+
+    if(data.status =='CLOSED'){
+        if(data.myPost == true){ // 설문 삭제
+            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_closed_myPost);
+        }else if(data.myPost == false && data.like == true ){ // 찬하트
+            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_closed_like);
+        }else if(data.myPost == false && data.like == false){ // 빈하트
+            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_closed_nolike);
+        }
+    }else if(data.dday == 0){
+        if(data.myPost == true){ // 설문 삭제
+            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_dday_myPost);
+        }else if(data.myPost == false && data.like == true ){ // 찬하트
+            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_dday_like);
+        }else if(data.myPost == false && data.like == false){ // 빈하트
+            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_dday_nolike);
+        }
+    }else{
+        if(data.myPost == true){ // 설문 삭제
+            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_d_myPost);
+        }else if(data.myPost == false && data.like == true ){ // 찬하트
+            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_d_like);
+        }else if(data.myPost == false && data.like == false){ // 빈하트
+            $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_d_nolike);
         }
     }
 }
@@ -155,4 +278,8 @@ function interested_item_delete(){
 
     .then((response) => response.json())
     .catch((error) => console.log("error", error))
+}
+
+function closed_alert(){
+    alert("이미 마감된 설문조사입니다.");
 }
