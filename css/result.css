@@ -191,7 +191,7 @@ ul {
     margin-left: 25px;
 }
 
-.sub-container {
+.sub-container,.sub-container2,.sub-container3,.sub-container4 {
     margin-top: 25px;
     font-family: 'Noto Sans KR';
     font-style: normal;
@@ -201,7 +201,7 @@ ul {
     color: #414141;
 }
 
-#textResultBox {
+#textResultBox, #textResultBox2 {
     height:250px;
     overflow-y: scroll;
     margin-top: 5px;
