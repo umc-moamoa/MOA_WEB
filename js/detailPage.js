@@ -247,12 +247,12 @@ function heart(){
     const $heartImg = document.querySelector(".heartImg");
     const $heartImgCheck = document.querySelector(".heartImg").getAttribute( 'src' );
 
-    if($heartImgCheck == "../image/Heart.png" || like == true){
+    if($heartImgCheck == "../image/Heart.png" || like == false){
         like = true;
         $heartImg.setAttribute('src',"../image/Heart2.png"); // 찬 하트
         interested_item_add();
         
-    }else if($heartImgCheck == "../image/Heart2.png" || like == false){
+    }else if($heartImgCheck == "../image/Heart2.png" || like == true){
         like = false;
         $heartImg.setAttribute('src',"../image/Heart.png"); // 빈 하트
         interested_item_delete();
