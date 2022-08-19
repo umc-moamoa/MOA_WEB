@@ -224,6 +224,10 @@ footer td p {
     color: #6C6C6C;
 }
 
+#deadline {
+    color: #4E7FF2;
+}
+
 #mainBottom {
     padding-top: 25px;
     padding-bottom: 20px;
