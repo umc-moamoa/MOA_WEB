@@ -7,6 +7,7 @@ function addQuestion() {
         return value;
     }
 
+    var textareaDiv = document.createElement("textarea");
     function changeQtype() {
         var thisQs = div1.children;
         for (var i=1; i<thisQs.length-1; i++) {
@@ -22,8 +23,10 @@ function addQuestion() {
                 thisQs[1].children[1].placeholder = '옵션 1';
                 thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="옵션 1"');
 
+                thisQs[1].style.display = '';
                 thisQs[2].style.display = '';
                 thisQs[3].style.display = '';
+                thisQs[4].style.display = 'none';
             }
             else if (thisQvalue == 2) {
                 thisQinput2.type = 'checkbox'; 
@@ -35,9 +38,10 @@ function addQuestion() {
                 thisQs[1].children[1].placeholder = '옵션 1';
                 thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="옵션 1"');
 
+                thisQs[1].style.display = '';
                 thisQs[2].style.display = '';
                 thisQs[3].style.display = '';
-
+                thisQs[4].style.display = 'none';
             }
             else if (thisQvalue == 3) {
                 thisQs[1].children[0].style.visibility = 'hidden';
@@ -47,23 +51,25 @@ function addQuestion() {
                 thisQs[1].children[1].placeholder = '단답형';
                 thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="단답형"');
 
+                thisQs[1].style.display = '';
                 thisQs[2].style.display = 'none';
                 thisQs[3].style.display = 'none';
+                thisQs[4].style.display = 'none';
             }
             else if (thisQvalue == 4) {
-                
-                thisQs[1].children[0].style.visibility = 'hidden';
-                thisQs[1].children[2].style.display = 'none';
+                textareaDiv.setAttribute('placeholder', '장문형');
+                textareaDiv.setAttribute('onfocus', 'this.placeholder=""');
+                textareaDiv.setAttribute('onblur', 'this.placeholder="장문형"');
+                textareaDiv.setAttribute('class', 'Qtype4');
+                textareaDiv.setAttribute('cols', '108');
+                textareaDiv.setAttribute('rows', '5');
+                thisQs[4].insertAdjacentElement('beforebegin',textareaDiv);
 
+                thisQs[1].style.display = 'none';
                 thisQs[2].style.display = 'none';
                 thisQs[3].style.display = 'none';
-
-                thisQs[1].children[1].value = ''; 
-                thisQs[1].children[1].placeholder = '장문형';
-                thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="장문형"');
-                // var longtext = document.createElement("textarea");
-                // longtext.setAttribute('placeholder', '장문형');
-                // longtext.setAttribute('onblur', 'this.placeholder="장문형"');
+                thisQs[4].style.display = '';
+                break;
             }
         }
     }
