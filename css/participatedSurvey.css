@@ -19,7 +19,6 @@ a {
 ul,li{
     list-style: none;
 }
-
 .header {    
     position: relative;
     width: 100%;
@@ -38,23 +37,19 @@ ul,li{
 #userMenu * {
     font-weight: 400;
     font-size: 12px;
-    /* letter-spacing: 0.1em; */
     color: #414141;
 }
 ul {
     display: block;
     margin-block-start: 10px;
     margin-block-end: 10px;
-    /* padding-inline-start: 20px; */
 }
-
 #userMenu .menu {
     position: relative;
     float: left;
     z-index: 400;
     margin-right: 15px;
 }
-
 #userMenu:after{
     content: "";
     display: block;
@@ -74,25 +69,21 @@ ul {
     display: block;
     width: 140px;
     margin: 0 auto;
-    /* margin-left: 80px; */
 }
 
 /* gnb */
 .gnb_main {
     width: 100%;
-/*     height: 40px; */
     margin: 30px auto; 
     margin-bottom: 0;
     border-right: none;
     border-left: none;
     box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
-    /* padding-top: 0.5px; */
 }
 .gnb{
     text-align: center;
     padding: 8px 0;
     margin: 0;
-/*     vertical-align:middle; */
 }
 .gnb li {
     display: inline;
@@ -114,7 +105,6 @@ ul {
 
 /* container */
 #wrapper .container {
-    /* min-height: 300vh; */
     width: 995px;
     margin: 70px auto;
     margin-bottom: 100px;
@@ -122,7 +112,6 @@ ul {
 }
 
 footer .container {
-    /* min-height: 300vh; */
     width: 970px;
     margin: 30px auto;
     padding: 0 65px;
@@ -131,7 +120,6 @@ footer .container {
 /*서브 제목*/
 #subTitle .subTitle {
     position: relative;
-
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
@@ -141,80 +129,55 @@ footer .container {
 
 /* main1 */
 #main1 {
-    /* position: relative; */
-    padding: 10px;
+    padding: 15px;
     margin: 15px;
-    /* height: auto; */
     background: #FFFFFF;
     border: 1px solid #909090;
 }
-
 .one-container1 {
     display: flex;
     justify-content : space-between;
     align-items: flex-end;
 }
-
 #title1 {
-    /* top: 5%; */
     font-size: 18px;
     color: #414141;
     font-weight: bold;
-    text-decoration: none;
 }
-
 .two-container1 {
-    margin-top: 2%;
+    margin-top: 5px;
     display: flex;
     justify-content: flex-start;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
-    font-weight: bold;
     color: #6C6C6C;
 }
-
-#count1 {
-    border-right: 0.1em solid #6C6C6C;
-    padding-right: 1em;
-}
-
-#type1 {
-    padding-left: 1em;
-}
-
 .three-container1{
-    margin-top: -7%;
     display: flex;
     justify-content:right;
 }
-
 #point1 {
-    font-size: 1.3em;
+    font-size: 18px;
     font-weight: 500;
-    color: #9CC2FF;
+    color: #4E7FF2;
+    padding-top: 10px;
 }
-
 .slick-slide{
     padding-right: 30px;
 }
-
 .arrow {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    top:480px;
+    top:530px;
     z-index: 200;
-    /* left:165px; */
 }
-
 .prev {
     margin-right: 780px;
 }
-
 .arrow img {
     width: 40px;
 }
-
 #SurveyList {
     padding:35px;
 }
@@ -228,19 +191,14 @@ footer {
     margin: 0 auto;
     width: 100%;
 }
-
 #wrapper {
-    /* height: auto; */
     min-height: 100vh;
     position: relative;
     height:700px;
-    /* padding-bottom: 226.302; */
 }
-
 table {
     width: 100%;
 }
-
 footer a {
     color: #909090;
     text-decoration: none;
@@ -257,9 +215,6 @@ footer a {
     font-size: 12px;
     font-weight: 500;
 }
-/* footer .container {
-    padding: 0 auto;
-} */
 footer ul {
     padding-inline-start: 100px;
 }

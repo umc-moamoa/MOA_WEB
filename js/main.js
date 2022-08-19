@@ -20,7 +20,7 @@ fetchSurvey1();
 
 function SurveyListTemplate1 (data) {
     const sendPostId = data.postId;
-    console.log(sendPostId);
+    //console.log(sendPostId);
 
     const SurveyItem = 
     `<div id="main1">
@@ -61,7 +61,7 @@ fetchSurvey2();
 
 function SurveyListTemplate2 (data) {
     const sendPostId = data.postId;
-    console.log(sendPostId);
+    //console.log(sendPostId);
 
     const SurveyItem = 
     `<div id="main1">

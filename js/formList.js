@@ -35,7 +35,6 @@ fetchSurvey();
 function SurveyListTemplate (data) {
 
     const sendPostId = data.postId;
-    console.log(sendPostId);
 
     const SurveyItem1 = `<div id="main1">
                             <div class="one-container1">
@@ -88,56 +87,47 @@ function SurveyListTemplate (data) {
 }
 
 function slick(){
-    // $(document).ready(function(){
-        if ( category == 1 ) {
-            $('#SurveyList1').slick({
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                rows:3,
-                infinite:false,
-                prevArrow : $('.prev'), 
-                nextArrow : $('.next'), 
-            });
-        }
-        else if ( category == 2 ) {
-            $('#SurveyList2').slick({
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                rows:3,
-                infinite:false,
-                prevArrow : $('.prev'), 
-                nextArrow : $('.next'), 
-            });
-        }
-        else if ( category == 3 ) {
-            $('#SurveyList3').slick({
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                rows:3,
-                infinite:false,
-                prevArrow : $('.prev'), 
-                nextArrow : $('.next'), 
-            });
-        }
-        else if ( category == 4 ) {
-            $('#SurveyList4').slick({
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                rows:3,
-                infinite:false,
-                prevArrow : $('.prev'), 
-                nextArrow : $('.next'), 
-            });
-        }
-    // });
+    if ( category == 1 ) {
+        $('#SurveyList1').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            rows:3,
+            infinite:false,
+            prevArrow : $('.prev'), 
+            nextArrow : $('.next'), 
+        });
+    }
+    else if ( category == 2 ) {
+        $('#SurveyList2').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            rows:3,
+            infinite:false,
+            prevArrow : $('.prev'), 
+            nextArrow : $('.next'), 
+        });
+    }
+    else if ( category == 3 ) {
+        $('#SurveyList3').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            rows:3,
+            infinite:false,
+            prevArrow : $('.prev'), 
+            nextArrow : $('.next'), 
+        });
+    }
+    else if ( category == 4 ) {
+        $('#SurveyList4').slick({
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            rows:3,
+            infinite:false,
+            prevArrow : $('.prev'), 
+            nextArrow : $('.next'), 
+        });
+    }
 }
-
- // 1->2->1 눌렀을 때 폼 목록 하나 더 생기는 거 해결하기 -> slick에 문제가 있는 것 같기도..?
-// onchange 될 때 추가하는 게 아니라, 처음 페이지 로딩되면 다 추가해놓고, onchange 되는 거에 따라 보여주기만 해야될듯.
-// 4파트를 만들어놓고, selectedValue에 따라서 visible 그거 ?.. 흠
-// 시도하다가 몇시간 날렸음
-
-// 뭐하지.?? -> 음, 최초 호출 count 제한을 둬볼까.. 2,3,4일 때 또 호출되는 게 문제인 거임. 그럼 똑같은 데이터로 또 생겨버리니까,,
 
 var count2 = 0;
 var count3 = 0;

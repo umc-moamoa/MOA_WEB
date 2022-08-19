@@ -12,8 +12,11 @@ const fetchParticipate = () => {
         requestOptions
     )
         .then((response) => response.json())
-        .then((webResult) => webResult.result.map(item => ParticipateListTemplate(item)))
-        .then((webResult) => slick())
+        .then((webResult) => {
+            webResult.result.map(item => ParticipateListTemplate(item));
+            console.log(webResult);
+            slick();
+        })
         .catch((error) => console.log("error", error));
 }
 
@@ -25,8 +28,8 @@ function ParticipateListTemplate(data) {
         <a id="title1" href="../html/detailPage.html">  ${data.title}  </a>
     </div>
     <div class="two-container1">
-        <span id="count1">${data.qcount}개 항목</span>
-        <span id="type1">D-4</span>
+        <span id="count1">${data.qcount}개 항목&nbsp;&nbsp;</span>
+        <span id="type1">ㅣ&nbsp;&nbsp;D-${data.d_day}</span>
     </div>
     <div class="three-container1">
         <span id="point1">  ${data.point}P  </span>

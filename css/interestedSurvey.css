@@ -38,16 +38,13 @@ ul,li{
 #userMenu * {
     font-weight: 400;
     font-size: 12px;
-    /* letter-spacing: 0.1em; */
     color: #414141;
 }
 ul {
     display: block;
     margin-block-start: 10px;
     margin-block-end: 10px;
-    /* padding-inline-start: 20px; */
 }
-
 #userMenu .menu {
     position: relative;
     float: left;
@@ -87,7 +84,6 @@ ul {
     text-align: center;
     padding: 8px 0;
     margin: 0;
-/*     vertical-align:middle; */
 }
 .gnb li {
     display: inline;
@@ -107,10 +103,8 @@ ul {
     font-weight: 700;
 }
 
-
 /* container */
 #wrapper .container {
-    /* min-height: 300vh; */
     width: 995px;
     margin: 70px auto;
     margin-bottom: 100px;
@@ -118,7 +112,6 @@ ul {
 }
 
 footer .container {
-    /* min-height: 300vh; */
     width: 970px;
     margin: 30px auto;
     padding: 0 65px;
@@ -127,7 +120,6 @@ footer .container {
 /*서브 제목*/
 #subTitle .subTitle {
     position: relative;
-
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
@@ -170,7 +162,6 @@ footer .container {
     color: #4E7FF2;
     padding-top: 10px;
 }
-
 .slick-slide{
     padding-right: 30px;
 }
@@ -181,15 +172,12 @@ footer .container {
     top:530px;
     z-index: 200;
 }
-
 .prev {
     margin-right: 780px;
 }
-
 .arrow img {
     width: 40px;
 }
-
 #SurveyList {
     padding:35px;
 }
@@ -198,23 +186,17 @@ footer .container {
 footer {
     background-color: white;
     color: #909090;
-
     bottom: 0;
     margin: 0 auto;
     width: 100%;
 }
-
 #wrapper {
-    /* height: auto; */
     min-height: 100vh;
     position: relative;
-    /* padding-bottom: 226.302; */
 }
-
 table {
     width: 100%;
 }
-
 footer a {
     color: #909090;
     text-decoration: none;
@@ -231,9 +213,6 @@ footer a {
     font-size: 12px;
     font-weight: 500;
 }
-/* footer .container {
-    padding: 0 auto;
-} */
 footer ul {
     padding-inline-start: 100px;
 }
