@@ -1,45 +1,153 @@
-const receivedPostId = location.href;
+// const $questionTitle = document.querySelector(".questionTitle");
+const $resultList = document.querySelector(".resultContainer");
+const $textResultBox = document.querySelector("#textResultBox");
+// const $subContainer = document.querySelector(".sub-container");
+const $subMain = document.querySelector(".subMain");
+
+const receivedPostId = location.href.split('?')[1];
 console.log(receivedPostId);
 
-const fetchResult = () => {
-  var requestOptions = {
-      method: "Get",
-  };
-
-  fetch(
-      "http://seolmunzip.shop:9000/results/52",
-      requestOptions
-  )
-      .then((response) => response.json())
-      .then((webResult) =>console.log(webResult) )
-      .then((webResult) => slick())
-      .catch((error) => console.log("error", error));
-}
-
-fetchResult();
-
+//설문조사의 총 질문 수 파악
 const fetchResultDetailId = () => {
   var requestOptions = {
       method: "Get",
   };
 
   fetch(
-      "http://seolmunzip.shop:9000/results/repeat/26",
+      `http://seolmunzip.shop:9000/results/repeat/52`,
       requestOptions
   )
       .then((response) => response.json())
-      .then((webResult) =>console.log(webResult) )
-      .then((webResult) => slick())
+      .then((webResult) =>{
+        console.log(webResult);
+        putResultTemplate(webResult.result);
+      })
       .catch((error) => console.log("error", error));
 }
 
+function putResultTemplate(data) {
+  for(i = data.startPostDetailId; i <= data.endPostDetailId; i++){
+      fetchResult(i);
+    }
+  }
+
 fetchResultDetailId();
 
-function resultTemplate(data) {
+//문항별 결과 
+function fetchResult(postDetailId) {
+  var requestOptions = {
+          method: "Get",
+      };
 
+      fetch(
+        `http://seolmunzip.shop:9000/results/${postDetailId}`,
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) =>{
+          console.log(webResult.result);
+          resultTemplate(webResult.result);
+        })
+        .catch((error) => console.log("error", error));
+}
+
+//결과 템플릿
+function resultTemplate(data) {
+  if(data.format == 1) { 
+    
+    var resultQuestion = `&nbsp;${data.question}`;
+    var resultTemplate = `
+      <div class="sub-container">
+        <div class="questionTitle">
+        </div>
+      </div>
+    `
+    var resultProgress = `
+    <div class="resultContainer">
+    <div>Figma&nbsp;</div>
+        <div class="progress-bar">           
+            <div class="progress"> </div>
+        </div>
+    <div>&nbsp;72%</div>
+    </div>`
+    $subMain.insertAdjacentHTML('beforeend', resultTemplate);
+    const $subContainer = document.querySelector(".sub-container");
+    const $questionTitle = document.querySelector(".questionTitle");
+    $subContainer.insertAdjacentHTML('beforeend', resultProgress);
+    $questionTitle.insertAdjacentHTML('beforeend', resultQuestion);
+    graphAnimation();
+
+}
+  else if(data.format == 2) {
+    var resultQuestion = `&nbsp;${data.question}`;
+    var resultTemplate = `
+      <div class="sub-container2">
+        <div class="questionTitle2">
+        </div>
+      </div>
+    `
+    var resultProgress = `
+    <div class="resultContainer">
+    <div>Figma&nbsp;</div>
+        <div class="progress-bar">           
+            <div class="progress"> </div>
+        </div>
+    <div>&nbsp;72%</div>
+    </div>`
+    $subMain.insertAdjacentHTML('beforeend', resultTemplate);
+    const $subContainer = document.querySelector(".sub-container2");
+    const $questionTitle = document.querySelector(".questionTitle2");
+    $subContainer.insertAdjacentHTML('beforeend', resultProgress);
+    $questionTitle.insertAdjacentHTML('beforeend', resultQuestion);
+    graphAnimation();
+  }
+  else if(data.format == 3) {
+    var resultQuestion = `&nbsp;${data.question}`;
+    var resultTemplate = `
+      <div class="sub-container3">
+        <div class="questionTitle3">
+        </div>
+        <div class="textResultBox">
+        </div>
+      </div>
+    `
+    var resultText = `
+    <div id="textResultItem">010-1234-5678</div>`
+    $subMain.insertAdjacentHTML('beforeend', resultTemplate);
+    const $textResultBox = document.querySelector(".textResultBox");
+    const $questionTitle = document.querySelector(".questionTitle3");
+    for(i=0; i<(data.getResultStatisticsRes).length;i++){
+      var resultText = `
+      <div id="textResultItem">${data.getResultStatisticsRes[i].result}</div>`
+      $textResultBox.insertAdjacentHTML('beforeend', resultText);
+    }
+    $questionTitle.insertAdjacentHTML('beforeend', resultQuestion);
+  }
+  else if(data.format == 4) {
+    var resultQuestion = `&nbsp;${data.question}`;
+    var resultTemplate = `
+      <div class="sub-container4">
+        <div class="questionTitle4">
+        </div>
+        <div class="textResultBox2">
+        </div>
+      </div>
+    `
+  
+    $subMain.insertAdjacentHTML('beforeend', resultTemplate);
+    const $textResultBox = document.querySelector(".textResultBox2");
+    const $questionTitle = document.querySelector(".questionTitle4");
+    for(i=0; i<(data.getResultStatisticsRes).length;i++){
+      var resultText = `
+      <div id="textResultItem">${data.getResultStatisticsRes[i].result}</div>`
+      $textResultBox.insertAdjacentHTML('beforeend', resultText);
+    }
+    $questionTitle.insertAdjacentHTML('beforeend', resultQuestion);
+  }
 }
 
 // 통계 그래프 애니메이션 효과
+function graphAnimation() {
 const $bar = document.querySelector(".progress");
 let t = 0
 let totalMinwon = 72
@@ -48,3 +156,4 @@ const barAnimation = setInterval(() => {
   $bar.style.width =  t + '%'
   t++ >= totalMinwon && clearInterval(barAnimation)
 }, 10)
+}
