@@ -1,17 +1,50 @@
-new Chart(document.getElementById("pie-chart"), {
-    type: 'pie',
-    data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-      datasets: [{
-        label: "Population (millions)",
-        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-        data: [2478,5267,734,784,433]
-      }]
-    },
-    // options: {
-    //   title: {
-    //     display: true,
-    //     text: 'Predicted world population (millions) in 2050'
-    //   }
-    // }
-});
+const receivedPostId = location.href;
+console.log(receivedPostId);
+
+const fetchResult = () => {
+  var requestOptions = {
+      method: "Get",
+  };
+
+  fetch(
+      "http://seolmunzip.shop:9000/results/52",
+      requestOptions
+  )
+      .then((response) => response.json())
+      .then((webResult) =>console.log(webResult) )
+      .then((webResult) => slick())
+      .catch((error) => console.log("error", error));
+}
+
+fetchResult();
+
+const fetchResultDetailId = () => {
+  var requestOptions = {
+      method: "Get",
+  };
+
+  fetch(
+      "http://seolmunzip.shop:9000/results/repeat/26",
+      requestOptions
+  )
+      .then((response) => response.json())
+      .then((webResult) =>console.log(webResult) )
+      .then((webResult) => slick())
+      .catch((error) => console.log("error", error));
+}
+
+fetchResultDetailId();
+
+function resultTemplate(data) {
+
+}
+
+// 통계 그래프 애니메이션 효과
+const $bar = document.querySelector(".progress");
+let t = 0
+let totalMinwon = 72
+$bar.style.width = 0
+const barAnimation = setInterval(() => {
+  $bar.style.width =  t + '%'
+  t++ >= totalMinwon && clearInterval(barAnimation)
+}, 10)
