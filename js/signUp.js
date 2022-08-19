@@ -6,21 +6,35 @@ function join_check(){
     var nickName = document.getElementById("nickName");
 
     // 해당 입력값이 없을 경우
+    var idCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{7,15}$/;
+    var id = $("#id").val();
     if(id.value == ""){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
         $(".validId1").text("아이디를 입력하세요.");
         id.focus(); 
         return false; 
+    }else if(false === idCheck.test(id)){
+        $(".validId1").css("display","block");
+        $(".validId1").css("color","#FC4B3D");
+        $(".validId1").text("아이디는 7~15자리로 사용해야합니다.");
+        return false;
     }else{
         $(".validId1").css("display","none");
     };
     
+    var nickCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{7,15}$/;
+    var nick = $("#nickName").val();
     if (nickName.value == "") {
         $(".validId2").css("display","block");
         $(".validId2").css("color","#FC4B3D");
         $(".validId2").text("닉네임을 입력하세요.");
         nickName.focus();
+        return false;
+    }else if(false === nickCheck.test(nick)){
+        $(".validId2").css("display","block");
+        $(".validId2").css("color","#FC4B3D");
+        $(".validId2").text("닉네임은 7~15자리로 사용해야합니다.");
         return false;
     }else{
         $(".validId2").css("display","none");
@@ -82,11 +96,18 @@ function id_check() {
 }
 
 function id_check_result(data) {
+    var idCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{7,15}$/;
+    var id = $("#id").val();
     if(id.value == ""){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
         $(".validId1").text("아이디를 입력하세요.");
         id.focus();
+    }else if(false === idCheck.test(id)){
+        $(".validId1").css("display","block");
+        $(".validId1").css("color","#FC4B3D");
+        $(".validId1").text("아이디는 7~15자리로 사용해야합니다.");
+        check_id = 0;
     }else if(data == "1000"){ 
         $(".validId1").css("display","block");
         $(".validId1").css("color","#4383FF");
@@ -98,8 +119,7 @@ function id_check_result(data) {
         $(".validId1").css("color","#FC4B3D");
         $(".validId1").text("이미 사용 중인 아이디입니다.");
         check_id = 0;
-    }
-    else{
+    }else{
         $(".validId1").css("display","none");
     }
 }
@@ -121,11 +141,18 @@ function name_check() {
 }
 
 function nick_check_result(data){
+    var nickCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{7,15}$/;
+    var nick = $("#nickName").val();
     if(id.value == ""){
         $(".validId2").css("display","block");
         $(".validId2").css("color","#FC4B3D");
         $(".validId2").text("닉네임을 입력하세요.");
         id.focus();
+    }else if(false === nickCheck.test(nick)){
+        $(".validId2").css("display","block");
+        $(".validId2").css("color","#FC4B3D");
+        $(".validId2").text("닉네임은 7~15자리로 사용해야합니다.");
+        check_name = 0;
     }else if(data == "1000"){ 
         $(".validId2").css("display","block");
         $(".validId2").css("color","#4383FF");
@@ -137,8 +164,7 @@ function nick_check_result(data){
         $(".validId2").css("color","#FC4B3D");
         $(".validId2").text("이미 사용 중인 닉네임입니다.");
         check_name = 0;
-    }
-    else{
+    }else{
         $(".validId2").css("display","none");
     };
 }
