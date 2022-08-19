@@ -238,7 +238,7 @@ footer td p {
     padding-top: 15px;
 }
 
-#Qtype4 {
+.Qtype4 {
     display: block;
     width: 750px;
     border: 1px solid #919191;
@@ -256,20 +256,35 @@ footer td p {
 .Qtype1 {
     margin: 7px 0;
 }
+.Qtype2 {
+    margin: 7px 0;
+}
 
 .question {
     margin-bottom: 30px;
 }
 
-.radioBtnText {
+.radioBtn {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 12px;
     color: #414141;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
 }
 
-#radioBox {
+.radioBox {
+    margin-top: 15px;
+}
+
+.checkBoxBtn {
+    display: inline-block;
+    margin-left: 12px;
+    color: #414141;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.checkBoxBox {
     margin-top: 15px;
 }
 
@@ -291,7 +306,7 @@ footer td p {
 
 .required {
     display: inline-block;
-    margin-left: 3px;
+    margin-left: 10px;
     font-weight: 400;
     font-size: 11px;
     color: #909090;
