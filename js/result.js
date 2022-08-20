@@ -1,6 +1,8 @@
 const $resultList = document.querySelector(".resultContainer");
 const $textResultBox = document.querySelector("#textResultBox");
 const $subMain = document.querySelector(".subMain");
+const $postDetail = document.querySelector(".flex-sTitle");
+var my_jwt = localStorage.getItem('x-access-token');
 
 const receivedPostId = location.href.split('?')[1];
 console.log(receivedPostId);
@@ -182,4 +184,51 @@ function graphAnimation(percent) {
       t++ >= totalMinwon && clearInterval(barAnimation)
     }, 10)
     }
+}
+
+//post detail 가져오기
+function fetchTitle(postId) {
+  var requestOptions = {
+          method: "Get",
+          headers: {'x-access-token' : my_jwt,}
+      };
+
+      fetch(
+        `http://seolmunzip.shop:9000/posts/content/${postId}`,
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) =>{
+          titleTemplate(webResult);
+        })
+        .catch((error) => console.log("error", error));
+}
+
+function fetchCount(postId) {
+  var requestOptions = {
+          method: "Get",
+      };
+
+      fetch(
+        `http://seolmunzip.shop:9000/results/count/${postId}`,
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) =>{
+          countTemplate(webResult);
+        })
+        .catch((error) => console.log("error", error));
+}
+
+fetchTitle(receivedPostId);
+fetchCount(receivedPostId);
+
+function titleTemplate(data){
+  var title = `<div id="sTitle">${data.result.title}</div>`
+  $postDetail.insertAdjacentHTML('afterbegin', title);
+}
+
+function countTemplate(data){
+  var count = `<div id="peopleNum"><img src="../image/Group 599.png">&nbsp;${data.result.count}명 응답</div>`
+  $postDetail.insertAdjacentHTML('beforeend', count);
 }
