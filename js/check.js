@@ -27,3 +27,17 @@ function change_logout(){
 function logout(){
     localStorage.removeItem('x-access-token');
 }
+function login_alert() {
+    if(my_jwt == null){
+        var link="../html/login.html";
+        location.href=link;
+        alert("회원 전용입니다. 로그인해주세요.");
+        $('.link new').click(function () {return false;});
+        $('.best').click(function () {return false;});
+        $('.bargain').click(function () {return false;});
+        $('.event').click(function () {return false;});
+        $('.bargain').click(function () {return false;});
+        $('.link_mypage').click(function () {return false;});
+
+    }
+}

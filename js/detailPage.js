@@ -12,6 +12,7 @@ const fetchDetail = () => {
     })
         .then((response) => response.json())
         .then((webResult) => {
+            login_alert();
             SurveyDetailTemplate(webResult.result);
         })
         .catch((error) => console.log("error", error));
