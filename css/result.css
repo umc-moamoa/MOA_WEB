@@ -269,9 +269,6 @@ footer td p {
 
 /* 통계 그래프 */
 .resultContainer {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     font-family: Noto Sans KR;
     font-size: 13px;
     font-weight: 500;

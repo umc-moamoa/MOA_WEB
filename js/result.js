@@ -1,7 +1,5 @@
-// const $questionTitle = document.querySelector(".questionTitle");
 const $resultList = document.querySelector(".resultContainer");
 const $textResultBox = document.querySelector("#textResultBox");
-// const $subContainer = document.querySelector(".sub-container");
 const $subMain = document.querySelector(".subMain");
 
 const receivedPostId = location.href.split('?')[1];
@@ -47,6 +45,12 @@ function fetchResult(postDetailId) {
         .then((webResult) =>{
           console.log(webResult.result);
           resultTemplate(webResult.result);
+          // for(i = 0; i<5; i++ ){
+          //   var caseStr = 'case'+i;
+          //   console.log(typeof caseStr);
+          //   console.log(caseStr);
+          //   console.log(webResult.result.case2)
+          // }
         })
         .catch((error) => console.log("error", error));
 }
@@ -73,10 +77,20 @@ function resultTemplate(data) {
     $subMain.insertAdjacentHTML('beforeend', resultTemplate);
     const $subContainer = document.querySelector(".sub-container");
     const $questionTitle = document.querySelector(".questionTitle");
+    for(i=0; i<(data.getResultItems).length; i++){
+      var dataCase = data.case1;
+      var resultProgress = `
+      <div class="resultContainer">
+      <div>${data.getResultItems[i].item}&nbsp;-&nbsp;${data.case1}%</div>
+          <div class="progress-bar">           
+              <div class="progress"> </div>
+          </div>
+      </div>`
     $subContainer.insertAdjacentHTML('beforeend', resultProgress);
+    graphAnimation(dataCase);
+    }
     $questionTitle.insertAdjacentHTML('beforeend', resultQuestion);
-    graphAnimation();
-
+    
 }
   else if(data.format == 2) {
     var resultQuestion = `&nbsp;${data.question}`;
@@ -88,18 +102,27 @@ function resultTemplate(data) {
     `
     var resultProgress = `
     <div class="resultContainer">
-    <div>Figma&nbsp;</div>
-        <div class="progress-bar">           
-            <div class="progress"> </div>
-        </div>
-    <div>&nbsp;72%</div>
+      <div>Figma&nbsp;-&nbsp;72%</div>
+          <div class="progress-bar">           
+              <div class="progress"> </div>
+          </div>
     </div>`
     $subMain.insertAdjacentHTML('beforeend', resultTemplate);
     const $subContainer = document.querySelector(".sub-container2");
     const $questionTitle = document.querySelector(".questionTitle2");
+    for(i=0; i<(data.getResultItems).length; i++){
+      var dataCase = data.case1;
+      var resultProgress = `
+      <div class="resultContainer">
+      <div>${data.getResultItems[i].item}&nbsp;-&nbsp;${data.case1}%</div>
+          <div class="progress-bar">           
+              <div class="progress"> </div>
+          </div>
+      </div>`
     $subContainer.insertAdjacentHTML('beforeend', resultProgress);
+    graphAnimation(dataCase);
+    }
     $questionTitle.insertAdjacentHTML('beforeend', resultQuestion);
-    graphAnimation();
   }
   else if(data.format == 3) {
     var resultQuestion = `&nbsp;${data.question}`;
@@ -147,13 +170,16 @@ function resultTemplate(data) {
 }
 
 // 통계 그래프 애니메이션 효과
-function graphAnimation() {
-const $bar = document.querySelector(".progress");
-let t = 0
-let totalMinwon = 72
-$bar.style.width = 0
-const barAnimation = setInterval(() => {
-  $bar.style.width =  t + '%'
-  t++ >= totalMinwon && clearInterval(barAnimation)
-}, 10)
+function graphAnimation(percent) {
+  const $bars = document.querySelectorAll(".progress");
+
+  for (let bar of $bars) {
+    let t = 0
+    let totalMinwon = percent;
+    bar.style.width = 0
+    const barAnimation = setInterval(() => {
+      bar.style.width =  t + '%'
+      t++ >= totalMinwon && clearInterval(barAnimation)
+    }, 10)
+    }
 }
