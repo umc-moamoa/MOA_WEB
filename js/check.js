@@ -27,6 +27,8 @@ function change_logout(){
 function logout(){
     localStorage.removeItem('x-access-token');
 }
+
+// 마이페이지 로그인 제한
 function login_alert1() {
     if(my_jwt == null){
         var link="../html/login.html";
@@ -34,6 +36,65 @@ function login_alert1() {
         alert("회원 전용입니다. 로그인해주세요.");
     }else{
         var link="../html/myPage.html";
+        location.href=link;
+    }
+}
+// 새 설문 만들기 로그인 제한
+function login_alert2() {
+    if(my_jwt == null){
+        var link="../html/login.html";
+        location.href=link;
+        alert("회원 전용입니다. 로그인해주세요.");
+    }else{
+        var link="../html/makeForm.html";
+        location.href=link;
+    }
+}
+
+// 내가 만든 설문 로그인 제한
+function login_alert3() {
+    if(my_jwt == null){
+        var link="../html/login.html";
+        location.href=link;
+        alert("회원 전용입니다. 로그인해주세요.");
+    }else{
+        var link="../html/mySurvey.html";
+        location.href=link;
+    }
+}
+
+// 관심있는 설문조사 로그인 제한
+function login_alert4() {
+    if(my_jwt == null){
+        var link="../html/login.html";
+        location.href=link;
+        alert("회원 전용입니다. 로그인해주세요.");
+    }else{
+        var link="../html/interestedSurvey.html";
+        location.href=link;
+    }
+}
+
+// 참여한 설문조사 로그인 제한
+function login_alert5() {
+    if(my_jwt == null){
+        var link="../html/login.html";
+        location.href=link;
+        alert("회원 전용입니다. 로그인해주세요.");
+    }else{
+        var link="../html/participatedSurvey.html";
+        location.href=link;
+    }
+}
+
+// 포인트 내역 로그인 제한
+function login_alert6() {
+    if(my_jwt == null){
+        var link="../html/login.html";
+        location.href=link;
+        alert("회원 전용입니다. 로그인해주세요.");
+    }else{
+        var link="../html/point.html";
         location.href=link;
     }
 }
