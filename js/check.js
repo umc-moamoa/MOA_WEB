@@ -27,10 +27,13 @@ function change_logout(){
 function logout(){
     localStorage.removeItem('x-access-token');
 }
-function login_alert() {
+function login_alert1() {
     if(my_jwt == null){
         var link="../html/login.html";
         location.href=link;
         alert("회원 전용입니다. 로그인해주세요.");
+    }else{
+        var link="../html/myPage.html";
+        location.href=link;
     }
 }
