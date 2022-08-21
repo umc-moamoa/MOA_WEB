@@ -10,6 +10,7 @@ function addQuestion() {
     var textareaDiv = document.createElement("textarea");
     function changeQtype() {
         var thisQs = div1.children;
+        thisQs[4].insertAdjacentElement('beforebegin',textareaDiv);
         for (var i=1; i<thisQs.length-1; i++) {
             var thisQinput2 = thisQs[i].firstChild;
             var thisQvalue = selectedValue();
@@ -63,7 +64,7 @@ function addQuestion() {
                 textareaDiv.setAttribute('class', 'Qtype4');
                 textareaDiv.setAttribute('cols', '108');
                 textareaDiv.setAttribute('rows', '5');
-                thisQs[4].insertAdjacentElement('beforebegin',textareaDiv);
+                // thisQs[4].insertAdjacentElement('beforebegin',textareaDiv);
 
                 thisQs[1].style.display = 'none';
                 thisQs[2].style.display = 'none';
