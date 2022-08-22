@@ -5,7 +5,6 @@ const $postDetail = document.querySelector(".flex-sTitle");
 var my_jwt = localStorage.getItem('x-access-token');
 
 const receivedPostId = location.href.split('?')[1];
-console.log(receivedPostId);
 
 //설문조사의 총 질문 수 파악
 const fetchResultDetailId = () => {
@@ -14,12 +13,11 @@ const fetchResultDetailId = () => {
   };
 
   fetch(
-      `http://seolmunzip.shop:9000/results/repeat/52`,
+      `http://seolmunzip.shop:9000/results/repeat/${receivedPostId}`,
       requestOptions
   )
       .then((response) => response.json())
       .then((webResult) =>{
-        console.log(webResult);
         putResultTemplate(webResult.result);
       })
       .catch((error) => console.log("error", error));
@@ -45,14 +43,8 @@ function fetchResult(postDetailId) {
     )
         .then((response) => response.json())
         .then((webResult) =>{
-          console.log(webResult.result);
           resultTemplate(webResult.result);
-          // for(i = 0; i<5; i++ ){
-          //   var caseStr = 'case'+i;
-          //   console.log(typeof caseStr);
-          //   console.log(caseStr);
-          //   console.log(webResult.result.case2)
-          // }
+
         })
         .catch((error) => console.log("error", error));
 }
@@ -63,12 +55,11 @@ function resultTemplate(data) {
     var resultQuestion = `<div class="questionTitle">${data.question}</div>`;
     $subContainer.insertAdjacentHTML('beforeend', resultQuestion);
     for(i=0; i<(data.getResultItems).length; i++){
-      var dataCase = data.case1;
       var resultProgress = `
       <div class="resultContainer">
-        <div>${data.getResultItems[i].item}&nbsp;-&nbsp;${data.case1}%</div>
+        <div>${data.getResultItems[i].item}&nbsp;-&nbsp;${data.statistics[i]}%</div>
           <div class="progress-bar">           
-            <div class="progress" style="width:${data.case1}%;"> </div>
+            <div class="progress" style="width:${data.statistics[i]}%;"> </div>
           </div>
       </div>`
     $subContainer.insertAdjacentHTML('beforeend', resultProgress);
