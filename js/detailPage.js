@@ -12,6 +12,7 @@ const fetchDetail = () => {
     })
         .then((response) => response.json())
         .then((webResult) => {
+            console.log(webResult.result.participation);
             SurveyDetailTemplate(webResult.result);
         })
         .catch((error) => console.log("error", error));
@@ -20,6 +21,46 @@ const fetchDetail = () => {
 fetchDetail();
 
 function SurveyDetailTemplate (data) {
+
+    // 내 게시물 아니고, 참여 이미 했음
+    const SurveyDetailItem_participated_like = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart2.png" width="40%" onclick="heart();"/></button></div>
+        </div>
+
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp; D-${data.dday}</span></div>
+        </div>
+        </div>
+
+        <div id="mainBottom"> ${data.content} </div>
+
+        <div class="join">
+            <button id="joinBtn" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
+        </div> 
+    `;
+    const SurveyDetailItem_participated_nolike = `
+        <div id="mainTop">
+        <div class="flex-container1">
+            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../image/Heart.png" width="40%" onclick="heart();"/></button></div>
+        </div>
+
+        <div class="flex-container2">
+            <div class="flex-item2"><span id="items">${data.qcount}개의 항목&nbsp;&nbsp;ㅣ</span></div>
+            <div class="flex-item2"><span id="deadline">&nbsp;&nbsp; D-${data.dday}</span></div>
+        </div>
+        </div>
+
+        <div id="mainBottom"> ${data.content} </div>
+
+        <div class="join">
+            <button id="joinBtn" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
+        </div> 
+    `;
 
     const SurveyDetailItem_closed_myPost = `
         <div id="mainTop">
@@ -94,7 +135,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
+            <button id="joinBtn" onClick="mypost_alert()">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
         </div> 
     `;
     const SurveyDetailItem_dday_like = `
@@ -152,7 +193,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn" onClick="location.href='../html/joinForm.html?${receivedPostId}'">설문&nbsp;&nbsp;참여</button>
+            <button id="joinBtn" onClick="mypost_alert()">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
         </div> 
     `;
     const SurveyDetailItem_d_like = `
@@ -194,7 +235,8 @@ function SurveyDetailTemplate (data) {
         </div> 
     `
 
-    if(data.status =='CLOSED'){
+    
+    if(data.status == 'CLOSED'){
         if(data.myPost == true){ // 설문 삭제
             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_closed_myPost);
         }else if(data.myPost == false && data.like == true ){ // 찬하트
@@ -202,7 +244,15 @@ function SurveyDetailTemplate (data) {
         }else if(data.myPost == false && data.like == false){ // 빈하트
             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_closed_nolike);
         }
-    }else if(data.dday == 0){
+    }
+    else if(data.participation == true && data.myPost == false) { // 이미 참여 (내 게시물 아님)
+        if(data.like == true) { // 찬하트
+             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_participated_like);
+        } else if(data.like == false) { // 빈하트
+             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_participated_nolike);
+        }
+    }
+    else if(data.dday == 0){
         if(data.myPost == true){ // 설문 삭제
             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_dday_myPost);
         }else if(data.myPost == false && data.like == true ){ // 찬하트
@@ -210,7 +260,8 @@ function SurveyDetailTemplate (data) {
         }else if(data.myPost == false && data.like == false){ // 빈하트
             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_dday_nolike);
         }
-    }else{
+    }
+    else{
         if(data.myPost == true){ // 설문 삭제
             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_d_myPost);
         }else if(data.myPost == false && data.like == true ){ // 찬하트
@@ -218,7 +269,7 @@ function SurveyDetailTemplate (data) {
         }else if(data.myPost == false && data.like == false){ // 빈하트
             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_d_nolike);
         }
-    }
+    } 
 }
 
 // 설문조사 삭제
@@ -282,4 +333,12 @@ function interested_item_delete(){
 
 function closed_alert(){
     alert("이미 마감된 설문조사입니다.");
+}
+
+function participated_alert(){
+    alert("이미 참여한 설문조사입니다.");
+}
+
+function mypost_alert(){
+    alert("내가 만든 설문조사입니다.");
 }
