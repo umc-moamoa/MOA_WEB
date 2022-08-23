@@ -22,6 +22,11 @@ function gotoMysurvey() {
     location.href=link;
 }
 
+function gotoMain() {
+    var link="../html/main.html";
+    location.href=link;
+}
+
 function setDeadline() {
     var deadline = document.getElementById("inputDate");
     deadline.value = new Date().toISOString().substring(0, 10);
@@ -103,8 +108,19 @@ function fetchMakeForm() {
 
     .then((response) => response.json())
     .then((response2) => {
-        console.log(response2.message);
-        gotoMysurvey();
+        if (response2.code == 2013) {
+            alert(response2.message);
+            gotoMain();
+        } else if (response2.code == 2018) {
+            alert(response2.message);
+            gotoMain();
+        } else if (response2.code == 2019) {
+            alert(response2.message);
+            gotoMain();
+        } else {
+            gotoMysurvey();
+        }
+        // console.log(response2.message);
     })
     .catch((error) => console.log("error", error))
 }
