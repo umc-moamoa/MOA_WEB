@@ -1,6 +1,7 @@
 const $SurveyList = document.querySelector("#SurveyList");
 var my_jwt = localStorage.getItem('x-access-token');
-var receivedPostId='';
+// const receivedPostId = location.href.split('?')[1];
+var receivedPostId;
 
 const fetchSurvey = () => {
     var requestOptions = {
@@ -47,7 +48,7 @@ function SurveyListTemplate (data) {
                 <span id="num">참여 인원</span>
                 <span id="num">${data.postResultCount}명</span>
             </div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button></div>
         </div>
     </div>
     `;
@@ -73,7 +74,7 @@ function SurveyListTemplate (data) {
                 <span id="num">참여 인원</span>
                 <span id="num">${data.postResultCount}명</span>
             </div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button></div>
         </div>
     </div>`;
     const SurveyItem3 = `
@@ -98,7 +99,7 @@ function SurveyListTemplate (data) {
                 <span id="num">참여 인원</span>
                 <span id="num">${data.postResultCount}명</span>
             </div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button></div>
         </div>
     </div>`;
 
@@ -112,9 +113,9 @@ function SurveyListTemplate (data) {
 }
 
 // 설문조사 삭제
-function deletePost() {
+function deletePost(postId) {
     const fetchDetail = () => {
-        fetch(`http://seolmunzip.shop:9000/posts/${receivedPostId}/status`, {
+        fetch(`http://seolmunzip.shop:9000/posts/${postId}/status`, {
             method: "PATCH",
             headers: {'x-access-token' : my_jwt,}
         })
