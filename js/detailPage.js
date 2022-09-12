@@ -39,7 +39,11 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
+<<<<<<< HEAD
             <button id="joinBtn" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
+=======
+            <button id="joinBtn_gray" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
+>>>>>>> 81ce81ec3fdc3f442c01a0c6ca2c86588fee1c5d
         </div> 
     `;
     const SurveyDetailItem_participated_nolike = `
@@ -58,7 +62,11 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
+<<<<<<< HEAD
             <button id="joinBtn" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
+=======
+            <button id="joinBtn_gray" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
+>>>>>>> 81ce81ec3fdc3f442c01a0c6ca2c86588fee1c5d
         </div> 
     `;
 
@@ -78,7 +86,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn" onClick="closed_alert();">마감된&nbsp;&nbsp;설문</button>
+            <button id="joinBtn_gray" onClick="closed_alert();">마감된&nbsp;&nbsp;설문</button>
         </div> 
     `;
     const SurveyDetailItem_closed_like = `
@@ -97,7 +105,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn" onClick="closed_alert();">마감된&nbsp;&nbsp;설문</button>
+            <button id="joinBtn_gray" onClick="closed_alert();">마감된&nbsp;&nbsp;설문</button>
         </div> 
     `;
     const SurveyDetailItem_closed_nolike = `
@@ -116,7 +124,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn" onClick="closed_alert();">마감된&nbsp;&nbsp;설문</button>
+            <button id="joinBtn_gray" onClick="closed_alert();">마감된&nbsp;&nbsp;설문</button>
         </div> 
     `;
     const SurveyDetailItem_dday_myPost = `
@@ -135,7 +143,11 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
+<<<<<<< HEAD
             <button id="joinBtn" onClick="mypost_alert()">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
+=======
+            <button id="joinBtn_gray" onClick="mypost_alert()">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
+>>>>>>> 81ce81ec3fdc3f442c01a0c6ca2c86588fee1c5d
         </div> 
     `;
     const SurveyDetailItem_dday_like = `
@@ -193,7 +205,11 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
+<<<<<<< HEAD
             <button id="joinBtn" onClick="mypost_alert()">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
+=======
+            <button id="joinBtn_gray" onClick="mypost_alert()">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
+>>>>>>> 81ce81ec3fdc3f442c01a0c6ca2c86588fee1c5d
         </div> 
     `;
     const SurveyDetailItem_d_like = `
