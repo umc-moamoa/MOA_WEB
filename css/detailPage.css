@@ -267,20 +267,3 @@ footer td p {
     cursor: pointer;
     margin: 20px 0 0 -31px;
 }
-
-/* 버튼 추가 */
-#joinBtn_test {
-    background: linear-gradient(91.36deg, #909090 -24.31%, #C6C6C6 130.3%);
-    box-shadow: 0px -10px 80px #C6C6C6;
-    border: none;
-    color: white;
-    text-align: center;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 600;
-
-    width: 670px;
-    padding: 12px 0;
-    cursor: pointer;
-    margin: 20px 0 0 -31px;
-}
