@@ -6,7 +6,7 @@ function join_check(){
     var nickName = document.getElementById("nickName");
 
     // 해당 입력값이 없을 경우
-    var idCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{7,15}$/;
+    var idCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
     var id = $("#id").val();
     if(id.value == ""){
         $(".validId1").css("display","block");
@@ -17,13 +17,13 @@ function join_check(){
     }else if(false === idCheck.test(id)){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
-        $(".validId1").text("아이디는 7~15자리로 사용해야합니다.");
+        $(".validId1").text("아이디는 영어대소문자 7~15자리로 사용해야합니다.");
         return false;
     }else{
         $(".validId1").css("display","none");
     };
     
-    var nickCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{7,15}$/;
+    var nickCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
     var nick = $("#nickName").val();
     if (nickName.value == "") {
         $(".validId2").css("display","block");
@@ -34,7 +34,7 @@ function join_check(){
     }else if(false === nickCheck.test(nick)){
         $(".validId2").css("display","block");
         $(".validId2").css("color","#FC4B3D");
-        $(".validId2").text("닉네임은 7~15자리로 사용해야합니다.");
+        $(".validId2").text("닉네임은 영어대소문자 7~15자리로 사용해야합니다.");
         return false;
     }else{
         $(".validId2").css("display","none");
@@ -51,7 +51,7 @@ function join_check(){
     }else if(false === pwdCheck.test(pw)){
         $(".validId3").css("display","block");
         $(".validId3").css("color","#FC4B3D");
-        $(".validId3").text("비밀번호는 영문자+숫자+특수문자 조합으로 7~15자리 사용해야 합니다.");
+        $(".validId3").text("비밀번호는 영어대소문자+숫자+특수문자 조합으로 7~15자리 사용해야 합니다.");
         pwd1.focus();
         return false;
     }
@@ -96,7 +96,7 @@ function id_check() {
 }
 
 function id_check_result(data) {
-    var idCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{7,15}$/;
+    var idCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
     var id = $("#id").val();
     if(id.value == ""){
         $(".validId1").css("display","block");
@@ -106,7 +106,7 @@ function id_check_result(data) {
     }else if(false === idCheck.test(id)){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
-        $(".validId1").text("아이디는 7~15자리로 사용해야합니다.");
+        $(".validId1").text("아이디는 영어대소문자 7~15자리로 사용해야합니다.");
         check_id = 0;
     }else if(data == "1000"){ 
         $(".validId1").css("display","block");
@@ -141,7 +141,7 @@ function name_check() {
 }
 
 function nick_check_result(data){
-    var nickCheck = /^(?=.*[a-zA-Z])(?=.*[0-9]).{7,15}$/;
+    var nickCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
     var nick = $("#nickName").val();
     if(id.value == ""){
         $(".validId2").css("display","block");
@@ -151,7 +151,7 @@ function nick_check_result(data){
     }else if(false === nickCheck.test(nick)){
         $(".validId2").css("display","block");
         $(".validId2").css("color","#FC4B3D");
-        $(".validId2").text("닉네임은 7~15자리로 사용해야합니다.");
+        $(".validId2").text("닉네임은 영어대소문자 7~15자리로 사용해야합니다.");
         check_name = 0;
     }else if(data == "1000"){ 
         $(".validId2").css("display","block");

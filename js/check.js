@@ -98,3 +98,15 @@ function login_alert6() {
         location.href=link;
     }
 }
+
+// 회원가입 로그인 제한
+function login_alert7() {
+    if(my_jwt == null){
+        var link="../html/signUp.html";
+        location.href=link;
+    }else{
+        var link="../html/main.html";
+        location.href=link;
+        alert("회원가입은 로그아웃한 상태에서 가능합니다.");
+    }
+}
