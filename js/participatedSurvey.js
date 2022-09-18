@@ -14,7 +14,9 @@ const fetchParticipate = () => {
         .then((response) => response.json())
         .then((webResult) => {
             webResult.result.map(item => ParticipateListTemplate(item));
-            console.log(webResult);
+            if(webResult.result.length != 0){
+                $(".length_zero_txt").css("display","none");
+            }
             slick();
         })
         .catch((error) => console.log("error", error));

@@ -182,6 +182,13 @@ footer .container {
     padding:35px;
 }
 
+.length_zero_txt{
+    padding-top: 15px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #6C6C6C;
+}
+
 /*footer*/
 footer {
     background-color: white;

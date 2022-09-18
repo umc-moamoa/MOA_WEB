@@ -14,6 +14,9 @@ const fetchInterest = () => {
         .then((response) => response.json())
         .then((webResult) => {
             webResult.result.map(item => InterestListTemplate(item));
+            if(webResult.result.length != 0){
+                $(".length_zero_txt").css("display","none");
+            }
             slick();
         })
         .catch((error) => console.log("error", error));
@@ -23,6 +26,7 @@ fetchInterest();
 
 function InterestListTemplate(data) {
     const postId = data.postId;
+    
     const InterestItem1 = `
         <div id="main1">
             <div class="one-container1">
