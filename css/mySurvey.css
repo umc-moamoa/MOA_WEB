@@ -207,6 +207,18 @@ footer .container {
     color: #909090;
 }
 
+#modifyBtn {
+    float:right;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    width: 50px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 13px;
+    color: #909090;
+}
+
 /*footer*/
 footer {
     background-color: white;
