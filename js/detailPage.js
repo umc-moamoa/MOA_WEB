@@ -123,7 +123,8 @@ function SurveyDetailTemplate (data) {
         <div id="mainTop">
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button>
+            <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
         </div>
 
         <div class="flex-container2">
@@ -135,7 +136,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn" onClick="mypost_alert()">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
+            <button id="joinBtn_gray" onClick="mypost_alert()">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
         </div> 
     `;
     const SurveyDetailItem_dday_like = `
@@ -177,11 +178,13 @@ function SurveyDetailTemplate (data) {
         </div> 
     `;
 
+// 일단 api 나오면 수정해야함. modifyForm에 가져갈 값 있따면 !! modifyBtn에 onclick은 다시 봐야함. 
     const SurveyDetailItem_d_myPost = `
         <div id="mainTop">
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button>
+                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
         </div>
 
         <div class="flex-container2">
@@ -193,7 +196,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn" onClick="mypost_alert()">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
+            <button id="joinBtn_gray" onClick="mypost_alert()">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
         </div> 
     `;
     const SurveyDetailItem_d_like = `
