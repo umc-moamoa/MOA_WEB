@@ -124,7 +124,7 @@ function SurveyDetailTemplate (data) {
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
             <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button>
-            <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
+                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html'">설문수정</button></div>
         </div>
 
         <div class="flex-container2">
@@ -184,7 +184,7 @@ function SurveyDetailTemplate (data) {
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
             <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button>
-                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
+                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html'">설문수정</button></div>
         </div>
 
         <div class="flex-container2">
