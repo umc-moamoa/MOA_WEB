@@ -167,6 +167,7 @@ ul {
     border: none;
     outline: none;
     display: block;
+    width: 400px;
 
     font-weight: 400;
     font-size: 15px;
