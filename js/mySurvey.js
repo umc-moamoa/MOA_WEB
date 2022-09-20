@@ -52,7 +52,7 @@ function SurveyListTemplate (data) {
                 <span id="num">${data.postResultCount}명</span>
             </div>
             <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button>
-                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html'">설문수정</button></div>
+                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
         </div>
     </div>
     `;

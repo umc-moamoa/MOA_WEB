@@ -4,6 +4,7 @@ var myPost;
 var like;
 
 const receivedPostId = location.href.split('?')[1];
+console.log(receivedPostId);
 
 const fetchDetail = () => {
     fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
@@ -124,7 +125,7 @@ function SurveyDetailTemplate (data) {
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
             <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button>
-                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html'">설문수정</button></div>
+                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
         </div>
 
         <div class="flex-container2">
@@ -178,13 +179,12 @@ function SurveyDetailTemplate (data) {
         </div> 
     `;
 
-// 일단 api 나오면 수정해야함. modifyForm에 가져갈 값 있따면 !! modifyBtn에 onclick은 다시 봐야함. 
     const SurveyDetailItem_d_myPost = `
         <div id="mainTop">
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
             <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button>
-                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html'">설문수정</button></div>
+                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
         </div>
 
         <div class="flex-container2">
