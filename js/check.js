@@ -1,5 +1,6 @@
 // jwt 관리하는 파일
 
+
 // 변수 선언
 var my_jwt = localStorage.getItem('x-access-token');
 const link_login = document.querySelector(".link_login");
@@ -31,9 +32,21 @@ function logout(){
 // 마이페이지 로그인 제한
 function login_alert1() {
     if(my_jwt == null){
-        var link="../html/login.html";
-        location.href=link;
-        alert("회원 전용입니다. 로그인해주세요.");
+        Swal.fire({
+            title: '회원 전용입니다.',
+            text: "로그인하시겠습니까?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#FD7373',
+            cancelButtonColor: '#9CC2FF',
+            confirmButtonText: '예',
+            cancelButtonText: '아니요'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var link="../html/login.html";
+                location.href=link;
+            }
+        })
     }else{
         var link="../html/myPage.html";
         location.href=link;
@@ -42,9 +55,21 @@ function login_alert1() {
 // 새 설문 만들기 로그인 제한
 function login_alert2() {
     if(my_jwt == null){
-        var link="../html/login.html";
-        location.href=link;
-        alert("회원 전용입니다. 로그인해주세요.");
+        Swal.fire({
+            title: '회원 전용입니다.',
+            text: "로그인하시겠습니까?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#FD7373',
+            cancelButtonColor: '#9CC2FF',
+            confirmButtonText: '예',
+            cancelButtonText: '아니요'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var link="../html/login.html";
+                location.href=link;
+            }
+        })
     }else{
         var link="../html/makeForm.html";
         location.href=link;
@@ -54,9 +79,21 @@ function login_alert2() {
 // 내가 만든 설문 로그인 제한
 function login_alert3() {
     if(my_jwt == null){
-        var link="../html/login.html";
-        location.href=link;
-        alert("회원 전용입니다. 로그인해주세요.");
+        Swal.fire({
+            title: '회원 전용입니다.',
+            text: "로그인하시겠습니까?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#FD7373',
+            cancelButtonColor: '#9CC2FF',
+            confirmButtonText: '예',
+            cancelButtonText: '아니요'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var link="../html/login.html";
+                location.href=link;
+            }
+        })
     }else{
         var link="../html/mySurvey.html";
         location.href=link;
@@ -66,9 +103,21 @@ function login_alert3() {
 // 관심있는 설문조사 로그인 제한
 function login_alert4() {
     if(my_jwt == null){
-        var link="../html/login.html";
-        location.href=link;
-        alert("회원 전용입니다. 로그인해주세요.");
+        Swal.fire({
+            title: '회원 전용입니다.',
+            text: "로그인하시겠습니까?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#FD7373',
+            cancelButtonColor: '#9CC2FF',
+            confirmButtonText: '예',
+            cancelButtonText: '아니요'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var link="../html/login.html";
+                location.href=link;
+            }
+        })
     }else{
         var link="../html/interestedSurvey.html";
         location.href=link;
@@ -78,9 +127,21 @@ function login_alert4() {
 // 참여한 설문조사 로그인 제한
 function login_alert5() {
     if(my_jwt == null){
-        var link="../html/login.html";
-        location.href=link;
-        alert("회원 전용입니다. 로그인해주세요.");
+        Swal.fire({
+            title: '회원 전용입니다.',
+            text: "로그인하시겠습니까?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#FD7373',
+            cancelButtonColor: '#9CC2FF',
+            confirmButtonText: '예',
+            cancelButtonText: '아니요'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var link="../html/login.html";
+                location.href=link;
+            }
+        })
     }else{
         var link="../html/participatedSurvey.html";
         location.href=link;
@@ -90,9 +151,21 @@ function login_alert5() {
 // 포인트 내역 로그인 제한
 function login_alert6() {
     if(my_jwt == null){
-        var link="../html/login.html";
-        location.href=link;
-        alert("회원 전용입니다. 로그인해주세요.");
+        Swal.fire({
+            title: '회원 전용입니다.',
+            text: "로그인하시겠습니까?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#FD7373',
+            cancelButtonColor: '#9CC2FF',
+            confirmButtonText: '예',
+            cancelButtonText: '아니요'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var link="../html/login.html";
+                location.href=link;
+            }
+        })
     }else{
         var link="../html/point.html";
         location.href=link;
@@ -100,13 +173,38 @@ function login_alert6() {
 }
 
 // 회원가입 로그인 제한
+// function login_alert7() {
+//     if(my_jwt == null){
+//         var link="../html/signUp.html";
+//         location.href=link;
+//     }else{
+//         var link="../html/main.html";
+//         location.href=link;
+//         alert("회원가입은 로그아웃한 상태에서 가능합니다.");
+//     }
+// }
+
 function login_alert7() {
-    if(my_jwt == null){
+    if(my_jwt != null){
+        Swal.fire({
+            title: '회원가입은 로그아웃한 상태에서 가능합니다.',
+            text: "로그아웃하시겠습니까?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#FD7373',
+            cancelButtonColor: '#9CC2FF',
+            confirmButtonText: '예',
+            cancelButtonText: '아니요'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                change_logout();
+                logout();
+                var link="../html/signUp.html";
+                location.href=link;
+            }
+        });
+    }else{
         var link="../html/signUp.html";
         location.href=link;
-    }else{
-        var link="../html/main.html";
-        location.href=link;
-        alert("회원가입은 로그아웃한 상태에서 가능합니다.");
     }
 }
