@@ -185,7 +185,7 @@ footer .container {
 .length_zero_txt{
     padding-top: 15px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     color: #6C6C6C;
 }
 
@@ -232,4 +232,9 @@ footer td p {
 }
 #info {
     padding: 20px 0;
+}
+
+.swal-wide {
+    font-size: 12px !important;
+    height: 200px !important;
 }

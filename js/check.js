@@ -35,10 +35,11 @@ function login_alert1() {
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
-            icon: 'warning',
+            // icon: 'warning',
+            customClass: 'swal-wide',
             showCancelButton: true,
-            confirmButtonColor: '#FD7373',
-            cancelButtonColor: '#9CC2FF',
+            confirmButtonColor: '#4E7FF2',
+            cancelButtonColor: '#DBDBDB',
             confirmButtonText: '예',
             cancelButtonText: '아니요'
         }).then((result) => {
@@ -58,10 +59,11 @@ function login_alert2() {
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
-            icon: 'warning',
+            // icon: 'warning',
+            customClass: 'swal-wide',
             showCancelButton: true,
-            confirmButtonColor: '#FD7373',
-            cancelButtonColor: '#9CC2FF',
+            confirmButtonColor: '#4E7FF2',
+            cancelButtonColor: '#DBDBDB',
             confirmButtonText: '예',
             cancelButtonText: '아니요'
         }).then((result) => {
@@ -82,10 +84,11 @@ function login_alert3() {
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
-            icon: 'warning',
+            // icon: 'warning',
+            customClass: 'swal-wide',
             showCancelButton: true,
-            confirmButtonColor: '#FD7373',
-            cancelButtonColor: '#9CC2FF',
+            confirmButtonColor: '#4E7FF2',
+            cancelButtonColor: '#DBDBDB',
             confirmButtonText: '예',
             cancelButtonText: '아니요'
         }).then((result) => {
@@ -106,10 +109,11 @@ function login_alert4() {
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
-            icon: 'warning',
+            // icon: 'warning',
+            customClass: 'swal-wide',
             showCancelButton: true,
-            confirmButtonColor: '#FD7373',
-            cancelButtonColor: '#9CC2FF',
+            confirmButtonColor: '#4E7FF2',
+            cancelButtonColor: '#DBDBDB',
             confirmButtonText: '예',
             cancelButtonText: '아니요'
         }).then((result) => {
@@ -130,10 +134,11 @@ function login_alert5() {
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
-            icon: 'warning',
+            // icon: 'warning',
+            customClass: 'swal-wide',
             showCancelButton: true,
-            confirmButtonColor: '#FD7373',
-            cancelButtonColor: '#9CC2FF',
+            confirmButtonColor: '#4E7FF2',
+            cancelButtonColor: '#DBDBDB',
             confirmButtonText: '예',
             cancelButtonText: '아니요'
         }).then((result) => {
@@ -154,10 +159,11 @@ function login_alert6() {
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
-            icon: 'warning',
+            // icon: 'warning',
+            customClass: 'swal-wide',
             showCancelButton: true,
-            confirmButtonColor: '#FD7373',
-            cancelButtonColor: '#9CC2FF',
+            confirmButtonColor: '#4E7FF2',
+            cancelButtonColor: '#DBDBDB',
             confirmButtonText: '예',
             cancelButtonText: '아니요'
         }).then((result) => {
@@ -187,12 +193,13 @@ function login_alert6() {
 function login_alert7() {
     if(my_jwt != null){
         Swal.fire({
-            title: '회원가입은 로그아웃한 상태에서 가능합니다.',
+            title: `회원가입은 \n 로그아웃한 상태에서 가능합니다.`,
             text: "로그아웃하시겠습니까?",
-            icon: 'warning',
+            // icon: 'warning',
+            customClass: 'swal-wide',
             showCancelButton: true,
-            confirmButtonColor: '#FD7373',
-            cancelButtonColor: '#9CC2FF',
+            confirmButtonColor: '#4E7FF2',
+            cancelButtonColor: '#DBDBDB',
             confirmButtonText: '예',
             cancelButtonText: '아니요'
         }).then((result) => {

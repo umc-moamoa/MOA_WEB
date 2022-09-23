@@ -283,3 +283,8 @@ footer td p {
     padding: 0;
     background-color: #9CC2FF;
 }
+
+.swal-wide {
+    font-size: 12px !important;
+    height: 200px !important;
+}

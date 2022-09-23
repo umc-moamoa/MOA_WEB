@@ -287,3 +287,8 @@ footer td p {
 #info {
     padding: 20px 0;
 }
+
+.swal-wide {
+    font-size: 12px !important;
+    height: 200px !important;
+}

@@ -434,3 +434,8 @@ input:nth-child(7)::-ms-input-placeholder {color: #414141;}
     cursor: pointer;
     margin: 20px 0 0 -31px;
 }
+
+.swal-wide {
+    font-size: 12px !important;
+    height: 200px !important;
+}

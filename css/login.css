@@ -320,3 +320,8 @@ input::-ms-input-placeholder{color: #909090;}
     width: 11px;
     height: 16px;
 }
+
+.swal-wide {
+    font-size: 12px !important;
+    height: 200px !important;
+}
