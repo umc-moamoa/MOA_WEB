@@ -1,6 +1,6 @@
 const $userInfo = document.querySelector("#userInfo");
 var my_jwt = localStorage.getItem('x-access-token');
-
+const $pointExplanation = document.querySelector("#pointExplanation");
 const fetchUser = () => {
     fetch(
         "http://seolmunzip.shop:9000/users",{
@@ -24,6 +24,7 @@ function userTemplate(data) {
         <div class="flex-container-icon-sub1">
             <img src="../image/Vector.png" width="28px">
             <div class="category1">포인트</div>
+            <button onclick="onDisplay()" type="button" id="point-btn"><img src="../image/Group 624.png"></button>
         </div>
         <div class="state">${data.point}<span>P</span></div>
     </div>
@@ -86,8 +87,14 @@ function deleteUser() {
                 }
             })
 
-           
             }
         )
         .catch((error) => console.log("error", error));
+}
+function onDisplay() {
+    $pointExplanation.style.display = "block";
+}
+
+function offDisplay() {
+    $pointExplanation.style.display = "none";
 }
