@@ -40,7 +40,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
+            <button id="joinBtn_gray" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
         </div> 
     `;
     const SurveyDetailItem_participated_nolike = `
@@ -59,7 +59,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
+            <button id="joinBtn_gray" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
         </div> 
     `;
 
