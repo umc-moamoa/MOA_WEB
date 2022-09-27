@@ -54,12 +54,12 @@ function SurveyInTemplate(data) {
         var q1Span = document.createElement("span");
         q1Span.className = 'Q1';
         q1Span.textContent = count + ".   " + `${data.question}`;
-        var reqSpan = document.createElement("span");
-        reqSpan.className = 'required';
-        reqSpan.textContent = "필수";
+        // var reqSpan = document.createElement("span");
+        // reqSpan.className = 'required';
+        // reqSpan.textContent = "필수";
 
         questionDiv.appendChild(q1Span);
-        questionDiv.appendChild(reqSpan);
+        // questionDiv.appendChild(reqSpan);
         questions.appendChild(questionDiv);
 
         // 답 - 라디오 버튼
@@ -94,12 +94,12 @@ function SurveyInTemplate(data) {
         var q1Span = document.createElement("span");
         q1Span.className = 'Q1';
         q1Span.textContent = count + ".   " + `${data.question}`;
-        var reqSpan = document.createElement("span");
-        reqSpan.className = 'required';
-        reqSpan.textContent = "필수";
+        // var reqSpan = document.createElement("span");
+        // reqSpan.className = 'required';
+        // reqSpan.textContent = "필수";
 
         questionDiv.appendChild(q1Span);
-        questionDiv.appendChild(reqSpan);
+        // questionDiv.appendChild(reqSpan);
         questions.appendChild(questionDiv);
 
         // 답 - 체크박스 버튼
@@ -130,7 +130,8 @@ function SurveyInTemplate(data) {
             questionDiv.appendChild(rBtnDiv);
         }
     }
-    // 단답형
+    // 단답형 
+    //         <span class="required">필수</span> 빈 줄에 있던 거 주석
     else if(data.format == 3) {
         postDetailId = `${data.postDetailId}`;
         var pi = new Array();
@@ -138,7 +139,7 @@ function SurveyInTemplate(data) {
         semipostDetailResults[count-1][0] = pi;
         var SurveyQ = `<div class="question">
         <span class="Q1">${count + ".   " + data.question}</span>
-        <span class="required">필수</span>
+
         <input type="text" class="Qtype3" maxlength="30"
         placeholder="자유롭게 적어주세요."
         onfocus="this.placeholder = ''" 
@@ -147,6 +148,7 @@ function SurveyInTemplate(data) {
         $SurveyQuestion.insertAdjacentHTML('beforeend',SurveyQ);
     }
     // 장문형
+    //         <span class="required">필수</span> 빈 줄에 있던 거 주석
     else if(data.format == 4) {
         postDetailId = `${data.postDetailId}`;
         var pi = new Array();
@@ -154,7 +156,7 @@ function SurveyInTemplate(data) {
         semipostDetailResults[count-1][0] = pi;
         var SurveyQ = `<div class="question">
         <span class="Q1">${count + ".   " + data.question}</span>
-        <span class="required">필수</span>
+
         <textarea class="Qtype4" cols="108" rows="10" 
         placeholder=" 자유롭게 적어주세요."
         onfocus="this.placeholder = ''" 

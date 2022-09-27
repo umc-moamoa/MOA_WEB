@@ -51,8 +51,8 @@ function SurveyListTemplate (data) {
                 <span id="num">참여 인원</span>
                 <span id="num">${data.postResultCount}명</span>
             </div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button>
-                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="delete_alert(${receivedPostId});">설문삭제</button>
+                                    <button id="modifyBtn" onClick="modify_alert(${receivedPostId});">설문수정</button></div>
         </div>
     </div>
     `;
@@ -78,7 +78,7 @@ function SurveyListTemplate (data) {
                 <span id="num">참여 인원</span>
                 <span id="num">${data.postResultCount}명</span>
             </div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button>
+            <div class="flex-item1"><button id="deleteBtn" onClick="delete_alert(${receivedPostId});">설문삭제</button>
                                     <button id="modifyBtn" >수정불가</button></div>
             
         </div>
@@ -105,8 +105,8 @@ function SurveyListTemplate (data) {
                 <span id="num">참여 인원</span>
                 <span id="num">${data.postResultCount}명</span>
             </div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost(${receivedPostId});">설문삭제</button>
-                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="delete_alert(${receivedPostId});">설문삭제</button>
+                                    <button id="modifyBtn" onClick="modify_alert(${receivedPostId});">설문수정</button></div>
         </div>
     </div>`;
 
@@ -119,6 +119,43 @@ function SurveyListTemplate (data) {
     }
 }
 
+// 수정 alert
+function modify_alert(postId) {
+    Swal.fire({
+        title: '수정하시겠습니까?',
+        customClass: 'swal-wide',
+        showCancelButton: true,
+        confirmButtonColor: '#4E7FF2',
+        cancelButtonColor: '#DBDBDB',
+        confirmButtonText: '예',
+        cancelButtonText: '아니요'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var link=`../html/modifyForm.html?${postId}`;
+            location.href=link;
+        }
+    })
+}
+
+// 삭제 alert
+function delete_alert(postId) {
+    Swal.fire({
+        title: '삭제하시겠습니까?',
+        // text: "삭제하시겠습니까?",
+        // icon: 'warning',
+        customClass: 'swal-wide',
+        showCancelButton: true,
+        confirmButtonColor: '#4E7FF2',
+        cancelButtonColor: '#DBDBDB',
+        confirmButtonText: '예',
+        cancelButtonText: '아니요'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            deletePost(postId);
+        }
+    })
+}
+
 // 설문조사 삭제
 function deletePost(postId) {
     const fetchDetail = () => {
@@ -128,9 +165,21 @@ function deletePost(postId) {
         })
         .then((response) => response.json())
         .then((webResult) => {
-            alert("설문조사가 삭제되었습니다.");
-            var link="../html/mySurvey.html";
-            location.href=link;
+            // alert("설문조사가 삭제되었습니다.");
+
+            Swal.fire({
+                title: '설문조사가 삭제되었습니다.',
+                customClass: 'swal-wide',
+                confirmButtonColor: '#4E7FF2',
+                cancelButtonColor: '#DBDBDB',
+                confirmButtonText: '예'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var link="../html/mySurvey.html";
+                    location.href=link;
+                }
+            })
+
         })
         .catch((error) => console.log("error", error));
     }

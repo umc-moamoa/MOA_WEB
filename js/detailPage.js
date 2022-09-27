@@ -67,7 +67,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainTop">
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="delete_alert();">설문삭제</button></div>
         </div>
 
         <div class="flex-container2">
@@ -79,7 +79,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn_gray" onClick="closed_alert();">마감된&nbsp;&nbsp;설문</button>
+            <button id="joinBtn_gray" onClick="closed_alert();">내가&nbsp;&nbsp;만든&nbsp;&nbsp;설문</button>
         </div> 
     `;
     const SurveyDetailItem_closed_like = `
@@ -124,8 +124,8 @@ function SurveyDetailTemplate (data) {
         <div id="mainTop">
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button>
-                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="delete_alert();">설문삭제</button>
+                                    <button id="modifyBtn" onClick="modify_alert(${receivedPostId});">설문수정</button></div>
         </div>
 
         <div class="flex-container2">
@@ -183,8 +183,8 @@ function SurveyDetailTemplate (data) {
         <div id="mainTop">
         <div class="flex-container1">
             <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="deletePost();">설문삭제</button>
-                                    <button id="modifyBtn" onClick="location.href='../html/modifyForm.html?${receivedPostId}'">설문수정</button></div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="delete_alert();">설문삭제</button>
+                                    <button id="modifyBtn" onClick="modify_alert(${receivedPostId});">설문수정</button></div>
         </div>
 
         <div class="flex-container2">
@@ -275,6 +275,43 @@ function SurveyDetailTemplate (data) {
     } 
 }
 
+// 수정 alert
+function modify_alert(postId) {
+    Swal.fire({
+        title: '수정하시겠습니까?',
+        customClass: 'swal-wide',
+        showCancelButton: true,
+        confirmButtonColor: '#4E7FF2',
+        cancelButtonColor: '#DBDBDB',
+        confirmButtonText: '예',
+        cancelButtonText: '아니요'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var link=`../html/modifyForm.html?${postId}`;
+            location.href=link;
+        }
+    })
+}
+
+// 삭제 alert
+function delete_alert() {
+    Swal.fire({
+        title: '삭제하시겠습니까?',
+        // text: "삭제하시겠습니까?",
+        // icon: 'warning',
+        customClass: 'swal-wide',
+        showCancelButton: true,
+        confirmButtonColor: '#4E7FF2',
+        cancelButtonColor: '#DBDBDB',
+        confirmButtonText: '예',
+        cancelButtonText: '아니요'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            deletePost();
+        }
+    })
+}
+
 // 설문조사 삭제
 function deletePost() {
     console.log("delete");
@@ -286,9 +323,18 @@ function deletePost() {
         })
         .then((response) => response.json())
         .then((webResult) => {
-            alert("설문조사가 삭제되었습니다.");
-            var link="../html/formList.html";
-            location.href=link;
+            Swal.fire({
+                title: '설문조사가 삭제되었습니다.',
+                customClass: 'swal-wide',
+                confirmButtonColor: '#4E7FF2',
+                cancelButtonColor: '#DBDBDB',
+                confirmButtonText: '예'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var link="../html/mySurvey.html";
+                    location.href=link;
+                }
+            })
         })
         .catch((error) => console.log("error", error));
     }

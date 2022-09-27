@@ -188,7 +188,19 @@ function save(){
 
 // 회원가입 후 메인으로 이동
 function moveToLogin(){
-    alert("회원가입이 완료되었습니다.");
-    var link="../html/login.html";
-    location.href=link;
+    //alert("회원가입이 완료되었습니다.");
+
+    Swal.fire({
+        title: '회원가입이 완료되었습니다.',
+        customClass: 'swal-wide',
+        confirmButtonColor: '#4E7FF2',
+        cancelButtonColor: '#DBDBDB',
+        confirmButtonText: '예'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var link="../html/login.html";
+            location.href=link;
+        }
+
+    })
 }

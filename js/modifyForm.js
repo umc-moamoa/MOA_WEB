@@ -47,7 +47,18 @@ function fetchModifyForm() {
         //     gotoMysurvey();
         // }
 
-        // gotoDetail(); //주석 해제하면 다시 디테일로 돌아감.
+        Swal.fire({
+            title: '설문조사가 수정되었습니다.',
+            customClass: 'swal-wide',
+            confirmButtonColor: '#4E7FF2',
+            cancelButtonColor: '#DBDBDB',
+            confirmButtonText: '예'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                gotoDetail(); 
+            }
+        })
+        
         console.log(response2.result);
     })
     .catch((error) => console.log("error", error))

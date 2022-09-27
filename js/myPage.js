@@ -40,16 +40,24 @@ $userInfo.insertAdjacentHTML('beforeend', userInfoItem);
 
 }
 
-//회원탈퇴
-function quit() {
-    var result = confirm("회원 탈퇴를 하시겠습니까?");
-        if(result) {
-            alert("탈퇴 처리되었습니다.");
+// 회원 탈퇴 alert
+function quit_alert() {
+    Swal.fire({
+        title: '탈퇴하시겠습니까?',
+        // text: "삭제하시겠습니까?",
+        // icon: 'warning',
+        customClass: 'swal-wide',
+        showCancelButton: true,
+        confirmButtonColor: '#4E7FF2',
+        cancelButtonColor: '#DBDBDB',
+        confirmButtonText: '예',
+        cancelButtonText: '아니요'
+    }).then((result) => {
+        if (result.isConfirmed) {
             deleteUser();
-        } else {
-            alert("탈퇴 취소되었습니다.");
         }
-    }
+    })
+}
 
 function deleteUser() {
     fetch(
@@ -59,6 +67,27 @@ function deleteUser() {
         }
     )
         .then((response) => response.json())
-        .then((response) => console.log(response))
+        .then((response) => {
+            console.log(response);
+
+            change_logout();
+            logout();
+            
+            Swal.fire({
+                title: '탈퇴되었습니다.',
+                customClass: 'swal-wide',
+                confirmButtonColor: '#4E7FF2',
+                cancelButtonColor: '#DBDBDB',
+                confirmButtonText: '예'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    var link="../html/main.html";
+                    location.href=link;
+                }
+            })
+
+           
+            }
+        )
         .catch((error) => console.log("error", error));
 }
