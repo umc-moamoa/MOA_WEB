@@ -3,7 +3,9 @@ var my_jwt = localStorage.getItem('x-access-token');
 const postId = location.href.split('?')[1];
 console.log(postId);
 
-var newContent;
+var updateTitle;
+var updateContent;
+var updateDeadline;
 
 function gotoDetail() {
     var link=`../html/detailPage.html?${postId}`;
@@ -11,14 +13,21 @@ function gotoDetail() {
 }
 
 function modifyContent() {
-    newContent = document.getElementById("inputExplain").value;
+    updateTitle = document.getElementById("inputTitle").value;
+    updateContent = document.getElementById("inputExplain").value;
+    updateDeadline = document.getElementById("inputDate").value;
     fetchModifyForm();
 }
 
 function fetchModifyForm() {
     const modifyItem = {
-        "userId" : 1,
-        "content" : newContent
+        // "userId" : 1,
+        // "content" : newContent
+        "postId" : postId,
+        "title" : updateTitle,
+        "content" : updateContent,
+        "deadline" : updateDeadline,
+        "postUserId" : 1
     }
 
     console.log(JSON.stringify(modifyItem));
@@ -34,7 +43,7 @@ function fetchModifyForm() {
 
     .then((response) => response.json())
     .then((response2) => {
-        // if (response2.code == 2020) {
+        // if (response2.code == 2022) {
         //     alert(response2.message);
         //     gotoMain();
         // } else if (response2.code == 2022) {

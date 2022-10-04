@@ -256,7 +256,7 @@ function SurveyDetailTemplate (data) {
         }
     }
     else if(data.dday == 0){
-        if(data.myPost == true){ // 설문 삭제
+        if(data.myPost == true && data.status == 'ACTIVE'){ // 설문 삭제
             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_dday_myPost);
         }else if(data.myPost == false && data.like == true ){ // 찬하트
             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_dday_like);
@@ -265,7 +265,7 @@ function SurveyDetailTemplate (data) {
         }
     }
     else{
-        if(data.myPost == true){ // 설문 삭제
+        if(data.myPost == true && data.status == 'ACTIVE'){ // 설문 삭제
             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_d_myPost);
         }else if(data.myPost == false && data.like == true ){ // 찬하트
             $SurveyDetail.insertAdjacentHTML('beforeend', SurveyDetailItem_d_like);
