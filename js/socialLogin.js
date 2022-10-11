@@ -1,5 +1,7 @@
-// 카카오 소셜로그인
+var my_jwt = localStorage.getItem('x-access-token');
+var my_refreshToken = localStorage.getItem('refreshToken');
 
+// 카카오 소셜로그인
 function kakao_login(){
     const CLIENT_ID = "d005491d50fe50570e19e7b3a140e7cb";
     const REDIRECT_URI =  "http://localhost:5500/oauth";
@@ -11,9 +13,22 @@ function kakao_login(){
 
     let code = new URL(window.location.href).searchParams.get('code');
     console.log(code);
-
-
 }
+
+/*
+function social_login(){
+    fetch(`http://seolmunzip.shop:9000//users/kakao/${accessToken}`, {
+        method: "POST",
+        headers: {'x-access-token' : my_jwt,
+                'refreshToken': my_refreshToken}
+    })
+    .then((response) => {
+        response.json();
+    })
+    .catch((error) => console.log("error", error))
+}
+*/
+
 
 
 // GET으로 인가코드 받는게 안된다..
@@ -31,3 +46,5 @@ const CLIENT_ID = "d005491d50fe50570e19e7b3a140e7cb";
     let code = new URL(window.location.href).searchParams.get('code');
     console.log(code);
 */
+
+
