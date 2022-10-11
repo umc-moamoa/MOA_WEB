@@ -182,7 +182,11 @@ function save(){
     })
 
     .then((response) => response.json())
-    .then(response => {moveToLogin();})
+    .then((response2) => {
+        console.log(response2)
+        // moveToLogin();
+    
+    })
     .catch((error) => console.log("error", error))
 }
 

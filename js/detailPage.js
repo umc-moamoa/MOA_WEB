@@ -1,5 +1,6 @@
 const $SurveyDetail = document.querySelector("#detailMain");
 var my_jwt = localStorage.getItem('x-access-token');
+var my_refresh = localStorage.getItem('x-refresh-token');
 var myPost;
 var like;
 
@@ -9,11 +10,11 @@ console.log(receivedPostId);
 const fetchDetail = () => {
     fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
         method: "GET",
-        headers: {'x-access-token' : my_jwt,}
+        headers: {'x-access-token' : my_jwt, 'x-refresh-token' : my_refresh, }
     })
         .then((response) => response.json())
         .then((webResult) => {
-            console.log(webResult.result.participation);
+            console.log(webResult.message);
             SurveyDetailTemplate(webResult.result);
         })
         .catch((error) => console.log("error", error));

@@ -1,4 +1,5 @@
 var my_jwt = localStorage.getItem('x-access-token');
+var my_refresh = localStorage.getItem('x-refresh-token');
 var semiCategoryId;
 var semiShortCount = 0;
 var semiLongCount = 0;
@@ -100,7 +101,7 @@ function fetchMakeForm() {
     fetch(`http://seolmunzip.shop:9000/posts` , {
         method: "POST",
         headers: {
-            'x-access-token' : my_jwt,
+            'x-access-token' : my_jwt, 'x-refresh-token' : my_refresh, 
             'Content-Type': 'application/json'            
         },
         body: JSON.stringify(formItem)

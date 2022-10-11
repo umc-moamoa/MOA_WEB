@@ -1,6 +1,7 @@
 const $SurveyQuestion = document.querySelector("#SurveyQuestion");
 var questions = document.getElementById("SurveyQuestion");
 var my_jwt = localStorage.getItem('x-access-token');
+var my_refresh = localStorage.getItem('x-refresh-token');
 var semipostDetailResults = new Array();
 var postDetailId;
 var formats = new Array(); // 여기에 format 넣음. 
@@ -18,7 +19,7 @@ console.log(rpostId);
 const fetchSuryeyIn = () => {
     var requestOptions = {
         method: "GET",
-        headers: {'x-access-token' : my_jwt,}
+        headers: {'x-access-token' : my_jwt, 'x-refresh-token' : my_refresh, }
     };
 
     fetch(

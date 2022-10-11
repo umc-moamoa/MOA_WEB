@@ -3,6 +3,7 @@
 
 // 변수 선언
 var my_jwt = localStorage.getItem('x-access-token');
+var my_refresh = localStorage.getItem('x-refresh-token');
 const link_login = document.querySelector(".link_login");
 const link_logout = document.querySelector(".link_logout");
 
@@ -27,6 +28,7 @@ function change_logout(){
 }
 function logout(){
     localStorage.removeItem('x-access-token');
+    localStorage.removeItem('x-refresh-token');
 }
 
 // 마이페이지 로그인 제한

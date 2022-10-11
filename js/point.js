@@ -2,6 +2,7 @@ const $SurveyList1 = document.querySelector("#SurveyList1");
 const $SurveyList2 = document.querySelector("#SurveyList2");
 const $pointAll = document.querySelector(".pointAll");
 var my_jwt = localStorage.getItem('x-access-token');
+var my_refresh = localStorage.getItem('x-refresh-token');
 var value;
 
 function selectedValue() {
@@ -14,7 +15,7 @@ function selectedValue() {
 const fetchSurvey1 = () => {
     var requestOptions = {
         method: "GET",
-        headers: {'x-access-token' : my_jwt,}
+        headers: {'x-access-token' : my_jwt, 'x-refresh-token' : my_refresh,}
     };
     value = selectedValue();
     fetch(

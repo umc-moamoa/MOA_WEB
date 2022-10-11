@@ -1,11 +1,12 @@
 const $userInfo = document.querySelector("#userInfo");
 var my_jwt = localStorage.getItem('x-access-token');
+var my_refresh = localStorage.getItem('x-refresh-token');
 const $pointExplanation = document.querySelector("#pointExplanation");
 const fetchUser = () => {
     fetch(
         "http://seolmunzip.shop:9000/users",{
             method: "GET",
-            headers: {'x-access-token' : my_jwt,}
+            headers: {'x-access-token' : my_jwt,  'x-refresh-token' : my_refresh, }
         }
     )
         .then((response) => response.json())

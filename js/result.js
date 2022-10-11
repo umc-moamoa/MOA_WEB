@@ -3,6 +3,7 @@ const $textResultBox = document.querySelector("#textResultBox");
 const $subContainer = document.querySelector(".sub-container");
 const $postDetail = document.querySelector(".flex-sTitle");
 var my_jwt = localStorage.getItem('x-access-token');
+var my_refresh = localStorage.getItem('x-refresh-token');
 
 const receivedPostId = location.href.split('?')[1];
 
@@ -10,6 +11,7 @@ const receivedPostId = location.href.split('?')[1];
 const fetchResultDetailId = () => {
   var requestOptions = {
       method: "Get",
+      headers: {'x-refresh-token' : my_refresh,}
   };
 
   fetch(
@@ -80,7 +82,7 @@ function resultTemplate(data) {
 function fetchTitle(postId) {
   var requestOptions = {
           method: "Get",
-          headers: {'x-access-token' : my_jwt,}
+          headers: {'x-access-token' : my_jwt, 'x-refresh-token' : my_refresh,}
       };
 
       fetch(
@@ -97,6 +99,7 @@ function fetchTitle(postId) {
 function fetchCount(postId) {
   var requestOptions = {
           method: "Get",
+          headers: {'x-refresh-token' : my_refresh,}
       };
 
       fetch(
