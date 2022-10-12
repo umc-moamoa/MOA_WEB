@@ -71,9 +71,49 @@ function save(){
             localStorage.setItem('x-refresh-token', response2.result.refreshToken);
             $(".one").css("display","none");
             $(".two").css("display","none");
-            // login(); 
+            login(); 
             // 메인으로 가는 거라 다시 주석 풀어야 함. 콘솔 찍으려고 한 거임.
         }
         })
     .catch((error) => console.log("error", error))
+}
+
+function selectEmail() {
+    category = selectedValue();
+    if ( category == 1 ) {
+        $('#SurveyList1').show();
+        $('#SurveyList2').hide();
+        $('#SurveyList3').hide();
+        $('#SurveyList4').hide();
+    }
+    else if ( category == 2 ) {
+        count2++;
+        if(count2 == 1) {
+            fetchSurvey(); //최초 1회만 데이터 추가됨. 1->2->1->2 중복 추가 방지
+        }
+        $('#SurveyList1').hide();
+        $('#SurveyList2').show();
+        $('#SurveyList3').hide();
+        $('#SurveyList4').hide();
+    }
+    else if ( category == 3 ) {
+        count3++;
+        if(count3 == 1) {
+            fetchSurvey(); //최초 1회만 데이터 추가됨. 1->2->1->2 중복 추가 방지
+        }
+        $('#SurveyList1').hide();
+        $('#SurveyList2').hide();
+        $('#SurveyList3').show();
+        $('#SurveyList4').hide();
+    }
+    else if ( category == 4 ) {
+        count4++;
+        if(count4 == 1) {
+            fetchSurvey(); //최초 1회만 데이터 추가됨. 1->2->1->2 중복 추가 방지
+        }
+        $('#SurveyList1').hide();
+        $('#SurveyList2').hide();
+        $('#SurveyList3').hide();
+        $('#SurveyList4').show();
+    }
 }
