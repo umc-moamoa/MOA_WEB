@@ -71,8 +71,7 @@ function save(){
             localStorage.setItem('x-refresh-token', response2.result.refreshToken);
             $(".one").css("display","none");
             $(".two").css("display","none");
-            // login(); 
-            // 메인으로 가는 거라 다시 주석 풀어야 함. 콘솔 찍으려고 한 거임.
+            login(); 
         }
         })
     .catch((error) => console.log("error", error))

@@ -15,6 +15,10 @@ const fetchDetail = () => {
         .then((response) => response.json())
         .then((webResult) => {
             console.log(webResult.message);
+            if(webResult.code == 2002) {
+                fetchTokenCheck();
+                fetchDetail();
+            }
             SurveyDetailTemplate(webResult.result);
         })
         .catch((error) => console.log("error", error));
