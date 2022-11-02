@@ -17,7 +17,7 @@ function join_check(){
     }else if(false === idCheck.test(id)){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
-        $(".validId1").text("아이디는 영어대소문자 7~15자리로 사용해야합니다.");
+        $(".validId1").text("이메일 인증해주세요.");
         return false;
     }else{
         $(".validId1").css("display","none");
@@ -106,7 +106,7 @@ function id_check_result(data) {
     }else if(false === idCheck.test(id)){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
-        $(".validId1").text("아이디는 영어대소문자 7~15자리로 사용해야합니다.");
+        $(".validId1").text("이메일 인증해주세요.");
         check_id = 0;
     }else if(data == "1000"){ 
         $(".validId1").css("display","block");
