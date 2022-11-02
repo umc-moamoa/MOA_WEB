@@ -15,7 +15,7 @@ console.log(receivedPostId);
 const fetchTokenCheck = () => {
     var requestOptions = {
         method: "Get",
-        headers: {'x-refresh-token' : my_refresh, }
+        headers: {'x-access-token' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
     };
 
     fetch(
@@ -38,7 +38,7 @@ const fetchTokenCheck = () => {
 const fetchDetail = () => {
     fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
         method: "GET",
-        headers: {'x-access-token' : my_jwt, 'x-refresh-token' : my_refresh, }
+        headers: {'x-access-token' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
     })
         .then((response) => response.json())
         .then((webResult) => {
