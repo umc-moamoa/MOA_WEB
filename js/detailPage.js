@@ -1,3 +1,7 @@
+// document.write("<script type='text/javascript' src='../js/token.js'></script>");  
+// import "../js/token.js";
+// document.write('<script src="js/jquery.ui.core.js"></script>');
+
 const $SurveyDetail = document.querySelector("#detailMain");
 var my_jwt = localStorage.getItem('x-access-token');
 var my_refresh = localStorage.getItem('x-refresh-token');
@@ -7,6 +11,30 @@ var like;
 const receivedPostId = location.href.split('?')[1];
 console.log(receivedPostId);
 
+
+const fetchTokenCheck = () => {
+    var requestOptions = {
+        method: "Get",
+        headers: {'x-refresh-token' : my_refresh, }
+    };
+
+    fetch(
+        "http://seolmunzip.shop:9000/auth/refresh",
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) => {
+            console.log(webResult.code);
+            localStorage.removeItem('x-access-token');
+            localStorage.setItem('x-access-token', webResult.result);
+
+        })
+        .catch((error) => console.log("error", error));
+}
+
+// fetchTokenCheck();
+
+
 const fetchDetail = () => {
     fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
         method: "GET",
@@ -14,12 +42,13 @@ const fetchDetail = () => {
     })
         .then((response) => response.json())
         .then((webResult) => {
-            console.log(webResult.message);
+            console.log(webResult.code);
             if(webResult.code == 2002) {
-                fetchTokenCheck();
-                fetchDetail();
+                // fetchTokenCheck();
+                // fetchDetail();
             }
             SurveyDetailTemplate(webResult.result);
+            fetchTokenCheck();
         })
         .catch((error) => console.log("error", error));
 }

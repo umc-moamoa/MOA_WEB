@@ -14,10 +14,6 @@ const fetchTokenCheck = () => {
         .then((response) => response.json())
         .then((webResult) => {
             console.log(webResult.message);
-            // 리프레쉬 토큰 마저 만료되었을 때 
-            if(webResult.code == 5001) {
-                
-            }
             localStorage.removeItem('x-access-token');
             localStorage.setItem('x-access-token', webResult.result);
 
