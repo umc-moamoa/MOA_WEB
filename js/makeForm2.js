@@ -85,6 +85,28 @@ function sortQuestion() {
     fetchMakeForm();
 }
 
+const fetchTokenCheck = () => {
+    var requestOptions = {
+        method: "Get",
+        headers: {'REFRESH-TOKEN' : my_refresh, }
+    };
+
+    fetch(
+        "http://seolmunzip.shop:9000/auth/refresh",
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) => {
+            console.log(webResult.code);
+            localStorage.removeItem('x-access-token');
+            localStorage.setItem('x-access-token', webResult.result);
+
+        })
+        .catch((error) => console.log("error", error));
+}
+
+// fetchTokenCheck();
+
 function fetchMakeForm() {
     const formItem = {
         "categoryId" : Number(semiCategoryId),
@@ -101,7 +123,7 @@ function fetchMakeForm() {
     fetch(`http://seolmunzip.shop:9000/posts` , {
         method: "POST",
         headers: {
-            'x-access-token' : my_jwt, 'x-refresh-token' : my_refresh, 
+            'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, 
             'Content-Type': 'application/json'            
         },
         body: JSON.stringify(formItem)
@@ -109,6 +131,11 @@ function fetchMakeForm() {
 
     .then((response) => response.json())
     .then((response2) => {
+        console.log(response2.code);
+        if(response2.code == 2002) {
+            fetchTokenCheck();
+            fetchMakeForm();
+        }
         if (response2.code == 2013) {
             alert(response2.message);
             gotoMain();

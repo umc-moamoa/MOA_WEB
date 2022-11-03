@@ -1,7 +1,3 @@
-// document.write("<script type='text/javascript' src='../js/token.js'></script>");  
-// import "../js/token.js";
-// document.write('<script src="js/jquery.ui.core.js"></script>');
-
 const $SurveyDetail = document.querySelector("#detailMain");
 var my_jwt = localStorage.getItem('x-access-token');
 var my_refresh = localStorage.getItem('x-refresh-token');
@@ -10,7 +6,6 @@ var like;
 
 const receivedPostId = location.href.split('?')[1];
 console.log(receivedPostId);
-
 
 const fetchTokenCheck = () => {
     var requestOptions = {
@@ -35,7 +30,7 @@ const fetchTokenCheck = () => {
 const fetchDetail = () => {
     fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
         method: "GET",
-        headers: {'x-access-token' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
+        headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
     })
         .then((response) => response.json())
         .then((webResult) => {

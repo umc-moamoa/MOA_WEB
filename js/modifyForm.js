@@ -36,7 +36,7 @@ function fetchModifyForm() {
     fetch(`http://seolmunzip.shop:9000/posts/${postId}` , {
         method: "PATCH",
         headers: {
-            'x-access-token' : my_jwt,  'x-refresh-token' : my_refresh, 
+            'X-ACCESS-TOKEN' : my_jwt, 
             'Content-Type': 'application/json'            
         },
         body: JSON.stringify(modifyItem)

@@ -2,19 +2,49 @@ const $userInfo = document.querySelector("#userInfo");
 var my_jwt = localStorage.getItem('x-access-token');
 var my_refresh = localStorage.getItem('x-refresh-token');
 const $pointExplanation = document.querySelector("#pointExplanation");
+
 const fetchUser = () => {
     fetch(
         "http://seolmunzip.shop:9000/users",{
             method: "GET",
-            headers: {'x-access-token' : my_jwt,  'x-refresh-token' : my_refresh, }
+            headers: {'x-access-token' : my_jwt,  'REFRESH-TOKEN' : my_refresh, }
         }
     )
         .then((response) => response.json())
-        .then((webResult) => userTemplate(webResult.result))
+        .then((webResult) => {
+            console.log(webResult.code);
+            if(webResult.code == 2002) {
+                fetchTokenCheck();
+                fetchUser();
+            }
+            
+            userTemplate(webResult.result);
+        })
+            
         .catch((error) => console.log("error", error));
 }
 
 fetchUser();
+
+const fetchTokenCheck = () => {
+    var requestOptions = {
+        method: "Get",
+        headers: {'REFRESH-TOKEN' : my_refresh, }
+    };
+
+    fetch(
+        "http://seolmunzip.shop:9000/auth/refresh",
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) => {
+            console.log(webResult.code);
+            localStorage.removeItem('x-access-token');
+            localStorage.setItem('x-access-token', webResult.result);
+
+        })
+        .catch((error) => console.log("error", error));
+}
 
 function userTemplate(data) {
     const userInfoItem = 
@@ -65,11 +95,16 @@ function deleteUser() {
     fetch(
         "http://seolmunzip.shop:9000/users",{
             method: "DELETE",
-            headers: {'x-access-token' : my_jwt,}
+            headers: {'x-access-token' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
         }
     )
         .then((response) => response.json())
         .then((response) => {
+            console.log(response.code);
+            if(response.code == 2002) {
+                fetchTokenCheck();
+                deleteUser();
+            }
             console.log(response);
 
             change_logout();

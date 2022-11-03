@@ -4,10 +4,30 @@ var my_refresh = localStorage.getItem('x-refresh-token');
 // const receivedPostId = location.href.split('?')[1];
 var receivedPostId;
 
+const fetchTokenCheck = () => {
+    var requestOptions = {
+        method: "Get",
+        headers: {'REFRESH-TOKEN' : my_refresh, }
+    };
+
+    fetch(
+        "http://seolmunzip.shop:9000/auth/refresh",
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) => {
+            console.log(webResult.code);
+            localStorage.removeItem('x-access-token');
+            localStorage.setItem('x-access-token', webResult.result);
+
+        })
+        .catch((error) => console.log("error", error));
+}
+
 const fetchSurvey = () => {
     var requestOptions = {
         method: "GET",
-        headers: {'x-access-token' : my_jwt,  'x-refresh-token' : my_refresh, }
+        headers: {'x-access-token' : my_jwt,  'REFRESH-TOKEN' : my_refresh, }
     };
 
     fetch(
@@ -16,6 +36,11 @@ const fetchSurvey = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
+            console.log(webResult.code);
+            if(webResult.code == 2002) {
+                fetchTokenCheck();
+                fetchSurvey();
+            }
             webResult.result.map(item => SurveyListTemplate(item));
             if(webResult.result.length != 0){
                 $(".length_zero_txt").css("display","none");
@@ -162,10 +187,17 @@ function deletePost(postId) {
     const fetchDetail = () => {
         fetch(`http://seolmunzip.shop:9000/posts/${postId}/status`, {
             method: "PATCH",
-            headers: {'x-access-token' : my_jwt,}
+            headers: {'x-access-token' : my_jwt, 'REFRESH-TOKEN' : my_refresh,}
         })
         .then((response) => response.json())
         .then((webResult) => {
+                        
+            console.log(webResult.code);
+            if(webResult.code == 2002) {
+                fetchTokenCheck();
+                deletePost();
+            }
+
             // alert("설문조사가 삭제되었습니다.");
 
             Swal.fire({

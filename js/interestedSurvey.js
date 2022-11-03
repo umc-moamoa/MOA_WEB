@@ -2,10 +2,30 @@ const $SurveyList = document.querySelector("#SurveyList");
 var my_jwt = localStorage.getItem('x-access-token');
 var my_refresh = localStorage.getItem('x-refresh-token');
 
+const fetchTokenCheck = () => {
+    var requestOptions = {
+        method: "Get",
+        headers: {'REFRESH-TOKEN' : my_refresh, }
+    };
+
+    fetch(
+        "http://seolmunzip.shop:9000/auth/refresh",
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) => {
+            console.log(webResult.code);
+            localStorage.removeItem('x-access-token');
+            localStorage.setItem('x-access-token', webResult.result);
+
+        })
+        .catch((error) => console.log("error", error));
+}
+
 const fetchInterest = () => {
     var requestOptions = {
         method: "Get",
-        headers: {'x-access-token' : my_jwt, 'x-refresh-token' : my_refresh, }
+        headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
     };
 
     fetch(
@@ -14,6 +34,11 @@ const fetchInterest = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
+            console.log(webResult.code);
+            if(webResult.code == 2002) {
+                fetchTokenCheck();
+                fetchInterest();
+            }
             webResult.result.map(item => InterestListTemplate(item));
             if(webResult.result.length != 0){
                 $(".length_zero_txt").css("display","none");

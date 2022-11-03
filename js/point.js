@@ -5,6 +5,26 @@ var my_jwt = localStorage.getItem('x-access-token');
 var my_refresh = localStorage.getItem('x-refresh-token');
 var value;
 
+const fetchTokenCheck = () => {
+    var requestOptions = {
+        method: "Get",
+        headers: {'REFRESH-TOKEN' : my_refresh, }
+    };
+
+    fetch(
+        "http://seolmunzip.shop:9000/auth/refresh",
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) => {
+            console.log(webResult.code);
+            localStorage.removeItem('x-access-token');
+            localStorage.setItem('x-access-token', webResult.result);
+
+        })
+        .catch((error) => console.log("error", error));
+}
+
 function selectedValue() {
     var select = document.getElementById('Stype');
     var value = select.options[select.selectedIndex].value; 
@@ -15,7 +35,7 @@ function selectedValue() {
 const fetchSurvey1 = () => {
     var requestOptions = {
         method: "GET",
-        headers: {'x-access-token' : my_jwt, 'x-refresh-token' : my_refresh,}
+        headers: {'x-access-token' : my_jwt, 'REFRESH-TOKEN' : my_refresh,}
     };
     value = selectedValue();
     fetch(
@@ -24,6 +44,12 @@ const fetchSurvey1 = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
+            console.log(webResult.code);
+            if(webResult.code == 2002) {
+                fetchTokenCheck();
+                fetchSurvey1();
+            }
+
             webResult.result.pointHistoryRecent.map(item => pointListTemplate2(item));
             pointListTemplate1(webResult.result);
             console.log(webResult);
@@ -68,7 +94,7 @@ function pointListTemplate2 (data) {
 const fetchSurvey2 = () => {
     var requestOptions2 = {
         method: "GET",
-        headers: {'x-access-token' : my_jwt,}
+        headers: {'x-access-token' : my_jwt, 'REFRESH-TOKEN' : my_refresh,}
     };
     value = selectedValue();
     fetch(
@@ -77,6 +103,12 @@ const fetchSurvey2 = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
+            
+            console.log(webResult.code);
+            if(webResult.code == 2002) {
+                fetchTokenCheck();
+                fetchSurvey2();
+            }
             webResult.result.pointHistoryFormer.map(item => pointListTemplate4(item));
             slick(value);
         })

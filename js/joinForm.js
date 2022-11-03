@@ -16,10 +16,32 @@ function gotoParticipatedSurvey() {
 const rpostId = location.href.split('?')[1];
 console.log(rpostId);
 
+const fetchTokenCheck = () => {
+    var requestOptions = {
+        method: "Get",
+        headers: {'REFRESH-TOKEN' : my_refresh, }
+    };
+
+    fetch(
+        "http://seolmunzip.shop:9000/auth/refresh",
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) => {
+            console.log(webResult.code);
+            localStorage.removeItem('x-access-token');
+            localStorage.setItem('x-access-token', webResult.result);
+
+        })
+        .catch((error) => console.log("error", error));
+}
+
+// fetchTokenCheck();
+
 const fetchSuryeyIn = () => {
     var requestOptions = {
         method: "GET",
-        headers: {'x-access-token' : my_jwt, 'x-refresh-token' : my_refresh, }
+        headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
     };
 
     fetch(
@@ -28,7 +50,11 @@ const fetchSuryeyIn = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
-            console.log(webResult);
+            console.log(webResult.code);
+            if(webResult.code == 2002) {
+                fetchTokenCheck();
+                fetchfetchSuryeyInDetail();
+            }
             postLength = webResult.result.length;
             console.log(postLength);
             webResult.result.map(item => SurveyInTemplate(item));
@@ -218,7 +244,7 @@ function sendPost() {
     fetch(`http://seolmunzip.shop:9000/results` , {
         method: "POST",
         headers: {
-            'x-access-token' : my_jwt,
+            'X-ACCESS-TOKEN' : my_jwt,
             'Content-Type': 'application/json'            
         },
         body: JSON.stringify(sendList)
