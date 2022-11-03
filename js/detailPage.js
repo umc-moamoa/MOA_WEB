@@ -15,7 +15,7 @@ console.log(receivedPostId);
 const fetchTokenCheck = () => {
     var requestOptions = {
         method: "Get",
-        headers: {'x-access-token' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
+        headers: {'REFRESH-TOKEN' : my_refresh, }
     };
 
     fetch(
@@ -32,9 +32,6 @@ const fetchTokenCheck = () => {
         .catch((error) => console.log("error", error));
 }
 
-// fetchTokenCheck();
-
-
 const fetchDetail = () => {
     fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
         method: "GET",
@@ -44,11 +41,12 @@ const fetchDetail = () => {
         .then((webResult) => {
             console.log(webResult.code);
             if(webResult.code == 2002) {
-                // fetchTokenCheck();
-                // fetchDetail();
+                fetchTokenCheck();
+                fetchDetail();
             }
             SurveyDetailTemplate(webResult.result);
-            fetchTokenCheck();
+            // fetchTokenCheck();
+            // 확인용이었음 !
         })
         .catch((error) => console.log("error", error));
 }
