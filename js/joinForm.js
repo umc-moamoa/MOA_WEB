@@ -53,7 +53,7 @@ const fetchSuryeyIn = () => {
             console.log(webResult.code);
             if(webResult.code == 2002) {
                 fetchTokenCheck();
-                fetchfetchSuryeyInDetail();
+                fetchSuryeyIn();
             }
             postLength = webResult.result.length;
             console.log(postLength);
