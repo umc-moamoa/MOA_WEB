@@ -91,8 +91,24 @@ function id_check() {
     })
 
     .then((response) => response.json())
-    .then((webResult) => id_check_result(webResult.code))
+    .then((webResult) => {
+        id_check_result(webResult.code);
+        windowOpen(); 
+        check_email();
+    })
     .catch((error) => console.log("error", error))
+}
+// 이메일 인증 팝업창
+function windowOpen(){
+    window.open('emailWindow.html', '이메일 인증', 'top=200, left=600, width=450, height=316, status=no, menubar=no, toolbar=no, resizable=no');
+}
+
+function check_email(){
+    const { OK_id, OK_Stype } = JSON.parse(localStorage.getItem("user-info"));
+    localStorage.remove("user-info");
+    $(".id").value(OK_id);
+    $(".Stype").selected(OK_Stype);
+    console.log(OK_id, OK_Stype);
 }
 
 function id_check_result(data) {
@@ -208,3 +224,4 @@ function moveToLogin(){
 
     })
 }
+
