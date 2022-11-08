@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 응답</title>
+    <title>나의 답변</title>
     <link rel="stylesheet" href="../css/answer.css" />
-    <link rel="icon" href="../image/logo.png">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 <body>
     <div class="flex-container">
@@ -31,7 +32,6 @@
                         </li>
                     </ul>
                 </div>
-
 
                 <!-- 로고 -->
                 <div id="headerLogo" class="layout-wrapper">
@@ -71,22 +71,27 @@
             <!-- container -->
             <div class="container">
 
-                <div id="main">
-                    <div class="flex-container2">
+                <!-- 서브 제목 -->
+                <div id="subTitle" >
+                    <p class="subTitle">나의 답변</p>
+                </div>
 
-                        <!-- 메인 -->
-                        <div>
-                            <div class="flex-sTitle"></div>
-                            <div class="sub-container"></div>
+                <div id="main">
+                    <form>
+                        <div class="flex-container2">
+                            <!-- 메인 -->
+                            <div id="SurveyQuestion">
+                            </div>
+                            <div><button type="button" id="submit_btn" onClick="sendPost()">제출</button></div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-
+    
         <!-- footer -->
         <footer>
-            <div id="fcontainer">
+            <div class="container">
                 <table>
                     <div class="row justify-content-center">
                         <div class="col-sm-4 col-md-3 item">
@@ -112,6 +117,8 @@
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="../js/answer.js"></script>
     <script src="../js/check.js"></script>
 </body>
 </html>

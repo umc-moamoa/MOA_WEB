@@ -39,21 +39,21 @@ const fetchDetail = () => {
             if(webResult.code == 1000) {
                 SurveyDetailTemplate(webResult.result);
             }
-            if(webResult.code == 1000) {
+            if(webResult.code == 2002) {
                 fetchTokenCheck();
                 // 재호출
-                fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
-                    method: "GET",
-                    headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
-                })
-                .then((response) => response.json())
-                .then((webResult) => {
-                    console.log(webResult.code);
-                    console.log(webResult.message);
-                    if(webResult.code == 1000) {
-                        SurveyDetailTemplate(webResult.result);
-                    }
-                })
+                // fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
+                //     method: "GET",
+                //     headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
+                // })
+                // .then((response) => response.json())
+                // .then((webResult) => {
+                //     console.log(webResult.code);
+                //     console.log(webResult.message);
+                //     if(webResult.code == 1000) {
+                //         SurveyDetailTemplate(webResult.result);
+                //     }
+                // })
             }
             // fetchTokenCheck();
             // 확인용이었음 !
@@ -82,7 +82,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn_gray" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
+            <button id="joinBtn_gray" onClick="location.href = '../html/answer.html?${receivedPostId}'">나의&nbsp;&nbsp;답변&nbsp;&nbsp;확인</button>
         </div> 
     `;
     const SurveyDetailItem_participated_nolike = `
@@ -101,7 +101,7 @@ function SurveyDetailTemplate (data) {
         <div id="mainBottom"> ${data.content} </div>
 
         <div class="join">
-            <button id="joinBtn_gray" onClick="participated_alert();">이미&nbsp;&nbsp;참여한&nbsp;&nbsp;설문</button>
+            <button id="joinBtn_gray" onClick="location.href = '../html/answer.html?${receivedPostId}'">나의&nbsp;&nbsp;답변&nbsp;&nbsp;확인</button>
         </div> 
     `;
 

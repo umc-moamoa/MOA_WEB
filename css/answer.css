@@ -43,12 +43,14 @@ ul,li{
 #userMenu * {
     font-weight: 400;
     font-size: 12px;
+    /* letter-spacing: 0.1em; */
     color: #414141;
 }
 ul {
     display: block;
     margin-block-start: 10px;
     margin-block-end: 10px;
+    /* padding-inline-start: 20px; */
 }
 
 #userMenu .menu {
@@ -67,7 +69,6 @@ ul {
     font-size: 0;
     text-indent: -9999px;
 }
-
 #userMenu .link:hover{
     color: #4E7FF2;
 }
@@ -77,21 +78,25 @@ ul {
     display: block;
     width: 140px;
     margin: 0 auto;
+    /* margin-left: 80px; */
 }
 
 /* gnb */
 .gnb_main {
     width: 100%;
+/*     height: 40px; */
     margin: 30px auto; 
     margin-bottom: 0;
     border-right: none;
     border-left: none;
     box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
+    /* padding-top: 0.5px; */
 }
 .gnb{
     text-align: center;
     padding: 8px 0;
     margin: 0;
+/*     vertical-align:middle; */
 }
 .gnb li {
     display: inline;
@@ -106,110 +111,38 @@ ul {
     color: #909090;
     margin: 0;
 }
-
 .link:hover {
     color: #4E7FF2;
     font-weight: 700;
 }
 
+
 /* container */
 #wrapper .container {
+    /* min-height: 300vh; */
     width: 970px;
     margin: 70px auto;
     margin-bottom: 100px;
     padding: 0 70px;
 }
 
-#fcontainer {
+footer .container {
+    /* min-height: 300vh; */
     width: 970px;
     margin: 30px auto;
     padding: 0 65px;
 }
 
 /*서브 제목*/
-#subTitle .subTitle{
+#subTitle .subTitle {
     position: relative;
-    margin-left: 135px;
+
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
     line-height: 40px;
     color: #414141;
 }
-
-/* main */
-#main {
-    box-sizing: border-box;
-    padding: 30px;
-    margin: 0 135px;
-    height: auto;
-    background: #FFFFFF;
-    border: 1px solid #909090;
-}
-
-.flex-container2 {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-sTitle {
-    display: flex;
-    justify-content: flex-start;
-    align-items: baseline;
-    padding-bottom: 15px;
-    padding-left: 8px;
-    border-bottom: 2px solid #C6C6C6;
-}
-
-#sTitle {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 35px;
-    color: #414141;
-}
-
-#peopleNum {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 23px;
-    color: #4E7FF2;
-    margin-left: 25px;
-}
-
-.sub-container {
-    margin-top: 10px;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 29px;
-    color: #414141;
-}
-
-#textResultBox {
-    height:250px;
-    overflow-y: scroll;
-    margin-top: 5px;
-}
-
-#textResultItem {
-    background: #F4F4F4;
-    box-shadow: 0px 0px 100px rgba(184, 171, 252, 0.1);
-    border-radius: 5px;
-    margin: 7px;
-    margin-left: 0;
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 26px;
-    color: #6C6C6C;
-}
-
 
 /*footer*/
 footer {
@@ -222,8 +155,10 @@ footer {
 }
 
 #wrapper {
+    /* height: auto; */
     min-height: 100vh;
     position: relative;
+    /* padding-bottom: 226.302; */
 }
 
 table {
@@ -246,7 +181,9 @@ footer a {
     font-size: 12px;
     font-weight: 500;
 }
-
+/* footer .container {
+    padding: 0 auto;
+} */
 footer ul {
     padding-inline-start: 100px;
 }
@@ -259,5 +196,124 @@ footer td p {
 }
 #info {
     padding: 20px 0;
+}
+
+/* main */
+#main {
+    box-sizing: border-box;
+    /* padding: 4% 4% 0% 4%; */
+    padding: 30px 30px 0 30px;
+
+    height: auto;
+    background: #FFFFFF;
+    border: 1px solid #909090;
+    border-bottom: 0;
+}
+
+.flex-container2 {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+}
+
+.Q1, .Q2, .Q3 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.Qtype3 {
+    display: block;
+    width: 750px;
+
+    border: none;
+    border-bottom: 1px solid #B5B5B5;
+    outline: none; /* 입력 시 테두리 지움*/
+    
+    font-weight: 500;
+    font-size: 14px;
+    color: #414141;
+
+/*     margin-bottom: 30px; */
+    padding-bottom: 7px;
+    padding-top: 15px;
+}
+
+.Qtype4 {
+    display: block;
+    width: 750px;
+    border: 1px solid #919191;
+    outline: none; 
+    border-radius: 8px;
+    resize: none;
+    margin-top: 15px;
+    padding: 7px;
+
+    font-weight: 500;
+    font-size: 14px;
+    color: #414141;
+}
+
+.Qtype1 {
+    margin: 7px 0;
+}
+.Qtype2 {
+    margin: 7px 0;
+}
+
+.question {
+    margin-bottom: 30px;
+}
+
+.radioBtn {
+    display: inline-block;
+    margin-left: 12px;
+    color: #414141;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.radioBox {
+    margin-top: 15px;
+}
+
+.checkBoxBtn {
+    display: inline-block;
+    margin-left: 12px;
+    color: #414141;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.checkBoxBox {
+    margin-top: 15px;
+}
+
+#submit_btn {
+    background: linear-gradient(91.36deg, #4E7FF2 -24.31%, #9CC2FF 130.3%);
+    box-shadow: 0px -10px 40px rgba(156, 194, 255, 0.3);
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+
+    width: 830px;
+    padding: 12px 0;
+    cursor: pointer;
+    margin: 20px 0 0 -31px;
+}
+
+.required {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: 400;
+    font-size: 11px;
+    color: #909090;
+}
+
+.swal-wide {
+    font-size: 12px !important;
+    height: 200px !important;
 }
 
