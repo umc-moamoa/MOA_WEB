@@ -35,11 +35,26 @@ const fetchDetail = () => {
         .then((response) => response.json())
         .then((webResult) => {
             console.log(webResult.code);
-            if(webResult.code == 2002) {
-                fetchTokenCheck();
-                fetchDetail();
+            console.log(webResult.message);
+            if(webResult.code == 1000) {
+                SurveyDetailTemplate(webResult.result);
             }
-            SurveyDetailTemplate(webResult.result);
+            if(webResult.code == 1000) {
+                fetchTokenCheck();
+                // 재호출
+                fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
+                    method: "GET",
+                    headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
+                })
+                .then((response) => response.json())
+                .then((webResult) => {
+                    console.log(webResult.code);
+                    console.log(webResult.message);
+                    if(webResult.code == 1000) {
+                        SurveyDetailTemplate(webResult.result);
+                    }
+                })
+            }
             // fetchTokenCheck();
             // 확인용이었음 !
         })
