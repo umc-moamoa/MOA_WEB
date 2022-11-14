@@ -180,6 +180,7 @@ function login_alert6() {
     }
 }
 
+
 // 회원가입 로그인 제한
 // function login_alert7() {
 //     if(my_jwt == null){
@@ -214,6 +215,31 @@ function login_alert7() {
         });
     }else{
         var link="../html/signUp.html";
+        location.href=link;
+    }
+}
+
+// 마이페이지 로그인 제한
+function login_alert8() {
+    if(my_jwt == null){
+        Swal.fire({
+            title: '회원 전용입니다.',
+            text: "로그인하시겠습니까?",
+            // icon: 'warning',
+            customClass: 'swal-wide',
+            showCancelButton: true,
+            confirmButtonColor: '#4E7FF2',
+            cancelButtonColor: '#DBDBDB',
+            confirmButtonText: '예',
+            cancelButtonText: '아니요'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                var link="../html/login.html";
+                location.href=link;
+            }
+        })
+    }else{
+        var link="../html/myPage.html";
         location.href=link;
     }
 }

@@ -3,7 +3,7 @@ var email_check_num = 0;
 // 이메일 인증(이메일 전송)
 function send_email() {
     const data = {
-        id: id.value
+        id: email.value
     }
     fetch(`http://seolmunzip.shop:9000/email/send`, {
         method: "GET",
@@ -13,13 +13,14 @@ function send_email() {
     .then((response) => response.json())
     .then((webResult) => {
         console.log(webResult);
-        check_send_email();
+        certifiedCode = webResult.result;
+        check_send_email(data);
     })
     .catch((error) => console.log("error", error))
 }
 
-function check_send_email(){
-    if(id.value == ""){
+function check_send_email(data){
+    if(email.value == ""){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
         $(".validId1").text("이메일을 입력하세요.");

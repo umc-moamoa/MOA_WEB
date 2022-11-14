@@ -18,17 +18,10 @@
                     </div>
                     <div id="signupBox">
                         <div class="box">
-                            <input type="text" class="inputEmail" id="id" maxlength="20"
+                            <input type="text" class="inputEmail" id="email" maxlength="30"
                             placeholder="이메일을 입력해주세요."
                             onfocus="this.placeholder = ''" 
                             onblur="this.placeholder = '이메일을 입력해주세요.'">
-                            <span class="email">@</span>
-                            <select id="Stype" onchange="selectEmail()">
-                                <option value="1" selected>이메일 선택</option>
-                                <option value="2">naver.com</option>
-                                <option value="3">google.com</option>
-                                <option value="4">daum.net</option>
-                            </select>
                             <button type="button" id="idBtn1" onclick="send_email();">이메일인증</button>
                             <p class="alert validId1"></p>
                         </div>

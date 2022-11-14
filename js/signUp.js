@@ -1,18 +1,18 @@
 // 유효성 체크
 function join_check(){
-    var id = document.getElementById("id");
+    var email = document.getElementById("email");
     var pwd1 = document.getElementById("pswd1");
     var pwd2 = document.getElementById("pswd2");
     var nickName = document.getElementById("nickName");
 
     // 해당 입력값이 없을 경우
     var idCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
-    var id = $("#id").val();
+    var id = $("#email").val();
     if(id.value == ""){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
         $(".validId1").text("아이디를 입력하세요.");
-        id.focus(); 
+        email.focus(); 
         return false; 
     }else if(false === idCheck.test(id)){
         $(".validId1").css("display","block");
@@ -81,9 +81,10 @@ function join_check(){
 }
 var check_id = 0;
 //아이디 중복체크
+/*
 function id_check() {
     const data = {
-        id: id.value
+        id: email.value
     }
     fetch(`http://seolmunzip.shop:9000/users/id/${data.id}`, {
         method: "GET",
@@ -98,6 +99,7 @@ function id_check() {
     })
     .catch((error) => console.log("error", error))
 }
+*/
 // 이메일 인증 팝업창
 function windowOpen(){
     window.open('emailWindow.html', '이메일 인증', 'top=200, left=600, width=450, height=316, status=no, menubar=no, toolbar=no, resizable=no');
@@ -106,14 +108,14 @@ function windowOpen(){
 function check_email(){
     const { OK_id, OK_Stype } = JSON.parse(localStorage.getItem("user-info"));
     localStorage.remove("user-info");
-    $(".id").value(OK_id);
+    $(".email").value(OK_id);
     $(".Stype").selected(OK_Stype);
     console.log(OK_id, OK_Stype);
 }
 
 function id_check_result(data) {
     var idCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
-    var id = $("#id").val();
+    var id = $("#email").val();
     if(id.value == ""){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
@@ -187,7 +189,7 @@ function nick_check_result(data){
 
 function save(){
     const data = {
-        id: document.getElementById("id").value,
+        id: document.getElementById("email").value,
         pwd: document.getElementById("pswd1").value,
         nick: document.getElementById("nickName").value
     }
