@@ -22,7 +22,7 @@ const fetchTokenCheck = () => {
             console.log(webResult.code);
             localStorage.removeItem('x-access-token');
             localStorage.setItem('x-access-token', webResult.result);
-            // fetchDetail();
+            my_jwt = localStorage.getItem('x-access-token');
         })
         .catch((error) => console.log("error", error));
 }
@@ -60,7 +60,6 @@ const fetchDetail = () => {
         })
         .catch((error) => console.log("error", error));
 }
-// fetchTokenCheck();
 fetchDetail();
 
 function SurveyDetailTemplate (data) {
