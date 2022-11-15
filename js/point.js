@@ -4,6 +4,7 @@ const $pointAll = document.querySelector(".pointAll");
 var my_jwt = localStorage.getItem('x-access-token');
 var my_refresh = localStorage.getItem('x-refresh-token');
 var value;
+const $pointExplanation = document.querySelector("#pointExplanation");
 
 const fetchTokenCheck = () => {
     var requestOptions = {
@@ -182,4 +183,12 @@ function showSurvey() {
         $('#SurveyList1').hide();
         $('#SurveyList2').show();
     }
+}
+
+function onDisplay() {
+    $pointExplanation.style.display = "block";
+}
+
+function offDisplay() {
+    $pointExplanation.style.display = "none";
 }

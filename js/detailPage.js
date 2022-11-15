@@ -22,7 +22,7 @@ const fetchTokenCheck = () => {
             console.log(webResult.code);
             localStorage.removeItem('x-access-token');
             localStorage.setItem('x-access-token', webResult.result);
-
+            // fetchDetail();
         })
         .catch((error) => console.log("error", error));
 }
@@ -42,25 +42,25 @@ const fetchDetail = () => {
             if(webResult.code == 2002) {
                 fetchTokenCheck();
                 // 재호출
-                // fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
-                //     method: "GET",
-                //     headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
-                // })
-                // .then((response) => response.json())
-                // .then((webResult) => {
-                //     console.log(webResult.code);
-                //     console.log(webResult.message);
-                //     if(webResult.code == 1000) {
-                //         SurveyDetailTemplate(webResult.result);
-                //     }
-                // })
+                fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
+                    method: "GET",
+                    headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
+                })
+                .then((response) => response.json())
+                .then((webResult) => {
+                    console.log(webResult.code);
+                    console.log(webResult.message);
+                    if(webResult.code == 1000) {
+                        SurveyDetailTemplate(webResult.result);
+                    }
+                })
             }
             // fetchTokenCheck();
             // 확인용이었음 !
         })
         .catch((error) => console.log("error", error));
 }
-
+// fetchTokenCheck();
 fetchDetail();
 
 function SurveyDetailTemplate (data) {

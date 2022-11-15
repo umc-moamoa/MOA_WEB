@@ -298,6 +298,7 @@ footer td p {
     margin-top: -7px;
     margin-left: 5px;
     z-index: 100;
+    cursor: pointer;
 }
 
 #pointTitle {
@@ -313,4 +314,5 @@ footer td p {
 #close-btn {
     z-index: 100;
     margin-left: 320px;
+    cursor: pointer;
 }
