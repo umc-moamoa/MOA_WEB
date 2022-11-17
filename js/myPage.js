@@ -13,12 +13,26 @@ const fetchUser = () => {
         .then((response) => response.json())
         .then((webResult) => {
             console.log(webResult.code);
+            if(webResult.code == 1000) {
+                userTemplate(webResult.result);
+            }
             if(webResult.code == 2002) {
                 fetchTokenCheck();
-                fetchUser();
+                fetch(
+                    "http://seolmunzip.shop:9000/users",{
+                        method: "GET",
+                        headers: {'x-access-token' : my_jwt,  'REFRESH-TOKEN' : my_refresh, }
+                    }
+                )
+                    .then((response) => response.json())
+                    .then((webResult) => {
+                        console.log(webResult.code);
+                        if(webResult.code == 1000) {
+                            userTemplate(webResult.result);
+                        }
+                    })
             }
-            
-            userTemplate(webResult.result);
+
         })
             
         .catch((error) => console.log("error", error));
@@ -41,7 +55,7 @@ const fetchTokenCheck = () => {
             console.log(webResult.code);
             localStorage.removeItem('x-access-token');
             localStorage.setItem('x-access-token', webResult.result);
-
+            my_jwt = localStorage.getItem('x-access-token');
         })
         .catch((error) => console.log("error", error));
 }

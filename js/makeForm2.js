@@ -100,12 +100,10 @@ const fetchTokenCheck = () => {
             console.log(webResult.code);
             localStorage.removeItem('x-access-token');
             localStorage.setItem('x-access-token', webResult.result);
-
+            my_jwt = localStorage.getItem('x-access-token');
         })
         .catch((error) => console.log("error", error));
 }
-
-// fetchTokenCheck();
 
 function fetchMakeForm() {
     const formItem = {
@@ -132,9 +130,39 @@ function fetchMakeForm() {
     .then((response) => response.json())
     .then((response2) => {
         console.log(response2.code);
+        if(response2.code == 1000) {
+            gotoMysurvey();
+        }
         if(response2.code == 2002) {
             fetchTokenCheck();
-            fetchMakeForm();
+            const formItem = {
+                "categoryId" : Number(semiCategoryId),
+                "shortCount" : semiShortCount,
+                "longCount" : semiLongCount,
+                "title" : semiTitle,
+                "content" : semiContent,
+                "deadline" : semiDeadline,
+                "postDetails" : semiPostDetails
+            }
+        
+            console.log(JSON.stringify(formItem));
+        
+            fetch(`http://seolmunzip.shop:9000/posts` , {
+                method: "POST",
+                headers: {
+                    'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, 
+                    'Content-Type': 'application/json'            
+                },
+                body: JSON.stringify(formItem)
+            })
+        
+            .then((response) => response.json())
+            .then((response2) => {
+                console.log(response2.code);
+                if(response2.code == 1000) {
+                    gotoMysurvey();
+                }
+            })
         }
         if (response2.code == 2013) {
             alert(response2.message);
@@ -145,10 +173,7 @@ function fetchMakeForm() {
         } else if (response2.code == 2019) {
             alert(response2.message);
             gotoMain();
-        } else {
-            gotoMysurvey();
-        }
-        // console.log(response2.message);
+        } 
     })
     .catch((error) => console.log("error", error))
 }

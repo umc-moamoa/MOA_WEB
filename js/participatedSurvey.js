@@ -17,7 +17,7 @@ const fetchTokenCheck = () => {
             console.log(webResult.code);
             localStorage.removeItem('x-access-token');
             localStorage.setItem('x-access-token', webResult.result);
-
+            my_jwt = localStorage.getItem('x-access-token');
         })
         .catch((error) => console.log("error", error));
 }
@@ -34,17 +34,38 @@ const fetchParticipate = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
-            
             console.log(webResult.code);
+            if(webResult.code == 1000) {
+                webResult.result.map(item => ParticipateListTemplate(item));
+                if(webResult.result.length != 0){
+                    $(".length_zero_txt").css("display","none");
+                }
+                slick();
+            }
             if(webResult.code == 2002) {
                 fetchTokenCheck();
-                fetchParticipate();
+                var requestOptions = {
+                    method: "Get",
+                    headers: {'x-access-token' : my_jwt,  'REFRESH-TOKEN' : my_refresh,}
+                };
+            
+                fetch(
+                    "http://seolmunzip.shop:9000/users/partPost",
+                    requestOptions
+                )
+                    .then((response) => response.json())
+                    .then((webResult) => {
+                        console.log(webResult.code);
+                        if(webResult.code == 1000) {
+                            webResult.result.map(item => ParticipateListTemplate(item));
+                            if(webResult.result.length != 0){
+                                $(".length_zero_txt").css("display","none");
+                            }
+                            slick();
+                        }
+                    })
             }
-            webResult.result.map(item => ParticipateListTemplate(item));
-            if(webResult.result.length != 0){
-                $(".length_zero_txt").css("display","none");
-            }
-            slick();
+            
         })
         .catch((error) => console.log("error", error));
 }
