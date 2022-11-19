@@ -2,9 +2,9 @@ var certifiedCode = localStorage.getItem('certifiedCode');
 var email_check_num = 0;
 // 이메일 인증(이메일 전송)
 function send_email() {
-    const data = {
-        id: email.value
-    }
+    //const data = {
+        //email: email.value
+    //}
     fetch(`http://seolmunzip.shop:9000/email/send`, {
         method: "GET",
         headers: {'Content-Type': 'application/json','certifiedCode': certifiedCode}
@@ -13,8 +13,11 @@ function send_email() {
     .then((response) => response.json())
     .then((webResult) => {
         console.log(webResult);
-        certifiedCode = webResult.result;
-        check_send_email(data);
+        //certifiedCode = webResult.result;
+        localStorage.removeItem('certifiedCode');
+        localStorage.setItem('certifiedCode', webResult.result);
+        //certifiedCode = localStorage.getItem('certifiedCode');
+        //check_send_email(data);
     })
     .catch((error) => console.log("error", error))
 }
@@ -24,7 +27,7 @@ function check_send_email(data){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
         $(".validId1").text("이메일을 입력하세요.");
-        id.focus();
+        email.focus();
     }else{
         $(".validId1").css("display","none");
     };
@@ -40,7 +43,7 @@ function email_num(){
     // }
     fetch(`http://seolmunzip.shop:9000/email/auth`, {
         method: "POST",
-        headers: {'Content-Type': 'application/json', 'certifiedCode': certifiedCode},
+        headers: {'Content-Type': 'application/json', 'certifiedCode': certifiedCode}
         //body: JSON.stringify(data)
     })
     .then((response) => response.json())
@@ -89,5 +92,5 @@ function email_OK(){
         });
     }else{
         alert("이메일 인증을 완료해주세요.");
-    }
+    };
 }
