@@ -21,7 +21,7 @@ const fetchTokenCheck = () => {
             console.log(webResult.code);
             localStorage.removeItem('x-access-token');
             localStorage.setItem('x-access-token', webResult.result);
-
+            my_jwt = localStorage.getItem('x-access-token');
         })
         .catch((error) => console.log("error", error));
 }
@@ -46,15 +46,35 @@ const fetchSurvey1 = () => {
         .then((response) => response.json())
         .then((webResult) => {
             console.log(webResult.code);
+            if(webResult.code == 1000) {
+                webResult.result.pointHistoryRecent.map(item => pointListTemplate2(item));
+                pointListTemplate1(webResult.result);
+                console.log(webResult);
+                slick(value);
+            }
             if(webResult.code == 2002) {
                 fetchTokenCheck();
-                fetchSurvey1();
+                var requestOptions = {
+                    method: "GET",
+                    headers: {'x-access-token' : my_jwt, 'REFRESH-TOKEN' : my_refresh,}
+                };
+                value = selectedValue();
+                fetch(
+                    `http://seolmunzip.shop:9000/users/point/recent`,
+                    requestOptions
+                )
+                    .then((response) => response.json())
+                    .then((webResult) => {
+                        console.log(webResult.code);
+                        if(webResult.code == 1000) {
+                            webResult.result.pointHistoryRecent.map(item => pointListTemplate2(item));
+                            pointListTemplate1(webResult.result);
+                            console.log(webResult);
+                            slick(value);
+                        }
+                    })
             }
-
-            webResult.result.pointHistoryRecent.map(item => pointListTemplate2(item));
-            pointListTemplate1(webResult.result);
-            console.log(webResult);
-            slick(value);
+           
         })
         .catch((error) => console.log("error", error));
 }

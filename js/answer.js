@@ -26,12 +26,11 @@ const fetchTokenCheck = () => {
             console.log(webResult.code);
             localStorage.removeItem('x-access-token');
             localStorage.setItem('x-access-token', webResult.result);
-
+            my_jwt = localStorage.getItem('x-access-token');
         })
         .catch((error) => console.log("error", error));
 }
 
-// fetchTokenCheck();
 
 const fetchSuryeyIn = () => {
     var requestOptions = {
@@ -46,13 +45,25 @@ const fetchSuryeyIn = () => {
         .then((response) => response.json())
         .then((webResult) => {
             console.log(webResult.code);
+            if(webResult.code == 1000) {
+                webResult.result.map(item => SurveyInTemplate(item));
+            }
             if(webResult.code == 2002) {
                 fetchTokenCheck();
-                fetchSuryeyIn();
+
+                    fetch(
+                        `http://seolmunzip.shop:9000/posts/${rpostId}`,
+                        requestOptions
+                    )
+                        .then((response) => response.json())
+                        .then((webResult) => {
+                            console.log(webResult.code);
+                            if(webResult.code == 1000) {
+                                webResult.result.map(item => SurveyInTemplate(item));
+                            }
+                        })
             }
-            postLength = webResult.result.length;
-            console.log(postLength);
-            webResult.result.map(item => SurveyInTemplate(item));
+            
         })
         .catch((error) => console.log("error", error));
 
