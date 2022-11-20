@@ -15,7 +15,7 @@ var types = document.getElementsByClassName("Qtype");
 var format;
 var question;
 var options;
-var item;
+var item1, item2;
 var i;
 
 function gotoMysurvey() {
@@ -60,17 +60,26 @@ function sortQuestion() {
         options = elements[i].children;
         if (types[i].value == 1 || types[i].value == 2) {
             for (j=1; j<options.length-1; j++) {
-                item = options[j].children[1].value;
-                semiPostItems[i][1+j] = item;
+                item1 = options[j].children[1];
+                if(item1) {
+                    item2 = item1.value;
+                    semiPostItems[i][1+j] = item2;
+                }
             }
         } else if (types[i].value == 3) {
             semiPostFormat[i] = new Array(1);
-            item = options[1].children[1].value;
-            semiPostItems[i][2] = item;
+            item1 = options[1].children[1]
+            if(item1) {
+                item2 = item1.value;
+                semiPostItems[i][2] = item2;
+            }
         } else if (types[i].value == 4) {
             semiPostFormat[i] = new Array(1);
-            item = options[4].value;
-            semiPostItems[i][2] = item;
+            item1 = options[4]
+            if(item1) {
+                item2 = item1.value;
+                semiPostItems[i][2] = item2;
+            }
         }
 
         if (types[i].value == 4) {

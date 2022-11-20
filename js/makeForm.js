@@ -14,35 +14,38 @@ function addQuestion() {
         for (var i=1; i<thisQs.length-1; i++) {
             var thisQinput2 = thisQs[i].firstChild;
             var thisQvalue = selectedValue();
-            if (thisQvalue == 1) {
-                thisQinput2.type = 'radio';
+            if (thisQinput2) {
 
-                thisQs[1].children[0].style.visibility = 'visible';
-                thisQs[1].children[2].style.display = '';
-
-                thisQs[1].children[1].value = ''; 
-                thisQs[1].children[1].placeholder = '옵션 1';
-                thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="옵션 1"');
-
-                thisQs[1].style.display = '';
-                thisQs[2].style.display = '';
-                thisQs[3].style.display = '';
-                thisQs[4].style.display = 'none';
-            }
-            else if (thisQvalue == 2) {
-                thisQinput2.type = 'checkbox'; 
-
-                thisQs[1].children[0].style.visibility = 'visible';
-                thisQs[1].children[2].style.display = '';
-
-                thisQs[1].children[1].value = ''; 
-                thisQs[1].children[1].placeholder = '옵션 1';
-                thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="옵션 1"');
-
-                thisQs[1].style.display = '';
-                thisQs[2].style.display = '';
-                thisQs[3].style.display = '';
-                thisQs[4].style.display = 'none';
+                if (thisQvalue == 1) {
+                    thisQinput2.type = 'radio';
+    
+                    thisQs[1].children[0].style.visibility = 'visible';
+                    thisQs[1].children[2].style.display = '';
+    
+                    thisQs[1].children[1].value = ''; 
+                    thisQs[1].children[1].placeholder = '옵션 1';
+                    thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="옵션 1"');
+    
+                    thisQs[1].style.display = '';
+                    thisQs[2].style.display = '';
+                    thisQs[3].style.display = '';
+                    thisQs[4].style.display = 'none';
+                }
+                else if (thisQvalue == 2) {
+                    thisQinput2.type = 'checkbox'; 
+    
+                    thisQs[1].children[0].style.visibility = 'visible';
+                    thisQs[1].children[2].style.display = '';
+    
+                    thisQs[1].children[1].value = ''; 
+                    thisQs[1].children[1].placeholder = '옵션 1';
+                    thisQs[1].children[1].setAttribute('onblur', 'this.placeholder="옵션 1"');
+    
+                    thisQs[1].style.display = '';
+                    thisQs[2].style.display = '';
+                    thisQs[3].style.display = '';
+                    thisQs[4].style.display = 'none';
+                }
             }
             else if (thisQvalue == 3) {
                 thisQs[1].children[0].style.visibility = 'hidden';
