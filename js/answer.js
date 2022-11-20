@@ -81,6 +81,7 @@ function SurveyInTemplate(data) {
     var questionDiv = document.createElement("div");
     questionDiv.className = 'question';
     
+    var inputDiv;
     // 객관식 - 라디오 버튼
     if(data.format == 1) {
         // 질문
@@ -112,9 +113,9 @@ function SurveyInTemplate(data) {
             inputDiv.value = j;
 
             //checked 임의 테스트
-            if(inputDiv.value == 0) {
-                inputDiv.checked = true;
-            }
+            // if(inputDiv.value == 0) {
+            //     inputDiv.checked = true;
+            // }
             
             var inputTextDiv = document.createElement("span");
             inputTextDiv.className = 'radioBtn';
@@ -124,6 +125,11 @@ function SurveyInTemplate(data) {
             itemDiv.appendChild(inputTextDiv);
             rBtnDiv.appendChild(itemDiv);
             questionDiv.appendChild(rBtnDiv);
+        }
+
+        if(inputDiv.value == 0) {
+            inputDiv.setAttribute('checked',true);
+            // inputDiv.checked = true;
         }
     }
     // 객관식 - 체크박스 버튼
