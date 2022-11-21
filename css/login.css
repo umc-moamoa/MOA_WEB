@@ -292,7 +292,7 @@ input::-ms-input-placeholder{color: #909090;}
 }
 .signUPTxt {
     color: #919191;
-    padding: 0 10px;
+    margin-left: 15px;
     font-weight: 500;
 }
 
