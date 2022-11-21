@@ -7,6 +7,7 @@ var postDetailId;
 var formats = new Array(); // 여기에 format 넣음. 
 var checkboxes = new Array();
 var postLength = 0;
+var resultList = new Array();
 
 const rpostId = location.href.split('?')[1];
 console.log(rpostId);
@@ -100,6 +101,7 @@ function SurveyInTemplate(data) {
         var rBtnDiv = document.createElement("div");
         rBtnDiv.className = 'radioBox'
         for(var j=0; j<data.items.length; j++) {
+            // var updateValue = update(2);
             var itemDiv = document.createElement("div");
             itemDiv.className = 'Qtype1';
 
@@ -112,11 +114,11 @@ function SurveyInTemplate(data) {
             inputDiv.name = postDetailId;
             inputDiv.value = j;
 
-            //checked 임의 테스트
-            // if(inputDiv.value == 0) {
+            //checked 임의 테스트(요소 생성하는 블록 내부에서만 값 수정 가능함)
+            // if(inputDiv.value == 0) { 
             //     inputDiv.checked = true;
             // }
-            
+
             var inputTextDiv = document.createElement("span");
             inputTextDiv.className = 'radioBtn';
             inputTextDiv.textContent = data.items[j];
@@ -127,10 +129,6 @@ function SurveyInTemplate(data) {
             questionDiv.appendChild(rBtnDiv);
         }
 
-        if(inputDiv.value == 0) {
-            inputDiv.setAttribute('checked',true);
-            // inputDiv.checked = true;
-        }
     }
     // 객관식 - 체크박스 버튼
     else if(data.format == 2) {
@@ -224,12 +222,14 @@ const fetchAnswer = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
-            console.log(webResult);
+            //console.log(webResult);
             if(webResult.code == 2002) {
                 fetchTokenCheck();
                 fetchAnswer();
             }
-            webResult.result.getUserResultRes.map(item => console.log(item));
+            // answerTemplate(webResult.result.getUserResultRes);
+            console.log(webResult.result.getUserResultRes);
+            webResult.result.getUserResultRes.map(item => answerTemplate2(item));
         })
         .catch((error) => console.log("error", error));
 
@@ -237,6 +237,18 @@ const fetchAnswer = () => {
 
 fetchAnswer();
 
-function answerTemplate(data) {
 
+// function answerTemplate(data) {
+//     // console.log(data.result);
+//     for(i = 0; i < data.length; i++) {
+//         console.log(data[i].result);
+//         // resultList.push(data[i].result);
+//     }
+// }
+
+function answerTemplate2(data) {
+    // console.log(data);
+    resultList.push(data);
 }
+console.log(resultList);
+console.log(resultList.length);
