@@ -45,6 +45,7 @@ const fetchSuryeyIn = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
+            console.log(webResult);
             console.log(webResult.code);
             if(webResult.code == 1000) {
                 webResult.result.map(item => SurveyInTemplate(item));
@@ -107,12 +108,14 @@ function SurveyInTemplate(data) {
 
             var inputDiv = document.createElement("input");
             inputDiv.type = 'radio';
+            // inputDiv.id = 'one';
             postDetailId = `${data.postDetailId}`;
             var pi = new Array();
             pi[0] = Number(postDetailId);
             semipostDetailResults[count-1][0] = pi;
             inputDiv.name = postDetailId;
             inputDiv.value = j;
+            inputDiv.id = j;
 
             //checked 임의 테스트(요소 생성하는 블록 내부에서만 값 수정 가능함)
             // if(inputDiv.value == 0) { 
@@ -136,12 +139,8 @@ function SurveyInTemplate(data) {
         var q1Span = document.createElement("span");
         q1Span.className = 'Q1';
         q1Span.textContent = count + ".   " + `${data.question}`;
-        // var reqSpan = document.createElement("span");
-        // reqSpan.className = 'required';
-        // reqSpan.textContent = "필수";
 
         questionDiv.appendChild(q1Span);
-        // questionDiv.appendChild(reqSpan);
         questions.appendChild(questionDiv);
 
         // 답 - 체크박스 버튼
@@ -222,7 +221,7 @@ const fetchAnswer = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
-            //console.log(webResult);
+            console.log(webResult);
             if(webResult.code == 2002) {
                 fetchTokenCheck();
                 fetchAnswer();
@@ -237,18 +236,13 @@ const fetchAnswer = () => {
 
 fetchAnswer();
 
-
-// function answerTemplate(data) {
-//     // console.log(data.result);
-//     for(i = 0; i < data.length; i++) {
-//         console.log(data[i].result);
-//         // resultList.push(data[i].result);
-//     }
-// }
-
 function answerTemplate2(data) {
-    // console.log(data);
-    resultList.push(data);
+    console.log(data.result);
+
+    if(data.result==2) {
+        var questions = document.getElementById(`${data.result-1}`);
+        questions.checked = true
+        console.log(questions);
+        console.log(questions.checked);
+    }
 }
-console.log(resultList);
-console.log(resultList.length);
