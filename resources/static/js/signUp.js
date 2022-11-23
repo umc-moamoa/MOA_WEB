@@ -1,3 +1,8 @@
+var emailInput = document.getElementById("email");
+var emailVal;
+var certifiedCode = localStorage.getItem('certifiedCode');
+var email_check_num;
+
 // 유효성 체크
 function join_check(){
     var email = document.getElementById("email");
@@ -80,29 +85,77 @@ function join_check(){
     
 }
 var check_id = 0;
-//아이디 중복체크
-/*
-function id_check() {
-    const data = {
-        id: email.value
-    }
-    fetch(`http://seolmunzip.shop:9000/users/id/${data.id}`, {
+
+function send_email() {
+    emailVal = emailInput.value;
+
+    var requestOptions = {
         method: "GET",
-        headers: {'Content-Type': 'application/json'}
-    })
+    };
+
+    fetch(`http://seolmunzip.shop:9000/email/send?email=${emailVal}`,
+        requestOptions
+    )
 
     .then((response) => response.json())
     .then((webResult) => {
-        id_check_result(webResult.code);
-        windowOpen(); 
-        check_email();
+        //console.log(webResult);
+        localStorage.removeItem('certifiedCode');
+        localStorage.setItem('certifiedCode', webResult.result);
+        certifiedCode = localStorage.getItem('certifiedCode');
+        console.log(certifiedCode);
+        check_send_email(webResult.code);
+    })
+    .catch((error) => console.log("error", error));
+}
+
+function check_send_email(data){
+    if(email.value == ""){
+        $(".validId1").css("display","block");
+        $(".validId1").css("color","#FC4B3D");
+        $(".validId1").text("이메일을 입력하세요.");
+        email.focus();
+    }else{
+        $(".validId1").css("display","none");
+    };
+}
+
+
+// 이메일 인증(인증번호 확인)
+function email_num(){
+    fetch(`http://seolmunzip.shop:9000/email/auth?certifiedCode=${certifiedCode}`, {
+        method: "POST",
+        headers: {'Content-Type': 'application/json', 'certifiedCode': certifiedCode}
+    })
+    .then((response) => response.json())
+    .then((response2) => {
+        console.log(response2);
+        check_email_num(response2.code);
     })
     .catch((error) => console.log("error", error))
 }
-*/
-// 이메일 인증 팝업창
-function windowOpen(){
-    window.open('emailWindow.html', '이메일 인증', 'top=200, left=600, width=450, height=316, status=no, menubar=no, toolbar=no, resizable=no');
+
+function check_email_num(data){
+    if(data == ""){
+        $(".validId5").css("display","block");
+        $(".validId5").css("color","#FC4B3D");
+        $(".validId5").text("인증번호를 입력하세요.");
+        num.focus();
+    }else if(data == "1000"){ 
+        $(".validId5").css("display","block");
+        $(".validId5").css("color","#4383FF");
+        $(".validId5").text("인증되었습니다.");
+        email_check_num = 1;
+    }
+    else if(data == "2063"){
+        $(".validId5").css("display","block");
+        $(".validId5").css("color","#FC4B3D");
+        $(".validId5").text("인증번호를 확인해주세요.");
+        num.focus();
+    }
+    else{
+        $(".validId5").css("display","none");
+    };
 }
 
 function check_email(){
@@ -161,7 +214,7 @@ function name_check() {
 function nick_check_result(data){
     var nickCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
     var nick = $("#nickName").val();
-    if(id.value == ""){
+    if(nick.value == ""){
         $(".validId2").css("display","block");
         $(".validId2").css("color","#FC4B3D");
         $(".validId2").text("닉네임을 입력하세요.");
@@ -202,7 +255,7 @@ function save(){
     .then((response) => response.json())
     .then((response2) => {
         console.log(response2)
-        // moveToLogin();
+        moveToLogin();
     
     })
     .catch((error) => console.log("error", error))
@@ -210,8 +263,6 @@ function save(){
 
 // 회원가입 후 메인으로 이동
 function moveToLogin(){
-    //alert("회원가입이 완료되었습니다.");
-
     Swal.fire({
         title: '회원가입이 완료되었습니다.',
         customClass: 'swal-wide',
