@@ -6,12 +6,13 @@ var email_check_num;
 // 유효성 체크
 function join_check(){
     var email = document.getElementById("email");
+    var num = document.getElementById("num");
     var pwd1 = document.getElementById("pswd1");
     var pwd2 = document.getElementById("pswd2");
     var nickName = document.getElementById("nickName");
 
     // 해당 입력값이 없을 경우
-    var idCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
+    // 아이디(이메일)
     var id = $("#email").val();
     if(id.value == ""){
         $(".validId1").css("display","block");
@@ -19,15 +20,11 @@ function join_check(){
         $(".validId1").text("아이디를 입력하세요.");
         email.focus(); 
         return false; 
-    }else if(false === idCheck.test(id)){
-        $(".validId1").css("display","block");
-        $(".validId1").css("color","#FC4B3D");
-        $(".validId1").text("이메일 인증해주세요.");
-        return false;
     }else{
         $(".validId1").css("display","none");
     };
     
+    // 닉네임
     var nickCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
     var nick = $("#nickName").val();
     if (nickName.value == "") {
@@ -45,6 +42,7 @@ function join_check(){
         $(".validId2").css("display","none");
     };
 
+    // 비밀번호
     var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[$@$!%*#?&])(?=.*[0-9]).{7,15}$/;
     var pw = $("#pswd1").val();
     if(pwd1.value == ""){
@@ -64,6 +62,7 @@ function join_check(){
         $(".validId3").css("display","none");
     };
 
+    // 비밀번호 확인
     if (pwd1.value !== pwd2.value) {
         $(".validId4").css("display","block");
         $(".validId4").css("color","#FC4B3D");
@@ -78,7 +77,8 @@ function join_check(){
         alert("아이디 중복체크해주세요.");
     }else if(check_name == 0){
         alert("닉네임 중복체크해주세요.");
-    }else{
+    }
+    else{
         save(); 
     };
 
@@ -86,6 +86,7 @@ function join_check(){
 }
 var check_id = 0;
 
+// 이메일 인증(이메일 보내기)
 function send_email() {
     emailVal = emailInput.value;
 
@@ -104,7 +105,8 @@ function send_email() {
         localStorage.setItem('certifiedCode', webResult.result);
         certifiedCode = localStorage.getItem('certifiedCode');
         console.log(certifiedCode);
-        check_send_email(webResult.code);
+        //check_send_email(webResult.code);
+        id_check_result(webResult.code);
     })
     .catch((error) => console.log("error", error));
 }
@@ -158,37 +160,23 @@ function check_email_num(data){
     };
 }
 
-function check_email(){
-    const { OK_id, OK_Stype } = JSON.parse(localStorage.getItem("user-info"));
-    localStorage.remove("user-info");
-    $(".email").value(OK_id);
-    $(".Stype").selected(OK_Stype);
-    console.log(OK_id, OK_Stype);
-}
 
 function id_check_result(data) {
-    var idCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
     var id = $("#email").val();
     if(id.value == ""){
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
-        $(".validId1").text("아이디를 입력하세요.");
+        $(".validId1").text("이메일을 입력하세요.");
         id.focus();
-    }else if(false === idCheck.test(id)){
-        $(".validId1").css("display","block");
-        $(".validId1").css("color","#FC4B3D");
-        $(".validId1").text("이메일 인증해주세요.");
-        check_id = 0;
     }else if(data == "1000"){ 
         $(".validId1").css("display","block");
         $(".validId1").css("color","#4383FF");
-        $(".validId1").text("사용 가능한 아이디입니다.");
+        $(".validId1").text("사용 가능한 이메일입니다.");
         check_id = 1;
-        
     }else if(data == "2061"){ 
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
-        $(".validId1").text("이미 사용 중인 아이디입니다.");
+        $(".validId1").text("이미 사용 중인 이메일입니다.");
         check_id = 0;
     }else{
         $(".validId1").css("display","none");
