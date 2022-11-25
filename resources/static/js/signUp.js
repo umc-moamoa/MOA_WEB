@@ -23,6 +23,17 @@ function join_check(){
     }else{
         $(".validId1").css("display","none");
     };
+    // 인증번호
+    var num = $("#num").val();
+    if(num.value == ""){
+        $(".validId5").css("display","block");
+        $(".validId5").css("color","#FC4B3D");
+        $(".validId5").text("인증번호를 입력하세요.");
+        num.focus(); 
+        return false; 
+    }else{
+        $(".validId5").css("display","none");
+    };
     
     // 닉네임
     var nickCheck = /^(?=.*[a-zA-Z]).{7,15}$/;
@@ -74,7 +85,7 @@ function join_check(){
     };
 
     if(check_id == 0){
-        alert("아이디 중복체크해주세요.");
+        alert("이메일 인증해주세요.");
     }else if(check_name == 0){
         alert("닉네임 중복체크해주세요.");
     }
@@ -243,7 +254,32 @@ function save(){
     .then((response) => response.json())
     .then((response2) => {
         console.log(response2)
-        moveToLogin();
+        
+        if(response2.code == 2006){
+            $(".validId1").css("display","block");
+            $(".validId1").css("color","#FC4B3D");
+            $(".validId1").text("이메일 글자수를 확인해주세요.");
+            console.log(response2.isSuccess);
+        } else if(response2.code == 2007) {
+            $(".validId2").css("display","block");
+            $(".validId2").css("color","#FC4B3D");
+            $(".validId2").text("닉네임은 영어대소문자 7~15자리로 사용해야합니다.");
+        }else if(response2.code == 2008) {
+            $(".validId3").css("display","block");
+            $(".validId3").css("color","#FC4B3D");
+            $(".validId3").text("비밀번호는 영어대소문자+숫자+특수문자 조합으로 7~15자리 사용해야 합니다.");
+        }else if(response2.code == 2061) {
+            $(".validId1").css("display","block");
+            $(".validId1").css("color","#FC4B3D");
+            $(".validId1").text("중복된 이메일입니다.");
+        }else if(response2.code == 2062) {
+            $(".validId2").css("display","block");
+            $(".validId2").css("color","#FC4B3D");
+            $(".validId2").text("중복된 닉네임입니다.");
+        }
+        else{
+            moveToLogin();
+        }
     
     })
     .catch((error) => console.log("error", error))
