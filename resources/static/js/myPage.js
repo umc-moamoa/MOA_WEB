@@ -63,6 +63,7 @@ const fetchTokenCheck = () => {
 function userTemplate(data) {
     const userInfoItem = 
     `<div class="flex-nickname">${data.nickName}<div id="님">&nbsp;&nbsp;님</div>
+    <div class="state"><button id="modifyBtn" onClick="modify_alert()">닉네임 변경</button></div>
     </div>
 
     <div class="flex-container-icon">
@@ -147,4 +148,22 @@ function onDisplay() {
 
 function offDisplay() {
     $pointExplanation.style.display = "none";
+}
+
+// 수정 alert
+function modify_alert() {
+    Swal.fire({
+        title: '닉네임 변경하시겠습니까?',
+        customClass: 'swal-wide',
+        showCancelButton: true,
+        confirmButtonColor: '#4E7FF2',
+        cancelButtonColor: '#DBDBDB',
+        confirmButtonText: '예',
+        cancelButtonText: '아니요'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var link=`../templates/modifyNickName.html`;
+            location.href=link;
+        }
+    })
 }
