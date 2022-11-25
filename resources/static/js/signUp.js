@@ -1,4 +1,5 @@
 var emailInput = document.getElementById("email");
+var num = document.getElementById("num");
 var emailVal;
 var certifiedCode = localStorage.getItem('certifiedCode');
 var email_check_num;
@@ -54,7 +55,7 @@ function join_check(){
     };
 
     // 비밀번호
-    var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[$@$!%*#?&])(?=.*[0-9]).{7,15}$/;
+    var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[$@$!%*#?&^.])(?=.*[0-9]).{7,15}$/;
     var pw = $("#pswd1").val();
     if(pwd1.value == ""){
         $(".validId3").css("display","block");
@@ -136,7 +137,8 @@ function check_send_email(data){
 
 // 이메일 인증(인증번호 확인)
 function email_num(){
-    fetch(`http://seolmunzip.shop:9000/email/auth?certifiedCode=${certifiedCode}`, {
+    inputCertifiedCode = num.value;
+    fetch(`http://seolmunzip.shop:9000/email/auth?certifiedCode=${inputCertifiedCode}`, {
         method: "POST",
         headers: {'Content-Type': 'application/json', 'certifiedCode': certifiedCode}
     })
