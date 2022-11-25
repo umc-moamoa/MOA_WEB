@@ -55,7 +55,7 @@ function join_check(){
     };
 
     // 비밀번호
-    var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[$@$!%*#?&])(?=.*[0-9]).{7,15}$/;
+    var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[$@$!%*#?&^.])(?=.*[0-9]).{7,15}$/;
     var pw = $("#pswd1").val();
     if(pwd1.value == ""){
         $(".validId3").css("display","block");
