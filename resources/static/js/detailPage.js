@@ -66,11 +66,16 @@ fetchDetail();
 
 function SurveyDetailTemplate (data) {
 
+    like = data.like;
+
     // 내 게시물 아니고, 참여 이미 했음
     const SurveyDetailItem_participated_like = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
             <div class="flex-item1"><button id="heart"><img class="heartImg" src="../static/image/Heart2.png" width="40%" onclick="heart();"/></button></div>
         </div>
 
@@ -89,7 +94,10 @@ function SurveyDetailTemplate (data) {
     const SurveyDetailItem_participated_nolike = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
             <div class="flex-item1"><button id="heart"><img class="heartImg" src="../static/image/Heart.png" width="40%" onclick="heart();"/></button></div>
         </div>
 
@@ -109,8 +117,11 @@ function SurveyDetailTemplate (data) {
     const SurveyDetailItem_closed_myPost = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-            <div class="flex-item1"><button id="deleteBtn" onClick="delete_alert();">설문삭제</button></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
+            <div class="flex-item1"><button id="deleteBtn" onClick="delete_alert();">설문삭제</button>
         </div>
 
         <div class="flex-container2">
@@ -128,7 +139,10 @@ function SurveyDetailTemplate (data) {
     const SurveyDetailItem_closed_like = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
             <div class="flex-item1"><button id="heart"><img class="heartImg" src="../static/image/Heart2.png" width="40%" onclick="heart();"/></button></div>
         </div>
 
@@ -147,7 +161,10 @@ function SurveyDetailTemplate (data) {
     const SurveyDetailItem_closed_nolike = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
             <div class="flex-item1"><button id="heart"><img class="heartImg" src="../static/image/Heart.png" width="40%" onclick="heart();"/></button></div>
         </div>
 
@@ -166,7 +183,10 @@ function SurveyDetailTemplate (data) {
     const SurveyDetailItem_dday_myPost = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
             <div class="flex-item1"><button id="deleteBtn" onClick="delete_alert();">설문삭제</button>
                                     <button id="modifyBtn" onClick="modify_alert(${receivedPostId});">설문수정</button></div>
         </div>
@@ -186,7 +206,10 @@ function SurveyDetailTemplate (data) {
     const SurveyDetailItem_dday_like = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
             <div class="flex-item1"><button id="heart"><img class="heartImg" src="../static/image/Heart2.png" width="40%" onclick="heart();"/></button></div>
         </div>
 
@@ -205,7 +228,10 @@ function SurveyDetailTemplate (data) {
     const SurveyDetailItem_dday_nolike = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
             <div class="flex-item1"><button id="heart"><img class="heartImg" src="../static/image/Heart.png" width="40%" onclick="heart();"/></button></div>
         </div>
 
@@ -225,7 +251,10 @@ function SurveyDetailTemplate (data) {
     const SurveyDetailItem_d_myPost = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
             <div class="flex-item1"><button id="deleteBtn" onClick="delete_alert();">설문삭제</button>
                                     <button id="modifyBtn" onClick="modify_alert(${receivedPostId});">설문수정</button></div>
         </div>
@@ -245,7 +274,10 @@ function SurveyDetailTemplate (data) {
     const SurveyDetailItem_d_like = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
             <div class="flex-item1"><button id="heart"><img class="heartImg" src="../static/image/Heart2.png" width="40%" onclick="heart();"/></button></div>
         </div>
 
@@ -264,8 +296,13 @@ function SurveyDetailTemplate (data) {
     const SurveyDetailItem_d_nolike = `
         <div id="mainTop">
         <div class="flex-container1">
-            <div class="flex-item1"><span id="detailTitle"> ${data.title} </span></div>
-            <div class="flex-item1"><button id="heart"><img class="heartImg" src="../static/image/Heart.png" width="40%" onclick="heart();"/></button></div>
+            <div class="flex-item1">
+                <span id="detailTitle"> ${data.title} </span>
+                <button id="share"><img class="shareImg" src="../static/image/share.png" width="15px" onclick="shareUrl();"/></button>
+            </div>
+            <div class="flex-item1">
+                <button id="heart"><img class="heartImg" src="../static/image/Heart.png" width="40%" onclick="heart();"/></button>
+            </div>
         </div>
 
         <div class="flex-container2">
@@ -390,7 +427,8 @@ function heart(){
     const $heartImg = document.querySelector(".heartImg");
     const $heartImgCheck = document.querySelector(".heartImg").getAttribute( 'src' );
 
-    if($heartImgCheck == "../static/image/Heart.png" || like == false){
+    console.log(like);
+    if($heartImgCheck == "../image/Heart.png" || like == false){
         like = true;
         $heartImg.setAttribute('src',"../static/image/Heart2.png"); // 찬 하트
         interested_item_add();
@@ -402,11 +440,53 @@ function heart(){
     }
 }
 
+function shareUrl() {
+    var requestOptions = {
+        method: "GET",
+        headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
+    };
+
+    fetch(
+        `http://seolmunzip.shop:9000/posts/content/${receivedPostId}/share`,
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) => {
+            console.log(webResult);
+            console.log(webResult.result.url);
+            copyToClipboard(webResult.result.url);
+            console.log('Copied!');
+            // 클립보드에 url 복사
+
+            Swal.fire({
+                title: '클립보드에 복사되었습니다.',
+                customClass: 'swal-wide',
+                confirmButtonColor: '#4E7FF2',
+                cancelButtonColor: '#DBDBDB',
+                confirmButtonText: '예'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                }
+        
+            })
+        })
+        .catch((error) => console.log("error", error));
+}
+
+function copyToClipboard(val) {
+    const t = document.createElement("textarea");
+    document.body.appendChild(t);
+    t.value = val;
+    t.select();
+    document.execCommand('copy');
+    document.body.removeChild(t);
+}
+
 // 관심있는 설문조사 등록
 function interested_item_add(){
     fetch(`http://seolmunzip.shop:9000/posts/interest/${receivedPostId}`, {
         method: "POST",
-        headers: {'x-access-token' : my_jwt,}
+        headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
     })
     .then((response) => response.json())
     .catch((error) => console.log("error", error))
@@ -416,7 +496,7 @@ function interested_item_add(){
 function interested_item_delete(){
     fetch(`http://seolmunzip.shop:9000/posts/interest/${receivedPostId}`, {
         method: "DELETE",
-        headers: {'x-access-token' : my_jwt,}
+        headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
     })
 
     .then((response) => response.json())

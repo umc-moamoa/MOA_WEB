@@ -213,7 +213,7 @@ const fetchAnswer = () => {
             console.log(webResult);
             if(webResult.code == 2002) {
                 fetchTokenCheck();
-                fetchAnswer();
+                fetchAnswer(); // 여기 다시
             }
             // answerTemplate(webResult.result.getUserResultRes);
             console.log(webResult.result.getUserResultRes);
