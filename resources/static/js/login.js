@@ -4,10 +4,10 @@
 
 // 로그인 버튼 클릭시 실행 함수
 function login_check() {
-    var id = document.getElementById("id");
+    var id = document.getElementById("email");
     var pwd1 = document.getElementById("pswd1");
 
-    if(id.value == ""){ 
+    if(email.value == ""){ 
         $(".validId1").css("display","block");
         $(".validId1").css("color","#FC4B3D");
         $(".validId1").text("아이디를 입력하세요.");
@@ -42,7 +42,7 @@ function pw_find(){
 // post 데이터 보내기 함수
 function save(){
     const data = {
-        id: document.getElementById("id").value,
+        id: document.getElementById("email").value,
         pwd: document.getElementById("pswd1").value
     }
     fetch(`http://seolmunzip.shop:9000/auth/login`, {
