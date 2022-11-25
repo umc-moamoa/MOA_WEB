@@ -38,35 +38,11 @@ const fetchDetail = () => {
             console.log(webResult.message);
             if(webResult.code == 1000) {
                 SurveyDetailTemplate(webResult.result);
-            }
-            if(webResult.code == 2002) {
+            } else if(webResult.code == 2001) {
+                // 여기 해야함
+            } else if(webResult.code == 2002) {
 
                 fetchTokenCheck();
-                // var requestOptions = {
-                //     method: "Get",
-                //     headers: {'REFRESH-TOKEN' : my_refresh, }
-                // };
-            
-                // fetch(
-                //     "http://seolmunzip.shop:9000/auth/refresh",
-                //     requestOptions
-                // )
-                //     .then((response) => response.json())
-                //     .then((webResult) => {
-                //         console.log(webResult.code);
-                //         localStorage.removeItem('x-access-token');
-                //         localStorage.setItem('x-access-token', webResult.result);
-                //         my_jwt = localStorage.getItem('x-access-token');
-                //     })
-                //     .catch((error) => console.log("error", error));
-
-                                // // 새로고침
-                                // if(localStorage.getItem('flag')) {
-                                //     localStorage.removeItem('flag');
-                                // } else {
-                                //     localStorage.setItem('flag', "flagValue");
-                                //     location.reload();
-                                // }
 
                 // 재호출
                 fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {

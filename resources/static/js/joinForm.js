@@ -99,12 +99,8 @@ function SurveyInTemplate(data) {
         var q1Span = document.createElement("span");
         q1Span.className = 'Q1';
         q1Span.textContent = count + ".   " + `${data.question}`;
-        // var reqSpan = document.createElement("span");
-        // reqSpan.className = 'required';
-        // reqSpan.textContent = "필수";
 
         questionDiv.appendChild(q1Span);
-        // questionDiv.appendChild(reqSpan);
         questions.appendChild(questionDiv);
 
         // 답 - 라디오 버튼
@@ -139,12 +135,8 @@ function SurveyInTemplate(data) {
         var q1Span = document.createElement("span");
         q1Span.className = 'Q1';
         q1Span.textContent = count + ".   " + `${data.question}`;
-        // var reqSpan = document.createElement("span");
-        // reqSpan.className = 'required';
-        // reqSpan.textContent = "필수";
 
         questionDiv.appendChild(q1Span);
-        // questionDiv.appendChild(reqSpan);
         questions.appendChild(questionDiv);
 
         // 답 - 체크박스 버튼
@@ -176,7 +168,6 @@ function SurveyInTemplate(data) {
         }
     }
     // 단답형 
-    //         <span class="required">필수</span> 빈 줄에 있던 거 주석
     else if(data.format == 3) {
         postDetailId = `${data.postDetailId}`;
         var pi = new Array();
