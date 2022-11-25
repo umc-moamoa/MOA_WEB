@@ -241,7 +241,7 @@ function nick_check_result(data){
 
 function save(){
     const data = {
-        id: document.getElementById("email").value,
+        email: document.getElementById("email").value,
         pwd: document.getElementById("pswd1").value,
         nick: document.getElementById("nickName").value
     }
