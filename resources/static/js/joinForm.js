@@ -48,6 +48,7 @@ const fetchSuryeyIn = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
+            console.log(webResult);
             console.log(webResult.code);
             if(webResult.code == 1000) {
                 postLength = webResult.result.length;
@@ -75,7 +76,6 @@ const fetchSuryeyIn = () => {
                         }
                     })
             }
-           
         })
         .catch((error) => console.log("error", error));
 
@@ -117,7 +117,7 @@ function SurveyInTemplate(data) {
             pi[0] = Number(postDetailId);
             semipostDetailResults[count-1][0] = pi;
             inputDiv.name = postDetailId;
-            inputDiv.value = j;
+            inputDiv.value = j+1;
 
             var inputTextDiv = document.createElement("span");
             inputTextDiv.className = 'radioBtn';
@@ -155,7 +155,7 @@ function SurveyInTemplate(data) {
             pi[0] = Number(postDetailId);
             semipostDetailResults[count-1][0] = pi;
             inputDiv.name = postDetailId;
-            inputDiv.value = j;
+            inputDiv.value = j+1;
 
             var inputTextDiv = document.createElement("span");
             inputTextDiv.className = 'checkBoxBtn';
@@ -223,7 +223,6 @@ function sendPost() {
             var j=0;
             selectedElements.forEach((el) => {
                 checkboxes[i][j++] = el.value;
-               
             });
             semipostDetailResults[i][1] = checkboxes[i];
             console.log(semipostDetailResults[i][1]);
