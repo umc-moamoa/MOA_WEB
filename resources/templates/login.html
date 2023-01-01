@@ -112,10 +112,21 @@
                     <p class="socialLoginTxt2">간편 로그인</p>
                 </div>
                 <div class="socialLogin">
-                    <a onclick="social_login();" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="../static/image/kakao_icon.png"></i></a>
+                    <a onclick="kakaoLogin();" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="../static/image/kakao_icon.png"></i></a>
                     <!-- <a href="#" class="social-item bg2"><i class="fa fa-naver"><img class="iconImg2" src="../image/naver_icon.png"></i></a>
-                    <a href="#" class="social-item bg3"><i class="fa fa-facebook"><img class="iconImg3" src="../image/facebook_icon.png"></i></a> -->
-                </div> 
+                        <a href="#" class="social-item bg3"><i class="fa fa-facebook"><img class="iconImg3" src="../image/facebook_icon.png"></i></a> -->
+                        
+                    </li>
+                    <!--
+                        카카오 로그아웃 확인 용
+                    -->
+                    <li onclick="kakaoLogout();">
+                        <a href="javascript:void(0)">
+                            <span>카카오 로그아웃</span>
+                        </a>
+                    </li>
+                    
+                    </div> 
             </div>
         </div>
 
@@ -149,6 +160,121 @@
     <script src="../static/js/login.js"></script>
     <script src="../static/js/check.js"></script>
     <script src="../static/js/socialLogin.js"></script>
-    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('8accbca7ac7fed46142e7ec6904e813d'); 
+        console.log(Kakao.isInitialized()); // sdk초기화여부판단
+
+        // 카카오 로그인
+        
+        function kakaoLogin() {
+        Kakao.Auth.login({
+            success: function(response) {
+                Kakao.API.request({ // 사용자 정보 가져오기 
+                    url: '/v2/user/me',
+                    success: (response) => {
+                        var kakaoid = response.id+"K";
+                        $.ajax({
+                        type : "post",
+                        url : 'http://seolmunzip.shop:9000/auth/kakaoLogin', // ID중복체크를 통해 회원가입 유무를 결정한다.
+                        data : {"userid":kakaoid},
+                        dataType:"json",
+                        success : function(response){   				
+                            if(response.idExists){
+                                // 존재하는 경우 로그인 처리
+                                //createHiddenLoginForm(kakaoid);
+                                social_login();
+                                
+                            } else{
+                                // 회원가입
+                                $.ajax({
+                                    type : "post",
+                                    url : 'http://seolmunzip.shop:9000/auth/kakaoLogin',
+                                    data : {"userid":kakaoid,
+                                            "name":response.properties.nickname,
+                                            "email":response.kakao_account.email},
+                                    dataType :"json",
+                                    success : function(response){
+                                        if(response.success){
+                                            // 로그인
+                                            console.log(response);
+                                            Kakao.Auth.setAccessToken(response.access_token);
+                                            //createHiddenLoginForm(kakaoid);	
+                                            //social_login();	    							
+                                        } else {
+                                            alert('카카오 회원가입 실패. 일반계정으로 로그인하시기 바랍니다.');
+                                        }
+                                    },
+                                    error: function(request, status, error){
+                                            alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+                                        }
+                                });
+                            }						
+                        },
+                        error: function(request, status, error){
+                                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
+                            }
+                    });
+                    }
+                });
+                // window.location.href='http://127.0.0.1:5500/resources/templates/main.html' //리다이렉트 되는 코드
+            },
+            fail: function(error) {
+                alert(error);
+            }
+        });
+    }
+
+
+/*
+        //카카오로그인
+        function kakaoLogin() {
+        Kakao.Auth.login({
+            success: function (response) {
+            Kakao.API.request({
+                url: '/v2/user/me',
+                success: function (response) {
+                    console.log(response);
+                    Kakao.Auth.setAccessToken(response.access_token);
+                    console.log(response.access_token);
+                    //social_login();
+                },
+                fail: function (error) {
+                    console.log(error);
+                },
+            })
+            },
+            fail: function (error) {
+            console.log(error)
+            },
+        })
+        }
+*/
+        function createHiddenLoginForm(kakaoId){
+            
+            var frm = document.createElement('form');
+            frm.setAttribute('method', 'post');
+            frm.setAttribute('action', 'http://seolmunzip.shop:9000/auth/kakaoLogin');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type','hidden');
+            hiddenInput.setAttribute('name','userid');
+            hiddenInput.setAttribute('value',kakaoId);
+            frm.appendChild(hiddenInput);
+            document.body.appendChild(frm);
+            frm.submit();
+            
+        }
+
+        //카카오로그아웃  
+        function kakaoLogout() {
+        if (!Kakao.Auth.getAccessToken()) {
+                alert("Not logged in.");
+                return;
+            }
+            Kakao.Auth.logout(function () {
+                alert("logout ok\naccess token -> " + Kakao.Auth.getAccessToken());
+            });
+        }
+    </script>
 </body>
 </html>
