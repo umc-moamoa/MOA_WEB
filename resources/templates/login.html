@@ -21,6 +21,7 @@
                         <li class="menu menu_login">
                             <a class="link link_login" href="login.html">로그인</a>
                             <a class="link link_logout" href="main.html" onclick="logout();">로그아웃</a>
+                            <a class="link link_kako_logout" href="main.html" onclick="kakao_logout();">로그아웃</a>
                         </li>
                         <li class="menu menu_join">
                             <a onclick="login_alert7();" class="link link_join" href="#">회원가입</a>
@@ -113,14 +114,11 @@
                 </div>
                 <div class="socialLogin">
                     <a onclick="loginWithKakao();" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="../static/image/kakao_icon.png"></i></a>
-                    <!-- <a href="#" class="social-item bg2"><i class="fa fa-naver"><img class="iconImg2" src="../image/naver_icon.png"></i></a>
-                        <a href="#" class="social-item bg3"><i class="fa fa-facebook"><img class="iconImg3" src="../image/facebook_icon.png"></i></a> -->
-                        
                     </li>
                     <!--
                         카카오 로그아웃 확인 용
                     -->
-                    <li onclick="kakaoLogout();">
+                    <li onclick="kakao_logout();">
                         <a href="javascript:void(0)">
                             <span>카카오 로그아웃</span>
                         </a>
@@ -165,66 +163,6 @@
         Kakao.init('8accbca7ac7fed46142e7ec6904e813d'); 
         //console.log(Kakao.isInitialized()); // sdk초기화여부판단
 
-        // 카카오 로그인
-        /*
-        function kakaoLogin() {
-        Kakao.Auth.login({
-            success: function(response) {
-                Kakao.API.request({ // 사용자 정보 가져오기 
-                    url: '/v2/user/me',
-                    success: (response) => {
-                        var kakaoid = response.id+"K";
-                        $.ajax({
-                        type : "post",
-                        url : 'http://seolmunzip.shop:9000/auth/kakaoLogin', // ID중복체크를 통해 회원가입 유무를 결정한다.
-                        data : {"userid":kakaoid},
-                        dataType:"json",
-                        success : function(response){   				
-                            if(response.idExists){
-                                // 존재하는 경우 로그인 처리
-                                //createHiddenLoginForm(kakaoid);
-                                social_login();
-                                
-                            } else{
-                                // 회원가입
-                                $.ajax({
-                                    type : "post",
-                                    url : 'http://seolmunzip.shop:9000/auth/kakaoLogin',
-                                    data : {"userid":kakaoid,
-                                            "name":response.properties.nickname,
-                                            "email":response.kakao_account.email},
-                                    dataType :"json",
-                                    success : function(response){
-                                        if(response.success){
-                                            // 로그인
-                                            console.log(response);
-                                            Kakao.Auth.setAccessToken(response.access_token);
-                                            //createHiddenLoginForm(kakaoid);	
-                                            //social_login();	    							
-                                        } else {
-                                            alert('카카오 회원가입 실패. 일반계정으로 로그인하시기 바랍니다.');
-                                        }
-                                    },
-                                    error: function(request, status, error){
-                                            alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
-                                        }
-                                });
-                            }						
-                        },
-                        error: function(request, status, error){
-                                alert("code: "+request.status+"\n"+"message: "+request.responseText+"\n"+"error: "+error);
-                            }
-                    });
-                    }
-                });
-                // window.location.href='http://127.0.0.1:5500/resources/templates/main.html' //리다이렉트 되는 코드
-            },
-            fail: function(error) {
-                alert(error);
-            }
-        });
-    }
-*/
     // 토큰 받아오기
     function loginWithKakao() {
         var my_access = localStorage.getItem('accessToken');
@@ -249,6 +187,9 @@
                     console.log(err);
                 }
             });
+            // 리다이렉트 
+            //login();
+            //window.location.href='http://127.0.0.1:5500/resources/templates/main.html'
         }
 
         // 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
@@ -270,29 +211,16 @@
                 }
             });
         }
-        /*
-        function createHiddenLoginForm(kakaoId){
-            
-            var frm = document.createElement('form');
-            frm.setAttribute('method', 'post');
-            frm.setAttribute('action', 'http://seolmunzip.shop:9000/auth/kakaoLogin');
-            var hiddenInput = document.createElement('input');
-            hiddenInput.setAttribute('type','hidden');
-            hiddenInput.setAttribute('name','userid');
-            hiddenInput.setAttribute('value',kakaoId);
-            frm.appendChild(hiddenInput);
-            document.body.appendChild(frm);
-            frm.submit();
-            
-        }*/
 
         //카카오로그아웃  
-        function kakaoLogout() {
+        function kakao_logout() {
         if (!Kakao.Auth.getAccessToken()) {
                 alert("Not logged in.");
                 return;
             }
             Kakao.Auth.logout(function () {
+                localStorage.removeItem('my_access');
+                localStorage.removeItem('my_refreshToken');
                 alert("logout ok\naccess token -> " + Kakao.Auth.getAccessToken());
             });
         }

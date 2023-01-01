@@ -2,6 +2,9 @@
 
 
 // 변수 선언
+var my_access = localStorage.getItem('accessToken');
+var my_refreshToken = localStorage.getItem('refreshToken');
+
 var my_jwt = localStorage.getItem('x-access-token');
 var my_refresh = localStorage.getItem('x-refresh-token');
 const link_login = document.querySelector(".link_login");
@@ -18,11 +21,17 @@ function login(){
 // 로그인 -> 로그인페이지로 이동 -> 로그인 성공 -> 로그아웃으로 모든 페이지 변경
 // 로그아웃 -> 메인으로 이동 -> 로그인으로 변경 -> jwt 삭제
 function change_logout(){
-    if(my_jwt != null){  // 로그인 된 상태
+    if(my_jwt != null){  // 자체 로그인 된 상태
         $(".link_login").css("display","none");
         $(".link_logout").css("display","block");
+        $(".link_kako_logout").css("display","none");
+    }else if(my_access != null){  // 카카오 로그인 된 상태
+        $(".link_login").css("display","none");
+        $(".link_logout").css("display","none");
+        $(".link_kako_logout").css("display","block");
     }else{ // 로그아웃 상태
         $(".link_login").css("display","block");
+        $(".link_kako_logout").css("display","none");
         $(".link_logout").css("display","none");
     }
 }

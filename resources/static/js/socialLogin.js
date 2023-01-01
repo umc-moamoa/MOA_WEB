@@ -1,4 +1,4 @@
-var my_jwt = localStorage.getItem('x-access-token');
+var my_access = localStorage.getItem('accessToken');
 var my_refreshToken = localStorage.getItem('refreshToken');
 
 // 카카오 소셜로그인
@@ -21,13 +21,28 @@ function kakao_login(){
 function social_login(){
     fetch(`http://seolmunzip.shop:9000/auth/kakaoLogin`, {
         method: "POST",
-        headers: {'x-access-token' : my_jwt,
+        headers: {'x-access-token' : my_access,
                 'refreshToken': my_refreshToken}
     })
     .then((response) => {
         console.log(response);
+        kakao_login_OK();
     })
     .catch((error) => console.log("error", error))
 }
 
-
+function kakao_login_OK(){
+    
+    if(my_access != null){  // 로그인 된 상태
+        $(".link_login").css("display","none");
+        $(".link_kako_logout").css("display","block");
+    }else{ // 로그아웃 상태
+        $(".link_login").css("display","block");
+        $(".link_kako_logout").css("display","none");
+    }
+    
+    function logout(){
+        localStorage.removeItem('x-access-token');
+        localStorage.removeItem('x-refresh-token');
+    }
+}
