@@ -50,6 +50,7 @@ const fetchSuryeyIn = () => {
             console.log(webResult.code);
             if(webResult.code == 1000) {
                 webResult.result.map(item => SurveyInTemplate(item));
+                fetchAnswer();
             }
             if(webResult.code == 2002) {
                 fetchTokenCheck();
@@ -63,6 +64,7 @@ const fetchSuryeyIn = () => {
                             console.log(webResult.code);
                             if(webResult.code == 1000) {
                                 webResult.result.map(item => SurveyInTemplate(item));
+                                fetchAnswer();
                             }
                         })
             }
@@ -215,15 +217,12 @@ const fetchAnswer = () => {
                 fetchTokenCheck();
                 fetchAnswer(); // 여기 다시
             }
-            // answerTemplate(webResult.result.getUserResultRes);
-            console.log(webResult.result.getUserResultRes);
-            webResult.result.getUserResultRes.map(item => answerTemplate2(item));
+            console.log(webResult.result);
+            webResult.result.map(item => answerTemplate2(item));
         })
         .catch((error) => console.log("error", error));
 
 }
-
-fetchAnswer();
 
 function answerTemplate2(data) {
     cnt += 10;
@@ -235,13 +234,13 @@ function answerTemplate2(data) {
         console.log(questions);
         console.log(questions.checked);
     } else if (data.format == 2) {
-        var questions = document.getElementById(`${parseInt(cnt) + parseInt(data.result)}`);
-        questions.checked = true
-        console.log(questions);
-        console.log(questions.checked);
-        // 체크박스일 경우 값이 배열로 묶여서 와야함
-        // 또 한가지 문제라면, 새로고침에 따라 다름.. 콘솔 보면 순서대로 안 될 때가 있음. 
-        // 비동기? 스레드 알아봐야 할 것 같음
+        for(i=0;i<data.result.length;i++){
+            console.log(data.result[i]);
+            var questions = document.getElementById(`${parseInt(cnt) + parseInt(data.result[i])}`);
+            questions.checked = true
+            console.log(questions);
+            console.log(questions.checked);
+        } 
     } else if (data.format == 3) {
         var questions = document.getElementById(`${parseInt(cnt)}`);
         questions.value = data.result;
