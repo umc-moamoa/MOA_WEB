@@ -26,16 +26,6 @@ function social_login(){
     })
     .then((response) => {
         console.log(response);
-        localStorage.removeItem('my_jwt');
-        localStorage.setItem('my_jwt', response.result.accessToken);
-        certifiedCode = localStorage.getItem('my_jwt');
-        console.log(my_jwt);
-
-        localStorage.removeItem('my_refreshToken');
-        localStorage.setItem('my_refreshToken', response.result.refreshToken);
-        certifiedCode = localStorage.getItem('my_refreshToken');
-        console.log(my_refreshToken);
-
     })
     .catch((error) => console.log("error", error))
 }
