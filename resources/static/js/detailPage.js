@@ -27,6 +27,11 @@ const fetchTokenCheck = () => {
         .catch((error) => console.log("error", error));
 }
 
+function gotoLogin() {
+    var link="../templates/login.html";
+    location.href=link;
+}
+
 const fetchDetail = () => {
     fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
         method: "GET",
@@ -36,27 +41,32 @@ const fetchDetail = () => {
         .then((webResult) => {
             console.log(webResult.code);
             console.log(webResult.message);
+            console.log(my_jwt);
+            console.log(my_refresh);
             if(webResult.code == 1000) {
                 SurveyDetailTemplate(webResult.result);
-            } else if(webResult.code == 2001) {
-                // 여기 해야함
             } else if(webResult.code == 2002) {
+                // 여기서 로그인/로그아웃 상태를 구별해서 봐야함
+                if(my_refresh == null) { // 로그아웃
+                    gotoLogin(); 
+                }
+                else { // 로그인 (access 토큰 만료)
+                    fetchTokenCheck();
 
-                fetchTokenCheck();
-
-                // 재호출
-                fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
-                    method: "GET",
-                    headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
-                })
-                .then((response) => response.json())
-                .then((webResult) => {
-                    console.log(webResult.code);
-                    console.log(webResult.message);
-                    if(webResult.code == 1000) {
-                        SurveyDetailTemplate(webResult.result);
-                    }
-                })
+                    // 재호출
+                    fetch(`http://seolmunzip.shop:9000/posts/content/${receivedPostId}`, {
+                        method: "GET",
+                        headers: {'X-ACCESS-TOKEN' : my_jwt, 'REFRESH-TOKEN' : my_refresh, }
+                    })
+                    .then((response) => response.json())
+                    .then((webResult) => {
+                        console.log(webResult.code);
+                        console.log(webResult.message);
+                        if(webResult.code == 1000) {
+                            SurveyDetailTemplate(webResult.result);
+                        }
+                    })
+                }
 
             }
         })
