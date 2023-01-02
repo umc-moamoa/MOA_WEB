@@ -2,8 +2,8 @@
 
 
 // 변수 선언
-var my_access = localStorage.getItem('accessToken');
-var my_refreshToken = localStorage.getItem('refreshToken');
+var my_access = localStorage.getItem('my_access');
+var my_refreshToken = localStorage.getItem('my_refreshToken');
 
 var my_jwt = localStorage.getItem('x-access-token');
 var my_refresh = localStorage.getItem('x-refresh-token');
@@ -21,28 +21,30 @@ function login(){
 // 로그인 -> 로그인페이지로 이동 -> 로그인 성공 -> 로그아웃으로 모든 페이지 변경
 // 로그아웃 -> 메인으로 이동 -> 로그인으로 변경 -> jwt 삭제
 function change_logout(){
-    if(my_jwt != null){  // 자체 로그인 된 상태
+    if(my_jwt != null || my_access != null){  // 자체 로그인 된 상태
         $(".link_login").css("display","none");
         $(".link_logout").css("display","block");
-        $(".link_kako_logout").css("display","none");
+        $(".link_kakao_logout").css("display","none");
     }else if(my_access != null){  // 카카오 로그인 된 상태
         $(".link_login").css("display","none");
         $(".link_logout").css("display","none");
-        $(".link_kako_logout").css("display","block");
+        $(".link_kakao_logout").css("display","block");
     }else{ // 로그아웃 상태
         $(".link_login").css("display","block");
-        $(".link_kako_logout").css("display","none");
         $(".link_logout").css("display","none");
+        $(".link_kakao_logout").css("display","none");
     }
 }
 function logout(){
+    localStorage.removeItem('my_access');
+    localStorage.removeItem('my_refreshToken');
     localStorage.removeItem('x-access-token');
     localStorage.removeItem('x-refresh-token');
 }
 
 // 마이페이지 로그인 제한
 function login_alert1() {
-    if(my_jwt == null){
+    if(my_jwt == null || my_access == null){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -66,7 +68,7 @@ function login_alert1() {
 }
 // 새 설문 만들기 로그인 제한
 function login_alert2() {
-    if(my_jwt == null){
+    if(my_jwt == null || my_access == null){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -91,7 +93,7 @@ function login_alert2() {
 
 // 내가 만든 설문 로그인 제한
 function login_alert3() {
-    if(my_jwt == null){
+    if(my_jwt == null || my_access == null){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -116,7 +118,7 @@ function login_alert3() {
 
 // 관심있는 설문조사 로그인 제한
 function login_alert4() {
-    if(my_jwt == null){
+    if(my_jwt == null || my_access == null){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -141,7 +143,7 @@ function login_alert4() {
 
 // 참여한 설문조사 로그인 제한
 function login_alert5() {
-    if(my_jwt == null){
+    if(my_jwt == null || my_access == null){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -166,7 +168,7 @@ function login_alert5() {
 
 // 포인트 내역 로그인 제한
 function login_alert6() {
-    if(my_jwt == null){
+    if(my_jwt == null || my_access == null){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -203,7 +205,7 @@ function login_alert6() {
 // }
 
 function login_alert7() {
-    if(my_jwt != null){
+    if(my_jwt != null || my_access == null){
         Swal.fire({
             title: `회원가입은 \n 로그아웃한 상태에서 가능합니다.`,
             text: "로그아웃하시겠습니까?",
@@ -230,7 +232,7 @@ function login_alert7() {
 
 // 마이페이지 로그인 제한
 function login_alert8() {
-    if(my_jwt == null){
+    if(my_jwt == null || my_access == null){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",

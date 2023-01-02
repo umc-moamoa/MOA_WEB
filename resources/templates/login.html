@@ -21,7 +21,6 @@
                         <li class="menu menu_login">
                             <a class="link link_login" href="login.html">로그인</a>
                             <a class="link link_logout" href="main.html" onclick="logout();">로그아웃</a>
-                            <a class="link link_kako_logout" href="main.html" onclick="kakao_logout();">로그아웃</a>
                         </li>
                         <li class="menu menu_join">
                             <a onclick="login_alert7();" class="link link_join" href="#">회원가입</a>
@@ -161,16 +160,14 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
         Kakao.init('8accbca7ac7fed46142e7ec6904e813d'); 
-        //console.log(Kakao.isInitialized()); // sdk초기화여부판단
 
     // 토큰 받아오기
     function loginWithKakao() {
-        var my_access = localStorage.getItem('accessToken');
-        var my_refreshToken = localStorage.getItem('refreshToken');
+        var my_access = localStorage.getItem('my_access');
+        var my_refreshToken = localStorage.getItem('my_refreshToken');
             Kakao.Auth.login({
                 success: function (authObj) {
                     console.log(authObj); // access토큰 값
-                    //Kakao.Auth.setAccessToken(authObj.access_token); // access토큰값 저장
 
                     localStorage.removeItem('my_access');
                     localStorage.setItem('my_access', authObj.access_token);
@@ -180,7 +177,7 @@
                     localStorage.setItem('my_refreshToken', authObj.refresh_token);
                     certifiedCode = localStorage.getItem('my_refreshToken');
 
-                    //getInfo();
+                    getInfo();
                     social_login();
                 },
                 fail: function (err) {
@@ -197,14 +194,10 @@
             Kakao.API.request({
                 url: '/v2/user/me',
                 success: function (res) {
-                    console.log(res);
-                    // 이메일, 성별, 닉네임, 프로필이미지
                     var email = res.kakao_account.email;
-                    var gender = res.kakao_account.gender;
                     var nickname = res.kakao_account.profile.nickname;
-                    var profile_image = res.kakao_account.profile.thumbnail_image_url;
 
-                    console.log(email, gender, nickname, profile_image);
+                    console.log(email, nickname);
                 },
                 fail: function (error) {
                     alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
