@@ -21,10 +21,12 @@ function kakao_login(){
 function social_login(){
     fetch(`http://seolmunzip.shop:9000/auth/kakaoLogin`, {
         method: "POST",
-        headers: {'x-access-token' : my_access,
+        headers: {'accessToken' : my_access,
                 'refreshToken': my_refreshToken}
+        
     })
     .then((response) => {
+        console.log("api 성공");
         console.log(response);
     })
     .catch((error) => console.log("error", error))
