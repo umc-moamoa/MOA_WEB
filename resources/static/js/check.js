@@ -25,21 +25,28 @@ function change_logout(){
         $(".link_login").css("display","none");
         $(".link_logout").css("display","block");
         $(".link_kakao_logout").css("display","none");
-    }else if(my_access != null){  // 카카오 로그인 된 상태
-        $(".link_login").css("display","none");
-        $(".link_logout").css("display","none");
-        $(".link_kakao_logout").css("display","block");
     }else{ // 로그아웃 상태
         $(".link_login").css("display","block");
         $(".link_logout").css("display","none");
         $(".link_kakao_logout").css("display","none");
     }
 }
+
 function logout(){
     localStorage.removeItem('my_access');
     localStorage.removeItem('my_refreshToken');
     localStorage.removeItem('x-access-token');
     localStorage.removeItem('x-refresh-token');
+
+    if (!Kakao.Auth.getAccessToken()) {
+        alert("Not logged in.");
+        return;
+    }
+    Kakao.Auth.logout(function () {
+        localStorage.removeItem('my_access');
+        localStorage.removeItem('my_refreshToken');
+        alert("logout ok\naccess token -> " + Kakao.Auth.getAccessToken());
+    });
 }
 
 // 마이페이지 로그인 제한
@@ -254,3 +261,23 @@ function login_alert8() {
         location.href=link;
     }
 }
+
+// 소셜 로그인
+var my_access = localStorage.getItem('my_access');
+var my_refreshToken = localStorage.getItem('my_refreshToken');
+
+
+function social_login(){
+    fetch(`http://seolmunzip.shop:9000/auth/kakaoLogin?accessToken=${my_access}`, {
+        method: "POST",
+        headers: {'accessToken' : my_access,
+                'refreshToken': my_refreshToken}
+        
+    })
+    .then((response) => {
+        console.log("api 성공");
+        console.log(response);
+    })
+    .catch((error) => console.log("error", error))
+}
+

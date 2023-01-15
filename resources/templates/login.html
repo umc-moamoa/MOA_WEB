@@ -156,7 +156,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="../static/js/login.js"></script>
     <script src="../static/js/check.js"></script>
-    <script src="../static/js/socialLogin.js"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
         Kakao.init('8accbca7ac7fed46142e7ec6904e813d'); 
@@ -184,11 +183,7 @@
                     console.log(err);
                 }
             });
-            // 리다이렉트 
-            // 토큰 받기는 되는데 우리 서버 측에서 회원으로 인지를 못하고 있음.. 
-            // 회원가입 api를 따로 호출해야하는지? or 자동 회원가입 처리가 되는지?
-            //social_login();
-            //window.location.href='http://127.0.0.1:5500/resources/templates/main.html'
+            //window.location.href='../templates/main.html'
         }
 
         // 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
@@ -214,6 +209,7 @@
                 return;
             }
             Kakao.Auth.logout(function () {
+                logout();
                 localStorage.removeItem('my_access');
                 localStorage.removeItem('my_refreshToken');
                 alert("logout ok\naccess token -> " + Kakao.Auth.getAccessToken());
