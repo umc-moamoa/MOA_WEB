@@ -13,7 +13,7 @@ const link_logout = document.querySelector(".link_logout");
 // 로그인 후 메인으로 이동
 change_logout();
 function login(){
-    var link="../templates/main.html";
+    var link="../main.html";
     location.href=link;
 }
 
@@ -64,12 +64,12 @@ function login_alert1() {
             cancelButtonText: '아니요'
         }).then((result) => {
             if (result.isConfirmed) {
-                var link="../templates/login.html";
+                var link="../login.html";
                 location.href=link;
             }
         })
     }else{
-        var link="../templates/myPage.html";
+        var link="../myPage.html";
         location.href=link;
     }
 }
@@ -88,12 +88,12 @@ function login_alert2() {
             cancelButtonText: '아니요'
         }).then((result) => {
             if (result.isConfirmed) {
-                var link="../templates/login.html";
+                var link="../login.html";
                 location.href=link;
             }
         })
     }else{
-        var link="../templates/makeForm.html";
+        var link="../makeForm.html";
         location.href=link;
     }
 }
@@ -113,12 +113,12 @@ function login_alert3() {
             cancelButtonText: '아니요'
         }).then((result) => {
             if (result.isConfirmed) {
-                var link="../templates/login.html";
+                var link="../login.html";
                 location.href=link;
             }
         })
     }else{
-        var link="../templates/mySurvey.html";
+        var link="../mySurvey.html";
         location.href=link;
     }
 }
@@ -138,12 +138,12 @@ function login_alert4() {
             cancelButtonText: '아니요'
         }).then((result) => {
             if (result.isConfirmed) {
-                var link="../templates/login.html";
+                var link="../login.html";
                 location.href=link;
             }
         })
     }else{
-        var link="../templates/interestedSurvey.html";
+        var link="../interestedSurvey.html";
         location.href=link;
     }
 }
@@ -163,12 +163,12 @@ function login_alert5() {
             cancelButtonText: '아니요'
         }).then((result) => {
             if (result.isConfirmed) {
-                var link="../templates/login.html";
+                var link="../login.html";
                 location.href=link;
             }
         })
     }else{
-        var link="../templates/participatedSurvey.html";
+        var link="../participatedSurvey.html";
         location.href=link;
     }
 }
@@ -188,12 +188,12 @@ function login_alert6() {
             cancelButtonText: '아니요'
         }).then((result) => {
             if (result.isConfirmed) {
-                var link="../templates/login.html";
+                var link="../login.html";
                 location.href=link;
             }
         })
     }else{
-        var link="../templates/point.html";
+        var link="../point.html";
         location.href=link;
     }
 }
@@ -227,12 +227,12 @@ function login_alert7() {
             if (result.isConfirmed) {
                 change_logout();
                 logout();
-                var link="../templates/signUp.html";
+                var link="../signUp.html";
                 location.href=link;
             }
         });
     }else{
-        var link="../templates/signUp.html";
+        var link="../signUp.html";
         location.href=link;
     }
 }
@@ -252,12 +252,12 @@ function login_alert8() {
             cancelButtonText: '아니요'
         }).then((result) => {
             if (result.isConfirmed) {
-                var link="../templates/login.html";
+                var link="../login.html";
                 location.href=link;
             }
         })
     }else{
-        var link="../templates/myPage.html";
+        var link="../myPage.html";
         location.href=link;
     }
 }

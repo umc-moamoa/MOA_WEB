@@ -9,7 +9,7 @@ var checkboxes = new Array();
 var postLength = 0;
 
 function gotoParticipatedSurvey() {
-    var link="../templates/participatedSurvey.html";
+    var link="../participatedSurvey.html";
     location.href=link;
 }
 

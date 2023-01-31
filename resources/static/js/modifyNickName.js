@@ -106,6 +106,6 @@ function fetchModifyForm() {
 }
 
 function gotoMysurvey() {
-    var link=`../templates/myPage.html`;
+    var link=`../myPage.html`;
     location.href=link;
 }

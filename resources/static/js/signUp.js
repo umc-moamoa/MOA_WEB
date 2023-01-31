@@ -297,7 +297,7 @@ function moveToLogin(){
         confirmButtonText: '예'
     }).then((result) => {
         if (result.isConfirmed) {
-            var link="../templates/login.html";
+            var link="../login.html";
             location.href=link;
         }
 

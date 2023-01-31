@@ -68,16 +68,16 @@ function userTemplate(data) {
 
     <div class="flex-container-icon">
         <div class="flex-container-icon-sub1">
-            <img src="../static/image/Vector.png" width="28px">
+            <img src="../image/Vector.png" width="28px">
             <div class="category1">포인트</div>
-            <button onclick="onDisplay()" type="button" id="point-btn"><img src="../static/image/Group 624.png"></button>
+            <button onclick="onDisplay()" type="button" id="point-btn"><img src="../image/Group 624.png"></button>
         </div>
         <div class="state">${data.point}<span>P</span></div>
     </div>
 
     <div class="flex-container-icon" id="icon_bottom_line">
         <div class="flex-container-icon-sub1">
-            <img src="../static/image/Vector (1).png" width="25px">
+            <img src="../image/Vector (1).png" width="25px">
             <div class="category1">&nbsp;진행 중인 설문조사</div>
         </div>
         <div class="state">${data.postCount}<span>개</span></div>
@@ -133,7 +133,7 @@ function deleteUser() {
                 confirmButtonText: '예'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    var link="../templates/main.html";
+                    var link="../main.html";
                     location.href=link;
                 }
             })
@@ -162,7 +162,7 @@ function modify_alert() {
         cancelButtonText: '아니요'
     }).then((result) => {
         if (result.isConfirmed) {
-            var link=`../templates/modifyNickName.html`;
+            var link=`../modifyNickName.html`;
             location.href=link;
         }
     })
