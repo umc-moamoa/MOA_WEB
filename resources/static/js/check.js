@@ -2,8 +2,8 @@
 
 
 // 변수 선언
-var my_access = localStorage.getItem('my_access');
-var my_refreshToken = localStorage.getItem('my_refreshToken');
+var my_access = localStorage.getItem('x-access-token');
+var my_refreshToken = localStorage.getItem('x-refresh-token');
 
 var my_jwt = localStorage.getItem('x-access-token');
 var my_refresh = localStorage.getItem('x-refresh-token');
@@ -263,19 +263,16 @@ function login_alert8() {
 }
 
 // 소셜 로그인
-var my_access = localStorage.getItem('my_access');
-var my_refreshToken = localStorage.getItem('my_refreshToken');
-
-
 function social_login(){
     fetch(`http://seolmunzip.shop:9000/auth/kakaoLogin?accessToken=${my_access}`, {
         method: "POST",
-        headers: {'accessToken' : my_access,
+        headers: {'Content-Type': 'application/json',
+            'accessToken' : my_access,
                 'refreshToken': my_refreshToken}
-        
     })
     .then((response) => {
         console.log("api 성공");
+        console.log(my_access);
         console.log(response);
     })
     .catch((error) => console.log("error", error))
