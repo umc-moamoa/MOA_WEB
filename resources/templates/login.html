@@ -23,10 +23,10 @@
                             <a class="link link_logout" href="main.html" onclick="logout();">로그아웃</a>
                         </li>
                         <li class="menu menu_join">
-                            <a onclick="login_alert7();" class="link link_join" href="#">회원가입</a>
+                            <a onclick="login_alert7();" class="link link_join" href="signUp.html">회원가입</a>
                         </li>
                         <li class="menu menu_mypage"> 
-                            <a onclick="login_alert1();" class="link link_mypage" href="#">마이페이지</a>
+                            <a onclick="login_alert1();" class="link link_mypage" href="myPage.html">마이페이지</a>
                         </li>
                     </ul>
                 </div>
@@ -73,13 +73,7 @@
                             </div>
                             <div id="loginBox">
                                 <div class="box">
-                                    <!--
-                                    <input type="text" class="inputId" id="id" maxlength="30"
-                                    placeholder="아이디"
-                                    onfocus="this.placeholder = ''" 
-                                    onblur="this.placeholder = '아이디'">
-                                    <p class="alert validId1"></p>-->
-                                    
+                            
                                     <input type="text" class="inputEmail" id="email" maxlength="30"
                                     placeholder="이메일"
                                     onfocus="this.placeholder = ''" 
@@ -113,14 +107,6 @@
                 </div>
                 <div class="socialLogin">
                     <a onclick="loginWithKakao();" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="/image/kakao_icon.png"></i></a>
-                    </li>
-                    <!--
-                        카카오 로그아웃 확인 용
-                    -->
-                    <li onclick="kakao_logout();">
-                        <a href="javascript:void(0)">
-                            <span>카카오 로그아웃</span>
-                        </a>
                     </li>
                     
                     </div> 
@@ -183,7 +169,7 @@
                     console.log(err);
                 }
             });
-            //window.location.href='../templates/main.html'
+            window.location.href='/templates/main.html'
         }
 
         // 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
@@ -204,6 +190,10 @@
 
         //카카오로그아웃  
         function kakao_logout() {
+        localStorage.removeItem('my_access');
+        localStorage.removeItem('my_refreshToken');
+        localStorage.removeItem('x-access-token');
+        localStorage.removeItem('x-refresh-token');
         if (!Kakao.Auth.getAccessToken()) {
                 alert("Not logged in.");
                 return;
