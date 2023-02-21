@@ -37,7 +37,7 @@ function id_find(){
 // 비밀번호 찾기
 function pw_find(){
     //window.open("팝업될 문서 경로", "팝업될 문서 이름", "옵션");
-    window.open("findPwd.html", "비밀번호 찾기", 'top=200, left=600, width=450, height=400, status=no, menubar=no, toolbar=no, resizable=no');
+    window.open("findPwd.html", "비밀번호 찾기", 'top=200, left=600, width=430, height=400, status=no, menubar=no, toolbar=no, resizable=no');
 }
 
 // post 데이터 보내기 함수
