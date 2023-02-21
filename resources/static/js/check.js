@@ -2,11 +2,11 @@
 
 
 // 변수 선언
-var my_access = localStorage.getItem('x-access-token');
-var my_refreshToken = localStorage.getItem('x-refresh-token');
+//var my_access = localStorage.getItem('x-access-token');
+//var my_refreshToken = localStorage.getItem('x-refresh-token');
 
-var my_jwt = localStorage.getItem('x-access-token');
-var my_refresh = localStorage.getItem('x-refresh-token');
+var access_token = localStorage.getItem('x-access-token');
+var refresh_token = localStorage.getItem('x-refresh-token');
 const link_login = document.querySelector(".link_login");
 const link_logout = document.querySelector(".link_logout");
 
@@ -21,7 +21,7 @@ function login(){
 // 로그인 -> 로그인페이지로 이동 -> 로그인 성공 -> 로그아웃으로 모든 페이지 변경
 // 로그아웃 -> 메인으로 이동 -> 로그인으로 변경 -> jwt 삭제
 function change_logout(){
-    if(my_jwt != null || my_access != null){  // 자체 로그인 된 상태
+    if(access_token != null){  // 자체 로그인 된 상태
         $(".link_login").css("display","none");
         $(".link_logout").css("display","block");
         $(".link_logout").css("color","#9CC2FF");
@@ -32,8 +32,6 @@ function change_logout(){
 }
 
 function logout(){
-    localStorage.removeItem('my_access');
-    localStorage.removeItem('my_refreshToken');
     localStorage.removeItem('x-access-token');
     localStorage.removeItem('x-refresh-token');
 /*
@@ -52,7 +50,7 @@ function logout(){
 
 // 마이페이지 로그인 제한
 function login_alert1() {
-    if(my_jwt == null || my_refresh == null){
+    if(access_token == undefined || refresh_token == undefined){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -76,7 +74,7 @@ function login_alert1() {
 }
 // 새 설문 만들기 로그인 제한
 function login_alert2() {
-    if(my_jwt == null || my_access == null){
+    if(access_token == undefined || refresh_token == undefined){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -101,7 +99,7 @@ function login_alert2() {
 
 // 내가 만든 설문 로그인 제한
 function login_alert3() {
-    if(my_jwt == null || my_access == null){
+    if(access_token == undefined || refresh_token == undefined){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -126,7 +124,7 @@ function login_alert3() {
 
 // 관심있는 설문조사 로그인 제한
 function login_alert4() {
-    if(my_jwt == null || my_access == null){
+    if(access_token == undefined || refresh_token == undefined){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -151,7 +149,7 @@ function login_alert4() {
 
 // 참여한 설문조사 로그인 제한
 function login_alert5() {
-    if(my_jwt == null || my_access == null){
+    if(access_token == undefined || refresh_token == undefined){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -176,7 +174,7 @@ function login_alert5() {
 
 // 포인트 내역 로그인 제한
 function login_alert6() {
-    if(my_jwt == null || my_access == null){
+    if(access_token == undefined || refresh_token == undefined){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -201,19 +199,8 @@ function login_alert6() {
 
 
 // 회원가입 로그인 제한
-// function login_alert7() {
-//     if(my_jwt == null){
-//         var link="../html/signUp.html";
-//         location.href=link;
-//     }else{
-//         var link="../html/main.html";
-//         location.href=link;
-//         alert("회원가입은 로그아웃한 상태에서 가능합니다.");
-//     }
-// }
-
 function login_alert7() {
-    if(my_jwt != null || my_access == null){
+    if(access_token != undefined || refresh_token == undefined){
         Swal.fire({
             title: `회원가입은 \n 로그아웃한 상태에서 가능합니다.`,
             text: "로그아웃하시겠습니까?",
@@ -240,7 +227,7 @@ function login_alert7() {
 
 // 마이페이지 로그인 제한
 function login_alert8() {
-    if(my_jwt == null || my_access == null){
+    if(access_token == undefined || refresh_token == undefined){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
@@ -265,15 +252,14 @@ function login_alert8() {
 
 // 소셜 로그인
 function social_login(){
-    fetch(`http://seolmunzip.shop:9000/auth/kakaoLogin?accessToken=${my_access}`, {
+    fetch(`http://seolmunzip.shop:9000/auth/kakaoLogin?accessToken=${access_token}`, {
         method: "POST",
         headers: {'Content-Type': 'application/json',
-            'accessToken' : my_access,
-                'refreshToken': my_refreshToken}
+            'accessToken' : access_token,
+                'refreshToken': refresh_token}
     })
     .then((response) => {
         console.log("api 성공");
-        console.log(my_access);
         console.log(response);
     })
     .catch((error) => console.log("error", error))

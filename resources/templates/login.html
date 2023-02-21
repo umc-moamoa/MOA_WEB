@@ -148,19 +148,19 @@
 
     // 토큰 받아오기
     function loginWithKakao() {
-        var my_access = localStorage.getItem('x-access-token');
-        var my_refreshToken = localStorage.getItem('x-refresh-token');
+        var access_token = localStorage.getItem('x-access-token');
+        var refresh_token = localStorage.getItem('x-refresh-token');
             Kakao.Auth.login({
                 success: function (authObj) {
                     console.log(authObj); // access토큰 값
 
                     localStorage.removeItem('x-access-token');
                     localStorage.setItem('x-access-token', authObj.access_token);
-                    certifiedCode = localStorage.getItem(my_access);
+                    certifiedCode = localStorage.getItem(access_token);
 
                     localStorage.removeItem('x-refresh-token');
                     localStorage.setItem('x-refresh-token', authObj.refresh_token);
-                    certifiedCode = localStorage.getItem(my_refreshToken);
+                    certifiedCode = localStorage.getItem(refresh_token);
                     location.href = location.href;
 
                     getInfo();
@@ -191,11 +191,10 @@
         }
 
         //카카오로그아웃  
+        /*
         function kakao_logout() {
-        //localStorage.removeItem('my_access');
-        //localStorage.removeItem('my_refreshToken');
-        localStorage.removeItem(my_access);
-        localStorage.removeItem(my_refreshToken);
+        localStorage.removeItem(access_token);
+        localStorage.removeItem(refresh_token);
 
         if (!Kakao.Auth.getAccessToken()) {
                 alert("Not logged in.");
@@ -208,6 +207,7 @@
                 alert("logout ok\naccess token -> " + Kakao.Auth.getAccessToken());
             });
         }
+        */
     </script>
 </body>
 </html>
