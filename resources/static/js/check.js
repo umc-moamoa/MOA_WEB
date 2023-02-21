@@ -24,11 +24,10 @@ function change_logout(){
     if(my_jwt != null || my_access != null){  // 자체 로그인 된 상태
         $(".link_login").css("display","none");
         $(".link_logout").css("display","block");
-        $(".link_kakao_logout").css("display","none");
+        $(".link_logout").css("color","#9CC2FF");
     }else{ // 로그아웃 상태
         $(".link_login").css("display","block");
         $(".link_logout").css("display","none");
-        $(".link_kakao_logout").css("display","none");
     }
 }
 
@@ -37,21 +36,23 @@ function logout(){
     localStorage.removeItem('my_refreshToken');
     localStorage.removeItem('x-access-token');
     localStorage.removeItem('x-refresh-token');
-
+/*
     if (!Kakao.Auth.getAccessToken()) {
         alert("Not logged in.");
         return;
     }
+    
     Kakao.Auth.logout(function () {
         localStorage.removeItem('my_access');
         localStorage.removeItem('my_refreshToken');
         alert("logout ok\naccess token -> " + Kakao.Auth.getAccessToken());
     });
+    */
 }
 
 // 마이페이지 로그인 제한
 function login_alert1() {
-    if(my_jwt == null || my_access == null){
+    if(my_jwt == null || my_refresh == null){
         Swal.fire({
             title: '회원 전용입니다.',
             text: "로그인하시겠습니까?",
