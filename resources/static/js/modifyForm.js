@@ -22,8 +22,6 @@ function modifyContent() {
 
 function fetchModifyForm() {
     const modifyItem = {
-        // "userId" : 1,
-        // "content" : newContent
         "postId" : postId,
         "title" : updateTitle,
         "content" : updateContent,
@@ -33,7 +31,7 @@ function fetchModifyForm() {
 
     console.log(JSON.stringify(modifyItem));
 
-    fetch(`http://seolmunzip.shop:9000/posts/${postId}` , {
+    fetch(`http://seolmunzip.shop:9000/posts` , {
         method: "PATCH",
         headers: {
             'X-ACCESS-TOKEN' : my_jwt, 
@@ -44,32 +42,24 @@ function fetchModifyForm() {
 
     .then((response) => response.json())
     .then((response2) => {
-        // if (response2.code == 2022) {
-        //     alert(response2.message);
-        //     gotoMain();
-        // } else if (response2.code == 2022) {
-        //     alert(response2.message);
-        //     gotoMain();
-        // } else if (response2.code == 3020) {
-        //     alert(response2.message);
-        //     gotoMain();
-        // } else {
-        //     gotoMysurvey();
-        // }
+        console.log(response2.code);
+        if (response2.code != 1000) {
+            alert(response2.message);
+        } else if (response2.code == 1000) {
+            Swal.fire({
+                title: '설문조사가 수정되었습니다.',
+                customClass: 'swal-wide',
+                confirmButtonColor: '#4E7FF2',
+                cancelButtonColor: '#DBDBDB',
+                confirmButtonText: '예'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    gotoDetail(); 
+                    // 잘 가는지 확인. 함수 속 href 링크가 헷갈림.
+                }
+            })
+        }
 
-        Swal.fire({
-            title: '설문조사가 수정되었습니다.',
-            customClass: 'swal-wide',
-            confirmButtonColor: '#4E7FF2',
-            cancelButtonColor: '#DBDBDB',
-            confirmButtonText: '예'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                gotoDetail(); 
-            }
-        })
-        
-        console.log(response2.result);
     })
     .catch((error) => console.log("error", error))
 

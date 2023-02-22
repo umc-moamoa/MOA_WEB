@@ -212,13 +212,22 @@ const fetchAnswer = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
-            console.log(webResult);
+            console.log(webResult.code);
+            if(webResult.code == 1000) {
+                webResult.result.map(item => answerTemplate2(item));
+            }
             if(webResult.code == 2002) {
                 fetchTokenCheck();
-                fetchAnswer(); // 여기 다시
+                fetch(
+                    `http://seolmunzip.shop:9000/users/answer/${rpostId}`,
+                    requestOptions
+                )
+                    .then((response) => response.json())
+                    .then((webResult) => {
+                        console.log(webResult.code);
+                        webResult.result.map(item => answerTemplate2(item));
+                    })
             }
-            console.log(webResult.result);
-            webResult.result.map(item => answerTemplate2(item));
         })
         .catch((error) => console.log("error", error));
 
