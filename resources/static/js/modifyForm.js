@@ -25,8 +25,7 @@ function fetchModifyForm() {
         "postId" : postId,
         "title" : updateTitle,
         "content" : updateContent,
-        "deadline" : updateDeadline,
-        "postUserId" : 1
+        "deadline" : updateDeadline
     }
 
     console.log(JSON.stringify(modifyItem));
@@ -46,6 +45,7 @@ function fetchModifyForm() {
         if (response2.code != 1000) {
             alert(response2.message);
         } else if (response2.code == 1000) {
+            console.log(response2.result);
             Swal.fire({
                 title: '설문조사가 수정되었습니다.',
                 customClass: 'swal-wide',
