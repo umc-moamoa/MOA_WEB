@@ -125,6 +125,9 @@
     <script>
         Kakao.init('8accbca7ac7fed46142e7ec6904e813d'); 
 
+        if(localStorage.getItem('certifiedCode') != undefined){
+            loginWithKakao();
+        }
     // 토큰 받아오기
     function loginWithKakao() {
         var access_token = localStorage.getItem('x-access-token');
@@ -142,9 +145,7 @@
                     certifiedCode = localStorage.getItem(refresh_token);
                     location.href = location.href;
 
-                    getInfo();
                     social_login();
-                    window.location.href="main.html";
                 },
                 fail: function (err) {
                     console.log(err);
@@ -152,23 +153,6 @@
             });
             
         }
-
-        // 엑세스 토큰을 발급받고, 아래 함수를 호출시켜서 사용자 정보를 받아옴.
-        function getInfo() {
-            Kakao.API.request({
-                url: '/v2/user/me',
-                success: function (res) {
-                    var email = res.kakao_account.email;
-                    var nickname = res.kakao_account.profile.nickname;
-
-                    console.log(email, nickname);
-                },
-                fail: function (error) {
-                    alert('카카오 로그인에 실패했습니다. 관리자에게 문의하세요.' + JSON.stringify(error));
-                }
-            });
-        }
-
     </script>
 </body>
 </html>
