@@ -34,6 +34,7 @@ function change_logout(){
 function logout(){
     localStorage.removeItem('x-access-token');
     localStorage.removeItem('x-refresh-token');
+    localStorage.clear();
 /*
     if (!Kakao.Auth.getAccessToken()) {
         alert("Not logged in.");
@@ -255,13 +256,17 @@ function social_login(){
     fetch(`http://seolmunzip.shop:9000/auth/kakaoLogin?accessToken=${access_token}`, {
         method: "POST",
         headers: {'Content-Type': 'application/json',
-            'accessToken' : access_token,
+                'accessToken' : access_token,
                 'refreshToken': refresh_token}
     })
     .then((response) => {
-        console.log("api 성공");
         console.log(response);
+        localStorage.setItem('socialLogin', success); // 카카오 로그인 여부 확인
+        location.href = "main.html"; // 메인으로 이동
     })
-    .catch((error) => console.log("error", error))
+    .catch((error) => {
+        console.log("error", error);
+        localStorage.setItem('socialLogin', fail); // 카카오 로그인 여부 확인
+    })
 }
 

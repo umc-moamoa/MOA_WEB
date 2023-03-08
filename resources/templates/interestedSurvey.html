@@ -113,25 +113,21 @@
     <script>
         Kakao.init('8accbca7ac7fed46142e7ec6904e813d'); 
 
-        if(localStorage.getItem('certifiedCode') != undefined){
+        if(localStorage.getItem('socialLogin') != success){
             loginWithKakao();
         }
-    // 토큰 받아오기
-    function loginWithKakao() {
-        var access_token = localStorage.getItem('x-access-token');
-        var refresh_token = localStorage.getItem('x-refresh-token');
+        // 토큰 받아오기
+        function loginWithKakao() {
             Kakao.Auth.login({
                 success: function (authObj) {
                     console.log(authObj); // access토큰 값
 
                     localStorage.removeItem('x-access-token');
                     localStorage.setItem('x-access-token', authObj.access_token);
-                    certifiedCode = localStorage.getItem(access_token);
 
                     localStorage.removeItem('x-refresh-token');
                     localStorage.setItem('x-refresh-token', authObj.refresh_token);
-                    certifiedCode = localStorage.getItem(refresh_token);
-                    location.href = location.href;
+                    location.href = location.href; // 새로고침
 
                     social_login();
                 },
@@ -139,7 +135,6 @@
                     console.log(err);
                 }
             });
-            
         }
     </script>
 </body>
