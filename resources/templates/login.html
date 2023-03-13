@@ -106,7 +106,7 @@
                     <p class="socialLoginTxt2">간편 로그인</p>
                 </div>
                 <div class="socialLogin">
-                    <a onclick="loginWithKakao();" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="/image/kakao_icon.png"></i></a>
+                    <a onclick="socialLogin_kakao();" class="social-item bg1"><i class="fa fa-kakao"><img class="iconImg1" src="/image/kakao_icon.png"></i></a>
                     </li>
                     
                     </div> 
@@ -145,10 +145,12 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
         Kakao.init('8accbca7ac7fed46142e7ec6904e813d'); 
-
-        if(localStorage.getItem('socialLogin') != success){
+        function socialLogin_kakao(){
+            // 토큰 처음 발급
+            localStorage.setItem('socialLogin', 200);
             loginWithKakao();
         }
+        
         // 토큰 받아오기
         function loginWithKakao() {
             Kakao.Auth.login({

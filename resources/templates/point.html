@@ -140,33 +140,6 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="/js/point.js"></script>
     <script src="/js/check.js"></script>
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script>
-        Kakao.init('8accbca7ac7fed46142e7ec6904e813d'); 
-
-        if(localStorage.getItem('socialLogin') != success){
-            loginWithKakao();
-        }
-        // 토큰 받아오기
-        function loginWithKakao() {
-            Kakao.Auth.login({
-                success: function (authObj) {
-                    console.log(authObj); // access토큰 값
-
-                    localStorage.removeItem('x-access-token');
-                    localStorage.setItem('x-access-token', authObj.access_token);
-
-                    localStorage.removeItem('x-refresh-token');
-                    localStorage.setItem('x-refresh-token', authObj.refresh_token);
-                    location.href = location.href; // 새로고침
-
-                    social_login();
-                },
-                fail: function (err) {
-                    console.log(err);
-                }
-            });
-        }
-    </script>
+   
 </body>
 </html>

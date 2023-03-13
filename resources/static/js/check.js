@@ -1,26 +1,17 @@
-// jwt 관리하는 파일
-
-
 // 변수 선언
-//var my_access = localStorage.getItem('x-access-token');
-//var my_refreshToken = localStorage.getItem('x-refresh-token');
-
 var access_token = localStorage.getItem('x-access-token');
 var refresh_token = localStorage.getItem('x-refresh-token');
 const link_login = document.querySelector(".link_login");
 const link_logout = document.querySelector(".link_logout");
 
-// 로그인 후 메인으로 이동
-change_logout();
-function login(){
-    var link="../main.html";
-    location.href=link;
-}
+// 100 : 로그아웃 상태
+// 200 : 소셜로그인 상태
+// 300 : 자체로그인 상태
+localStorage.setItem('socialLogin', 100);
 
-// 로그인을 로그아웃으로 변경
-// 로그인 -> 로그인페이지로 이동 -> 로그인 성공 -> 로그아웃으로 모든 페이지 변경
-// 로그아웃 -> 메인으로 이동 -> 로그인으로 변경 -> jwt 삭제
+// 로그인 확인
 function change_logout(){
+    localStorage.setItem('socialLogin', 100);
     if(access_token != null){  // 자체 로그인 된 상태
         $(".link_login").css("display","none");
         $(".link_logout").css("display","block");
@@ -30,23 +21,20 @@ function change_logout(){
         $(".link_logout").css("display","none");
     }
 }
+change_logout();
 
+// 로그인 후 메인으로 이동
+function login(){
+    var link="../main.html";
+    location.href=link;
+}
+
+// 로그아웃
 function logout(){
     localStorage.removeItem('x-access-token');
     localStorage.removeItem('x-refresh-token');
     localStorage.clear();
-/*
-    if (!Kakao.Auth.getAccessToken()) {
-        alert("Not logged in.");
-        return;
-    }
-    
-    Kakao.Auth.logout(function () {
-        localStorage.removeItem('my_access');
-        localStorage.removeItem('my_refreshToken');
-        alert("logout ok\naccess token -> " + Kakao.Auth.getAccessToken());
-    });
-    */
+    localStorage.setItem('socialLogin', 100);
 }
 
 // 마이페이지 로그인 제한
@@ -251,22 +239,5 @@ function login_alert8() {
     }
 }
 
-// 소셜 로그인
-function social_login(){
-    fetch(`http://seolmunzip.shop:9000/auth/kakaoLogin?accessToken=${access_token}`, {
-        method: "POST",
-        headers: {'Content-Type': 'application/json',
-                'accessToken' : access_token,
-                'refreshToken': refresh_token}
-    })
-    .then((response) => {
-        console.log(response);
-        localStorage.setItem('socialLogin', success); // 카카오 로그인 여부 확인
-        location.href = "main.html"; // 메인으로 이동
-    })
-    .catch((error) => {
-        console.log("error", error);
-        localStorage.setItem('socialLogin', fail); // 카카오 로그인 여부 확인
-    })
-}
+
 

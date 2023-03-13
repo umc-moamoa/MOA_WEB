@@ -1,6 +1,6 @@
 // 변수 선언
-// var my_jwt = localStorage.getItem('x-access-token');
-// var my_refresh = localStorage.getItem('x-refresh-token');
+var my_jwt = localStorage.getItem('x-access-token');
+var my_refresh = localStorage.getItem('x-refresh-token');
 
 // 로그인 버튼 클릭시 실행 함수
 function login_check() {
@@ -80,4 +80,43 @@ function save(){
         }
         })
     .catch((error) => console.log("error", error))
+}
+
+// 소셜 로그인
+function social_login(){
+    fetch(`http://seolmunzip.shop:9000/auth/kakaoLogin?accessToken=${my_jwt}`, {
+        method: "POST",
+        headers: {'Content-Type': 'application/json',
+                'accessToken' : my_jwt,
+                'refreshToken': my_refresh}
+    })
+    .then((response) => {
+        console.log(response);
+        localStorage.setItem('socialLogin', 200); // 카카오 로그인 여부 확인
+        fetchTokenCheck();
+        login(); // 메인으로 이동
+    })
+    .catch((error) => {
+        console.log("error", error);
+        localStorage.setItem('socialLogin', 100); // 카카오 로그인 여부 확인
+    })
+}
+
+const fetchTokenCheck = () => {
+    var requestOptions = {
+        method: "Get",
+        headers: {'REFRESH-TOKEN' : my_refresh, }
+    };
+
+    fetch(
+        "http://seolmunzip.shop:9000/auth/refresh",
+        requestOptions
+    )
+        .then((response) => response.json())
+        .then((webResult) => {
+            //localStorage.removeItem('x-access-token');
+            localStorage.setItem('x-access-token', webResult.result);
+            my_jwt = localStorage.getItem('x-access-token');
+        })
+        .catch((error) => console.log("error", error));
 }
