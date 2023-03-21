@@ -52,8 +52,8 @@ const fetchTokenCheck = () => {
     )
         .then((response) => response.json())
         .then((webResult) => {
-            console.log(webResult.code);
-            localStorage.removeItem('x-access-token');
+            console.log(webResult);
+            //localStorage.removeItem('x-access-token');
             localStorage.setItem('x-access-token', webResult.result);
             my_jwt = localStorage.getItem('x-access-token');
         })
