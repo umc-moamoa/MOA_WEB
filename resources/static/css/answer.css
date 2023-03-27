@@ -43,14 +43,12 @@ ul,li{
 #userMenu * {
     font-weight: 400;
     font-size: 12px;
-    /* letter-spacing: 0.1em; */
     color: #414141;
 }
 ul {
     display: block;
     margin-block-start: 10px;
     margin-block-end: 10px;
-    /* padding-inline-start: 20px; */
 }
 
 #userMenu .menu {
@@ -78,25 +76,21 @@ ul {
     display: block;
     width: 140px;
     margin: 0 auto;
-    /* margin-left: 80px; */
 }
 
 /* gnb */
 .gnb_main {
     width: 100%;
-/*     height: 40px; */
     margin: 30px auto; 
     margin-bottom: 0;
     border-right: none;
     border-left: none;
     box-shadow: 0 1px 5px 0 rgb(32 33 36 / 20%);
-    /* padding-top: 0.5px; */
 }
 .gnb{
     text-align: center;
     padding: 8px 0;
     margin: 0;
-/*     vertical-align:middle; */
 }
 .gnb li {
     display: inline;
@@ -119,7 +113,6 @@ ul {
 
 /* container */
 #wrapper .container {
-    /* min-height: 300vh; */
     width: 970px;
     margin: 70px auto;
     margin-bottom: 100px;
@@ -127,7 +120,6 @@ ul {
 }
 
 footer .container {
-    /* min-height: 300vh; */
     width: 970px;
     margin: 30px auto;
     padding: 0 65px;
@@ -136,7 +128,6 @@ footer .container {
 /*서브 제목*/
 #subTitle .subTitle {
     position: relative;
-
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
@@ -155,10 +146,8 @@ footer {
 }
 
 #wrapper {
-    /* height: auto; */
     min-height: 100vh;
     position: relative;
-    /* padding-bottom: 226.302; */
 }
 
 table {
@@ -181,9 +170,7 @@ footer a {
     font-size: 12px;
     font-weight: 500;
 }
-/* footer .container {
-    padding: 0 auto;
-} */
+
 footer ul {
     padding-inline-start: 100px;
 }
@@ -201,9 +188,7 @@ footer td p {
 /* main */
 #main {
     box-sizing: border-box;
-    /* padding: 4% 4% 0% 4%; */
     padding: 30px 30px 0 30px;
-
     height: auto;
     background: #FFFFFF;
     border: 1px solid #909090;
@@ -213,7 +198,6 @@ footer td p {
 .flex-container2 {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
 }
 
 .Q1, .Q2, .Q3 {
@@ -233,7 +217,6 @@ footer td p {
     font-size: 14px;
     color: #414141;
 
-/*     margin-bottom: 30px; */
     padding-bottom: 7px;
     padding-top: 15px;
 }

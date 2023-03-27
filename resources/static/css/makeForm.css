@@ -29,9 +29,6 @@ ul, li {
 
 #backTop {
     position: absolute;
-    /* display: block; */
-    /* height: 50%; */
-    /* left: 50%; */
     z-index: -100;
 }
 
@@ -46,7 +43,6 @@ ul, li {
 #userMenu * {
     font-weight: 400;
     font-size: 12px;
-    /* letter-spacing: 0.1em; */
     color: #414141;
 }
 ul {
@@ -96,7 +92,6 @@ ul {
     text-align: center;
     padding: 8px 0;
     margin: 0;
-/*     vertical-align:middle; */
 }
 .gnb li {
     display: inline;
@@ -118,7 +113,6 @@ ul {
 
 /* container */
 #wrapper .container {
-    /* min-height: 300vh; */
     width: 970px;
     margin: 70px auto;
     margin-bottom: 100px;
@@ -126,7 +120,6 @@ ul {
 }
 
 footer .container {
-    /* min-height: 300vh; */
     width: 970px;
     margin: 30px auto;
     padding: 0 65px;
@@ -154,10 +147,8 @@ footer {
 }
 
 #wrapper {
-    /* height: auto; */
     min-height: 100vh;
     position: relative;
-    /* padding-bottom: 226.302; */
 }
 
 table {
@@ -180,9 +171,7 @@ footer a {
     font-size: 12px;
     font-weight: 500;
 }
-/* footer .container {
-    padding: 0 auto;
-} */
+
 footer ul {
     padding-inline-start: 100px;
 }
@@ -200,7 +189,6 @@ footer td p {
 /* main */
 #main {
     box-sizing: border-box;
-    /* padding: 4% 4% 0% 4%; */
     padding: 30px 30px 0 30px;
 
     height: auto;
@@ -212,13 +200,12 @@ footer td p {
 .flex-container2 {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
 }
 
 #inputTitle {
     display: inline-block;
     border: none;
-    outline: none; /* 입력 시 테두리 지움*/
+    outline: none;
     
     font-weight: 600;
     font-size: 20px;
@@ -265,7 +252,6 @@ footer td p {
 
 .deadline {
     display: inline-block;
-    /* font-weight: 600; */
     font-size: 14px;
     color: #414141;
     margin-left: 10px;
@@ -321,12 +307,6 @@ input:nth-child(2)::-ms-input-placeholder{color: #909090;}
     font-weight: 500;
     color: #414141;
 
-    /* 화살표 아이콘 없애고 바꿀라 했더니 개구림 */
-
-    /* -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: url('../image/Rectangle\ 83.png') no-repeat 95% 50%; */
 }
 
 .Qtype4 {
@@ -345,9 +325,6 @@ input:nth-child(2)::-ms-input-placeholder{color: #909090;}
     color: #414141;
 }
 
-/* select::-ms-expand {
-    display: none;
-} */
 
 .makeOption {
     margin: 11px 0;
@@ -360,8 +337,7 @@ input:nth-child(2)::-ms-input-placeholder{color: #909090;}
 #checkButton {
     display: inline-block;
     margin-right: 5px;
-/* 
-    width: 2.7%; */
+
 }
 
 .optionInput {
@@ -384,11 +360,6 @@ input:nth-child(5)::-ms-input-placeholder{color: #909090;}
 input:nth-child(7)::placeholder {color: #414141;}
 input:nth-child(7)::-webkit-input-placeholder {color: #414141;}
 input:nth-child(7)::-ms-input-placeholder {color: #414141;}
-
-/* #xButton {
-    display: inline-block;
-    width: 2.6%;
-} */
 
 #xButton {
     width: 25px;

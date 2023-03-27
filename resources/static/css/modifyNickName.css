@@ -156,7 +156,7 @@ ul {
 #inputTitle {
     display: inline-block;
     border: none;
-    outline: none; /* 입력 시 테두리 지움*/
+    outline: none; 
     
     font-weight: 600;
     font-size: 20px;
@@ -191,7 +191,6 @@ ul {
 
 .deadline {
     display: inline-block;
-    /* font-weight: 600; */
     font-size: 14px;
     color: #414141;
     margin-left: 10px;
